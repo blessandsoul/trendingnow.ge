@@ -1,0 +1,261 @@
+'use client';
+
+import {
+  ArrowsClockwiseIcon,
+  BarbellIcon,
+  CameraIcon,
+  CaretRightIcon,
+  CarIcon,
+  FireIcon,
+  HandbagIcon,
+  HeartIcon,
+  HouseIcon,
+  LightningIcon,
+  ListIcon,
+  MagnifyingGlassIcon,
+  MapPinIcon,
+  PackageIcon,
+  ShoppingCartIcon,
+  SparkleIcon,
+  StarIcon,
+  UserCircleIcon,
+  XIcon,
+} from '@phosphor-icons/react';
+import { useCallback, useEffect, useMemo, useState, type CSSProperties, type ComponentType } from 'react';
+
+import type { CatalogPayload, StoreCategory, StoreProduct } from '../data/currentCatalog';
+import styles from './TrendingNowStorefront.module.css';
+
+type IconName = 'search' | 'menu' | 'heart' | 'bag' | 'user' | 'pin' | 'cart' | 'spark' | 'bolt' | 'home' | 'car' | 'move' | 'arrow' | 'refresh' | 'camera' | 'close' | 'fire' | 'package' | 'star';
+type CategoryFilter = StoreCategory | 'ყველა';
+type CatalogState = 'loading' | 'ready' | 'error';
+type EnterStyle = CSSProperties & Record<'--enter-delay', string>;
+
+const iconMap: Record<IconName, ComponentType<{ className?: string; weight?: 'regular' | 'bold' | 'fill' }>> = {
+  search: MagnifyingGlassIcon,
+  menu: ListIcon,
+  heart: HeartIcon,
+  bag: HandbagIcon,
+  user: UserCircleIcon,
+  pin: MapPinIcon,
+  cart: ShoppingCartIcon,
+  spark: SparkleIcon,
+  bolt: LightningIcon,
+  home: HouseIcon,
+  car: CarIcon,
+  move: BarbellIcon,
+  arrow: CaretRightIcon,
+  refresh: ArrowsClockwiseIcon,
+  camera: CameraIcon,
+  close: XIcon,
+  fire: FireIcon,
+  package: PackageIcon,
+  star: StarIcon,
+};
+
+const categories: Array<{ label: CategoryFilter; icon: IconName; note: string }> = [
+  { label: 'ყველა', icon: 'spark', note: 'ყველა არჩევანი' },
+  { label: 'მოდა', icon: 'bag', note: 'ყოველდღიური სტილი' },
+  { label: 'სახლი', icon: 'home', note: 'სახლი და კომფორტი' },
+  { label: 'ტექნიკა', icon: 'bolt', note: 'ჭკვიანი ნივთები' },
+  { label: 'ავტო', icon: 'car', note: 'მანქანისთვის' },
+  { label: 'სპორტი', icon: 'move', note: 'აქტიური დღე' },
+  { label: 'მოვლა', icon: 'spark', note: 'სისუფთავე და მოვლა' },
+];
+
+function Icon({ name, className, weight = 'regular' }: { name: IconName; className?: string; weight?: 'regular' | 'bold' | 'fill' }) {
+  const SelectedIcon = iconMap[name];
+  return <SelectedIcon className={className} weight={weight} aria-hidden="true" />;
+}
+
+function ProductImage({ product, priority = false }: { product: StoreProduct; priority?: boolean }) {
+  const [failed, setFailed] = useState(false);
+
+  if (failed) {
+    return <div className={styles.imageFallback} aria-label={`${product.name} სურათი მიუწვდომელია`}><Icon name="package" weight="bold" /><span>{product.category}</span></div>;
+  }
+
+  return <img className={styles.productImage} src={product.image} alt={product.name} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'} onError={() => setFailed(true)} />;
+}
+
+function ProductSkeleton() {
+  return <div className={styles.skeletonCard} aria-hidden="true"><div /><span /><span /><b /></div>;
+}
+
+function formatCapturedAt(value: string | undefined) {
+  if (!value) return 'მონაცემი ახლდება';
+
+  const formatted = new Intl.DateTimeFormat('ka-GE', { day: 'numeric', month: 'long' }).format(new Date(value));
+  return `${formatted}-ს მონაცემები`;
+}
+
+export function TrendingNowStorefront() {
+  const [activeCategory, setActiveCategory] = useState<CategoryFilter>('ყველა');
+  const [query, setQuery] = useState('');
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [favoritesOnly, setFavoritesOnly] = useState(false);
+  const [cart, setCart] = useState<string[]>([]);
+  const [cartOnly, setCartOnly] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [sortByDiscount, setSortByDiscount] = useState(false);
+  const [catalog, setCatalog] = useState<CatalogPayload | null>(null);
+  const [catalogState, setCatalogState] = useState<CatalogState>('loading');
+
+  const loadCatalog = useCallback(async () => {
+    setCatalogState('loading');
+
+    try {
+      const response = await fetch('/api/catalog', { cache: 'no-store' });
+      if (!response.ok) throw new Error('Catalog request failed');
+
+      const payload = await response.json() as CatalogPayload;
+      if (!Array.isArray(payload.products) || typeof payload.capturedAt !== 'string') throw new Error('Invalid catalog response');
+
+      setCatalog(payload);
+      setCatalogState('ready');
+    } catch {
+      setCatalogState('error');
+    }
+  }, []);
+
+  useEffect(() => {
+    void Promise.resolve().then(loadCatalog);
+  }, [loadCatalog]);
+
+  const visibleProducts = useMemo(() => {
+    const normalizedQuery = query.toLocaleLowerCase('ka-GE').trim();
+    const filtered = (catalog?.products ?? []).filter((product) => {
+      const inCategory = activeCategory === 'ყველა' || product.category === activeCategory;
+      const inFavorites = !favoritesOnly || favorites.includes(product.id);
+      const inCart = !cartOnly || cart.includes(product.id);
+      const matchesQuery = !normalizedQuery || `${product.name} ${product.category} ${product.note}`.toLocaleLowerCase('ka-GE').includes(normalizedQuery);
+      return inCategory && inFavorites && inCart && matchesQuery;
+    });
+
+    return sortByDiscount
+      ? [...filtered].sort((left, right) => Number(right.discount?.replace(/\D/g, '') ?? 0) - Number(left.discount?.replace(/\D/g, '') ?? 0))
+      : filtered;
+  }, [activeCategory, cart, cartOnly, catalog, favorites, favoritesOnly, query, sortByDiscount]);
+
+  const featuredProducts = useMemo(() => (catalog?.products ?? []).slice(0, 3), [catalog]);
+  const productsByCategory = useMemo(() => new Map((catalog?.products ?? []).map((product) => [product.category, product])), [catalog]);
+
+  const toggleFavorite = (id: string) => setFavorites((items) => items.includes(id) ? items.filter((item) => item !== id) : [...items, id]);
+  const addToCart = (id: string) => setCart((items) => items.includes(id) ? items : [...items, id]);
+  const selectCategory = (category: CategoryFilter) => {
+    setActiveCategory(category);
+    setFavoritesOnly(false);
+    setCartOnly(false);
+    setMenuOpen(false);
+  };
+  const resetCatalog = () => {
+    setQuery('');
+    setActiveCategory('ყველა');
+    setFavoritesOnly(false);
+    setCartOnly(false);
+    setSortByDiscount(false);
+  };
+
+  return <main className={styles.page}>
+    <header className={styles.header} id="top">
+      <div className={styles.headerInner}>
+        <div className={styles.utility}>
+          <p>ონლაინ მაღაზია საქართველოსთვის</p>
+          <nav aria-label="დამხმარე ინფორმაცია">
+            <span>მიწოდება</span>
+            <span>დახმარება</span>
+            <span>GE</span>
+          </nav>
+        </div>
+        <div className={styles.topbar}>
+          <a className={styles.brand} href="#top" aria-label="TrendingNow მთავარი" onClick={resetCatalog}>Trending<span>Now</span><b>.ge</b></a>
+          <button className={`${styles.catalogButton} ${menuOpen ? styles.catalogButtonOpen : ''}`} type="button" aria-label="კატეგორიების გახსნა" aria-expanded={menuOpen} onClick={() => setMenuOpen((value) => !value)}><Icon name={menuOpen ? 'close' : 'menu'} weight="bold" /><span>კატალოგი</span></button>
+          <label className={styles.search}><Icon name="search" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="რა გჭირდება?" aria-label="პროდუქტის ძიება" />{query ? <button type="button" onClick={() => setQuery('')} aria-label="ძიების გასუფთავება"><Icon name="close" /></button> : <Icon name="camera" />}</label>
+          <nav className={styles.actions} aria-label="მომხმარებლის მოქმედებები">
+            <button className={styles.locationAction} type="button"><Icon name="pin" weight="fill" /><span><small>მიწოდების ადგილი</small>თბილისი</span></button>
+            <button type="button" onClick={() => setFavoritesOnly((value) => !value)} aria-pressed={favoritesOnly}><Icon name="heart" /><span>რჩეული</span>{favorites.length > 0 && <i>{favorites.length}</i>}</button>
+            <button type="button" onClick={resetCatalog}><Icon name="user" /><span>შესვლა</span></button>
+            <button className={styles.cart} type="button" aria-pressed={cartOnly} onClick={() => setCartOnly((value) => !value)}><Icon name="cart" weight="bold" /><span>კალათა</span>{cart.length > 0 && <i>{cart.length}</i>}</button>
+          </nav>
+        </div>
+        <div className={styles.subbar}>
+          <nav aria-label="სწრაფი კატეგორიები">
+            <button type="button" onClick={() => { resetCatalog(); setSortByDiscount(true); }}><Icon name="fire" weight="fill" />დღის ფასდაკლებები</button>
+            {categories.slice(1, 5).map((category) => <button type="button" key={category.label} onClick={() => selectCategory(category.label)}>{category.label}</button>)}
+          </nav>
+          <p><Icon name="refresh" />{formatCapturedAt(catalog?.capturedAt)}</p>
+        </div>
+      </div>
+      <div className={styles.menuPanel} data-open={menuOpen} aria-hidden={!menuOpen}>
+        <div className={styles.menuPanelInner}>
+          <div className={styles.menuPanelHeading}><div><span>კატალოგი</span><p>იპოვე ნივთი კატეგორიით</p></div><button type="button" tabIndex={menuOpen ? 0 : -1} onClick={() => setMenuOpen(false)} aria-label="კატეგორიების დახურვა"><Icon name="close" /></button></div>
+          <div className={styles.categoryPicker}>{categories.map((category) => <button className={activeCategory === category.label ? styles.activeCategory : ''} type="button" key={category.label} tabIndex={menuOpen ? 0 : -1} onClick={() => selectCategory(category.label)}><Icon name={category.icon} weight={activeCategory === category.label ? 'fill' : 'regular'} /><span><b>{category.label}</b><small>{category.note}</small></span><Icon name="arrow" /></button>)}</div>
+        </div>
+      </div>
+    </header>
+
+    <section className={styles.promo} aria-label="დღის შეთავაზებები">
+      <article className={styles.promoLead}>
+        <div className={styles.promoCopy}>
+          <span><Icon name="fire" weight="fill" />დღის არჩევანი</span>
+          <h1>ნივთები, რომლებიც ახლა ყველაზე სწრაფად ქრება.</h1>
+          <p>კატალოგში შეგიძლია მოძებნო პოპულარული არჩევანი და დაამატო კალათაში.</p>
+          <button type="button" onClick={() => { resetCatalog(); document.getElementById('catalog-title')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>კატალოგის ნახვა <Icon name="arrow" weight="bold" /></button>
+        </div>
+        {featuredProducts[0] && <div className={styles.promoProduct}><ProductImage product={featuredProducts[0]} priority /><div><span>{featuredProducts[0].discount ?? 'ახალი არჩევანი'}</span><b>{featuredProducts[0].price}</b></div></div>}
+      </article>
+      <div className={styles.promoStack}>
+        {featuredProducts.slice(1).map((product) => <button className={styles.promoMini} key={product.id} type="button" onClick={() => { setQuery(product.name); setActiveCategory('ყველა'); }}><span><small>{product.discount ?? 'პოპულარული'}</small><b>{product.name}</b><i>{product.price}</i></span><ProductImage product={product} /></button>)}
+      </div>
+    </section>
+
+    <section className={styles.categorySection} aria-labelledby="category-title">
+      <div className={styles.sectionHeading}><div><h2 id="category-title">კატეგორიები</h2><p>სწრაფი გზა სასურველ არჩევანამდე</p></div><button type="button" onClick={() => setMenuOpen(true)}>ყველა კატეგორია <Icon name="arrow" /></button></div>
+      <nav className={styles.categoryTiles} aria-label="კატეგორიები">
+        {categories.slice(1).map((category) => {
+          const preview = category.label === 'ყველა' ? undefined : productsByCategory.get(category.label);
+          return <button className={activeCategory === category.label ? styles.activeTile : ''} key={category.label} type="button" aria-pressed={activeCategory === category.label} onClick={() => selectCategory(category.label)}><span><Icon name={category.icon} weight="fill" /><b>{category.label}</b><small>{category.note}</small></span>{preview && <ProductImage product={preview} />}</button>;
+        })}
+      </nav>
+    </section>
+
+    <section className={styles.catalog} aria-labelledby="catalog-title">
+      <div className={styles.catalogLead}>
+        <div><h2 id="catalog-title">პოპულარული ახლა</h2><p>ფასი და ხელმისაწვდომობა საბოლოოდ დასტურდება შეკვეთამდე.</p></div>
+        <div className={styles.catalogControls}><span>{catalogState === 'ready' ? `${visibleProducts.length} ნივთი` : 'კატალოგი იტვირთება'}</span><button type="button" aria-pressed={sortByDiscount} onClick={() => setSortByDiscount((value) => !value)}><Icon name="spark" weight="fill" />{sortByDiscount ? 'ფასდაკლებით' : 'ფასდაკლებები'}</button></div>
+      </div>
+      {catalogState === 'loading' && <div className={styles.grid} aria-busy="true" aria-label="პროდუქტები იტვირთება">{Array.from({ length: 12 }, (_, index) => <ProductSkeleton key={index} />)}</div>}
+      {catalogState === 'error' && <div className={styles.empty}><Icon name="refresh" /><h2>პროდუქტები ჯერ ვერ ჩაიტვირთა</h2><p>კავშირი გადაამოწმე და სცადე თავიდან.</p><button type="button" onClick={() => void loadCatalog()}>განახლება</button></div>}
+      {catalogState === 'ready' && visibleProducts.length > 0 && <div className={styles.grid}>{visibleProducts.map((product, index) => {
+        const favorite = favorites.includes(product.id);
+        const inCart = cart.includes(product.id);
+        return <article className={styles.card} key={product.id} style={{ '--enter-delay': `${Math.min(index, 9) * 45}ms` } as EnterStyle}>
+          <div className={styles.productMedia}>
+            <div className={styles.cardTop}><button className={favorite ? styles.favorited : ''} type="button" aria-label={favorite ? `${product.name} რჩეულებიდან წაშლა` : `${product.name} რჩეულებში დამატება`} aria-pressed={favorite} onClick={() => toggleFavorite(product.id)}><Icon name="heart" weight={favorite ? 'fill' : 'regular'} /></button></div>
+            <ProductImage product={product} />
+            {product.discount && <div className={styles.discount}>{product.discount}</div>}
+          </div>
+          <div className={styles.cardInfo}>
+            <div className={styles.prices}><b>{product.price}</b>{product.oldPrice && <del>{product.oldPrice}</del>}</div>
+            <h3>{product.name}</h3>
+            <p>{product.note}</p>
+            <div className={styles.rankLine}><Icon name="star" weight="fill" /><span>ტოპ {product.rank}</span><span>{product.category}</span></div>
+            <button className={inCart ? styles.added : styles.add} type="button" onClick={() => addToCart(product.id)}><Icon name={inCart ? 'spark' : 'cart'} weight={inCart ? 'fill' : 'bold'} />{inCart ? 'კალათაშია' : 'კალათაში'}</button>
+          </div>
+        </article>;
+      })}</div>}
+      {catalogState === 'ready' && visibleProducts.length === 0 && <div className={styles.empty}><Icon name={cartOnly ? 'cart' : 'search'} /><h2>{cartOnly ? 'კალათა ჯერ ცარიელია' : 'ამ არჩევანში ვერაფერი ვიპოვეთ'}</h2><p>{cartOnly ? 'დაამატე ნივთები კატალოგიდან და ისინი აქ გამოჩნდება.' : 'შეცვალე ძიება ან გახსენი ყველა კატეგორია.'}</p><button type="button" onClick={resetCatalog}>ყველა ნივთის ნახვა</button></div>}
+    </section>
+
+    <footer className={styles.footer}>
+      <div className={styles.footerTop}>
+        <button className={styles.footerBrand} type="button" onClick={resetCatalog}>Trending<span>Now</span><b>.ge</b></button>
+        <p>მოიძიე პოპულარული ნივთები ერთ სივრცეში. შეკვეთამდე ვადასტურებთ საბოლოო ფასს და ხელმისაწვდომობას.</p>
+        <nav className={styles.footerNav} aria-label="ფუტერის ნავიგაცია"><button type="button" onClick={resetCatalog}>კატალოგი</button><button type="button" onClick={() => setFavoritesOnly((value) => !value)}>რჩეული</button><button type="button" onClick={() => setCartOnly((value) => !value)}>კალათა</button></nav>
+      </div>
+      <div className={styles.footerMeta}><span>© 2026 TrendingNow.ge</span><span>თბილისი, საქართველო</span></div>
+    </footer>
+
+    <nav className={styles.mobileNav} aria-label="მობილური ნავიგაცია"><a href="#top" onClick={resetCatalog}><Icon name="home" weight="fill" /><span>მთავარი</span></a><button type="button" onClick={() => setMenuOpen(true)}><Icon name="menu" /><span>კატალოგი</span></button><button type="button" aria-pressed={favoritesOnly} onClick={() => setFavoritesOnly((value) => !value)}><Icon name="heart" weight={favoritesOnly ? 'fill' : 'regular'} /><span>რჩეული</span>{favorites.length > 0 && <i>{favorites.length}</i>}</button><button type="button" aria-pressed={cartOnly} onClick={() => setCartOnly((value) => !value)}><Icon name="cart" weight="bold" /><span>კალათა</span>{cart.length > 0 && <i>{cart.length}</i>}</button></nav>
+  </main>;
+}

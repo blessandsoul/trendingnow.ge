@@ -1,0 +1,82 @@
+/* TrendingNow.ge Signal Pop Commerce theme */
+
+:root {
+  --radius: 0.75rem;
+  --background: #f5f7fa;
+  --foreground: #11141b;
+  --card: #ffffff;
+  --card-foreground: #11141b;
+  --popover: #ffffff;
+  --popover-foreground: #11141b;
+  --primary: #ff4057;
+  --primary-foreground: #ffffff;
+  --secondary: #edf0f4;
+  --secondary-foreground: #11141b;
+  --muted: #edf0f4;
+  --muted-foreground: #69717e;
+  --accent: #e9edf2;
+  --accent-foreground: #11141b;
+  --destructive: #b42318;
+  --border: #dde2e9;
+  --input: #d4dae3;
+  --ring: #ff4057;
+  --success: #2a9d4a;
+  --success-foreground: #ffffff;
+  --warning: #f4b400;
+  --warning-foreground: #11141b;
+  --info: #2251ff;
+  --info-foreground: #ffffff;
+  --chart-1: #ff4057;
+  --chart-2: #11141b;
+  --chart-3: #2251ff;
+  --chart-4: #2a9d4a;
+  --chart-5: #8b96a5;
+  --sidebar: #f5f7fa;
+  --sidebar-foreground: #11141b;
+  --sidebar-primary: #11141b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #eef2f6;
+  --sidebar-accent-foreground: #11141b;
+  --sidebar-border: #dde2e9;
+  --sidebar-ring: #ff4057;
+}
+
+.dark {
+  --background: #07111f;
+  --foreground: #f7f9fb;
+  --card: #0d1828;
+  --card-foreground: #f7f9fb;
+  --popover: #0d1828;
+  --popover-foreground: #f7f9fb;
+  --primary: #ff5c70;
+  --primary-foreground: #ffffff;
+  --secondary: #142238;
+  --secondary-foreground: #f7f9fb;
+  --muted: #142238;
+  --muted-foreground: #a8b2bf;
+  --accent: #1d2d46;
+  --accent-foreground: #f7f9fb;
+  --destructive: #ff6b5f;
+  --border: rgba(255, 255, 255, 0.14);
+  --input: rgba(255, 255, 255, 0.18);
+  --ring: #ff5c70;
+  --success: #35c465;
+  --success-foreground: #07152a;
+  --warning: #ffd43b;
+  --warning-foreground: #07152a;
+  --info: #6ba4ff;
+  --info-foreground: #07152a;
+  --chart-1: #ff5c70;
+  --chart-2: #6ba4ff;
+  --chart-3: #35c465;
+  --chart-4: #a8b2bf;
+  --chart-5: #ffffff;
+  --sidebar: #0d1828;
+  --sidebar-foreground: #f7f9fb;
+  --sidebar-primary: #ff5c70;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #142238;
+  --sidebar-accent-foreground: #f7f9fb;
+  --sidebar-border: rgba(255, 255, 255, 0.14);
+  --sidebar-ring: #ff5c70;
+}

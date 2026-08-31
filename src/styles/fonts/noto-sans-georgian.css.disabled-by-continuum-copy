@@ -1,0 +1,7 @@
+/* Noto Sans Georgian is the only public-facing type family for this storefront. */
+
+:root {
+  --font-sans-value: var(--font-noto-georgian), "Noto Sans Georgian", Arial, sans-serif;
+  --font-heading-value: var(--font-noto-georgian), "Noto Sans Georgian", Arial, sans-serif;
+  --font-mono-value: var(--font-noto-georgian), "Noto Sans Georgian", Arial, sans-serif;
+}
