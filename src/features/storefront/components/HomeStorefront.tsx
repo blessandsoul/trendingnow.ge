@@ -226,7 +226,7 @@ export function HomeStorefront(): React.ReactElement {
           <div className="relative min-h-[600px] overflow-hidden rounded-[22px] bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_24px_80px_rgba(17,20,27,0.09)] sm:min-h-[560px] sm:rounded-[26px] lg:min-h-[500px]">
             <HeroImageSlider hero={hero} className="absolute inset-0 min-h-full" />
             <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.99)_0%,rgba(255,255,255,0.96)_68%,rgba(255,255,255,0.72)_100%)] sm:bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.96)_44%,rgba(255,255,255,0.62)_64%,rgba(255,255,255,0.12)_100%)]" />
-            <div data-hero-content className="relative z-20 flex min-h-[600px] max-w-full flex-col justify-center px-5 pb-24 pt-10 max-[359px]:pt-3 min-[390px]:px-6 sm:min-h-[560px] sm:max-w-[660px] sm:px-10 sm:pb-24 sm:pt-12 lg:min-h-[500px] lg:px-16">
+            <div data-hero-content className="relative z-20 flex min-h-[600px] max-w-full flex-col justify-center px-5 pb-24 pt-10 max-[359px]:-translate-y-4 max-[359px]:pt-0 min-[390px]:px-6 sm:min-h-[560px] sm:max-w-[660px] sm:px-10 sm:pb-24 sm:pt-12 lg:min-h-[500px] lg:px-16">
                 {hero?.eyebrow && (
                   <p className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-[0.14em] text-[#FF4057] before:h-px before:w-8 before:bg-current sm:mb-4">{hero.eyebrow}</p>
                 )}
