@@ -226,35 +226,35 @@ export function HomeStorefront(): React.ReactElement {
           <div className="relative min-h-[600px] overflow-hidden rounded-[22px] bg-white shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_24px_80px_rgba(17,20,27,0.09)] sm:min-h-[560px] sm:rounded-[26px] lg:min-h-[500px]">
             <HeroImageSlider hero={hero} className="absolute inset-0 min-h-full" />
             <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.99)_0%,rgba(255,255,255,0.96)_68%,rgba(255,255,255,0.72)_100%)] sm:bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.96)_44%,rgba(255,255,255,0.62)_64%,rgba(255,255,255,0.12)_100%)]" />
-            <div data-hero-content className="relative z-20 flex min-h-[600px] max-w-full flex-col justify-center px-5 pb-24 pt-10 min-[390px]:px-6 sm:min-h-[560px] sm:max-w-[660px] sm:px-10 sm:pb-24 sm:pt-12 lg:min-h-[500px] lg:px-16">
+            <div data-hero-content className="relative z-20 flex min-h-[600px] max-w-full flex-col justify-center px-5 pb-24 pt-10 max-[359px]:pt-3 min-[390px]:px-6 sm:min-h-[560px] sm:max-w-[660px] sm:px-10 sm:pb-24 sm:pt-12 lg:min-h-[500px] lg:px-16">
                 {hero?.eyebrow && (
-                  <p className="mb-4 flex items-center gap-2 text-xs font-black uppercase tracking-[0.14em] text-[#FF4057] before:h-px before:w-8 before:bg-current">{hero.eyebrow}</p>
+                  <p className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-[0.14em] text-[#FF4057] before:h-px before:w-8 before:bg-current sm:mb-4">{hero.eyebrow}</p>
                 )}
-                <h1 className="max-w-[620px] text-balance text-[30px] font-black leading-[1.08] tracking-[-0.045em] text-[#11141B] min-[390px]:text-[34px] sm:text-5xl lg:text-[56px]">
+                <h1 className="max-w-[620px] text-balance text-[29px] font-black leading-[1.08] tracking-[-0.045em] text-[#11141B] max-[359px]:text-[26px] min-[390px]:text-[30px] sm:text-5xl lg:text-[56px]">
                   {toStorefrontUppercase(hero?.title ?? copy.home.heroTitle)}
                 </h1>
-                <p className="mt-5 max-w-[540px] text-pretty text-sm leading-6 text-[#5F6875] sm:text-base">
+                <p className="mt-3 max-w-[540px] text-pretty text-sm leading-[1.45] text-[#5F6875] sm:mt-5 sm:text-base sm:leading-6">
                   {hero?.text ?? copy.home.heroText}
                 </p>
                 {heroFacts.length > 0 && (
-                  <div className="mt-6 flex flex-wrap gap-2.5" aria-label="კატალოგის მოკლე ინფორმაცია">
+                  <div className="mt-4 grid grid-cols-2 gap-2 max-[359px]:flex max-[359px]:snap-x max-[359px]:overflow-x-auto sm:mt-6 sm:flex sm:flex-wrap sm:gap-2.5" aria-label="კატალოგის მოკლე ინფორმაცია">
                     {heroFacts.map((fact) => (
                       <div
                         key={fact.label}
-                        className="flex min-h-11 items-center gap-2 rounded-[12px] bg-white/86 px-3.5 shadow-[0_0_0_1px_rgba(0,0,0,0.07),0_6px_18px_rgba(17,20,27,0.06)] backdrop-blur-md"
+                        className="flex min-h-11 min-w-0 items-center gap-1.5 rounded-[12px] bg-white/86 px-2.5 shadow-[0_0_0_1px_rgba(0,0,0,0.07),0_6px_18px_rgba(17,20,27,0.06)] backdrop-blur-md max-[359px]:shrink-0 max-[359px]:snap-start sm:gap-2 sm:px-3.5"
                       >
                         <span className="tabular-nums text-sm font-black text-[#11141B]">{fact.value}</span>
-                        <span className="text-[11px] font-semibold text-[#69717E]">{fact.label}</span>
+                        <span className="min-w-0 text-[11px] font-semibold leading-tight text-[#69717E]">{fact.label}</span>
                       </div>
                     ))}
                   </div>
                 )}
-                <Button asChild className="mt-7 h-12 w-fit rounded-[12px] bg-[#FF4057] pl-7 pr-6 font-black text-white shadow-[0_12px_26px_rgba(255,64,87,0.28)] hover:-translate-y-0.5 hover:bg-[#F02F48]">
+                <Button asChild className="mt-4 h-12 w-fit rounded-[12px] bg-[#FF4057] pl-7 pr-6 font-black text-white shadow-[0_12px_26px_rgba(255,64,87,0.28)] hover:-translate-y-0.5 hover:bg-[#F02F48] max-[359px]:mt-2 sm:mt-7">
                   <Link href={localizeHref(hero?.ctaHref ?? ROUTES.PRODUCTS)}>
                     {hero?.ctaLabel ?? copy.home.heroCta} <ArrowRight className="size-4" />
                   </Link>
                 </Button>
-                <p className="mt-3 flex max-w-[520px] items-center gap-2 text-pretty text-xs font-semibold text-[#5F6875]">
+                <p className="mt-2 flex max-w-[520px] items-center gap-2 text-pretty text-xs font-semibold text-[#5F6875] max-[359px]:hidden sm:mt-3">
                   <ShieldCheck className="size-4 shrink-0 text-[#2A9D4A]" aria-hidden="true" />
                   ფასი და მიწოდების პირობები დასტურდება შეკვეთამდე
                 </p>
