@@ -10,7 +10,7 @@ function clamp(value: string, fallback: string, max = 96): string {
 
 export function GET(request: NextRequest): ImageResponse {
   const { searchParams } = new URL(request.url);
-  const title = clamp(searchParams.get('title') ?? '', 'Continuum GE');
+  const title = clamp(searchParams.get('title') ?? '', 'TrendingNow.ge');
   const date = clamp(searchParams.get('date') ?? '', '', 32);
   const tags = (searchParams.get('tags') ?? '')
     .split(',')
@@ -25,7 +25,7 @@ export function GET(request: NextRequest): ImageResponse {
           width: '100%',
           height: '100%',
           display: 'flex',
-          background: '#07152A',
+          background: '#11141B',
           color: '#FFFFFF',
           position: 'relative',
           fontFamily: 'Inter, Arial, sans-serif',
@@ -36,7 +36,7 @@ export function GET(request: NextRequest): ImageResponse {
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(135deg, rgba(253,195,2,0.95) 0%, rgba(253,195,2,0.82) 26%, rgba(23,74,152,0.88) 58%, rgba(7,21,42,1) 100%)',
+              'linear-gradient(135deg, rgba(255,64,87,0.98) 0%, rgba(255,64,87,0.86) 24%, rgba(140,92,246,0.92) 58%, rgba(17,20,27,1) 100%)',
           }}
         />
         <div
@@ -67,17 +67,21 @@ export function GET(request: NextRequest): ImageResponse {
                   display: 'flex',
                   width: 56,
                   height: 56,
-                  borderRadius: 12,
-                  background: '#FFFFFF',
-                  color: '#07152A',
+                  borderRadius: 18,
+                  background: 'rgba(255,255,255,0.14)',
+                  border: '1px solid rgba(255,255,255,0.24)',
                   alignItems: 'center',
                   justifyContent: 'center',
                   fontWeight: 900,
                 }}
               >
-                C
+                <div style={{ display: 'flex', alignItems: 'flex-end', gap: 5, height: 28 }}>
+                  <span style={{ width: 7, height: 14, borderRadius: 7, background: '#FFFFFF' }} />
+                  <span style={{ width: 7, height: 22, borderRadius: 7, background: '#FFFFFF' }} />
+                  <span style={{ width: 7, height: 28, borderRadius: 7, background: '#FFFFFF' }} />
+                </div>
               </div>
-              Continuum GE
+              TrendingNow.ge
             </div>
             {date && (
               <div style={{ fontSize: 24, fontWeight: 800, opacity: 0.86 }}>

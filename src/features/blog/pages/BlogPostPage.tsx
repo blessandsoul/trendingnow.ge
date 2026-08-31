@@ -110,7 +110,7 @@ export async function BlogPostPage({ slug, locale }: BlogPostPageProps): Promise
       )}
       {isFallback && (
         <div className="storefront-container max-w-4xl pt-8">
-          <div className="rounded-[8px] border border-[#F6D98B] bg-[#FFF8D7] p-4 text-center text-sm font-semibold text-[#8A6500]">
+          <div className="rounded-[16px] border border-[#D9C7FF] bg-[#F7F2FF] p-4 text-center text-sm font-semibold text-[#5B2DB6]">
             {copy.fallbackNotice}
           </div>
         </div>

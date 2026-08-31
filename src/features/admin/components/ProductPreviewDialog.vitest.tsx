@@ -36,7 +36,7 @@ const mainImage = '/uploads/storefront/product/draft-main.webp';
 
 const draft = {
   name: 'Unsaved product',
-  brand: 'Continuum',
+  brand: 'TrendingNow.ge',
   description: `<p>Unsaved description</p><div data-description-image-row="true"><img src="${descriptionImage}" alt="Draft detail" width="520" data-align="center"><img src="${secondDescriptionImage}" alt="Second draft detail" width="520" data-align="center"></div>`,
   imageUrl: mainImage,
   salePrice: 199,

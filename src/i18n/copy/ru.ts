@@ -25,34 +25,34 @@ const ruPublicCopy = {
       description: 'Проверьте товары в корзине и подготовьте заказ на TrendingNow.ge.',
     },
     login: {
-      title: 'Вход | Continuum GE',
-      description: 'Войдите в свой аккаунт Continuum GE.',
+      title: 'Вход | TrendingNow.ge',
+      description: 'Войдите в свой аккаунт TrendingNow.ge.',
     },
     register: {
-      title: 'Регистрация | Continuum GE',
-      description: 'Создайте аккаунт Continuum GE.',
+      title: 'Регистрация | TrendingNow.ge',
+      description: 'Создайте аккаунт TrendingNow.ge.',
     },
     resetPassword: {
-      title: 'Восстановление пароля | Continuum GE',
-      description: 'Восстановите пароль аккаунта Continuum GE.',
+      title: 'Восстановление пароля | TrendingNow.ge',
+      description: 'Восстановите пароль аккаунта TrendingNow.ge.',
     },
     verifyAccount: {
-      title: 'Подтверждение аккаунта | Continuum GE',
-      description: 'Подтвердите свой аккаунт Continuum GE.',
+      title: 'Подтверждение аккаунта | TrendingNow.ge',
+      description: 'Подтвердите свой аккаунт TrendingNow.ge.',
     },
     dashboard: {
-      title: 'Личный кабинет скоро | Continuum GE',
-      description: 'Личный кабинет Continuum GE скоро будет доступен.',
+      title: 'Личный кабинет скоро | TrendingNow.ge',
+      description: 'Личный кабинет TrendingNow.ge скоро будет доступен.',
     },
   },
   infoPages: {
     aboutUs: {
       metadata: {
-        title: 'О нас | Continuum GE',
-        description: 'Информация об онлайн-магазине Continuum GE.',
+        title: 'О нас | TrendingNow.ge',
+        description: 'Информация об онлайн-магазине TrendingNow.ge.',
       },
       eyebrow: 'О нас',
-      title: 'Continuum GE - онлайн-магазин электроники для ежедневного использования',
+      title: 'TrendingNow.ge - онлайн-магазин электроники для ежедневного использования',
       intro: 'У нас можно купить беспроводные наушники, умные часы, аксессуары для смартфонов и другие практичные устройства.',
       cards: [
         { label: 'Телефон', value: '+995 574 88 28 87' },
@@ -62,7 +62,7 @@ const ruPublicCopy = {
         {
           title: 'Что мы предлагаем',
           text: [
-            'Continuum GE - онлайн-магазин, где можно выбрать беспроводные наушники, умные часы, аксессуары для смартфонов и другие устройства, которые упрощают повседневное использование техники.',
+            'TrendingNow.ge - онлайн-магазин, где можно выбрать беспроводные наушники, умные часы, аксессуары для смартфонов и другие устройства, которые упрощают повседневное использование техники.',
           ],
         },
         {
@@ -76,8 +76,8 @@ const ruPublicCopy = {
     },
     delivery: {
       metadata: {
-        title: 'Доставка | Continuum GE',
-        description: 'Условия доставки Continuum GE в Тбилиси, Рустави и регионах.',
+        title: 'Доставка | TrendingNow.ge',
+        description: 'Условия доставки TrendingNow.ge в Тбилиси, Рустави и регионах.',
       },
       eyebrow: 'Доставка',
       title: 'Условия доставки',
@@ -115,12 +115,12 @@ const ruPublicCopy = {
     },
     warranty: {
       metadata: {
-        title: 'Условия гарантии | Continuum GE',
-        description: 'Условия гарантии Continuum GE, права потребителя и политика возврата.',
+        title: 'Условия гарантии | TrendingNow.ge',
+        description: 'Условия гарантии TrendingNow.ge, права потребителя и политика возврата.',
       },
       eyebrow: 'Условия гарантии',
       title: 'Гарантия, возврат и права потребителя',
-      intro: 'Здесь собраны основные условия Continuum GE по качеству товара, получению заказа, возврату и предусмотренной законом гарантии.',
+      intro: 'Здесь собраны основные условия TrendingNow.ge по качеству товара, получению заказа, возврату и предусмотренной законом гарантии.',
       cards: [
         { label: 'Законная гарантия', value: '2 года' },
         { label: 'Запрос на возврат', value: '14 дней' },
@@ -191,8 +191,8 @@ const ruPublicCopy = {
     },
     paymentMethods: {
       metadata: {
-        title: 'Способы оплаты | Continuum GE',
-        description: 'Способы оплаты Continuum GE и условия расчета по заказу.',
+        title: 'Способы оплаты | TrendingNow.ge',
+        description: 'Способы оплаты TrendingNow.ge и условия расчета по заказу.',
       },
       eyebrow: 'Способы оплаты',
       title: 'Гибкие способы оплаты онлайн-заказа',
@@ -227,8 +227,8 @@ const ruPublicCopy = {
     },
     faq: {
       metadata: {
-        title: 'Вопросы и ответы | Continuum GE',
-        description: 'Часто задаваемые вопросы о заказах, доставке, гарантии и оплате в Continuum GE.',
+        title: 'Вопросы и ответы | TrendingNow.ge',
+        description: 'Часто задаваемые вопросы о заказах, доставке, гарантии и оплате в TrendingNow.ge.',
       },
       eyebrow: 'Вопросы и ответы',
       title: 'Часто задаваемые вопросы',
@@ -267,8 +267,8 @@ const ruPublicCopy = {
     },
     contact: {
       metadata: {
-        title: 'Контакт | Continuum GE',
-        description: 'Контактная информация Continuum GE и каналы поддержки.',
+        title: 'Контакт | TrendingNow.ge',
+        description: 'Контактная информация TrendingNow.ge и каналы поддержки.',
       },
       eyebrow: 'Контакт',
       title: 'Свяжитесь с нами по вопросам заказа, товара или сервиса',
@@ -302,8 +302,8 @@ const ruPublicCopy = {
     },
     corporateOffer: {
       metadata: {
-        title: 'Корпоративное предложение | Continuum GE',
-        description: 'Корпоративные заказы, инвойсы и бизнес-предложения от Continuum GE.',
+        title: 'Корпоративное предложение | TrendingNow.ge',
+        description: 'Корпоративные заказы, инвойсы и бизнес-предложения от TrendingNow.ge.',
       },
       eyebrow: 'Корпоративное предложение',
       title: 'Заказы техники для компаний',
@@ -415,8 +415,8 @@ const ruPublicCopy = {
   },
   footer: {
     summary: 'Актуальные товары, выбранные категории и новые находки в одном месте.',
-    facebookAria: 'Continuum GE на Facebook',
-    instagramAria: 'Continuum GE в Instagram',
+    facebookAria: 'TrendingNow.ge на Facebook',
+    instagramAria: 'TrendingNow.ge в Instagram',
     agencyAria: 'AI агентство',
     paymentMethods: 'Способы оплаты',
     paymentBadges: ['VISA', 'MC', 'AMEX', 'G Pay', 'Apple Pay', 'Банк'],
@@ -640,7 +640,7 @@ const ruPublicCopy = {
   },
   auth: {
     shell: {
-      accountLabel: 'Аккаунт Continuum',
+      accountLabel: 'Аккаунт TrendingNow.ge',
       backToStore: 'Вернуться в магазин',
       browseProducts: 'Посмотреть товары',
     },
@@ -682,7 +682,7 @@ const ruPublicCopy = {
       noAccount: 'Нет аккаунта?',
       register: 'Регистрация',
       panelTitle: 'Вернуться к покупкам легко',
-      panelDescription: 'Войдите в аккаунт, смотрите заказы, сохраняйте избранные товары и продолжайте покупки в Continuum.',
+      panelDescription: 'Войдите в аккаунт, смотрите заказы, сохраняйте избранные товары и продолжайте покупки на TrendingNow.ge.',
     },
     register: {
       title: 'Регистрация',
@@ -704,11 +704,11 @@ const ruPublicCopy = {
       remembered: 'Вспомнили пароль?',
       login: 'Войти',
       panelTitle: 'Вернуться в аккаунт легко',
-      panelDescription: 'Восстановите пароль и продолжайте смотреть заказы, избранное и товары в Continuum.',
+      panelDescription: 'Восстановите пароль и продолжайте смотреть заказы, избранное и товары на TrendingNow.ge.',
     },
     verify: {
       panelTitle: 'Остался один шаг',
-      panelDescription: 'Подтвердите email, затем войдите в аккаунт и пользуйтесь личным пространством Continuum.',
+      panelDescription: 'Подтвердите email, затем войдите в аккаунт и пользуйтесь личным пространством TrendingNow.ge.',
       title: 'Проверьте email',
       description: 'Аккаунт создан. Перед входом откройте ссылку подтверждения, которую мы отправили вам на почту.',
       backToLogin: 'Вернуться ко входу',

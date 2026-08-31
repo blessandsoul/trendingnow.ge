@@ -75,7 +75,7 @@ export async function TagPage({ tag, locale }: TagPageProps): Promise<React.Reac
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
-      <div className="storefront-container py-14 md:py-20">
+      <div className="storefront-container py-10 md:py-16">
         <nav className="mb-6 flex justify-center gap-2 text-sm font-semibold text-[#526071]">
           <Link href={localizedPath(locale, '/blog')} className="hover:text-[#07152A]">{copy.title}</Link>
           <span>/</span>
@@ -84,8 +84,9 @@ export async function TagPage({ tag, locale }: TagPageProps): Promise<React.Reac
           <span className="text-[#07152A]">{result.tag}</span>
         </nav>
 
-        <div className="mx-auto mb-14 max-w-3xl text-center">
-          <h1 className="text-4xl font-black leading-tight tracking-tight text-[#07152A] sm:text-5xl md:text-6xl">
+        <div className="tn-surface mx-auto mb-14 max-w-4xl rounded-[24px] px-6 py-10 text-center sm:px-10">
+          <p className="tn-kicker mb-3">TrendingNow.ge</p>
+          <h1 className="text-4xl font-black leading-tight tracking-tight text-[#11141B] sm:text-5xl md:text-6xl">
             {result.tag}
           </h1>
           <p className="mt-4 text-lg text-[#526071]">
@@ -100,7 +101,7 @@ export async function TagPage({ tag, locale }: TagPageProps): Promise<React.Reac
             ))}
           </div>
         ) : (
-          <div className="rounded-[8px] border border-[#DFE6EF] bg-[#F7F9FB] px-5 py-14 text-center text-[#526071]">
+          <div className="tn-surface rounded-[20px] px-5 py-14 text-center text-[#526071]">
             {copy.noPostsForTag}
           </div>
         )}

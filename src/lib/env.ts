@@ -19,7 +19,7 @@ const envSchema = z.object({
       blankAsUndefined,
       z.string()
         .url('NEXT_PUBLIC_SITE_URL must be a valid URL')
-        .default('https://continuum.ge'),
+        .default('https://trendingnow.ge'),
     ),
 
   // --- Error Tracking (Optional, Sentry) ---

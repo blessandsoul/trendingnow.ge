@@ -20,7 +20,7 @@ export function ReadingProgress(): React.ReactElement {
 
   return (
     <div
-      className="fixed left-0 top-0 z-[60] h-[3px] bg-linear-to-r from-[#FDC302] via-[#174A98] to-[#07152A] transition-[width] duration-150 ease-out"
+      className="fixed left-0 top-0 z-[60] h-[3px] bg-linear-to-r from-[#FF4057] via-[#8C5CF6] to-[#19C6A6] transition-[width] duration-150 ease-out"
       style={{ width: `${progress}%` }}
       role="progressbar"
       aria-valuenow={Math.round(progress)}

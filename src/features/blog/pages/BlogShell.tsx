@@ -14,11 +14,11 @@ interface BlogShellProps {
 
 export function BlogShell({ children }: BlogShellProps): React.ReactElement {
   return (
-    <div className="min-h-dvh bg-white text-[#07152A]">
+    <div className="tn-page min-h-dvh text-[#11141B]">
       <Suspense fallback={<HeaderFallback />}>
         <StorefrontHeader />
       </Suspense>
-      <main>{children}</main>
+      <main className="relative">{children}</main>
       <StorefrontFooter />
     </div>
   );

@@ -19,7 +19,7 @@ const storefrontMocks = vi.hoisted(() => ({
           slug: 'ergonomic-chair',
           name: 'Ergonomic Chair',
           description: null,
-          brand: 'Continuum',
+          brand: 'TrendingNow.ge',
           imageUrl: '/uploads/chair.webp',
           salePrice: 129,
           originalPrice: null,

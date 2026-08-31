@@ -37,7 +37,7 @@ export function Pagination({ page, totalPages, prevLabel, nextLabel, locale }: P
     const base = localizedPath(locale, '/blog');
     return nextPage === 1 ? base : `${base}?page=${nextPage}`;
   };
-  const arrowPill = 'rounded-full border border-[#DFE6EF] bg-white px-4 py-2 text-sm font-semibold text-[#526071] transition-colors hover:border-[#C89300] hover:text-[#07152A]';
+  const arrowPill = 'rounded-full border border-[#E8E0F8] bg-white px-4 py-2 text-sm font-semibold text-[#526071] transition-colors hover:border-[#8C5CF6] hover:bg-[#F7F2FF] hover:text-[#5B2DB6]';
   const numPill = 'flex h-9 min-w-9 items-center justify-center rounded-full border px-2 text-sm font-semibold transition-colors';
 
   return (
@@ -54,11 +54,11 @@ export function Pagination({ page, totalPages, prevLabel, nextLabel, locale }: P
             ...
           </span>
         ) : item === page ? (
-          <span key={item} aria-current="page" className={cn(numPill, 'border-[#07152A] bg-[#07152A] text-white')}>
+          <span key={item} aria-current="page" className={cn(numPill, 'border-[#FF4057] bg-[#FF4057] text-white')}>
             {item}
           </span>
         ) : (
-          <Link key={item} href={href(item)} className={cn(numPill, 'border-[#DFE6EF] bg-white text-[#526071] hover:border-[#C89300] hover:text-[#07152A]')}>
+          <Link key={item} href={href(item)} className={cn(numPill, 'border-[#E8E0F8] bg-white text-[#526071] hover:border-[#8C5CF6] hover:text-[#5B2DB6]')}>
             {item}
           </Link>
         ),

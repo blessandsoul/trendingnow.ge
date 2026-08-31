@@ -19,9 +19,9 @@ describe('collectProductSitemapEntries', () => {
       });
 
     await expect(collectProductSitemapEntries(fetchPage)).resolves.toEqual([
-      { url: 'https://continuum.ge/products/wireless-earbuds', lastModified: new Date('2026-07-10T10:00:00.000Z') },
-      { url: 'https://continuum.ge/products/smart-watch', lastModified: new Date('2026-07-12T12:00:00.000Z') },
-      { url: 'https://continuum.ge/products/phone-case', lastModified: new Date('2026-07-13T14:00:00.000Z') },
+      { url: 'https://trendingnow.ge/products/wireless-earbuds', lastModified: new Date('2026-07-10T10:00:00.000Z') },
+      { url: 'https://trendingnow.ge/products/smart-watch', lastModified: new Date('2026-07-12T12:00:00.000Z') },
+      { url: 'https://trendingnow.ge/products/phone-case', lastModified: new Date('2026-07-13T14:00:00.000Z') },
     ]);
     expect(fetchPage).toHaveBeenCalledTimes(2);
   });

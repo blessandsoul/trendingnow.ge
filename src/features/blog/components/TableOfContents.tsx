@@ -65,9 +65,9 @@ export function TableOfContents({ content, locale }: TableOfContentsProps): Reac
   if (items.length < 2) return null;
 
   return (
-    <nav aria-label={copy.tocTitle} className="rounded-[8px] border border-[#DFE6EF] bg-white p-4 shadow-sm">
-      <div className="mb-3 flex items-center gap-2 text-sm font-bold text-[#07152A]">
-        <ListIcon className="size-4 text-[#C89300]" />
+    <nav aria-label={copy.tocTitle} className="tn-surface rounded-[16px] p-4">
+      <div className="mb-3 flex items-center gap-2 text-sm font-bold text-[#11141B]">
+        <ListIcon className="size-4 text-[#8C5CF6]" />
         <span>{copy.tocTitle}</span>
       </div>
       <ol className="space-y-1">
@@ -84,9 +84,9 @@ export function TableOfContents({ content, locale }: TableOfContentsProps): Reac
                 }
               }}
               className={cn(
-                'block py-1 text-sm transition-colors hover:text-[#C89300]',
+                'block py-1 text-sm transition-colors hover:text-[#8C5CF6]',
                 item.level === 3 && 'pl-4',
-                activeId === item.id ? 'font-semibold text-[#C89300]' : 'text-[#526071]',
+                activeId === item.id ? 'font-semibold text-[#8C5CF6]' : 'text-[#526071]',
               )}
             >
               {item.text}

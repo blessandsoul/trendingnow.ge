@@ -11,18 +11,18 @@ import {
 describe('SEO metadata', () => {
   it('builds a self-canonical translated public page with locale alternates', () => {
     const metadata = buildPublicMetadata(
-      { title: 'Delivery | Continuum GE', description: 'Delivery information.' },
+      { title: 'Delivery | TrendingNow.ge', description: 'Delivery information.' },
       'en',
       '/delivery',
     );
 
     expect(metadata.alternates).toEqual({
-      canonical: 'https://continuum.ge/en/delivery',
+      canonical: 'https://trendingnow.ge/en/delivery',
       languages: {
-        ka: 'https://continuum.ge/delivery',
-        en: 'https://continuum.ge/en/delivery',
-        ru: 'https://continuum.ge/ru/delivery',
-        'x-default': 'https://continuum.ge/delivery',
+        ka: 'https://trendingnow.ge/delivery',
+        en: 'https://trendingnow.ge/en/delivery',
+        ru: 'https://trendingnow.ge/ru/delivery',
+        'x-default': 'https://trendingnow.ge/delivery',
       },
     });
   });
@@ -36,11 +36,11 @@ describe('SEO metadata', () => {
 
   it('indexes Georgian product URLs and canonicalizes untranslated variants to Georgian', () => {
     expect(buildProductMetadataPolicy('ka', 'wireless-earbuds')).toEqual({
-      canonical: 'https://continuum.ge/products/wireless-earbuds',
+      canonical: 'https://trendingnow.ge/products/wireless-earbuds',
       index: true,
     });
     expect(buildProductMetadataPolicy('en', 'wireless-earbuds')).toEqual({
-      canonical: 'https://continuum.ge/products/wireless-earbuds',
+      canonical: 'https://trendingnow.ge/products/wireless-earbuds',
       index: false,
     });
   });
@@ -48,12 +48,12 @@ describe('SEO metadata', () => {
   it('gives unfiltered localized catalog pages self canonicals and locale alternates', () => {
     expect(buildCatalogMetadata({ title: 'Products', description: 'Catalog.' }, 'en')).toMatchObject({
       alternates: {
-        canonical: 'https://continuum.ge/en/products',
+        canonical: 'https://trendingnow.ge/en/products',
         languages: {
-          ka: 'https://continuum.ge/products',
-          en: 'https://continuum.ge/en/products',
-          ru: 'https://continuum.ge/ru/products',
-          'x-default': 'https://continuum.ge/products',
+          ka: 'https://trendingnow.ge/products',
+          en: 'https://trendingnow.ge/en/products',
+          ru: 'https://trendingnow.ge/ru/products',
+          'x-default': 'https://trendingnow.ge/products',
         },
       },
       robots: { index: true, follow: true },
@@ -62,7 +62,7 @@ describe('SEO metadata', () => {
 
   it('canonicalizes filtered and sorted catalog URLs to the Georgian catalog', () => {
     expect(buildCatalogMetadata({ title: 'Products', description: 'Catalog.' }, 'en', true)).toMatchObject({
-      alternates: { canonical: 'https://continuum.ge/products' },
+      alternates: { canonical: 'https://trendingnow.ge/products' },
     });
     expect(hasCatalogRefinement({ category: 'audio' })).toBe(true);
     expect(hasCatalogRefinement({ sort: 'price-asc' })).toBe(true);

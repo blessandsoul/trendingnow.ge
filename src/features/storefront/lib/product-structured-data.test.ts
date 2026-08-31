@@ -11,7 +11,7 @@ describe('buildProductStructuredData', () => {
           slug: 'wireless-earbuds',
           name: 'Wireless Earbuds',
           description: '<p>Comfortable earbuds for every day.</p>',
-          brand: 'Continuum',
+          brand: 'TrendingNow.ge',
           imageUrl: '/uploads/earbuds.png',
           salePrice: 199,
           originalPrice: 249,
@@ -38,27 +38,27 @@ describe('buildProductStructuredData', () => {
         relatedProducts: [],
         recentProducts: [],
       },
-      'https://continuum.ge/products/wireless-earbuds',
+      'https://trendingnow.ge/products/wireless-earbuds',
     );
 
     expect(productJsonLd).toMatchObject({
       '@type': 'Product',
       name: 'Wireless Earbuds',
       sku: 'CONT-EARBUDS',
-      brand: { '@type': 'Brand', name: 'Continuum' },
+      brand: { '@type': 'Brand', name: 'TrendingNow.ge' },
       offers: {
         '@type': 'Offer',
         price: '199',
         priceCurrency: 'GEL',
         availability: 'https://schema.org/InStock',
-        url: 'https://continuum.ge/products/wireless-earbuds',
+        url: 'https://trendingnow.ge/products/wireless-earbuds',
       },
     });
     expect(productJsonLd.image).toEqual(['http://localhost:8080/uploads/earbuds.png']);
     expect(breadcrumbJsonLd.itemListElement).toEqual([
-      { '@type': 'ListItem', position: 1, name: 'TrendingNow.ge', item: 'https://continuum.ge/' },
-      { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://continuum.ge/products' },
-      { '@type': 'ListItem', position: 3, name: 'Wireless Earbuds', item: 'https://continuum.ge/products/wireless-earbuds' },
+      { '@type': 'ListItem', position: 1, name: 'TrendingNow.ge', item: 'https://trendingnow.ge/' },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://trendingnow.ge/products' },
+      { '@type': 'ListItem', position: 3, name: 'Wireless Earbuds', item: 'https://trendingnow.ge/products/wireless-earbuds' },
     ]);
   });
 });

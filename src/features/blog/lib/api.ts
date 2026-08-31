@@ -20,18 +20,18 @@ let coverMapping: CoverMapping | null = null;
 
 const BLOG_DEFAULTS: Record<BlogLocale, { authorName: string; authorRole: string; readTime: string }> = {
   ka: {
-    authorName: 'Continuum გუნდი',
-    authorRole: 'ტექნიკის კონსულტანტები',
+    authorName: 'TrendingNow გუნდი',
+    authorRole: 'პროდუქტების რედაქტორები',
     readTime: '4 წუთი',
   },
   en: {
-    authorName: 'Continuum Team',
-    authorRole: 'Electronics advisors',
+    authorName: 'TrendingNow Team',
+    authorRole: 'Product editors',
     readTime: '4 min read',
   },
   ru: {
-    authorName: 'Команда Continuum',
-    authorRole: 'Консультанты по технике',
+    authorName: 'Команда TrendingNow',
+    authorRole: 'Редакторы по товарам',
     readTime: '4 мин',
   },
 };
@@ -94,7 +94,7 @@ function ensureCoverImage(post: Partial<BlogPost>): Partial<BlogPost> {
   }
 
   if (!post.coverImage) {
-    const params = new URLSearchParams({ title: post.title || 'Continuum GE' });
+    const params = new URLSearchParams({ title: post.title || 'TrendingNow.ge' });
     const tags = post.tags?.filter(Boolean).slice(0, 3);
     if (tags?.length) params.set('tags', tags.join(','));
     post.coverImage = `/api/og?${params.toString()}`;

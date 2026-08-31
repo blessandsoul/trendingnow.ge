@@ -32,7 +32,7 @@ interface BlogCopy {
 
 const ka: BlogCopy = {
   title: 'ბლოგი',
-  subtitle: 'ყიდვის გზამკვლევები, შედარებები და პრაქტიკული რჩევები ტექნიკის სწორად შესარჩევად.',
+  subtitle: 'ტრენდული პროდუქტები, ყიდვის გზამკვლევები, შედარებები და პრაქტიკული რჩევები უკეთესი არჩევანისთვის.',
   latestHeading: 'ბოლო სტატიები',
   topicsHeading: 'თემები',
   viewAllTags: 'ყველა თემის ნახვა ->',
@@ -51,18 +51,18 @@ const ka: BlogCopy = {
   postNotFoundTitle: 'სტატია ვერ მოიძებნა',
   tagNotFoundTitle: 'თემა ვერ მოიძებნა',
   tagDescription: (tag: string) => `"${tag}" თემის სტატიები`,
-  productCtaEyebrow: 'Continuum კატალოგი',
+  productCtaEyebrow: 'TrendingNow კატალოგი',
   productCtaTitle: 'იპოვეთ ამ თემასთან დაკავშირებული პროდუქტი',
   productCtaBody: 'გახსენით კატალოგი შესაბამისი ძიებით და შეადარეთ სტატიაში ნახსენები კატეგორიის პროდუქტები.',
   productCtaButton: 'პროდუქტების ძიება',
   productCtaSecondary: 'ყველა პროდუქტი',
-  seoTitle: 'ბლოგი | Continuum GE',
-  seoDescription: 'Continuum GE-ის ბლოგი ტექნიკის შერჩევის, მოვლის, შედარებისა და ონლაინ ყიდვის შესახებ.',
+  seoTitle: 'ბლოგი | TrendingNow.ge',
+  seoDescription: 'TrendingNow.ge-ის ბლოგი ტრენდული პროდუქტების, შედარების, შერჩევისა და ონლაინ ყიდვის შესახებ.',
 };
 
 const en: BlogCopy = {
   title: 'Blog',
-  subtitle: 'Buying guides, comparisons, and practical tips for choosing the right electronics.',
+  subtitle: 'Trending products, buying guides, comparisons, and practical tips for making a better choice.',
   latestHeading: 'Latest articles',
   topicsHeading: 'Topics',
   viewAllTags: 'View all topics ->',
@@ -81,18 +81,18 @@ const en: BlogCopy = {
   postNotFoundTitle: 'Article not found',
   tagNotFoundTitle: 'Topic not found',
   tagDescription: (tag: string) => `Articles about "${tag}"`,
-  productCtaEyebrow: 'Continuum catalog',
+  productCtaEyebrow: 'TrendingNow catalog',
   productCtaTitle: 'Find a product related to this topic',
   productCtaBody: 'Open the catalog with a relevant search and compare products from the category mentioned in the article.',
   productCtaButton: 'Search products',
   productCtaSecondary: 'All products',
-  seoTitle: 'Blog | Continuum GE',
-  seoDescription: 'The Continuum GE blog about choosing, maintaining, comparing, and buying electronics online.',
+  seoTitle: 'Blog | TrendingNow.ge',
+  seoDescription: 'The TrendingNow.ge blog about discovering, comparing, choosing, and buying trending products online.',
 };
 
 const ru: BlogCopy = {
   title: 'Блог',
-  subtitle: 'Гиды по покупке, сравнения и практичные советы для правильного выбора техники.',
+  subtitle: 'Трендовые товары, гиды по покупке, сравнения и практичные советы для уверенного выбора.',
   latestHeading: 'Последние статьи',
   topicsHeading: 'Темы',
   viewAllTags: 'Все темы ->',
@@ -111,13 +111,13 @@ const ru: BlogCopy = {
   postNotFoundTitle: 'Статья не найдена',
   tagNotFoundTitle: 'Тема не найдена',
   tagDescription: (tag: string) => `Статьи по теме "${tag}"`,
-  productCtaEyebrow: 'Каталог Continuum',
+  productCtaEyebrow: 'Каталог TrendingNow',
   productCtaTitle: 'Найдите товар по этой теме',
   productCtaBody: 'Откройте каталог с подходящим поиском и сравните товары категории, упомянутой в статье.',
   productCtaButton: 'Искать товары',
   productCtaSecondary: 'Все товары',
-  seoTitle: 'Блог | Continuum GE',
-  seoDescription: 'Блог Continuum GE о выборе, уходе, сравнении и онлайн-покупке техники.',
+  seoTitle: 'Блог | TrendingNow.ge',
+  seoDescription: 'Блог TrendingNow.ge о трендовых товарах, сравнении, выборе и онлайн-покупках.',
 };
 
 export const BLOG_COPY: Record<BlogLocale, BlogCopy> = {

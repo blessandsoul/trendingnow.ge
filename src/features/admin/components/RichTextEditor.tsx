@@ -146,7 +146,7 @@ function DescriptionImageNodeView({ node, selected, updateAttributes, deleteNode
           <span className="text-xs font-bold text-[#526071]">{images.length === 2 ? adminCopy.richTextImageTwo : adminCopy.richTextImageOne}</span>
           <span className="inline-flex items-center gap-1.5 text-xs font-black text-[#07152A]">
             {adminCopy.richTextImageEdit}
-            <ImagePlus className="size-3.5 text-[#C89300]" />
+            <ImagePlus className="size-3.5 text-[#8C5CF6]" />
           </span>
         </div>
       </button>

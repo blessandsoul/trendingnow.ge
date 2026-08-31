@@ -292,12 +292,12 @@ function VerifyAccountRoute({
       ]}
     >
       <div className="text-center">
-        <span className="mx-auto grid size-14 place-items-center rounded-[8px] bg-[#FFF7D7] text-[#07152A]">
+        <span className="tn-soft-icon mx-auto grid size-16 place-items-center rounded-[16px]">
           <MailCheck className="size-7" aria-hidden="true" />
         </span>
-        <h1 className="mt-5 text-2xl font-black tracking-tight text-[#07152A]">{copy.auth.verify.title}</h1>
-        <p className="mt-2 text-sm leading-6 text-[#6B7685]">{copy.auth.verify.description}</p>
-        <Button asChild className="mt-6 h-11 rounded-[7px] bg-[#FDC302] px-5 font-black text-[#07152A] hover:bg-[#F2B900]">
+        <h1 className="mt-5 text-3xl font-black tracking-[-0.035em] text-[#11141B]">{copy.auth.verify.title}</h1>
+        <p className="mt-2 text-sm leading-6 text-[#69717E]">{copy.auth.verify.description}</p>
+        <Button asChild className="tn-primary-action mt-6 h-12 px-6 font-black">
           <Link href={localizedPath(locale, ROUTES.LOGIN)}>{copy.auth.verify.backToLogin}</Link>
         </Button>
       </div>

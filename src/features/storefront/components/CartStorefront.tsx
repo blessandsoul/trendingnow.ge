@@ -174,7 +174,7 @@ export function CartStorefront(): React.ReactElement {
                         key={zone}
                         className={`flex cursor-pointer items-center justify-between gap-3 rounded-[7px] border px-3 py-2.5 text-sm transition-colors ${
                           isSelected
-                            ? 'border-[#07152A] bg-[#FFF9E6]'
+                            ? 'border-[#8C5CF6] bg-[#F7F2FF]'
                             : 'border-[#DFE6EF] hover:border-[#B9C4D2]'
                         }`}
                       >

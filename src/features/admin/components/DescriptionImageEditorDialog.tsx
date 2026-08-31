@@ -183,7 +183,7 @@ export function DescriptionImageEditorDialog({
                   {adminCopy.richTextImageSwap}
                 </button>
               )}
-              <button type="button" onClick={() => onOpenChange(false)} className="ml-auto inline-flex h-9 items-center rounded-md bg-[#FDC302] px-4 text-sm font-black text-[#07152A] transition hover:bg-[#E8B400]">
+              <button type="button" onClick={() => onOpenChange(false)} className="ml-auto inline-flex h-9 items-center rounded-[10px] bg-[#FF4057] px-4 text-sm font-black text-white transition hover:bg-[#E9344C]">
                 {adminCopy.richTextImageDone}
               </button>
             </div>

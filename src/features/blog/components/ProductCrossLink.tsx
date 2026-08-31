@@ -36,18 +36,18 @@ export function ProductCrossLink({ tags, locale }: ProductCrossLinkProps): React
   const href = target.query ? `/products?search=${encodeURIComponent(target.query)}` : '/products';
 
   return (
-    <aside className="my-10 rounded-[8px] border border-[#DFE6EF] bg-[#FAFBFC] p-6 md:p-8">
-      <p className="mb-2 text-xs font-black uppercase tracking-[0.24em] text-[#8B96A5]">{copy.productCtaEyebrow}</p>
+    <aside className="tn-dark-panel my-10 p-6 md:p-8">
+      <p className="mb-2 text-xs font-black uppercase tracking-[0.24em] text-[#FF8C9A]">{copy.productCtaEyebrow}</p>
       <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
         <div className="max-w-2xl">
-          <h2 className="mb-2 text-xl font-black tracking-tight text-[#07152A]">{copy.productCtaTitle}</h2>
-          <p className="text-sm leading-6 text-[#526071]">{copy.productCtaBody}</p>
+          <h2 className="mb-2 text-xl font-black tracking-tight text-white">{copy.productCtaTitle}</h2>
+          <p className="text-sm leading-6 text-white/70">{copy.productCtaBody}</p>
         </div>
         <div className="flex shrink-0 flex-wrap gap-2">
-          <Link href={href} className="rounded-[7px] bg-[#FDC302] px-5 py-2.5 text-sm font-black text-[#07152A] transition-colors hover:bg-[#F2B900]">
+          <Link href={href} className="rounded-[12px] bg-[#FF4057] px-5 py-2.5 text-sm font-black text-white transition-colors hover:bg-[#E9344C]">
             {copy.productCtaButton}
           </Link>
-          <Link href="/products" className="rounded-[7px] border border-[#DFE6EF] bg-white px-5 py-2.5 text-sm font-bold text-[#07152A] transition-colors hover:border-[#C89300]">
+          <Link href="/products" className="rounded-[12px] border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-white/20">
             {copy.productCtaSecondary}
           </Link>
         </div>

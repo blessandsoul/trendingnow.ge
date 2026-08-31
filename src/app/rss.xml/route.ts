@@ -37,7 +37,7 @@ export async function GET(): Promise<Response> {
       <channel>
         <title>${escapeXml(`${SITE_NAME} ბლოგი`)}</title>
         <link>${escapeXml(SITE_URL)}</link>
-        <description>${escapeXml('Continuum GE-ის ყიდვის გზამკვლევები, ტექნიკის რჩევები და პროდუქტის შედარებები.')}</description>
+        <description>${escapeXml('TrendingNow.ge-ის ყიდვის გზამკვლევები, ტრენდული პროდუქტები და პრაქტიკული შედარებები.')}</description>
         <language>${DEFAULT_BLOG_LOCALE}</language>
         <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
         ${items}

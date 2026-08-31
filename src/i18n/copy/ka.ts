@@ -23,34 +23,34 @@ export const kaCopy = {
       description: 'ნახეთ კალათაში დამატებული პროდუქტები და მოამზადეთ შეკვეთა TrendingNow.ge-ზე.',
     },
     login: {
-      title: 'შესვლა | Continuum GE',
-      description: 'შედით თქვენს Continuum GE ანგარიშში.',
+      title: 'შესვლა | TrendingNow.ge',
+      description: 'შედით თქვენს TrendingNow.ge ანგარიშში.',
     },
     register: {
-      title: 'რეგისტრაცია | Continuum GE',
-      description: 'შექმენით Continuum GE ანგარიში.',
+      title: 'რეგისტრაცია | TrendingNow.ge',
+      description: 'შექმენით TrendingNow.ge ანგარიში.',
     },
     resetPassword: {
-      title: 'პაროლის აღდგენა | Continuum GE',
-      description: 'აღადგინეთ Continuum GE ანგარიშის პაროლი.',
+      title: 'პაროლის აღდგენა | TrendingNow.ge',
+      description: 'აღადგინეთ TrendingNow.ge ანგარიშის პაროლი.',
     },
     verifyAccount: {
-      title: 'ანგარიშის დადასტურება | Continuum GE',
-      description: 'დაადასტურეთ თქვენი Continuum GE ანგარიში.',
+      title: 'ანგარიშის დადასტურება | TrendingNow.ge',
+      description: 'დაადასტურეთ თქვენი TrendingNow.ge ანგარიში.',
     },
     dashboard: {
-      title: 'პირადი სივრცე მალე | Continuum GE',
-      description: 'Continuum GE-ის პირადი სივრცე მალე დაემატება.',
+      title: 'პირადი სივრცე მალე | TrendingNow.ge',
+      description: 'TrendingNow.ge-ის პირადი სივრცე მალე დაემატება.',
     },
   },
   infoPages: {
     aboutUs: {
       metadata: {
-        title: 'ჩვენს შესახებ | Continuum GE',
-        description: 'ინფორმაცია Continuum GE ონლაინ მაღაზიის შესახებ.',
+        title: 'ჩვენს შესახებ | TrendingNow.ge',
+        description: 'ინფორმაცია TrendingNow.ge ონლაინ მაღაზიის შესახებ.',
       },
       eyebrow: 'ჩვენს შესახებ',
-      title: 'Continuum GE არის ონლაინ მაღაზია ყოველდღიური ტექნიკისთვის',
+      title: 'TrendingNow.ge არის ონლაინ მაღაზია ყოველდღიური ტექნიკისთვის',
       intro: 'ჩვენთან შეგიძლიათ შეიძინოთ უკაბელო ყურსასმენები, ჭკვიანი საათები, სმარტფონის აქსესუარები და სხვა პრაქტიკული მოწყობილობები.',
       cards: [
         { label: 'ტელეფონი', value: '+995 574 88 28 87' },
@@ -60,7 +60,7 @@ export const kaCopy = {
         {
           title: 'რას გთავაზობთ',
           text: [
-            'Continuum GE არის ონლაინ მაღაზია, სადაც შეგიძლიათ შეარჩიოთ უკაბელო ყურსასმენები, ჭკვიანი საათები, სმარტფონის აქსესუარები და სხვა მოწყობილობები, რომლებიც ყოველდღიურ გამოყენებას ამარტივებს.',
+            'TrendingNow.ge არის ონლაინ მაღაზია, სადაც შეგიძლიათ შეარჩიოთ უკაბელო ყურსასმენები, ჭკვიანი საათები, სმარტფონის აქსესუარები და სხვა მოწყობილობები, რომლებიც ყოველდღიურ გამოყენებას ამარტივებს.',
           ],
         },
         {
@@ -74,8 +74,8 @@ export const kaCopy = {
     },
     delivery: {
       metadata: {
-        title: 'მიწოდება | Continuum GE',
-        description: 'Continuum GE მიწოდების პირობები თბილისში, რუსთავში და რეგიონებში.',
+        title: 'მიწოდება | TrendingNow.ge',
+        description: 'TrendingNow.ge მიწოდების პირობები თბილისში, რუსთავში და რეგიონებში.',
       },
       eyebrow: 'მიწოდება',
       title: 'მიწოდების პირობები',
@@ -113,12 +113,12 @@ export const kaCopy = {
     },
     warranty: {
       metadata: {
-        title: 'საგარანტიო პირობები | Continuum GE',
-        description: 'Continuum GE საგარანტიო პირობები, მომხმარებლის უფლებები და დაბრუნების პოლიტიკა.',
+        title: 'საგარანტიო პირობები | TrendingNow.ge',
+        description: 'TrendingNow.ge საგარანტიო პირობები, მომხმარებლის უფლებები და დაბრუნების პოლიტიკა.',
       },
       eyebrow: 'საგარანტიო პირობები',
       title: 'გარანტია, დაბრუნება და მომხმარებლის უფლებები',
-      intro: 'აქ თავმოყრილია Continuum GE-ის ძირითადი პირობები ნივთის ხარისხთან, შეკვეთის მიღებასთან, დაბრუნებასთან და კანონით გათვალისწინებულ გარანტიასთან დაკავშირებით.',
+      intro: 'აქ თავმოყრილია TrendingNow.ge-ის ძირითადი პირობები ნივთის ხარისხთან, შეკვეთის მიღებასთან, დაბრუნებასთან და კანონით გათვალისწინებულ გარანტიასთან დაკავშირებით.',
       cards: [
         { label: 'კანონისმიერი გარანტია', value: '2 წელი' },
         { label: 'დაბრუნების მოთხოვნა', value: '14 დღე' },
@@ -189,8 +189,8 @@ export const kaCopy = {
     },
     paymentMethods: {
       metadata: {
-        title: 'გადახდის მეთოდები | Continuum GE',
-        description: 'Continuum GE გადახდის მეთოდები და შეკვეთის ანგარიშსწორების პირობები.',
+        title: 'გადახდის მეთოდები | TrendingNow.ge',
+        description: 'TrendingNow.ge გადახდის მეთოდები და შეკვეთის ანგარიშსწორების პირობები.',
       },
       eyebrow: 'გადახდის მეთოდები',
       title: 'გადახდის მოქნილი გზები ონლაინ შეკვეთისთვის',
@@ -225,8 +225,8 @@ export const kaCopy = {
     },
     faq: {
       metadata: {
-        title: 'კითხვები და პასუხები | Continuum GE',
-        description: 'ხშირად დასმული კითხვები Continuum GE შეკვეთებზე, მიწოდებაზე, გარანტიასა და გადახდაზე.',
+        title: 'კითხვები და პასუხები | TrendingNow.ge',
+        description: 'ხშირად დასმული კითხვები TrendingNow.ge შეკვეთებზე, მიწოდებაზე, გარანტიასა და გადახდაზე.',
       },
       eyebrow: 'კითხვები და პასუხები',
       title: 'ხშირად დასმული კითხვები',
@@ -265,8 +265,8 @@ export const kaCopy = {
     },
     contact: {
       metadata: {
-        title: 'კონტაქტი | Continuum GE',
-        description: 'Continuum GE საკონტაქტო ინფორმაცია და მხარდაჭერის არხები.',
+        title: 'კონტაქტი | TrendingNow.ge',
+        description: 'TrendingNow.ge საკონტაქტო ინფორმაცია და მხარდაჭერის არხები.',
       },
       eyebrow: 'კონტაქტი',
       title: 'დაგვიკავშირდით შეკვეთის, პროდუქტის ან მომსახურების საკითხზე',
@@ -300,8 +300,8 @@ export const kaCopy = {
     },
     corporateOffer: {
       metadata: {
-        title: 'კორპორატიული შეთავაზება | Continuum GE',
-        description: 'კორპორატიული შეკვეთები, ინვოისები და ბიზნეს შეთავაზებები Continuum GE-სგან.',
+        title: 'კორპორატიული შეთავაზება | TrendingNow.ge',
+        description: 'კორპორატიული შეკვეთები, ინვოისები და ბიზნეს შეთავაზებები TrendingNow.ge-სგან.',
       },
       eyebrow: 'კორპორატიული შეთავაზება',
       title: 'ტექნიკის შეკვეთები კომპანიებისთვის',
@@ -413,8 +413,8 @@ export const kaCopy = {
   },
   footer: {
     summary: 'აქტუალური პროდუქტები, შერჩეული კატეგორიები და ახალი აღმოჩენები ერთ სივრცეში.',
-    facebookAria: 'Continuum GE Facebook-ზე',
-    instagramAria: 'Continuum GE Instagram-ზე',
+    facebookAria: 'TrendingNow.ge Facebook-ზე',
+    instagramAria: 'TrendingNow.ge Instagram-ზე',
     agencyAria: 'AI სააგენტო',
     paymentMethods: 'გადახდის მეთოდები',
     paymentBadges: ['VISA', 'MC', 'AMEX', 'G Pay', 'Apple Pay', 'ბანკი'],
@@ -638,7 +638,7 @@ export const kaCopy = {
   },
   auth: {
     shell: {
-      accountLabel: 'Continuum ანგარიში',
+      accountLabel: 'TrendingNow.ge ანგარიში',
       backToStore: 'მაღაზიაში დაბრუნება',
       browseProducts: 'პროდუქტების ნახვა',
     },
@@ -680,7 +680,7 @@ export const kaCopy = {
       noAccount: 'არ გაქვთ ანგარიში?',
       register: 'რეგისტრაცია',
       panelTitle: 'დაბრუნდით ყიდვაზე მარტივად',
-      panelDescription: 'შედით ანგარიშში, ნახეთ შეკვეთები, შეინახეთ რჩეული პროდუქტები და გააგრძელეთ შოპინგი Continuum-ზე.',
+      panelDescription: 'შედით ანგარიშში, ნახეთ შეკვეთები, შეინახეთ რჩეული პროდუქტები და გააგრძელეთ შოპინგი TrendingNow.ge-ზე.',
     },
     register: {
       title: 'რეგისტრაცია',
@@ -702,11 +702,11 @@ export const kaCopy = {
       remembered: 'გაგახსენდათ პაროლი?',
       login: 'შესვლა',
       panelTitle: 'ანგარიშზე დაბრუნება მარტივად',
-      panelDescription: 'აღადგინეთ პაროლი და გააგრძელეთ შეკვეთების, რჩეულებისა და პროდუქტების ნახვა Continuum-ზე.',
+      panelDescription: 'აღადგინეთ პაროლი და გააგრძელეთ შეკვეთების, რჩეულებისა და პროდუქტების ნახვა TrendingNow.ge-ზე.',
     },
     verify: {
       panelTitle: 'ერთი ნაბიჯი დარჩა',
-      panelDescription: 'დაადასტურეთ ელფოსტა, შემდეგ შედით ანგარიშში და გამოიყენეთ Continuum-ის პირადი სივრცე.',
+      panelDescription: 'დაადასტურეთ ელფოსტა, შემდეგ შედით ანგარიშში და გამოიყენეთ TrendingNow.ge-ის პირადი სივრცე.',
       title: 'შეამოწმეთ ელფოსტა',
       description: 'ანგარიში შეიქმნა. შესვლამდე გახსენით დადასტურების ბმული, რომელიც ელფოსტაზე გამოგიგზავნეთ.',
       backToLogin: 'შესვლაზე დაბრუნება',
@@ -787,7 +787,7 @@ export const kaCopy = {
   admin: {
     sidebar: ['მიმოხილვა', 'მაღაზია', 'კატეგორიები', 'პროდუქტები', 'მომხმარებლები', 'სესიები'],
     headerEyebrow: 'ადმინის პანელი',
-    headerTitle: 'Continuum მართვის სივრცე',
+    headerTitle: 'TrendingNow.ge მართვის სივრცე',
     adminBadge: 'ადმინი',
     logout: 'გასვლა',
     checkingAccess: 'ადმინის წვდომა მოწმდება...',
@@ -805,13 +805,13 @@ export const kaCopy = {
         sessions: 'სესიები',
       },
       dragToReorder: 'გადასალაგებლად გადაათრიეთ',
-      homeAria: 'Continuum-ის მთავარი გვერდი',
+      homeAria: 'TrendingNow.ge-ის მთავარი გვერდი',
       storeAdmin: 'მაღაზიის მართვა',
       sidebarNote: 'მთავარი storefront-ის header და footer უცვლელია. მათ შორის არსებული კონტენტი აქ იმართება.',
       openAdminMenu: 'ადმინის მენიუს გახსნა',
       adminMenu: 'ადმინის მენიუ',
       adminNavigation: 'ადმინის ნავიგაცია',
-      adminTitle: 'Continuum ადმინი',
+      adminTitle: 'TrendingNow.ge ადმინი',
       logout: 'გასვლა',
       productRowsCount: 'პროდუქტების რიგები',
       promoBannersCount: 'პრომო ბანერები',

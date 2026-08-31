@@ -25,34 +25,34 @@ const enPublicCopy = {
       description: 'Review the products in your cart and prepare your TrendingNow.ge order.',
     },
     login: {
-      title: 'Sign In | Continuum GE',
-      description: 'Sign in to your Continuum GE account.',
+      title: 'Sign In | TrendingNow.ge',
+      description: 'Sign in to your TrendingNow.ge account.',
     },
     register: {
-      title: 'Register | Continuum GE',
-      description: 'Create a Continuum GE account.',
+      title: 'Register | TrendingNow.ge',
+      description: 'Create a TrendingNow.ge account.',
     },
     resetPassword: {
-      title: 'Reset Password | Continuum GE',
-      description: 'Reset the password for your Continuum GE account.',
+      title: 'Reset Password | TrendingNow.ge',
+      description: 'Reset the password for your TrendingNow.ge account.',
     },
     verifyAccount: {
-      title: 'Verify Account | Continuum GE',
-      description: 'Verify your Continuum GE account.',
+      title: 'Verify Account | TrendingNow.ge',
+      description: 'Verify your TrendingNow.ge account.',
     },
     dashboard: {
-      title: 'Account Area Coming Soon | Continuum GE',
-      description: 'The Continuum GE account area is coming soon.',
+      title: 'Account Area Coming Soon | TrendingNow.ge',
+      description: 'The TrendingNow.ge account area is coming soon.',
     },
   },
   infoPages: {
     aboutUs: {
       metadata: {
-        title: 'About Us | Continuum GE',
-        description: 'Information about the Continuum GE online store.',
+        title: 'About Us | TrendingNow.ge',
+        description: 'Information about the TrendingNow.ge online store.',
       },
       eyebrow: 'About us',
-      title: 'Continuum GE is an online store for everyday electronics',
+      title: 'TrendingNow.ge is an online store for everyday electronics',
       intro: 'With us, you can buy wireless earbuds, smart watches, smartphone accessories, and other practical devices.',
       cards: [
         { label: 'Phone', value: '+995 574 88 28 87' },
@@ -62,7 +62,7 @@ const enPublicCopy = {
         {
           title: 'What we offer',
           text: [
-            'Continuum GE is an online store where you can choose wireless earbuds, smart watches, smartphone accessories, and other devices that make everyday use easier.',
+            'TrendingNow.ge is an online store where you can choose wireless earbuds, smart watches, smartphone accessories, and other devices that make everyday use easier.',
           ],
         },
         {
@@ -76,8 +76,8 @@ const enPublicCopy = {
     },
     delivery: {
       metadata: {
-        title: 'Delivery | Continuum GE',
-        description: 'Continuum GE delivery terms in Tbilisi, Rustavi, and the regions.',
+        title: 'Delivery | TrendingNow.ge',
+        description: 'TrendingNow.ge delivery terms in Tbilisi, Rustavi, and the regions.',
       },
       eyebrow: 'Delivery',
       title: 'Delivery terms',
@@ -115,12 +115,12 @@ const enPublicCopy = {
     },
     warranty: {
       metadata: {
-        title: 'Warranty Terms | Continuum GE',
-        description: 'Continuum GE warranty terms, consumer rights, and return policy.',
+        title: 'Warranty Terms | TrendingNow.ge',
+        description: 'TrendingNow.ge warranty terms, consumer rights, and return policy.',
       },
       eyebrow: 'Warranty terms',
       title: 'Warranty, returns, and consumer rights',
-      intro: 'This page brings together the main Continuum GE terms for product quality, order receipt, returns, and the warranty provided by law.',
+      intro: 'This page brings together the main TrendingNow.ge terms for product quality, order receipt, returns, and the warranty provided by law.',
       cards: [
         { label: 'Legal warranty', value: '2 years' },
         { label: 'Return request', value: '14 days' },
@@ -191,8 +191,8 @@ const enPublicCopy = {
     },
     paymentMethods: {
       metadata: {
-        title: 'Payment Methods | Continuum GE',
-        description: 'Continuum GE payment methods and order payment terms.',
+        title: 'Payment Methods | TrendingNow.ge',
+        description: 'TrendingNow.ge payment methods and order payment terms.',
       },
       eyebrow: 'Payment methods',
       title: 'Flexible payment options for online orders',
@@ -227,8 +227,8 @@ const enPublicCopy = {
     },
     faq: {
       metadata: {
-        title: 'Questions and Answers | Continuum GE',
-        description: 'Frequently asked questions about Continuum GE orders, delivery, warranty, and payment.',
+        title: 'Questions and Answers | TrendingNow.ge',
+        description: 'Frequently asked questions about TrendingNow.ge orders, delivery, warranty, and payment.',
       },
       eyebrow: 'Questions and answers',
       title: 'Frequently asked questions',
@@ -267,8 +267,8 @@ const enPublicCopy = {
     },
     contact: {
       metadata: {
-        title: 'Contact | Continuum GE',
-        description: 'Continuum GE contact information and support channels.',
+        title: 'Contact | TrendingNow.ge',
+        description: 'TrendingNow.ge contact information and support channels.',
       },
       eyebrow: 'Contact',
       title: 'Contact us about orders, products, or service',
@@ -302,8 +302,8 @@ const enPublicCopy = {
     },
     corporateOffer: {
       metadata: {
-        title: 'Corporate Offer | Continuum GE',
-        description: 'Corporate orders, invoices, and business offers from Continuum GE.',
+        title: 'Corporate Offer | TrendingNow.ge',
+        description: 'Corporate orders, invoices, and business offers from TrendingNow.ge.',
       },
       eyebrow: 'Corporate offer',
       title: 'Electronics orders for companies',
@@ -415,8 +415,8 @@ const enPublicCopy = {
   },
   footer: {
     summary: 'Current products, selected categories, and new discoveries in one place.',
-    facebookAria: 'Continuum GE on Facebook',
-    instagramAria: 'Continuum GE on Instagram',
+    facebookAria: 'TrendingNow.ge on Facebook',
+    instagramAria: 'TrendingNow.ge on Instagram',
     agencyAria: 'AI agency',
     paymentMethods: 'Payment methods',
     paymentBadges: ['VISA', 'MC', 'AMEX', 'G Pay', 'Apple Pay', 'Bank'],
@@ -640,7 +640,7 @@ const enPublicCopy = {
   },
   auth: {
     shell: {
-      accountLabel: 'Continuum account',
+      accountLabel: 'TrendingNow.ge account',
       backToStore: 'Back to store',
       browseProducts: 'Browse products',
     },
@@ -682,7 +682,7 @@ const enPublicCopy = {
       noAccount: 'Do not have an account?',
       register: 'Register',
       panelTitle: 'Get back to shopping easily',
-      panelDescription: 'Sign in to view orders, save favorite products, and keep shopping on Continuum.',
+      panelDescription: 'Sign in to view orders, save favorite products, and keep shopping on TrendingNow.ge.',
     },
     register: {
       title: 'Register',
@@ -704,11 +704,11 @@ const enPublicCopy = {
       remembered: 'Remembered your password?',
       login: 'Sign in',
       panelTitle: 'Return to your account easily',
-      panelDescription: 'Reset your password and continue viewing orders, favorites, and products on Continuum.',
+      panelDescription: 'Reset your password and continue viewing orders, favorites, and products on TrendingNow.ge.',
     },
     verify: {
       panelTitle: 'One step left',
-      panelDescription: 'Verify your email, then sign in and use the Continuum account area.',
+      panelDescription: 'Verify your email, then sign in and use your TrendingNow.ge account area.',
       title: 'Check your email',
       description: 'Your account has been created. Before signing in, open the verification link we sent to your email.',
       backToLogin: 'Back to sign in',

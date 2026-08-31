@@ -205,7 +205,7 @@ export function OrderCheckoutDialog({
           </label>
 
           {showGuestPrompt && (
-            <div className="rounded-[8px] border border-[#FFE8AA] bg-[#FFF9E6] p-4">
+            <div className="rounded-[16px] border border-[#D9C7FF] bg-[#F7F2FF] p-4">
               <h3 className="text-base font-black text-[#07152A]">{copy.checkout.guestTitle}</h3>
               <p className="mt-1 text-sm leading-5 text-[#526071]">{copy.checkout.guestText}</p>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">

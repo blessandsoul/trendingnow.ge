@@ -14,7 +14,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { useForgotPassword, useResetPassword } from '../hooks/usePasswordReset';
 
 const fieldClass =
-  'h-11 rounded-[7px] border-[#D7DFEA] bg-[#FAFBFC] text-[#07152A] placeholder:text-[#8B96A5] focus-visible:ring-[#FDC302]/45';
+  'tn-field h-12 px-4 text-[#11141B] placeholder:text-[#8B93A1]';
 
 function PasswordResetInner(): React.ReactElement {
   const copy = useLocaleCopy();
@@ -36,13 +36,13 @@ function PasswordResetInner(): React.ReactElement {
         }}
       >
         <div className="space-y-2">
-          <h1 className="text-2xl font-black tracking-tight text-[#07152A]">{copy.auth.reset.newPasswordTitle}</h1>
-          <p className="text-sm leading-6 text-[#6B7685]">
+          <h1 className="text-3xl font-black tracking-[-0.035em] text-[#11141B]">{copy.auth.reset.newPasswordTitle}</h1>
+          <p className="text-sm leading-6 text-[#69717E]">
             {copy.auth.reset.newPasswordDescription}
           </p>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="newPassword" className="text-[#07152A]">{copy.auth.fields.newPassword}</Label>
+          <Label htmlFor="newPassword" className="font-bold text-[#11141B]">{copy.auth.fields.newPassword}</Label>
           <Input
             id="newPassword"
             type="password"
@@ -56,7 +56,7 @@ function PasswordResetInner(): React.ReactElement {
         </div>
         <Button
           type="submit"
-          className="h-11 w-full rounded-[7px] bg-[#FDC302] font-black text-[#07152A] shadow-[0_10px_24px_rgba(253,195,2,0.2)] transition duration-150 active:translate-y-px md:hover:bg-[#F2B900]"
+          className="tn-primary-action h-12 w-full font-black transition active:translate-y-px"
           disabled={isResetting || newPassword.length < 8}
         >
           {isResetting && <Loader2 className="size-4 animate-spin" />}
@@ -75,13 +75,13 @@ function PasswordResetInner(): React.ReactElement {
       }}
     >
       <div className="space-y-2">
-        <h1 className="text-2xl font-black tracking-tight text-[#07152A]">{copy.auth.reset.requestTitle}</h1>
-        <p className="text-sm leading-6 text-[#6B7685]">
+        <h1 className="text-3xl font-black tracking-[-0.035em] text-[#11141B]">{copy.auth.reset.requestTitle}</h1>
+        <p className="text-sm leading-6 text-[#69717E]">
           {copy.auth.reset.requestDescription}
         </p>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="email" className="text-[#07152A]">{copy.auth.fields.email}</Label>
+        <Label htmlFor="email" className="font-bold text-[#11141B]">{copy.auth.fields.email}</Label>
         <Input
           id="email"
           type="email"
@@ -95,15 +95,15 @@ function PasswordResetInner(): React.ReactElement {
       </div>
       <Button
         type="submit"
-        className="h-11 w-full rounded-[7px] bg-[#FDC302] font-black text-[#07152A] shadow-[0_10px_24px_rgba(253,195,2,0.2)] transition duration-150 active:translate-y-px md:hover:bg-[#F2B900]"
+        className="tn-primary-action h-12 w-full font-black transition active:translate-y-px"
         disabled={isSending}
       >
         {isSending && <Loader2 className="size-4 animate-spin" />}
         {copy.auth.reset.sendLink}
       </Button>
-      <p className="text-center text-sm text-[#6B7685]">
+      <p className="text-center text-sm text-[#69717E]">
         {copy.auth.reset.remembered}{' '}
-        <Link href={localizeHref(ROUTES.LOGIN)} className="font-bold text-[#8A6A00] hover:text-[#07152A]">
+        <Link href={localizeHref(ROUTES.LOGIN)} className="font-bold text-[#6D3AE8] hover:text-[#FF4057]">
           {copy.auth.reset.login}
         </Link>
       </p>
@@ -113,7 +113,7 @@ function PasswordResetInner(): React.ReactElement {
 
 export function PasswordResetScreen(): React.ReactElement {
   return (
-    <Suspense fallback={<div className="h-[260px] animate-pulse rounded-[8px] bg-[#F4F6F8]" />}>
+    <Suspense fallback={<div className="h-[260px] animate-pulse rounded-[16px] bg-[#F1F2F6]" />}>
       <PasswordResetInner />
     </Suspense>
   );

@@ -150,6 +150,80 @@
     clip-path: polygon(0 0, 100% 0, 58% 100%, 0 100%);
     pointer-events: none;
   }
+
+  .tn-page {
+    min-height: 100dvh;
+    color: #11141b;
+    background:
+      radial-gradient(circle at 8% 2%, rgb(255 64 87 / 0.12), transparent 30rem),
+      radial-gradient(circle at 92% 10%, rgb(124 58 237 / 0.12), transparent 32rem),
+      linear-gradient(180deg, #ffffff 0%, #f6f7fb 22rem, #f4f5f8 100%);
+  }
+
+  .tn-surface {
+    border: 1px solid rgb(214 217 226 / 0.9);
+    border-radius: 1.25rem;
+    background: rgb(255 255 255 / 0.94);
+    box-shadow: 0 22px 70px rgb(17 20 27 / 0.08);
+    backdrop-filter: blur(18px);
+  }
+
+  .tn-dark-panel {
+    color: #ffffff;
+    background:
+      radial-gradient(circle at 88% 12%, rgb(255 64 87 / 0.36), transparent 22rem),
+      radial-gradient(circle at 18% 88%, rgb(25 198 166 / 0.2), transparent 20rem),
+      linear-gradient(145deg, #11141b 0%, #24183e 54%, #4a194c 100%);
+  }
+
+  .tn-kicker {
+    color: #ff4057;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .tn-primary-action {
+    border-radius: 0.75rem;
+    background: #ff4057;
+    color: #ffffff;
+    box-shadow: 0 12px 28px rgb(255 64 87 / 0.22);
+  }
+
+  .tn-primary-action:hover {
+    background: #e9344c;
+  }
+
+  .tn-secondary-action {
+    border: 1px solid #d8dbe4;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    color: #11141b;
+  }
+
+  .tn-secondary-action:hover {
+    border-color: #8c5cf6;
+    background: #f8f5ff;
+  }
+
+  .tn-field {
+    border-color: #d8dbe4;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    color: #11141b;
+  }
+
+  .tn-field:focus-visible {
+    border-color: #ff4057;
+    box-shadow: 0 0 0 3px rgb(255 64 87 / 0.14);
+  }
+
+  .tn-soft-icon {
+    color: #ff4057;
+    background: linear-gradient(135deg, #fff0f3 0%, #f1eaff 100%);
+  }
 }
 
 @keyframes storefront-hero-slide {

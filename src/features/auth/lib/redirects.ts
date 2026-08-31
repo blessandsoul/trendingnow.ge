@@ -30,7 +30,7 @@ export function normalizeAppRedirectPath(path: string | null | undefined): strin
   }
 
   try {
-    const parsed = new URL(path, 'http://continuum.local');
+    const parsed = new URL(path, 'http://trendingnow.local');
     const normalizedPath = stripLocalePrefix(parsed.pathname).path;
     return `${normalizedPath}${parsed.search}${parsed.hash}`;
   } catch {

@@ -305,7 +305,7 @@ function ProductInfo({ product }: { product: StorefrontProductDetailProduct }): 
           </span>
         )}
         {discountPercent > 0 && (
-          <Badge className="mb-1 border-[#FFE8AA] bg-[#FFF7D7] text-[#A36F00]">-{discountPercent}%</Badge>
+          <Badge className="mb-1 border-[#FFC6CE] bg-[#FFF0F3] text-[#C72D42]">-{discountPercent}%</Badge>
         )}
       </div>
 

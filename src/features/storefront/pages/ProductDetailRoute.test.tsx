@@ -11,7 +11,7 @@ const productDetail: StorefrontProductDetail = {
     slug: 'wireless-earbuds',
     name: 'Wireless Earbuds',
     description: '<p>Comfortable earbuds for every day.</p>',
-    brand: 'Continuum',
+    brand: 'TrendingNow.ge',
     imageUrl: '/uploads/earbuds.png',
     salePrice: 199,
     originalPrice: 249,
@@ -67,7 +67,7 @@ describe('ProductDetailRoute', () => {
     const page = await ProductDetailRoute({ slug: productDetail.product.slug });
     const html = renderToStaticMarkup(page);
 
-    expect(metadata.alternates).toMatchObject({ canonical: 'https://continuum.ge/products/wireless-earbuds' });
+    expect(metadata.alternates).toMatchObject({ canonical: 'https://trendingnow.ge/products/wireless-earbuds' });
     expect(html).toContain('<h1');
     expect(html).toContain('Wireless Earbuds');
     expect(html).toContain('Comfortable earbuds for every day.');

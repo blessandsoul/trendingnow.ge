@@ -41,7 +41,7 @@ function createRegisterSchema(copy: AppCopy) {
 type RegisterFormData = z.infer<ReturnType<typeof createRegisterSchema>>;
 
 const fieldClass =
-  'h-11 rounded-[7px] border-[#D7DFEA] bg-[#FAFBFC] text-[#07152A] placeholder:text-[#8B96A5] focus-visible:ring-[#FDC302]/45';
+  'tn-field h-12 px-4 text-[#11141B] placeholder:text-[#8B93A1]';
 
 export const RegisterForm = (): React.ReactElement => {
   const copy = useLocaleCopy();
@@ -69,8 +69,8 @@ export const RegisterForm = (): React.ReactElement => {
   return (
     <div className="w-full space-y-5">
       <div className="space-y-2">
-        <h1 className="text-2xl font-black tracking-tight text-[#07152A]">{copy.auth.register.title}</h1>
-        <p className="text-sm leading-6 text-[#6B7685]">
+        <h1 className="text-3xl font-black tracking-[-0.035em] text-[#11141B]">{copy.auth.register.title}</h1>
+        <p className="text-sm leading-6 text-[#69717E]">
           {copy.auth.register.description}
         </p>
       </div>
@@ -78,7 +78,7 @@ export const RegisterForm = (): React.ReactElement => {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
-            <Label htmlFor="firstName" className="text-[#07152A]">{copy.auth.fields.firstName}</Label>
+            <Label htmlFor="firstName" className="font-bold text-[#11141B]">{copy.auth.fields.firstName}</Label>
             <Input
               id="firstName"
               placeholder={copy.auth.fields.firstNamePlaceholder}
@@ -94,7 +94,7 @@ export const RegisterForm = (): React.ReactElement => {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="lastName" className="text-[#07152A]">{copy.auth.fields.lastName}</Label>
+            <Label htmlFor="lastName" className="font-bold text-[#11141B]">{copy.auth.fields.lastName}</Label>
             <Input
               id="lastName"
               placeholder={copy.auth.fields.lastNamePlaceholder}
@@ -111,7 +111,7 @@ export const RegisterForm = (): React.ReactElement => {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-[#07152A]">{copy.auth.fields.email}</Label>
+          <Label htmlFor="email" className="font-bold text-[#11141B]">{copy.auth.fields.email}</Label>
           <Input
             id="email"
             type="email"
@@ -128,7 +128,7 @@ export const RegisterForm = (): React.ReactElement => {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="password" className="text-[#07152A]">{copy.auth.fields.password}</Label>
+          <Label htmlFor="password" className="font-bold text-[#11141B]">{copy.auth.fields.password}</Label>
           <Input
             id="password"
             type="password"
@@ -145,7 +145,7 @@ export const RegisterForm = (): React.ReactElement => {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="confirmPassword" className="text-[#07152A]">{copy.auth.fields.confirmPassword}</Label>
+          <Label htmlFor="confirmPassword" className="font-bold text-[#11141B]">{copy.auth.fields.confirmPassword}</Label>
           <Input
             id="confirmPassword"
             type="password"
@@ -165,7 +165,7 @@ export const RegisterForm = (): React.ReactElement => {
 
         <Button
           type="submit"
-          className="h-11 w-full rounded-[7px] bg-[#FDC302] font-black text-[#07152A] shadow-[0_10px_24px_rgba(253,195,2,0.2)] transition duration-150 active:translate-y-px md:hover:bg-[#F2B900]"
+          className="tn-primary-action h-12 w-full font-black transition active:translate-y-px"
           disabled={isRegistering}
         >
           {isRegistering ? (
@@ -179,11 +179,11 @@ export const RegisterForm = (): React.ReactElement => {
         </Button>
       </form>
 
-      <p className="text-center text-sm text-[#6B7685]">
+      <p className="text-center text-sm text-[#69717E]">
         {copy.auth.register.hasAccount}{' '}
         <Link
           href={localizeHref(ROUTES.LOGIN)}
-          className="font-bold text-[#8A6A00] transition-colors duration-150 active:text-[#07152A] md:hover:text-[#07152A]"
+          className="font-bold text-[#6D3AE8] transition-colors active:text-[#FF4057] md:hover:text-[#FF4057]"
         >
           {copy.auth.register.login}
         </Link>

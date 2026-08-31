@@ -18,10 +18,10 @@ export async function TagsIndexPage({ locale }: TagsIndexPageProps): Promise<Rea
 
   return (
     <BlogShell>
-      <div className="storefront-container py-14 md:py-20">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="mb-3 text-xs font-black uppercase tracking-[0.26em] text-[#8B96A5]">{copy.title}</p>
-          <h1 className="text-4xl font-black leading-tight tracking-tight text-[#07152A] sm:text-5xl md:text-6xl">
+      <div className="storefront-container py-10 md:py-16">
+        <div className="tn-surface mx-auto mb-12 max-w-4xl rounded-[24px] px-6 py-10 text-center sm:px-10 md:py-14">
+          <p className="tn-kicker mb-3">{copy.title}</p>
+          <h1 className="text-4xl font-black leading-tight tracking-tight text-[#11141B] sm:text-5xl md:text-6xl">
             {copy.tagsTitle}
           </h1>
           <p className="mt-4 text-lg leading-8 text-[#526071] md:text-xl">{copy.subtitle}</p>
@@ -34,7 +34,7 @@ export async function TagsIndexPage({ locale }: TagsIndexPageProps): Promise<Rea
               <Link
                 key={slug}
                 href={localizedPath(locale, `/blog/tags/${slug}`)}
-                className="rounded-full border border-[#DFE6EF] bg-white px-4 py-2 font-semibold text-[#07152A] transition-colors hover:border-[#C89300] hover:bg-[#FFF8D7]"
+                className="rounded-full border border-[#E8E0F8] bg-white px-4 py-2 font-semibold text-[#11141B] shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#8C5CF6] hover:bg-[#F7F2FF]"
                 style={{ fontSize: `${scale}rem` }}
               >
                 {tag}

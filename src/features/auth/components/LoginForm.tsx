@@ -30,7 +30,7 @@ function createLoginSchema(copy: AppCopy) {
 type LoginFormData = z.infer<ReturnType<typeof createLoginSchema>>;
 
 const fieldClass =
-  'h-11 rounded-[7px] border-[#D7DFEA] bg-[#FAFBFC] text-[#07152A] placeholder:text-[#8B96A5] focus-visible:ring-[#FDC302]/45';
+  'tn-field h-12 px-4 text-[#11141B] placeholder:text-[#8B93A1]';
 
 const LoginFormInner = (): React.ReactElement => {
   const copy = useLocaleCopy();
@@ -56,15 +56,15 @@ const LoginFormInner = (): React.ReactElement => {
   return (
     <div className="w-full space-y-5">
       <div className="space-y-2">
-        <h1 className="text-2xl font-black tracking-tight text-[#07152A]">{copy.auth.login.title}</h1>
-        <p className="text-sm leading-6 text-[#6B7685]">
+        <h1 className="text-3xl font-black tracking-[-0.035em] text-[#11141B]">{copy.auth.login.title}</h1>
+        <p className="text-sm leading-6 text-[#69717E]">
           {copy.auth.login.description}
         </p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-[#07152A]">{copy.auth.fields.email}</Label>
+          <Label htmlFor="email" className="font-bold text-[#11141B]">{copy.auth.fields.email}</Label>
           <Input
             id="email"
             type="email"
@@ -81,7 +81,7 @@ const LoginFormInner = (): React.ReactElement => {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="password" className="text-[#07152A]">{copy.auth.fields.password}</Label>
+          <Label htmlFor="password" className="font-bold text-[#11141B]">{copy.auth.fields.password}</Label>
           <Input
             id="password"
             type="password"
@@ -99,7 +99,7 @@ const LoginFormInner = (): React.ReactElement => {
 
         <Button
           type="submit"
-          className="h-11 w-full rounded-[7px] bg-[#FDC302] font-black text-[#07152A] shadow-[0_10px_24px_rgba(253,195,2,0.2)] transition duration-150 active:translate-y-px md:hover:bg-[#F2B900]"
+          className="tn-primary-action h-12 w-full font-black transition active:translate-y-px"
           disabled={isLoggingIn}
         >
           {isLoggingIn ? (
@@ -116,17 +116,17 @@ const LoginFormInner = (): React.ReactElement => {
       <div className="text-center text-sm">
         <Link
           href={localizeHref(ROUTES.RESET_PASSWORD)}
-          className="font-bold text-[#8A6A00] transition-colors duration-150 active:text-[#07152A] md:hover:text-[#07152A]"
+          className="font-bold text-[#6D3AE8] transition-colors active:text-[#FF4057] md:hover:text-[#FF4057]"
         >
           {copy.auth.login.forgotPassword}
         </Link>
       </div>
 
-      <p className="text-center text-sm text-[#6B7685]">
+      <p className="text-center text-sm text-[#69717E]">
         {copy.auth.login.noAccount}{' '}
         <Link
           href={localizeHref(ROUTES.REGISTER)}
-          className="font-bold text-[#8A6A00] transition-colors duration-150 active:text-[#07152A] md:hover:text-[#07152A]"
+          className="font-bold text-[#6D3AE8] transition-colors active:text-[#FF4057] md:hover:text-[#FF4057]"
         >
           {copy.auth.login.register}
         </Link>
@@ -137,7 +137,7 @@ const LoginFormInner = (): React.ReactElement => {
 
 export const LoginForm = (): React.ReactElement => {
   return (
-    <Suspense fallback={<div className="h-[340px] animate-pulse rounded-[8px] bg-[#F4F6F8]" />}>
+    <Suspense fallback={<div className="h-[340px] animate-pulse rounded-[16px] bg-[#F1F2F6]" />}>
       <LoginFormInner />
     </Suspense>
   );

@@ -29,7 +29,7 @@ const toastClassNames = {
   error:
     'border-[#F1C6C1] bg-[#FFF7F6] dark:border-[#7B2C2B] dark:bg-[#241414] [&_[data-icon]]:border-[#F1C6C1] [&_[data-icon]]:bg-[#FFF0EF] [&_[data-icon]]:text-[#B42318] dark:[&_[data-icon]]:border-[#7B2C2B] dark:[&_[data-icon]]:bg-[#351B1B] dark:[&_[data-icon]]:text-[#FF6B5F]',
   warning:
-    'border-[#FFE2A6] bg-[#FFFBEE] dark:border-[#765D16] dark:bg-[#251F0D] [&_[data-icon]]:border-[#FFE2A6] [&_[data-icon]]:bg-[#FFF7D7] [&_[data-icon]]:text-[#A36F00] dark:[&_[data-icon]]:border-[#765D16] dark:[&_[data-icon]]:bg-[#342A10] dark:[&_[data-icon]]:text-[#FDC302]',
+    'border-[#D9C7FF] bg-[#F7F2FF] dark:border-[#6543A8] dark:bg-[#1E1730] [&_[data-icon]]:border-[#D9C7FF] [&_[data-icon]]:bg-[#EDE6FF] [&_[data-icon]]:text-[#5B2DB6] dark:[&_[data-icon]]:border-[#6543A8] dark:[&_[data-icon]]:bg-[#2A1E45] dark:[&_[data-icon]]:text-[#BFA4FF]',
   info:
     'border-[#CFE0FA] bg-[#F7FAFF] dark:border-[#315D9D] dark:bg-[#0D1A2B] [&_[data-icon]]:border-[#CFE0FA] [&_[data-icon]]:bg-[#EEF6FF] [&_[data-icon]]:text-[#1D5FD3] dark:[&_[data-icon]]:border-[#315D9D] dark:[&_[data-icon]]:bg-[#142A46] dark:[&_[data-icon]]:text-[#6BA4FF]',
   loading:

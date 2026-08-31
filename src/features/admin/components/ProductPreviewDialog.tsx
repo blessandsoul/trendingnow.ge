@@ -74,7 +74,7 @@ export function ProductPreviewDialog({
               )}
             >
               <div className={cn('border-b border-[#E7ECF2] py-3 text-xs font-black uppercase tracking-[0.14em] text-[#526071]', isPhoneViewport ? 'px-4' : 'px-4 sm:px-6')}>
-                Continuum GE
+                TrendingNow.ge
               </div>
               <article className={cn(
                 'grid',
@@ -90,7 +90,7 @@ export function ProductPreviewDialog({
                   />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs font-bold uppercase tracking-[0.13em] text-[#6B7685]">{draft.brand || 'Continuum GE'}</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.13em] text-[#6B7685]">{draft.brand || 'TrendingNow.ge'}</p>
                   <h2 className={cn('mt-2 font-black tracking-tight text-[#07152A]', isPhoneViewport ? 'text-2xl leading-tight' : 'text-2xl sm:text-3xl')}>{draft.name || adminCopy.product}</h2>
                   <div className={cn('flex flex-wrap items-end gap-x-3 gap-y-1', isPhoneViewport ? 'mt-4' : 'mt-5')}>
                     <span className={cn('font-black text-[#07152A]', isPhoneViewport ? 'text-xl' : 'text-2xl')}>{formatGel(price)}</span>

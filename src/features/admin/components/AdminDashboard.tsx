@@ -293,8 +293,8 @@ function TogglePill({
       className={cn(
         'inline-flex h-8 items-center gap-1 rounded-full border px-3 text-xs font-bold transition disabled:opacity-60',
         active
-          ? 'border-[#F1C84B] bg-[#FFF7D7] text-[#07152A]'
-          : 'border-[#DCE4EF] bg-white text-[#657286] hover:border-[#C89300]',
+          ? 'border-[#BFA4FF] bg-[#FFF0F3] text-[#07152A]'
+          : 'border-[#DCE4EF] bg-white text-[#657286] hover:border-[#8C5CF6]',
       )}
     >
       {active ? <Eye className="size-3.5" /> : <EyeOff className="size-3.5" />}
@@ -321,7 +321,7 @@ function MetricCard({
           <p className="text-xs font-bold uppercase tracking-[0.08em] text-[#7A8595]">{title}</p>
           <p className="mt-2 text-3xl font-black tabular-nums text-[#07152A]">{value}</p>
         </div>
-        <span className="grid size-10 place-items-center rounded-[6px] bg-[#FFF3BF] text-[#07152A]">
+        <span className="grid size-10 place-items-center rounded-[6px] bg-[#F2EAFF] text-[#07152A]">
           <Icon className="size-5" />
         </span>
       </div>
@@ -473,13 +473,13 @@ function AssetUploadButton({
 
 function AdminSidebar({ page, mobile = false }: { page: AdminPage; mobile?: boolean }): React.ReactElement {
   return (
-    <div className={cn('flex h-full flex-col bg-[#07152A] text-white', mobile ? 'p-4' : 'p-4')}>
+    <div className={cn('tn-dark-panel flex h-full flex-col rounded-none text-white', mobile ? 'p-4' : 'p-4')}>
       <Link href={ROUTES.HOME} className="mb-7 inline-flex items-center gap-3" aria-label={adminCopy.homeAria}>
-        <span className="grid size-10 place-items-center rounded-[6px] bg-[#FDC302] text-[#07152A]">
+        <span className="grid size-10 place-items-center rounded-[12px] bg-[#FF4057] text-white">
           <ShoppingBag className="size-5" />
         </span>
         <span>
-          <span className="block text-sm font-black leading-4">Continuum</span>
+          <span className="block text-sm font-black leading-4">TrendingNow.ge</span>
           <span className="text-xs text-white/55">{adminCopy.storeAdmin}</span>
         </span>
       </Link>
@@ -490,7 +490,7 @@ function AdminSidebar({ page, mobile = false }: { page: AdminPage; mobile?: bool
             key={itemPage}
             href={href}
             className={cn(
-              'flex h-10 items-center gap-3 rounded-[6px] px-3 text-sm font-bold text-white/68 transition hover:bg-white/8 hover:text-white',
+              'flex h-10 items-center gap-3 rounded-[10px] px-3 text-sm font-bold text-white/68 transition hover:bg-white/8 hover:text-white',
               page === itemPage && 'bg-white text-[#07152A] shadow-[0_10px_22px_rgba(0,0,0,0.16)] hover:bg-white hover:text-[#07152A]',
             )}
           >
@@ -500,7 +500,7 @@ function AdminSidebar({ page, mobile = false }: { page: AdminPage; mobile?: bool
         ))}
       </nav>
 
-      <div className="mt-auto rounded-[6px] border border-white/10 bg-white/5 p-3 text-xs leading-5 text-white/62">
+      <div className="mt-auto rounded-[14px] border border-white/10 bg-white/5 p-3 text-xs leading-5 text-white/62">
         {adminCopy.sidebarNote}
       </div>
     </div>
@@ -512,13 +512,13 @@ function DashboardShell({ page, children }: { page: AdminPage; children: React.R
   const pageLabel = navItems.find((item) => item.page === page)?.label ?? adminCopy.nav.overview;
 
   return (
-    <div className="min-h-dvh bg-[#F5F7FA] text-[#07152A]">
+    <div className="tn-page min-h-dvh text-[#11141B]">
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-[254px] lg:block">
         <AdminSidebar page={page} />
       </aside>
 
       <div className="lg:pl-[254px]">
-        <header className="sticky top-0 z-30 border-b border-[#DDE5EF] bg-white/92 backdrop-blur">
+        <header className="sticky top-0 z-30 border-b border-[#E8E0F8] bg-white/92 backdrop-blur">
           <div className="flex min-h-16 items-center justify-between gap-3 px-4 py-3 lg:px-6">
             <div className="flex min-w-0 items-center gap-3">
               <Sheet>
@@ -536,8 +536,8 @@ function DashboardShell({ page, children }: { page: AdminPage; children: React.R
                 </SheetContent>
               </Sheet>
               <div className="min-w-0">
-                <p className="text-xs font-black uppercase tracking-[0.14em] text-[#C89300]">{adminCopy.adminTitle}</p>
-                <h1 className="truncate text-xl font-black text-[#07152A] sm:text-2xl">{pageLabel}</h1>
+                <p className="text-xs font-black uppercase tracking-[0.14em] text-[#8C5CF6]">{adminCopy.adminTitle}</p>
+                <h1 className="truncate text-xl font-black text-[#11141B] sm:text-2xl">{pageLabel}</h1>
               </div>
             </div>
 
@@ -570,7 +570,7 @@ function DashboardShell({ page, children }: { page: AdminPage; children: React.R
         <main
           className="min-h-[calc(100dvh-65px)] px-4 py-5 lg:px-6"
           style={{
-            backgroundImage: 'radial-gradient(#D7DEEA 1px, transparent 1px)',
+            backgroundImage: 'radial-gradient(#DDD2F3 1px, transparent 1px)',
             backgroundSize: '22px 22px',
           }}
         >
@@ -607,7 +607,7 @@ function AccessState(): React.ReactElement {
             {copy.admin.accessRequiredText}
           </p>
           <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:justify-center">
-            <Button asChild className="rounded-[6px] bg-[#FDC302] text-[#07152A] hover:bg-[#F2B900]">
+            <Button asChild className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]">
               <Link href={ROUTES.LOGIN}>{copy.admin.signInAsAdmin}</Link>
             </Button>
             {user && (
@@ -724,7 +724,7 @@ function HeroEditor(): React.ReactElement {
             event.preventDefault();
             updateHero.mutate({
               eyebrow: nullable(heroDraft.eyebrow),
-              title: heroDraft.title || 'Continuum',
+              title: heroDraft.title || 'TrendingNow.ge',
               text: nullable(heroDraft.text),
               ctaLabel: nullable(heroDraft.ctaLabel),
               ctaHref: nullable(heroDraft.ctaHref),
@@ -779,7 +779,7 @@ function HeroEditor(): React.ReactElement {
                 <Input value={slideDraft.imageUrl} onChange={(event) => setSlideDraft((prev) => ({ ...prev, imageUrl: event.target.value }))} placeholder="/uploads/storefront/hero/x.webp" />
               </Field>
               <AssetUploadButton kind="hero" label={adminCopy.heroSlide} compact onUploaded={(url) => setSlideDraft((prev) => ({ ...prev, imageUrl: url }))} />
-              <Button type="submit" className="rounded-[6px] bg-[#FDC302] text-[#07152A] hover:bg-[#F2B900]" disabled={createSlide.isPending}>
+              <Button type="submit" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]" disabled={createSlide.isPending}>
                 <Plus className="size-4" />
                 {adminCopy.add}
               </Button>
@@ -879,7 +879,7 @@ function ProductRowsEditor({
             {categories.map((category) => <option key={category.id} value={category.id}>{category.name}</option>)}
           </NativeSelect>
         )}
-        <Button type="submit" className="rounded-[6px] bg-[#FDC302] text-[#07152A] hover:bg-[#F2B900]" disabled={createRow.isPending}>
+        <Button type="submit" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]" disabled={createRow.isPending}>
           <Plus className="size-4" />
           {adminCopy.addRow}
         </Button>
@@ -1029,7 +1029,7 @@ function ProductRowCard({
             </NativeSelect>
             <Button
               type="button"
-              className="rounded-[6px] bg-[#FDC302] text-[#07152A] hover:bg-[#F2B900]"
+              className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]"
               disabled={!manualProductId || manualIds.includes(manualProductId)}
               onClick={() => {
                 const next = [...manualIds, manualProductId];
@@ -1119,7 +1119,7 @@ function PromoBannersEditor(): React.ReactElement {
           <option value="WARM">{adminCopy.toneLabels.WARM}</option>
           <option value="BLUE">{adminCopy.toneLabels.BLUE}</option>
         </NativeSelect>
-        <Button type="submit" className="rounded-[6px] bg-[#FDC302] text-[#07152A] hover:bg-[#F2B900]" disabled={createBanner.isPending}>
+        <Button type="submit" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]" disabled={createBanner.isPending}>
           <Plus className="size-4" />
           {adminCopy.add}
         </Button>
@@ -1202,7 +1202,7 @@ function ServiceNewsletterEditor(): React.ReactElement {
           <Input value={serviceDraft.icon} onChange={(event) => setServiceDraft((prev) => ({ ...prev, icon: event.target.value }))} placeholder={adminCopy.icon} />
           <Input value={serviceDraft.title} onChange={(event) => setServiceDraft((prev) => ({ ...prev, title: event.target.value }))} placeholder={adminCopy.title} />
           <Input value={serviceDraft.text} onChange={(event) => setServiceDraft((prev) => ({ ...prev, text: event.target.value }))} placeholder={adminCopy.text} />
-          <Button type="submit" className="rounded-[6px] bg-[#FDC302] text-[#07152A] hover:bg-[#F2B900]">
+          <Button type="submit" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]">
             <Plus className="size-4" />
             {adminCopy.add}
           </Button>
@@ -1439,7 +1439,7 @@ function CategoriesPage({ categories }: { categories: IAdminStorefrontCategory[]
               {topLevelCategories(categories).map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
             </NativeSelect>
           </Field>
-          <Button type="submit" className="rounded-[6px] bg-[#FDC302] text-[#07152A] hover:bg-[#F2B900]" disabled={createCategory.isPending}>
+          <Button type="submit" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]" disabled={createCategory.isPending}>
             <Plus className="size-4" />
             {adminCopy.createCategory}
           </Button>
@@ -1834,7 +1834,7 @@ function ProductsPage({ categories }: { categories: IAdminStorefrontCategory[] }
       action={(
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
           <SheetTrigger asChild>
-            <Button type="button" className="rounded-[6px] bg-[#FDC302] text-[#07152A] hover:bg-[#F2B900]" onClick={() => setEditingProduct(undefined)}>
+            <Button type="button" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]" onClick={() => setEditingProduct(undefined)}>
               <PackagePlus className="size-4" />
               {adminCopy.newProduct}
             </Button>

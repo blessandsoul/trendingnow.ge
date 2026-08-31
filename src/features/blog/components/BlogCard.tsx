@@ -32,9 +32,9 @@ export function BlogCard({ post, locale, className, index = 0 }: BlogCardProps):
       <Link
         href={localizedPath(locale, `/blog/${post.slug}`)}
         className={cn(
-          'group flex h-full cursor-pointer flex-col overflow-hidden rounded-[8px] border border-[#DFE6EF] bg-white shadow-sm',
-          'transition-all duration-300 hover:-translate-y-1 hover:border-[#C89300] hover:shadow-xl hover:shadow-[#07152A]/10',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FDC302]/70 focus-visible:ring-offset-2',
+          'group flex h-full cursor-pointer flex-col overflow-hidden rounded-[20px] border border-[#E8E0F8] bg-white shadow-[0_12px_34px_rgba(17,20,27,0.06)]',
+          'transition-all duration-300 hover:-translate-y-1 hover:border-[#8C5CF6] hover:shadow-xl hover:shadow-[#07152A]/10',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057]/70 focus-visible:ring-offset-2',
           className,
         )}
       >
@@ -67,12 +67,12 @@ export function BlogCard({ post, locale, className, index = 0 }: BlogCardProps):
         </div>
 
         <div className="flex flex-1 flex-col p-4">
-          <h3 className="mb-2 line-clamp-2 text-base font-black leading-snug text-[#07152A] transition-colors group-hover:text-[#174A98]">
+          <h3 className="mb-2 line-clamp-2 text-base font-black leading-snug text-[#11141B] transition-colors group-hover:text-[#5B2DB6]">
             {post.title}
           </h3>
           <p className="text-sm leading-6 text-[#526071]">
             {post.excerpt.length > 112 ? `${post.excerpt.slice(0, 112)}... ` : `${post.excerpt} `}
-            <span className="inline-flex items-center gap-1 whitespace-nowrap text-xs font-bold text-[#174A98] transition-all group-hover:gap-2">
+            <span className="inline-flex items-center gap-1 whitespace-nowrap text-xs font-bold text-[#FF4057] transition-all group-hover:gap-2">
               {copy.readMore} <span aria-hidden="true">-&gt;</span>
             </span>
           </p>

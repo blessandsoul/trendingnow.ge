@@ -56,14 +56,14 @@ export function BlogPost({ post, locale }: BlogPostProps): React.ReactElement {
             <Link
               key={tag}
               href={localizedPath(locale, `/blog/tags/${tagToSlug(tag)}`)}
-              className="rounded-full border border-[#FDC302]/40 bg-[#FFF8D7] px-3 py-1 text-xs font-bold text-[#8A6500] transition-colors hover:border-[#C89300]"
+              className="rounded-full border border-[#FF4057]/40 bg-[#F7F2FF] px-3 py-1 text-xs font-bold text-[#5B2DB6] transition-colors hover:border-[#8C5CF6]"
             >
               {tag}
             </Link>
           ))}
         </div>
 
-        <h1 className="max-w-4xl text-center text-3xl font-black leading-tight tracking-tight text-[#07152A] text-balance sm:text-4xl md:text-left md:text-5xl lg:text-6xl">
+        <h1 className="max-w-4xl text-center text-3xl font-black leading-tight tracking-tight text-[#11141B] text-balance sm:text-4xl md:text-left md:text-5xl lg:text-6xl">
           {post.title}
         </h1>
         <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-semibold text-[#526071] md:justify-start">
@@ -79,7 +79,7 @@ export function BlogPost({ post, locale }: BlogPostProps): React.ReactElement {
         initial={{ opacity: 0, scale: 0.97 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.55, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-        className="relative mb-12 aspect-[16/9] w-full overflow-hidden rounded-[12px] border border-[#DFE6EF] bg-[#F5F7FA] shadow-xl"
+        className="relative mb-12 aspect-[16/9] w-full overflow-hidden rounded-[24px] border border-[#E8E0F8] bg-[#F5F7FA] shadow-xl"
       >
         <Image
           src={post.coverImage}
@@ -121,10 +121,10 @@ export function BlogPost({ post, locale }: BlogPostProps): React.ReactElement {
             prose-h2:mb-4 prose-h2:mt-10 prose-h2:text-2xl prose-h2:md:text-3xl
             prose-h3:mb-3 prose-h3:mt-7 prose-h3:text-xl
             prose-p:mb-5 prose-p:leading-8 prose-p:text-[#526071]
-            prose-a:font-bold prose-a:text-[#174A98] prose-a:no-underline hover:prose-a:underline
-            prose-li:text-[#526071] prose-li:marker:text-[#C89300]
+            prose-a:font-bold prose-a:text-[#5B2DB6] prose-a:no-underline hover:prose-a:underline
+            prose-li:text-[#526071] prose-li:marker:text-[#8C5CF6]
             prose-strong:font-black prose-strong:text-[#07152A]
-            prose-blockquote:rounded-r-[8px] prose-blockquote:border-l-4 prose-blockquote:border-[#FDC302] prose-blockquote:bg-[#FFF8D7] prose-blockquote:px-5 prose-blockquote:py-2 prose-blockquote:not-italic
+            prose-blockquote:rounded-r-[16px] prose-blockquote:border-l-4 prose-blockquote:border-[#FF4057] prose-blockquote:bg-[#FFF0F3] prose-blockquote:px-5 prose-blockquote:py-2 prose-blockquote:not-italic
             prose-code:rounded-md prose-code:bg-[#F5F7FA] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:text-[#174A98] prose-code:before:content-none prose-code:after:content-none
             prose-hr:border-[#DFE6EF]
             [&>*:first-child]:!mt-0"
@@ -142,7 +142,7 @@ export function BlogPost({ post, locale }: BlogPostProps): React.ReactElement {
         </div>
 
         <div className="mt-8">
-          <Link href={localizedPath(locale, '/blog')} className="inline-flex items-center gap-2 text-sm font-black text-[#174A98] transition-all hover:gap-3">
+          <Link href={localizedPath(locale, '/blog')} className="inline-flex items-center gap-2 text-sm font-black text-[#5B2DB6] transition-all hover:gap-3">
             &lt;- {copy.backToBlog}
           </Link>
         </div>

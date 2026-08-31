@@ -27,23 +27,25 @@ export async function BlogIndexPage({ locale, rawPage }: BlogIndexPageProps): Pr
 
   return (
     <BlogShell>
-      <div className="storefront-container py-14 md:py-20">
-        <div className="mx-auto mb-14 max-w-3xl text-center">
-          <p className="mb-3 text-xs font-black uppercase tracking-[0.26em] text-[#8B96A5]">Continuum GE</p>
-          <h1 className="text-4xl font-black leading-tight tracking-tight text-[#07152A] text-balance sm:text-5xl md:text-6xl">
+      <div className="storefront-container py-10 md:py-16">
+        <div className="tn-dark-panel relative mx-auto mb-14 max-w-5xl overflow-hidden px-6 py-12 text-center sm:px-10 md:py-16">
+          <div className="absolute -right-16 -top-20 size-64 rounded-full bg-[#8C5CF6]/35 blur-3xl" aria-hidden="true" />
+          <div className="absolute -bottom-24 -left-12 size-60 rounded-full bg-[#19C6A6]/20 blur-3xl" aria-hidden="true" />
+          <p className="tn-kicker relative mb-4 text-white/70">TrendingNow.ge</p>
+          <h1 className="relative text-4xl font-black leading-tight tracking-tight text-white text-balance sm:text-5xl md:text-6xl">
             {copy.title}
           </h1>
-          <p className="mt-4 text-lg leading-8 text-[#526071] md:text-xl">{copy.subtitle}</p>
+          <p className="relative mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/70 md:text-xl">{copy.subtitle}</p>
         </div>
 
         {isFallback && (
-          <div className="mx-auto mb-8 max-w-3xl rounded-[8px] border border-[#F6D98B] bg-[#FFF8D7] p-4 text-center text-sm font-semibold text-[#8A6500]">
+          <div className="mx-auto mb-8 max-w-3xl rounded-[16px] border border-[#D9C7FF] bg-[#F7F2FF] p-4 text-center text-sm font-semibold text-[#5B2DB6]">
             {copy.fallbackNotice}
           </div>
         )}
 
         <section aria-labelledby="blog-latest">
-          <h2 id="blog-latest" className="mb-8 text-2xl font-black tracking-tight text-[#07152A]">
+          <h2 id="blog-latest" className="mb-8 text-2xl font-black tracking-tight text-[#11141B]">
             {copy.latestHeading}
           </h2>
           <BlogList posts={pagePosts} locale={locale} topTags={topTags} />

@@ -10,7 +10,7 @@ describe('robots', () => {
         allow: '/',
         disallow: ['/admin/', '/dashboard/'],
       },
-      sitemap: 'https://continuum.ge/sitemap.xml',
+      sitemap: 'https://trendingnow.ge/sitemap.xml',
     });
   });
 });

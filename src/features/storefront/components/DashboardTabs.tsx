@@ -27,7 +27,7 @@ export function DashboardTabs({ active, className }: DashboardTabsProps): React.
   return (
     <nav
       aria-label={copy.common.dashboard}
-      className={cn('grid w-full grid-cols-[minmax(0,1fr)_minmax(0,1fr)_44px] gap-2 rounded-[8px] border border-[#DFE6EF] bg-white p-2 shadow-[0_8px_24px_rgba(8,21,42,0.04)] sm:flex sm:flex-wrap', className)}
+      className={cn('tn-surface grid w-full grid-cols-[minmax(0,1fr)_minmax(0,1fr)_44px] gap-2 rounded-[16px] p-2 sm:flex sm:flex-wrap', className)}
     >
       {tabs.map(({ key, label, href, icon: Icon }) => {
         const isActive = active === key;
@@ -38,10 +38,10 @@ export function DashboardTabs({ active, className }: DashboardTabsProps): React.
             href={localizeHref(href)}
             aria-current={isActive ? 'page' : undefined}
             className={cn(
-              'inline-flex h-11 min-w-0 items-center justify-center gap-1.5 rounded-[7px] px-2 text-xs font-black leading-tight transition-colors sm:flex-none sm:gap-2 sm:px-4 sm:text-sm',
+              'inline-flex h-11 min-w-0 items-center justify-center gap-1.5 rounded-[12px] px-2 text-xs font-black leading-tight transition-colors sm:flex-none sm:gap-2 sm:px-4 sm:text-sm',
               isActive
-                ? 'bg-[#07152A] text-white'
-                : 'text-[#526071] hover:bg-[#F7F9FB] hover:text-[#07152A]',
+                ? 'bg-[#FF4057] text-white shadow-[0_8px_20px_rgba(255,64,87,0.24)]'
+                : 'text-[#526071] hover:bg-[#F7F2FF] hover:text-[#5B2DB6]',
             )}
           >
             <Icon className="size-4 shrink-0" aria-hidden="true" />
@@ -53,7 +53,7 @@ export function DashboardTabs({ active, className }: DashboardTabsProps): React.
         type="button"
         variant="outline"
         size="icon"
-        className="h-11 w-11 rounded-[7px] border-[#DFE6EF] bg-white text-[#07152A] hover:bg-[#FFF5F5] hover:text-[#B42318] sm:ml-auto"
+        className="h-11 w-11 rounded-[12px] border-[#E8E0F8] bg-white text-[#11141B] hover:bg-[#FFF0F3] hover:text-[#B42318] sm:ml-auto"
         disabled={isLoggingOut}
         onClick={() => void logout()}
         aria-label={copy.common.signOut}
