@@ -1,6 +1,6 @@
 import type { PaginatedApiResponse } from '@/lib/api/api.types';
 import { currentCatalog, type StoreCategory } from './currentCatalog';
-import { getProductVisuals } from './product-media';
+import { getProductVisualEntries, getProductVisuals } from './product-media';
 import type {
   CartItem,
   ProductListParams,
@@ -271,14 +271,14 @@ export function getLocalProduct(slug: string): StorefrontProductDetail | null {
   const product = localProducts.find((item) => item.slug === slug);
   if (!product) return null;
 
-  const productVisuals = getProductVisuals(product.id);
+  const productVisuals = getProductVisualEntries(product.id);
   const detailProduct = {
     ...product,
-    gallery: productVisuals.map((url, index) => ({
+    gallery: productVisuals.map((visual) => ({
       type: 'image' as const,
-      url,
-      thumbnailUrl: url,
-      alt: `${product.name} — AI ვიზუალი ${index + 1}`,
+      url: visual.url,
+      thumbnailUrl: visual.url,
+      alt: `${product.name} — ${visual.label}`,
     })),
     attributes: {
       sku: product.id,

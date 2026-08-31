@@ -56,7 +56,7 @@ const enPublicCopy = {
       intro: 'With us, you can buy wireless earbuds, smart watches, smartphone accessories, and other practical devices.',
       cards: [
         { label: 'Phone', value: '+995 574 88 28 87' },
-        { label: 'Email', value: 'shopcontinuum@gmail.com' },
+        { label: 'Email', value: 'contact@ainow.ge' },
       ],
       sections: [
         {
@@ -69,7 +69,7 @@ const enPublicCopy = {
           title: 'Contact information',
           items: [
             'Phone: +995 574 88 28 87',
-            'Email: shopcontinuum@gmail.com',
+            'Email: contact@ainow.ge',
           ],
         },
       ],
@@ -124,14 +124,14 @@ const enPublicCopy = {
       cards: [
         { label: 'Legal warranty', value: '2 years' },
         { label: 'Return request', value: '14 days' },
-        { label: 'Contact email', value: 'shopcontinuum@gmail.com' },
+        { label: 'Contact email', value: 'contact@ainow.ge' },
       ],
       sections: [
         {
           title: 'Contact information',
           items: [
             'Phone: +995 574 88 28 87',
-            'Email: shopcontinuum@gmail.com',
+            'Email: contact@ainow.ge',
           ],
         },
         {
@@ -167,7 +167,7 @@ const enPublicCopy = {
           title: 'Return terms',
           items: [
             'The consumer has the right to submit a return request within 14 calendar days after receiving the goods.',
-            'To request a return, the consumer must write to us at shopcontinuum@gmail.com.',
+            'To request a return, the consumer must write to us at contact@ainow.ge.',
             'The email must include first name and last name, product name, purchase date, and phone number.',
             'When withdrawing from the contract, the consumer returns the goods immediately after sending the notice, but no later than 7 calendar days.',
             'If the product characteristics do not match the website data, the product has an original defect, or it is damaged during transport, the seller will handle the return using its own resources.',
@@ -185,7 +185,7 @@ const enPublicCopy = {
         },
         {
           title: 'In case of return',
-          text: ['Please send return-related notices to our email: shopcontinuum@gmail.com.'],
+          text: ['Please send return-related notices to our email: contact@ainow.ge.'],
         },
       ],
     },
@@ -200,7 +200,7 @@ const enPublicCopy = {
       cards: [
         { label: 'Card payment', value: 'Visa and Mastercard' },
         { label: 'Other methods', value: 'To be confirmed' },
-        { label: 'Support', value: 'shopcontinuum@gmail.com' },
+        { label: 'Support', value: 'contact@ainow.ge' },
       ],
       sections: [
         {
@@ -256,7 +256,7 @@ const enPublicCopy = {
           blocks: [
             { title: 'Returns', text: 'A return request is reviewed according to the active terms and the condition of the product.' },
             { title: 'Warranty', text: 'Warranty terms are listed on the warranty page and in the product documentation.' },
-            { title: 'Support', text: 'For additional questions, write to us at shopcontinuum@gmail.com.' },
+            { title: 'Support', text: 'For additional questions, write to us at contact@ainow.ge.' },
           ],
         },
         {
@@ -275,14 +275,14 @@ const enPublicCopy = {
       intro: 'If you need help choosing a product, clarifying an order, or handling a warranty matter, use the contact channels below.',
       cards: [
         { label: 'Phone', value: '+995 574 88 28 87' },
-        { label: 'Email', value: 'shopcontinuum@gmail.com' },
+        { label: 'Email', value: 'contact@ainow.ge' },
       ],
       sections: [
         {
           title: 'Contact information',
           items: [
             'Phone: +995 574 88 28 87',
-            'Email: shopcontinuum@gmail.com',
+            'Email: contact@ainow.ge',
             'Social networks: Facebook and Instagram pages are available in the site footer.',
           ],
         },
@@ -310,7 +310,7 @@ const enPublicCopy = {
       intro: 'Companies can choose products, clarify quantities, and request an individual offer. Terms are confirmed according to the real request.',
       cards: [
         { label: 'Order type', value: 'B2B' },
-        { label: 'Contact', value: 'shopcontinuum@gmail.com' },
+        { label: 'Contact', value: 'contact@ainow.ge' },
         { label: 'Documents', value: 'Invoice on request' },
       ],
       sections: [
@@ -502,6 +502,7 @@ const enPublicCopy = {
     previousMediaAria: 'Previous media',
     nextMediaAria: 'Next media',
     showMediaAria: (index: number) => `Show media ${index}`,
+    swipeMediaHint: 'Swipe left or right to browse the photos',
     highlights: 'Key benefits',
     total: 'Total',
     online: 'Online',

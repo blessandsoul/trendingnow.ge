@@ -33,7 +33,7 @@ export function StorefrontFooter(): React.ReactElement {
           </p>
           <div className="relative mt-5 space-y-2 text-sm text-white/64">
             <p className="flex items-center gap-2"><Phone className="size-4 text-[#FF4057]" /> +995 574 88 28 87</p>
-            <p className="flex items-center gap-2"><Mail className="size-4 text-[#FF4057]" /> shopcontinuum@gmail.com</p>
+            <p className="flex items-center gap-2"><Mail className="size-4 text-[#FF4057]" /> contact@ainow.ge</p>
           </div>
           <div className="relative mt-6 flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-[#FF4057]">
             <span className="h-px w-8 bg-current" /> signal pop commerce

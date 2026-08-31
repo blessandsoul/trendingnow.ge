@@ -1,7 +1,7 @@
 'use client';
 
 import type React from 'react';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
@@ -52,6 +52,8 @@ import { Reveal } from './Reveal';
 import { RichText } from './RichText';
 import { StorefrontFooter } from './StorefrontFooter';
 import { StorefrontHeader } from './StorefrontHeader';
+import { TrendingNowLogoMark } from './TrendingNowWordmark';
+import { resolveGallerySwipe, wrapGalleryIndex } from './gallery-swipe';
 
 const iconMap: Record<string, LucideIcon> = {
   box: Box,
@@ -149,6 +151,7 @@ function ProductGallery({
   const toggleFavorite = useToggleFavorite();
   const isFavorite = favoriteIds.data?.productIds.includes(product.id) ?? false;
   const isFavoritePending = toggleFavorite.isPending && toggleFavorite.variables?.productId === product.id;
+  const swipeStart = useRef<{ pointerId: number; x: number; y: number } | null>(null);
   const gallery = (product.gallery.length > 0
     ? product.gallery
     : [{ type: 'image', url: product.imageUrl, thumbnailUrl: product.imageUrl, alt: product.name } satisfies StorefrontProductGalleryItem])
@@ -158,8 +161,23 @@ function ProductGallery({
       thumbnailUrl: publicMediaUrl(item.thumbnailUrl),
     }));
   const selectedMedia = gallery[Math.min(selectedIndex, gallery.length - 1)] ?? gallery[0];
-  const selectPrevious = (): void => onSelect((selectedIndex - 1 + gallery.length) % gallery.length);
-  const selectNext = (): void => onSelect((selectedIndex + 1) % gallery.length);
+  const selectPrevious = (): void => onSelect(wrapGalleryIndex(selectedIndex - 1, gallery.length));
+  const selectNext = (): void => onSelect(wrapGalleryIndex(selectedIndex + 1, gallery.length));
+
+  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>): void => {
+    if (!event.isPrimary || event.pointerType === 'mouse') return;
+    swipeStart.current = { pointerId: event.pointerId, x: event.clientX, y: event.clientY };
+  };
+
+  const handlePointerEnd = (event: React.PointerEvent<HTMLDivElement>): void => {
+    const start = swipeStart.current;
+    swipeStart.current = null;
+    if (!start || start.pointerId !== event.pointerId) return;
+
+    const direction = resolveGallerySwipe(start, { x: event.clientX, y: event.clientY });
+    if (direction === 'next') selectNext();
+    if (direction === 'previous') selectPrevious();
+  };
 
   return (
     <section className="min-w-0">
@@ -198,7 +216,16 @@ function ProductGallery({
           </button>
         </div>
 
-        <div className="relative aspect-[4/5] min-h-[360px] sm:min-h-[520px] xl:min-h-[620px]">
+        <div
+          className="relative aspect-[4/5] min-h-[360px] touch-pan-y select-none sm:min-h-[520px] xl:min-h-[620px]"
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerEnd}
+          onPointerCancel={() => {
+            swipeStart.current = null;
+          }}
+          aria-roledescription="carousel"
+          aria-label={product.name}
+        >
           <SafeImage
             src={selectedMedia.url}
             alt={selectedMedia.alt}
@@ -214,6 +241,13 @@ function ProductGallery({
               </span>
             </div>
           )}
+          <div
+            className="pointer-events-none absolute bottom-3 left-3 z-10 flex items-center gap-1.5 rounded-full border border-white/70 bg-white/92 px-2.5 py-1 text-[11px] font-black tabular-nums text-[#11141B] shadow-[0_5px_18px_rgba(17,20,27,0.12)]"
+            aria-live="polite"
+          >
+            <TrendingNowLogoMark className="size-4" />
+            <span>{Math.min(selectedIndex + 1, gallery.length)}/{gallery.length}</span>
+          </div>
         </div>
 
         {gallery.length > 1 && (
@@ -238,17 +272,18 @@ function ProductGallery({
         )}
       </div>
 
-      <div className="no-scrollbar mt-3 flex gap-3 overflow-x-auto pb-1">
+      <div className="no-scrollbar mt-3 flex snap-x snap-proximity gap-3 overflow-x-auto overscroll-x-contain scroll-smooth pb-1">
         {gallery.map((item, index) => (
           <button
             key={`${item.url}-${index}`}
             type="button"
             onClick={() => onSelect(index)}
             className={cn(
-              'relative h-20 w-20 shrink-0 overflow-hidden rounded-[8px] border bg-white sm:h-24 sm:w-24',
+              'relative h-20 w-20 shrink-0 snap-start overflow-hidden rounded-[8px] border bg-white sm:h-24 sm:w-24',
               selectedIndex === index ? 'border-[#FF4057] ring-2 ring-[#FF4057]/25' : 'border-[#DDE2E9]',
             )}
             aria-label={copy.product.showMediaAria(index + 1)}
+            aria-current={selectedIndex === index ? 'true' : undefined}
           >
             <SafeImage src={item.thumbnailUrl} alt={item.alt} fill sizes="96px" className="object-cover" />
             {item.type === 'video' && (
@@ -259,6 +294,9 @@ function ProductGallery({
           </button>
         ))}
       </div>
+      {gallery.length > 1 && (
+        <p className="mt-2 text-xs font-semibold text-[#6B7685] sm:hidden">{copy.product.swipeMediaHint}</p>
+      )}
       <p className="mt-2 text-[11px] font-semibold leading-5 text-[#7A8492]">
         AI ვიზუალიზაცია · პროდუქტის რეალური დეტალები და კომპლექტაცია დასტურდება შეკვეთამდე
       </p>

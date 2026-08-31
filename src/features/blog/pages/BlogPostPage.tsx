@@ -49,7 +49,7 @@ export async function BlogPostPage({ slug, locale }: BlogPostPageProps): Promise
       url: SITE_URL,
       logo: {
         '@type': 'ImageObject',
-        url: absoluteUrl('/storefront/trendingnow/logo.png'),
+        url: absoluteUrl('/storefront/trendingnow/logo-mark-user-v1.png'),
       },
     },
     mainEntityOfPage: {

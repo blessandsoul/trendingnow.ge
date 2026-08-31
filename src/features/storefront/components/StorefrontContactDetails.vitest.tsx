@@ -49,7 +49,7 @@ describe('public support contact details', () => {
     renderWithGeorgianCopy(<StorefrontInfoPage {...kaCopy.infoPages.contact} />);
 
     expect(screen.getAllByText('+995 574 88 28 87')).not.toHaveLength(0);
-    expect(screen.getAllByText('shopcontinuum@gmail.com')).not.toHaveLength(0);
+    expect(screen.getAllByText('contact@ainow.ge')).not.toHaveLength(0);
     expect(screen.queryByText(/ლიბანის 29/)).not.toBeInTheDocument();
   });
 
@@ -57,7 +57,7 @@ describe('public support contact details', () => {
     renderWithGeorgianCopy(<StorefrontFooter />);
 
     expect(screen.getByText('+995 574 88 28 87')).toBeInTheDocument();
-    expect(screen.getByText('shopcontinuum@gmail.com')).toBeInTheDocument();
+    expect(screen.getByText('contact@ainow.ge')).toBeInTheDocument();
     expect(screen.queryByText(/თბილისი, საქართველო/)).not.toBeInTheDocument();
   });
 

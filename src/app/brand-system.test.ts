@@ -24,6 +24,29 @@ function activeUiFiles(root: string): string[] {
 }
 
 describe('TrendingNow visual system', () => {
+  it('uses the supplied transparent PNG mark with a live-text wordmark', () => {
+    const componentPath = path.join(
+      process.cwd(),
+      'src/features/storefront/components/TrendingNowWordmark.tsx',
+    );
+    const componentSource = fs.readFileSync(componentPath, 'utf8');
+    const markPath = path.join(
+      process.cwd(),
+      'public/storefront/trendingnow/logo-mark-user-v1.png',
+    );
+    const mark = fs.readFileSync(markPath);
+
+    expect(componentSource).toContain('/storefront/trendingnow/logo-mark-user-v1.png');
+    expect(componentSource).toContain('Trending');
+    expect(componentSource).toContain('Now');
+    expect(componentSource).toContain('.ge');
+    expect(componentSource).not.toContain('logo-v2.png');
+    expect(mark.subarray(1, 4).toString('ascii')).toBe('PNG');
+    expect(mark.readUInt32BE(16)).toBe(1254);
+    expect(mark.readUInt32BE(20)).toBe(1254);
+    expect(mark[25]).toBe(6);
+  });
+
   it('keeps active UI free of the legacy Continuum skin', () => {
     const legacyTokens = [
       'Continuum GE',
