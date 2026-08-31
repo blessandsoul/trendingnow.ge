@@ -8,6 +8,7 @@ import { getErrorMessage } from '@/lib/utils/error';
 import { useLocaleCopy, useLocalizedPath } from '@/i18n/context';
 import { stripLocalePrefix } from '@/i18n/locales';
 import { ROUTES } from '@/lib/constants/routes';
+import { localStorefrontHome } from '../data/local-storefront';
 import { storefrontService } from '../services/storefront.service';
 import type {
   CreateStorefrontOrderRequest,
@@ -48,6 +49,7 @@ export function useStorefrontHome() {
   return useQuery({
     queryKey: storefrontKeys.home(),
     queryFn: () => storefrontService.getHome(),
+    initialData: localStorefrontHome,
   });
 }
 
