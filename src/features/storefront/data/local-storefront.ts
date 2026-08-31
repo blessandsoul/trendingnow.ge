@@ -1,5 +1,6 @@
 import type { PaginatedApiResponse } from '@/lib/api/api.types';
 import { currentCatalog, type StoreCategory } from './currentCatalog';
+import { getProductVisuals } from './product-media';
 import type {
   CartItem,
   ProductListParams,
@@ -72,7 +73,7 @@ export const localProducts: StorefrontProduct[] = currentCatalog.products.map((p
   name: product.name,
   description: product.note,
   brand: 'TrendingNow',
-  imageUrl: product.image,
+  imageUrl: getProductVisuals(product.id)[0],
   salePrice: parsePrice(product.price) ?? 0,
   originalPrice: parsePrice(product.oldPrice),
   currency: 'GEL',
@@ -270,11 +271,15 @@ export function getLocalProduct(slug: string): StorefrontProductDetail | null {
   const product = localProducts.find((item) => item.slug === slug);
   if (!product) return null;
 
+  const productVisuals = getProductVisuals(product.id);
   const detailProduct = {
     ...product,
-    gallery: [
-      { type: 'image' as const, url: product.imageUrl, thumbnailUrl: product.imageUrl, alt: product.name },
-    ],
+    gallery: productVisuals.map((url, index) => ({
+      type: 'image' as const,
+      url,
+      thumbnailUrl: url,
+      alt: `${product.name} — AI ვიზუალი ${index + 1}`,
+    })),
     attributes: {
       sku: product.id,
       highlights: [

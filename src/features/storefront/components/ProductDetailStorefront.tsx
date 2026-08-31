@@ -198,14 +198,14 @@ function ProductGallery({
           </button>
         </div>
 
-        <div className="relative aspect-square min-h-[300px] sm:min-h-[420px] xl:min-h-[540px]">
+        <div className="relative aspect-[4/5] min-h-[360px] sm:min-h-[520px] xl:min-h-[620px]">
           <SafeImage
             src={selectedMedia.url}
             alt={selectedMedia.alt}
             fill
             priority
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 58vw, 780px"
-            className="object-contain p-8 sm:p-12"
+            className="object-cover"
           />
           {selectedMedia.type === 'video' && (
             <div className="absolute inset-0 grid place-items-center bg-[#07152A]/5">
@@ -250,7 +250,7 @@ function ProductGallery({
             )}
             aria-label={copy.product.showMediaAria(index + 1)}
           >
-            <SafeImage src={item.thumbnailUrl} alt={item.alt} fill sizes="96px" className="object-contain p-2" />
+            <SafeImage src={item.thumbnailUrl} alt={item.alt} fill sizes="96px" className="object-cover" />
             {item.type === 'video' && (
               <span className="absolute inset-0 grid place-items-center bg-[#07152A]/10 text-[#07152A]">
                 <PlayCircle className="size-6" />
@@ -259,6 +259,9 @@ function ProductGallery({
           </button>
         ))}
       </div>
+      <p className="mt-2 text-[11px] font-semibold leading-5 text-[#7A8492]">
+        AI ვიზუალიზაცია · პროდუქტის რეალური დეტალები და კომპლექტაცია დასტურდება შეკვეთამდე
+      </p>
     </section>
   );
 }
@@ -690,13 +693,13 @@ export function ProductDetailStorefront({
           <>
             <Breadcrumb product={product} />
             <section className="storefront-container grid gap-5 xl:grid-cols-[minmax(0,0.95fr)_minmax(340px,0.78fr)_330px]">
-              <Reveal>
+              <Reveal className="min-w-0">
                 <ProductGallery product={product} selectedIndex={selectedIndex} onSelect={setSelectedIndex} onShare={handleShare} />
               </Reveal>
-              <Reveal delay={0.04}>
+              <Reveal className="min-w-0" delay={0.04}>
                 <ProductInfo product={product} />
               </Reveal>
-              <Reveal delay={0.08}>
+              <Reveal className="min-w-0" delay={0.08}>
                 <PurchasePanel product={product} quantity={quantity} onQuantityChange={setQuantity} onShare={handleShare} />
               </Reveal>
             </section>

@@ -46,7 +46,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
     >
       <div
         className={cn(
-          'relative mb-3 aspect-[4/3] w-full overflow-hidden rounded-[12px] bg-[#F1F3F6] shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)]',
+          'relative mb-3 aspect-[4/5] w-full overflow-hidden rounded-[12px] bg-[#F1F3F6] shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)]',
           compact && 'mb-0 h-[104px] w-[116px] shrink-0',
         )}
       >
@@ -82,9 +82,14 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
             alt={product.name}
             fill
             sizes={compact ? '116px' : '(max-width: 1023px) 46vw, (max-width: 1280px) 30vw, 260px'}
-            className="object-contain p-3 outline outline-1 -outline-offset-1 outline-black/10 transition-transform duration-500 ease-out group-hover:scale-[1.045] group-focus-within:scale-[1.025] motion-reduce:transition-none dark:outline-white/10 sm:p-4"
+            className="object-cover outline outline-1 -outline-offset-1 outline-black/10 transition-transform duration-500 ease-out group-hover:scale-[1.035] group-focus-within:scale-[1.02] motion-reduce:transition-none dark:outline-white/10"
           />
         </Link>
+        {!compact && (
+          <span className="pointer-events-none absolute bottom-2 left-2 z-10 rounded-full bg-[#11141B]/78 px-2 py-1 text-[9px] font-black uppercase tracking-[0.08em] text-white backdrop-blur-sm">
+            AI ვიზუალი
+          </span>
+        )}
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col">

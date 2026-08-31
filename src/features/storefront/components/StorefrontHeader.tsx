@@ -228,19 +228,21 @@ export function StorefrontHeader(): React.ReactElement {
 
         <div
           className={cn(
-            'storefront-container flex flex-wrap items-center gap-x-3 transition-[padding,row-gap] duration-300 ease-out lg:flex-nowrap',
+            'storefront-container flex flex-wrap items-center gap-x-3 transition-[padding,row-gap] duration-300 ease-out md:flex-nowrap',
             scrollHeaderState.isCompact ? 'gap-y-0 py-2' : 'gap-y-3 py-3',
           )}
         >
         <Link
           href={localizeHref(ROUTES.HOME)}
-          className="mr-auto shrink-0 rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057]/55 focus-visible:ring-offset-4"
+          className="mr-auto shrink-0 rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057]/55 focus-visible:ring-offset-4 md:mr-0"
           aria-label={copy.header.homeAria}
         >
           <TrendingNowWordmark
             className={cn(
               'transition-[width,height] duration-200',
-              scrollHeaderState.isCompact ? 'size-9 sm:size-10' : 'size-10 sm:size-11',
+              scrollHeaderState.isCompact
+                ? 'h-[30px] w-[150px] sm:h-8 sm:w-[160px]'
+                : 'h-8 w-[160px] sm:h-9 sm:w-[180px] xl:h-10 xl:w-[200px]',
             )}
           />
         </Link>
@@ -250,7 +252,7 @@ export function StorefrontHeader(): React.ReactElement {
           aria-hidden={scrollHeaderState.isCompact}
           className={cn(
             'hidden h-10 max-w-48 shrink-0 overflow-hidden whitespace-nowrap rounded-[9px] bg-[#11141B] font-bold text-white',
-            'transition-[max-width,padding,opacity] duration-300 ease-out hover:bg-[#252A33] md:inline-flex',
+            'transition-[max-width,padding,opacity] duration-300 ease-out hover:bg-[#252A33] lg:inline-flex',
             scrollHeaderState.isCompact
               ? 'invisible max-w-0 border-0 px-0 opacity-0'
               : 'visible max-w-48 px-4 opacity-100',
@@ -266,7 +268,7 @@ export function StorefrontHeader(): React.ReactElement {
           onSubmit={submitSearch}
           className={cn(
             'relative order-3 flex w-full min-w-0 overflow-hidden transition-[max-height,opacity] duration-300 ease-out',
-            'md:visible md:order-none md:max-h-none md:flex-1 md:overflow-visible md:opacity-100',
+            'md:visible md:order-none md:mx-auto md:w-auto md:max-w-[520px] md:flex-1 md:overflow-visible md:opacity-100 lg:max-w-[620px] xl:max-w-[700px]',
             scrollHeaderState.isCompact
               ? 'invisible max-h-0 opacity-0'
               : 'visible max-h-24 opacity-100',

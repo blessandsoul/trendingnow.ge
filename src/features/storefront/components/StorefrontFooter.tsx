@@ -27,7 +27,7 @@ export function StorefrontFooter(): React.ReactElement {
       <div className="storefront-container grid gap-9 py-11 xl:grid-cols-[1.1fr_1.7fr_0.8fr]">
         <div className="relative overflow-hidden">
           <span className="absolute -left-8 -top-16 h-44 w-10 rotate-[24deg] bg-[#FF4057]" aria-hidden="true" />
-          <TrendingNowWordmark className="relative mb-5 size-12" tone="dark" />
+          <TrendingNowWordmark className="relative mb-5 h-10 w-[200px]" tone="dark" />
           <p className="relative max-w-[320px] text-sm leading-6 text-white/56">
             {copy.footer.summary}
           </p>

@@ -15,9 +15,9 @@ export async function generateMetadata(): Promise<Metadata> {
     description: copy.metadata.root.description,
     metadataBase: new URL(SITE_URL),
     icons: {
-      icon: [{ url: '/storefront/trendingnow/favicon.png', type: 'image/png', sizes: '64x64' }],
+      icon: [{ url: '/storefront/trendingnow/favicon.png', type: 'image/png', sizes: '512x512' }],
       shortcut: '/storefront/trendingnow/favicon.png',
-      apple: '/storefront/trendingnow/logo.png',
+      apple: '/storefront/trendingnow/favicon.png',
     },
   };
 }
