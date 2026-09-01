@@ -14,8 +14,8 @@ import path from 'path';
  */
 export const FILE_UPLOAD_CONSTANTS = {
   MAX_FILE_SIZE: env.MAX_FILE_SIZE_MB * 1024 * 1024, // ENV-configurable (default 10MB)
-  ALLOWED_MIME_TYPES: ['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'] as const,
-  ALLOWED_EXTENSIONS: ['.jpg', '.jpeg', '.png', '.webp', '.heic', '.heif'] as const,
+  ALLOWED_MIME_TYPES: ['image/jpeg', 'image/png'] as const,
+  ALLOWED_EXTENSIONS: ['.jpg', '.jpeg', '.png'] as const,
   AVATAR_MAX_DIMENSION: 512, // pixels
 } as const;
 

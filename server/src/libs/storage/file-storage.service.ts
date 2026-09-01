@@ -13,7 +13,7 @@
  *   root and is reachable ONLY through the auth-gated, owner-scoped streaming
  *   route GET /api/v1/files/:filename (see src/modules/files/).
  *
- * The public avatar URL shape is UNCHANGED — `/uploads/users/{id}/avatar/x.webp`
+ * The public avatar URL shape is UNCHANGED — `/uploads/users/{id}/avatar/x.png`
  * — because the static mount serves UPLOAD_PUBLIC_DIR at prefix `/uploads/`, so
  * the file just moves one level down on disk (under public/) with no URL churn.
  */
@@ -104,8 +104,8 @@ class FileStorageService {
    *   'John',
    *   'Doe'
    * );
-   * // filename: "john-doe-avatar.webp"
-   * // url: "/uploads/users/{userId}/avatar/john-doe-avatar.webp"
+   * // filename: "john-doe-avatar.png"
+   * // url: "/uploads/users/{userId}/avatar/john-doe-avatar.png"
    * ```
    */
   async saveAvatar(
@@ -120,7 +120,7 @@ class FileStorageService {
       await this.ensureDirectoryExists(avatarDir);
 
       // Generate SEO-friendly filename
-      const filename = generateAvatarFilename(firstName, lastName, 'webp');
+      const filename = generateAvatarFilename(firstName, lastName, 'png');
       const filePath = path.join(avatarDir, filename);
 
       // Write file to disk (overwrites existing)

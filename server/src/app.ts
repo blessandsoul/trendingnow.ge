@@ -150,7 +150,7 @@ export async function buildApp(): Promise<FastifyInstance> {
   // root and is unreachable through /uploads/* — it is served only by the
   // auth-gated, owner-scoped route GET /api/v1/files/:filename (filesRoutes).
   // The public avatar URL shape is unchanged: serving UPLOAD_PUBLIC_DIR at
-  // prefix '/uploads/' keeps avatars at /uploads/users/{id}/avatar/x.webp.
+  // prefix '/uploads/' keeps avatars at /uploads/users/{id}/avatar/x.png.
   await app.register(fastifyStatic, {
     root: fileStorageService.getPublicDir(),
     prefix: '/uploads/',

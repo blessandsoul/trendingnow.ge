@@ -27,7 +27,7 @@ class UsersService {
    *
    * Process:
    * 1. Get user from database (need first/last name for SEO filename)
-   * 2. Optimize image (resize, compress, convert to WebP)
+   * 2. Optimize image (resize, strip metadata, convert to PNG)
    * 3. Generate SEO-friendly filename
    * 4. Save to user-specific directory
    * 5. Update user record with avatar URL
@@ -56,7 +56,7 @@ class UsersService {
       fileSize: fileBuffer.length,
     });
 
-    // Optimize image (resize, compress, convert to WebP)
+    // Optimize image (resize, strip metadata, convert to PNG)
     const optimizedBuffer = await imageOptimizerService.optimizeAvatar(fileBuffer);
 
     // Save to user-specific directory with SEO-friendly filename
