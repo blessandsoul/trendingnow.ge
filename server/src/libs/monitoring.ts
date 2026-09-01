@@ -2,6 +2,7 @@ import { prisma } from '@libs/prisma.js';
 import { getRedis } from '@libs/redis.js';
 import { env } from '@config/env.js';
 import { logger } from '@libs/logger.js';
+import { getHeapStatistics } from 'node:v8';
 
 export interface HealthCheckResult {
   status: 'healthy' | 'degraded' | 'unhealthy';
@@ -91,8 +92,13 @@ function checkMemory(): CheckStatus {
   const used = process.memoryUsage();
   const heapUsedMB = Math.round(used.heapUsed / 1024 / 1024);
   const heapTotalMB = Math.round(used.heapTotal / 1024 / 1024);
+  const heapLimit = getHeapStatistics().heap_size_limit;
+  const heapLimitMB = Math.round(heapLimit / 1024 / 1024);
   const rssMB = Math.round(used.rss / 1024 / 1024);
-  const heapUsagePercent = Math.round((used.heapUsed / used.heapTotal) * 100);
+  // V8 expands heapTotal as the application allocates. Comparing heapUsed to
+  // that current allocation regularly reports 80-95% immediately after a GC,
+  // even when the process is hundreds of MB below its actual heap ceiling.
+  const heapUsagePercent = Math.round((used.heapUsed / heapLimit) * 100);
 
   // Warn if heap usage > 80%
   const status = heapUsagePercent > 80 ? 'degraded' : 'up';
@@ -107,6 +113,7 @@ function checkMemory(): CheckStatus {
     details: {
       heapUsedMB,
       heapTotalMB,
+      heapLimitMB,
       rssMB,
       heapUsagePercent,
       external: Math.round(used.external / 1024 / 1024),
