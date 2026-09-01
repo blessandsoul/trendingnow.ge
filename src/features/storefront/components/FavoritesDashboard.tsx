@@ -88,10 +88,10 @@ export function FavoritesDashboard(): React.ReactElement {
                 <Heart className="size-7" aria-hidden="true" />
               </span>
               <h2 className="mt-4 text-xl font-black text-[#11141B]">{copy.dashboard.favorites.emptyTitle}</h2>
-              <p className="mx-auto mt-2 max-w-[420px] text-sm leading-6 text-[#6B7685]">
+              <p className="mx-auto mt-2 max-w-[420px] text-sm leading-6 text-[#657080]">
                 {copy.dashboard.favorites.emptyText}
               </p>
-              <Button asChild className="mt-5 h-11 rounded-[9px] bg-[#FF4057] px-6 font-black text-white hover:bg-[#F02F48]">
+              <Button asChild className="mt-5 h-11 rounded-[9px] bg-[#D92F49] px-6 font-black text-white hover:bg-[#B4233A]">
                 <Link href={localizeHref(ROUTES.PRODUCTS)}>{copy.dashboard.favorites.continueShopping}</Link>
               </Button>
             </div>

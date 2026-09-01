@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TrendingNow.ge
 
-## Getting Started
+Production marketplace for trend-led consumer products in Georgia.
 
-First, run the development server:
+## Repository layout
+
+- `/` — Next.js storefront, deployed as the `TrendingNow.ge` Coolify application.
+- `/server` — Fastify, Prisma, MySQL and Redis API, deployed as the `TrendingNow API` Coolify application.
+- `/docs` — buyer-experience standard, UI/UX audit and product-image standard.
+
+## Local development
+
+Storefront:
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+API:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd server
+npm ci
+docker compose up -d
+npm run prisma:migrate:deploy
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Inter](https://fonts.google.com/specimen/Inter) and [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono). Fonts are managed via the font preset system in `src/styles/fonts/` — see the design system rules for how to switch fonts.
+Keep real credentials in local `.env` files or the Coolify environment. They must never be committed.
 
-## Learn More
+## Production
 
-To learn more about Next.js, take a look at the following resources:
+- Storefront: `https://trendingnow.ge`
+- API: `https://api.trendingnow.ge/api/v1`
+- Support: `contact@ainow.ge`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Both applications deploy from `main`. The API container applies pending Prisma migrations before starting.

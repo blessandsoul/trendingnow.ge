@@ -58,7 +58,10 @@ function toOrigin(url: string | undefined): string | null {
   }
 }
 
-const apiOrigin = toOrigin(process.env.NEXT_PUBLIC_API_BASE_URL) ?? 'http://localhost:8080';
+const defaultApiOrigin = process.env.NODE_ENV === 'production'
+  ? 'https://api.trendingnow.ge'
+  : 'http://localhost:8000';
+const apiOrigin = toOrigin(process.env.NEXT_PUBLIC_API_BASE_URL) ?? defaultApiOrigin;
 // When Sentry is configured, its browser SDK POSTs envelopes to the DSN origin;
 // it must be allowed in connect-src or every error report is blocked by CSP.
 const sentryOrigin = toOrigin(process.env.NEXT_PUBLIC_SENTRY_DSN);

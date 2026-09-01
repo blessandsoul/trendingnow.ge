@@ -14,6 +14,7 @@ import { publicMediaUrl } from '@/lib/utils/media';
 import { useAddCartItem, useFavoriteIds, useToggleFavorite } from '../hooks/useStorefront';
 import { formatGel, toStorefrontUppercase } from '../lib/format';
 import type { StorefrontProduct } from '../types/storefront.types';
+import { AiImageMark } from './AiImageMark';
 
 interface ProductCardProps {
   product: StorefrontProduct;
@@ -31,11 +32,6 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
   const isFavoritePending = toggleFavorite.isPending && toggleFavorite.variables?.productId === product.id;
   const displayName = toStorefrontUppercase(product.name);
   const displayCategoryName = toStorefrontUppercase(product.category.name);
-  const hasDiscount = product.originalPrice !== null && product.originalPrice > product.salePrice;
-  const discountPercent = hasDiscount
-    ? Math.round(((product.originalPrice! - product.salePrice) / product.originalPrice!) * 100)
-    : 0;
-  const savings = hasDiscount ? product.originalPrice! - product.salePrice : 0;
 
   return (
     <article
@@ -50,14 +46,11 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
           compact && 'mb-0 h-[104px] w-[116px] shrink-0',
         )}
       >
-        {(hasDiscount || product.isBestseller || product.isNew) && !compact && (
+        {(product.isBestseller || product.isNew) && !compact && (
           <Badge
-            className={cn(
-              'absolute left-2 top-2 z-10 border-transparent text-[10px] font-black text-white shadow-sm',
-              hasDiscount ? 'bg-[#FF4057]' : 'bg-[#11141B]',
-            )}
+            className="absolute left-2 top-2 z-10 border-transparent bg-[#11141B] text-[10px] font-black text-white shadow-sm"
           >
-            {hasDiscount ? `-${discountPercent}%` : product.isNew ? copy.productCard.new : copy.productCard.bestseller}
+            {product.isNew ? copy.productCard.new : copy.productCard.bestseller}
           </Badge>
         )}
         <button
@@ -67,7 +60,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
           onClick={() => toggleFavorite.toggleFavorite({ productId: product.id, productSlug: product.slug, isFavorite })}
           className={cn(
             'absolute right-2 top-2 z-10 grid size-11 place-items-center rounded-full bg-white/92 text-[#7C8490] shadow-[0_0_0_1px_rgba(0,0,0,0.07),0_4px_12px_rgba(17,20,27,0.08)] backdrop-blur transition-[color,transform,box-shadow] duration-150 ease-out hover:text-[#11141B] active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057] disabled:cursor-not-allowed disabled:opacity-70 motion-reduce:transition-none',
-            isFavorite && 'text-[#FF4057] hover:text-[#F02F48]',
+            isFavorite && 'text-[#D92F49] hover:text-[#B4233A]',
           )}
         >
           <Heart className={cn('size-4', isFavorite && 'fill-current')} />
@@ -85,22 +78,22 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
             className="object-cover outline outline-1 -outline-offset-1 outline-black/10 transition-transform duration-500 ease-out group-hover:scale-[1.035] group-focus-within:scale-[1.02] motion-reduce:transition-none dark:outline-white/10"
           />
         </Link>
-        {!compact && (
-          <span className="pointer-events-none absolute bottom-2 left-2 z-10 rounded-full bg-[#11141B]/78 px-2 py-1 text-[9px] font-black uppercase tracking-[0.08em] text-white backdrop-blur-sm">
-            AI ვიზუალი
-          </span>
-        )}
+        <AiImageMark
+          label={copy.product.aiImageAria}
+          variant={compact ? 'compact' : 'card'}
+          className="absolute bottom-2 left-2 z-10"
+        />
       </div>
 
       <div className="flex min-w-0 flex-1 flex-col">
         {!compact && (
-          <p className="mb-1 line-clamp-1 text-[10px] font-black uppercase tracking-[0.08em] text-[#FF4057] sm:text-[11px]">
+          <p className="mb-1 line-clamp-1 text-[10px] font-black uppercase tracking-[0.08em] text-[#B4233A] sm:text-[11px]">
             {displayCategoryName}
           </p>
         )}
         <Link
           href={productHref}
-          className="line-clamp-2 min-h-10 rounded-[4px] text-sm font-extrabold leading-5 tracking-[-0.015em] text-[#11141B] transition-colors duration-150 hover:text-[#FF4057] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057]/55 sm:min-h-[42px] sm:text-[15px]"
+          className="line-clamp-2 min-h-10 rounded-[4px] text-sm font-extrabold leading-5 tracking-[-0.015em] text-[#11141B] transition-colors duration-150 hover:text-[#B4233A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D92F49]/55 sm:min-h-[42px] sm:text-[15px]"
         >
           {displayName}
         </Link>
@@ -111,15 +104,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
           <div className="min-w-0">
             <div className="flex flex-wrap items-baseline gap-x-2 tabular-nums">
               <span className="whitespace-nowrap text-lg font-black tracking-[-0.03em] text-[#11141B] sm:text-xl">{formatGel(product.salePrice)}</span>
-              {hasDiscount && (
-                <span className="text-xs font-semibold text-[#8A929E] line-through sm:text-sm">{formatGel(product.originalPrice!)}</span>
-              )}
             </div>
-            {hasDiscount && (
-              <p className="mt-0.5 text-[11px] font-bold text-[#2A8C47]">
-                {copy.productCard.savings(formatGel(savings))}
-              </p>
-            )}
           </div>
           {!compact && (
             <p className="mt-2 flex items-center gap-1.5 text-[11px] font-bold leading-4 text-[#476052]">
@@ -130,7 +115,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
           {!compact && (
             <Button
               type="button"
-              className="mt-3 h-11 w-full rounded-[12px] bg-[#FF4057] pl-4 pr-3.5 font-black text-white shadow-[0_8px_18px_rgba(255,64,87,0.22)] hover:bg-[#F02F48]"
+              className="mt-3 h-11 w-full rounded-[12px] bg-[#D92F49] pl-4 pr-3.5 font-black text-white shadow-[0_8px_18px_rgba(217,47,73,0.22)] hover:bg-[#B4233A]"
               disabled={addCartItem.isPending}
               onClick={() => addCartItem.mutate({ productSlug: product.slug })}
               aria-label={copy.productCard.addToCartAria(product.name)}

@@ -93,8 +93,4 @@ export const onlineStoreJsonLd = {
   logo: absoluteUrl('/storefront/trendingnow/logo-mark-user-v1.png'),
   email: 'contact@ainow.ge',
   telephone: '+995 574 88 28 87',
-  sameAs: [
-    'https://www.facebook.com/continuum.ge',
-    'https://www.instagram.com/continuum.ge/',
-  ],
 };

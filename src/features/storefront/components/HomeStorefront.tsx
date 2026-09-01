@@ -42,7 +42,7 @@ function SectionHeader({ title, href }: { title: string; href?: string }): React
       {href && (
         <Link
           href={localizeHref(href)}
-          className="group flex min-h-10 w-fit items-center gap-2 rounded-[8px] px-1 text-sm font-bold text-[#11141B] transition-[color,transform] duration-150 ease-out hover:text-[#FF4057] active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057]/55"
+          className="group flex min-h-10 w-fit items-center gap-2 rounded-[8px] px-1 text-sm font-bold text-[#11141B] transition-[color,transform] duration-150 ease-out hover:text-[#B4233A] active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D92F49]/55"
         >
           {toStorefrontUppercase(copy.common.viewAllProducts)} <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
         </Link>
@@ -208,7 +208,7 @@ export function HomeStorefront(): React.ReactElement {
             <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.99)_0%,rgba(255,255,255,0.96)_68%,rgba(255,255,255,0.72)_100%)] sm:bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.96)_44%,rgba(255,255,255,0.62)_64%,rgba(255,255,255,0.12)_100%)]" />
             <div data-hero-content className="relative z-20 flex min-h-[600px] max-w-full flex-col justify-center px-5 pb-24 pt-10 max-[359px]:-translate-y-4 max-[359px]:pt-0 min-[390px]:px-6 sm:min-h-[560px] sm:max-w-[660px] sm:px-10 sm:pb-24 sm:pt-12 lg:min-h-[500px] lg:px-16">
                 {hero?.eyebrow && (
-                  <p className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-[0.14em] text-[#FF4057] before:h-px before:w-8 before:bg-current sm:mb-4">{hero.eyebrow}</p>
+                  <p className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-[0.14em] text-[#B4233A] before:h-px before:w-8 before:bg-current sm:mb-4">{hero.eyebrow}</p>
                 )}
                 <h1 className="max-w-[620px] text-balance text-[29px] font-black leading-[1.08] tracking-[-0.045em] text-[#11141B] max-[359px]:text-[26px] min-[390px]:text-[30px] sm:text-5xl lg:text-[56px]">
                   {toStorefrontUppercase(hero?.title ?? copy.home.heroTitle)}
@@ -229,7 +229,7 @@ export function HomeStorefront(): React.ReactElement {
                     ))}
                   </div>
                 )}
-                <Button asChild className="mt-4 h-12 w-fit rounded-[12px] bg-[#FF4057] pl-7 pr-6 font-black text-white shadow-[0_12px_26px_rgba(255,64,87,0.28)] hover:-translate-y-0.5 hover:bg-[#F02F48] max-[359px]:mt-2 sm:mt-7">
+                <Button asChild className="mt-4 h-12 w-fit rounded-[12px] bg-[#D92F49] pl-7 pr-6 font-black text-white shadow-[0_12px_26px_rgba(217,47,73,0.28)] hover:-translate-y-0.5 hover:bg-[#B4233A] max-[359px]:mt-2 sm:mt-7">
                   <Link href={localizeHref(hero?.ctaHref ?? ROUTES.PRODUCTS)}>
                     {hero?.ctaLabel ?? copy.home.heroCta} <ArrowRight className="size-4" />
                   </Link>

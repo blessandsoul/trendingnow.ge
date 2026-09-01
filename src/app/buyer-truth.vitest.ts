@@ -9,6 +9,11 @@ const publicCopyFiles = [
   'i18n/copy/ru.ts',
   'i18n/copy/en.ts',
   'features/storefront/components/StorefrontFooter.tsx',
+  'features/storefront/components/AiImageMark.tsx',
+  'features/storefront/components/BuyerDecisionPassport.tsx',
+  'features/storefront/components/BuyerNeedFinder.tsx',
+  'features/storefront/components/ProductCard.tsx',
+  'features/storefront/components/ProductComparisonLedger.tsx',
   'features/storefront/components/ProductDetailStorefront.tsx',
   'features/storefront/components/CartStorefront.tsx',
 ];
@@ -31,5 +36,12 @@ describe('buyer truth contract', () => {
     expect(source).not.toContain('უფასო დაბრუნება');
     expect(source).not.toContain('Бесплатный возврат');
     expect(source).not.toContain('Free returns');
+  });
+
+  it('marks AI product photos with a compact icon instead of repeated visible disclosure copy', () => {
+    expect(source).toContain('role="img"');
+    expect(source.match(/<AiImageMark/g)).toHaveLength(2);
+    expect(source).not.toContain('AI ვიზუალი');
+    expect(source).not.toContain('AI ვიზუალიზაცია');
   });
 });

@@ -66,7 +66,7 @@ export function StorefrontInfoPage({
 
             <div className="tn-dark-panel p-5 sm:p-6">
               <div className="flex items-center gap-2 text-sm font-extrabold text-white">
-                <FileText className="size-4 text-[#FF4057]" />
+                <FileText className="size-4 text-[#FF7A8A]" />
                 TrendingNow.ge
               </div>
               <p className="mt-3 text-sm leading-6 text-white/70">
@@ -98,7 +98,7 @@ export function StorefrontInfoPage({
             {sections.map((section) => (
               <article key={section.title} className="tn-surface rounded-[22px] p-5 sm:p-7">
                 {section.eyebrow && (
-                  <p className="mb-2 text-xs font-bold uppercase tracking-[0.08em] text-[#FF4057]">{section.eyebrow}</p>
+                  <p className="mb-2 text-xs font-bold uppercase tracking-[0.08em] text-[#B4233A]">{section.eyebrow}</p>
                 )}
                 <h2 className="text-xl font-black text-[#11141B] sm:text-2xl">{section.title}</h2>
 
@@ -114,7 +114,7 @@ export function StorefrontInfoPage({
                   <ul className="mt-4 grid gap-3 text-sm leading-6 text-[#526071] sm:text-base">
                     {section.items.map((item) => (
                       <li key={item} className="grid grid-cols-[20px_minmax(0,1fr)] gap-3">
-                        <CheckCircle2 className="mt-0.5 size-5 text-[#FF4057]" />
+                        <CheckCircle2 className="mt-0.5 size-5 text-[#B4233A]" />
                         <span>{item}</span>
                       </li>
                     ))}

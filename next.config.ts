@@ -16,7 +16,10 @@ const productImageRemotePatterns: RemotePattern[] = [
 ];
 
 function apiUploadsRemotePattern(): RemotePattern {
-  const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8080/api/v1";
+  const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL
+    || (process.env.NODE_ENV === "production"
+      ? "https://api.trendingnow.ge/api/v1"
+      : "http://localhost:8000/api/v1");
   const apiUrl = new URL(apiBaseUrl);
 
   return {

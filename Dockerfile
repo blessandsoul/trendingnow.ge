@@ -39,9 +39,9 @@ COPY . .
 # Build arguments for env vars needed at build time
 # Next.js inlines NEXT_PUBLIC_* values during build, so they must
 # be available here. Pass them via --build-arg in Coolify/Docker.
-ARG NEXT_PUBLIC_API_BASE_URL
-ARG NEXT_PUBLIC_APP_NAME
-ARG NEXT_PUBLIC_SITE_URL
+ARG NEXT_PUBLIC_API_BASE_URL=https://api.trendingnow.ge/api/v1
+ARG NEXT_PUBLIC_APP_NAME=TrendingNow.ge
+ARG NEXT_PUBLIC_SITE_URL=https://trendingnow.ge
 
 ENV NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL
 ENV NEXT_PUBLIC_APP_NAME=$NEXT_PUBLIC_APP_NAME

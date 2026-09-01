@@ -248,10 +248,10 @@ export function getLocalProducts(
     return Number(right.isFeatured) - Number(left.isFeatured);
   });
 
-  const page = Math.max(1, params.page ?? 1);
   const limit = Math.max(1, params.limit ?? 12);
   const totalItems = items.length;
   const totalPages = Math.ceil(totalItems / limit);
+  const page = Math.min(Math.max(1, params.page ?? 1), Math.max(1, totalPages));
   const start = (page - 1) * limit;
 
   return {
@@ -278,7 +278,7 @@ export function getLocalProduct(slug: string): StorefrontProductDetail | null {
       type: 'image' as const,
       url: visual.url,
       thumbnailUrl: visual.url,
-      alt: `${product.name} — ${visual.label}`,
+      alt: `${product.name} - ${visual.label}`,
     })),
     attributes: {
       sku: product.id,
@@ -324,8 +324,37 @@ export function getLocalProduct(slug: string): StorefrontProductDetail | null {
 }
 
 const localCartQuantities = new Map<string, number>();
+const localCartStorageKey = 'trendingnow.cart.v1';
+let localCartHydrated = false;
+
+function hydrateLocalCart(): void {
+  if (localCartHydrated || typeof window === 'undefined') return;
+  localCartHydrated = true;
+  try {
+    const stored = window.localStorage.getItem(localCartStorageKey);
+    if (!stored) return;
+    const parsed = JSON.parse(stored) as unknown;
+    if (!Array.isArray(parsed)) return;
+    for (const entry of parsed) {
+      if (!Array.isArray(entry) || entry.length !== 2) continue;
+      const [slug, quantity] = entry;
+      if (typeof slug !== 'string' || typeof quantity !== 'number') continue;
+      if (!localProducts.some((product) => product.slug === slug)) continue;
+      if (!Number.isInteger(quantity) || quantity < 1 || quantity > 99) continue;
+      localCartQuantities.set(slug, quantity);
+    }
+  } catch {
+    window.localStorage.removeItem(localCartStorageKey);
+  }
+}
+
+function persistLocalCart(): void {
+  if (typeof window === 'undefined') return;
+  window.localStorage.setItem(localCartStorageKey, JSON.stringify(Array.from(localCartQuantities.entries())));
+}
 
 export function getLocalCart(): StorefrontCart {
+  hydrateLocalCart();
   const items: CartItem[] = Array.from(localCartQuantities.entries()).flatMap(([slug, quantity]) => {
     const product = localProducts.find((item) => item.slug === slug);
     if (!product) return [];
@@ -354,24 +383,32 @@ export function getLocalCart(): StorefrontCart {
 }
 
 export function addLocalCartItem(productSlug: string, quantity = 1): StorefrontCart {
+  hydrateLocalCart();
   const current = localCartQuantities.get(productSlug) ?? 0;
   localCartQuantities.set(productSlug, Math.min(99, current + Math.max(1, quantity)));
+  persistLocalCart();
   return getLocalCart();
 }
 
 export function updateLocalCartItem(itemId: string, quantity: number): StorefrontCart {
+  hydrateLocalCart();
   const slug = itemId.replace(/^local-/, '');
   if (quantity <= 0) localCartQuantities.delete(slug);
   else localCartQuantities.set(slug, Math.min(99, quantity));
+  persistLocalCart();
   return getLocalCart();
 }
 
 export function removeLocalCartItem(itemId: string): StorefrontCart {
+  hydrateLocalCart();
   localCartQuantities.delete(itemId.replace(/^local-/, ''));
+  persistLocalCart();
   return getLocalCart();
 }
 
 export function clearLocalCart(): StorefrontCart {
+  hydrateLocalCart();
   localCartQuantities.clear();
+  persistLocalCart();
   return getLocalCart();
 }

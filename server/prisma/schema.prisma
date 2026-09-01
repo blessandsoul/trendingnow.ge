@@ -1,0 +1,235 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum OrderStatus {
+  PENDING
+  ACCEPTED
+  SENT_FOR_DELIVERY
+  DELIVERED
+}
+
+enum TelegramNotificationStatus {
+  PENDING
+  SENT
+  FAILED
+  SKIPPED
+}
+
+enum DeliveryZone {
+  TBILISI
+  REGION
+}
+
+model User {
+  id        String    @id @default(uuid())
+  email     String    @unique
+  password  String
+  firstName String
+  lastName  String
+  avatarUrl String? // SEO-friendly path: /uploads/users/{userId}/avatar/{firstName-lastName}-avatar.webp
+  role      UserRole  @default(USER)
+  isActive  Boolean   @default(true)
+  deletedAt DateTime?
+
+  // Account lockout
+  failedLoginAttempts Int       @default(0)
+  lockedUntil         DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  refreshTokens RefreshToken[]
+  sessions      Session[]
+  blockedIps    BlockedIp[]
+  favorites     Favorite[]
+  orders        Order[]
+
+  // Performance indexes for high-traffic scenarios (10K-100K users/day)
+  @@index([role]) // For role-based authorization queries
+  @@index([isActive]) // For filtering active/inactive users
+  @@index([deletedAt]) // For soft delete filtering
+  @@index([email, isActive]) // Compound index for login queries
+  @@map("users")
+}
+
+model RefreshToken {
+  id        String   @id @default(uuid())
+  token     String   @unique @db.VarChar(500)
+  userId    String
+  sessionId String? // Links token to its session for direct lookup on logout
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Performance indexes for token operations and cleanup
+  @@index([userId])
+  @@index([token])
+  @@index([userId, expiresAt]) // Compound index for efficient token cleanup queries
+  @@index([expiresAt]) // For expired token cleanup cron jobs
+  @@index([sessionId]) // For deleting tokens by session (admin force-expire)
+  @@map("refresh_tokens")
+}
+
+model Session {
+  id           String   @id @default(uuid())
+  userId       String
+  deviceInfo   String?  @db.VarChar(500) // User agent, device type
+  ipAddress    String?  @db.VarChar(45) // IPv4 or IPv6
+  lastActiveAt DateTime @default(now())
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Performance indexes for session queries
+  @@index([userId])
+  @@index([userId, expiresAt])
+  @@index([expiresAt]) // For expired session cleanup
+  @@map("sessions")
+}
+
+model BlockedIp {
+  id        String  @id @default(uuid())
+  ip        String  @unique @db.VarChar(45)
+  reason    String? @db.VarChar(500)
+  blockedBy String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [blockedBy], references: [id])
+
+  @@map("blocked_ips")
+}
+
+model StorefrontCategory {
+  id          String   @id @default(uuid())
+  slug        String   @unique @db.VarChar(120)
+  name        String   @db.VarChar(180)
+  description String?  @db.VarChar(500)
+  imageUrl    String?  @db.VarChar(500)
+  sortOrder   Int      @default(0)
+  isFeatured  Boolean  @default(false)
+  isActive    Boolean  @default(true)
+  parentId    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  parent   StorefrontCategory?  @relation("StorefrontCategoryTree", fields: [parentId], references: [id], onDelete: SetNull)
+  children StorefrontCategory[] @relation("StorefrontCategoryTree")
+  products StorefrontProduct[]
+
+  @@index([parentId])
+  @@index([isActive, sortOrder])
+  @@map("storefront_categories")
+}
+
+model StorefrontProduct {
+  id               String    @id
+  slug             String    @unique @db.VarChar(180)
+  name             String    @db.VarChar(300)
+  description      String?   @db.Text
+  brand            String    @default("TrendingNow") @db.VarChar(180)
+  imageUrl         String    @db.VarChar(500)
+  salePrice        Decimal   @db.Decimal(12, 2)
+  originalPrice    Decimal?  @db.Decimal(12, 2)
+  currency         String    @default("GEL") @db.VarChar(3)
+  isFeatured       Boolean   @default(false)
+  isNew            Boolean   @default(false)
+  isBestseller     Boolean   @default(false)
+  isActive         Boolean   @default(true)
+  gallery          Json?
+  attributes       Json?
+  sourceRank       Int?
+  sourceCapturedAt DateTime?
+  categoryId       String
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  category   StorefrontCategory @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  favorites  Favorite[]
+  orderItems OrderItem[]
+
+  @@index([categoryId, isActive])
+  @@index([isActive, isFeatured])
+  @@index([isActive, isBestseller])
+  @@map("storefront_products")
+}
+
+model Favorite {
+  userId    String
+  productId String
+  createdAt DateTime @default(now())
+
+  user    User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  product StorefrontProduct @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@id([userId, productId])
+  @@index([userId, createdAt])
+  @@map("favorites")
+}
+
+model Order {
+  id                String                     @id @default(uuid())
+  publicCode        String                     @unique @db.VarChar(40)
+  userId            String?
+  firstName         String                     @db.VarChar(80)
+  lastName          String                     @db.VarChar(80)
+  phone             String                     @db.VarChar(40)
+  deliveryAddress   String                     @db.VarChar(500)
+  deliveryZone      DeliveryZone
+  status            OrderStatus                @default(PENDING)
+  subtotal          Decimal                    @db.Decimal(12, 2)
+  discount          Decimal                    @default(0) @db.Decimal(12, 2)
+  shipping          Decimal                    @db.Decimal(12, 2)
+  total             Decimal                    @db.Decimal(12, 2)
+  currency          String                     @default("GEL") @db.VarChar(3)
+  promoCode         String?                    @db.VarChar(80)
+  telegramStatus    TelegramNotificationStatus @default(SKIPPED)
+  telegramError     String?                    @db.VarChar(500)
+  telegramMessageId Int?
+  createdAt         DateTime                   @default(now())
+  updatedAt         DateTime                   @updatedAt
+
+  user  User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  items OrderItem[]
+
+  @@index([userId, createdAt])
+  @@index([status, createdAt])
+  @@index([phone])
+  @@map("orders")
+}
+
+model OrderItem {
+  id              String   @id @default(uuid())
+  orderId         String
+  productId       String?
+  productSlug     String   @db.VarChar(180)
+  productName     String   @db.VarChar(300)
+  productBrand    String   @db.VarChar(180)
+  productImageUrl String   @db.VarChar(500)
+  categoryName    String   @db.VarChar(180)
+  quantity        Int
+  unitPrice       Decimal  @db.Decimal(12, 2)
+  lineTotal       Decimal  @db.Decimal(12, 2)
+  createdAt       DateTime @default(now())
+
+  order   Order              @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product StorefrontProduct? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+  @@index([productId])
+  @@map("order_items")
+}

@@ -92,10 +92,10 @@ export function OrdersDashboard(): React.ReactElement {
                 <ShoppingBag className="size-7" aria-hidden="true" />
               </span>
               <h2 className="mt-4 text-xl font-black text-[#11141B]">{copy.dashboard.orders.emptyTitle}</h2>
-              <p className="mx-auto mt-2 max-w-[420px] text-sm leading-6 text-[#6B7685]">
+              <p className="mx-auto mt-2 max-w-[420px] text-sm leading-6 text-[#657080]">
                 {copy.dashboard.orders.emptyText}
               </p>
-              <Button asChild className="mt-5 h-11 rounded-[9px] bg-[#FF4057] px-6 font-black text-white hover:bg-[#F02F48]">
+              <Button asChild className="mt-5 h-11 rounded-[9px] bg-[#D92F49] px-6 font-black text-white hover:bg-[#B4233A]">
                 <Link href={localizeHref(ROUTES.PRODUCTS)}>{copy.dashboard.orders.continueShopping}</Link>
               </Button>
             </div>
@@ -109,7 +109,7 @@ export function OrdersDashboard(): React.ReactElement {
                     <div>
                       <p className="text-xs font-black uppercase tracking-[0.08em] text-[#8B96A5]">{copy.dashboard.orders.orderCode}</p>
                       <h2 className="mt-1 text-xl font-black text-[#07152A]">{order.publicCode}</h2>
-                      <p className="mt-1 text-xs font-semibold text-[#6B7685]">{new Date(order.createdAt).toLocaleString('ka-GE')}</p>
+                      <p className="mt-1 text-xs font-semibold text-[#657080]">{new Date(order.createdAt).toLocaleString('ka-GE')}</p>
                     </div>
                     <div className="flex flex-wrap items-center gap-2 sm:justify-end">
                       <Badge className={statusBadgeClasses[order.status]}>
@@ -127,7 +127,7 @@ export function OrdersDashboard(): React.ReactElement {
                         </span>
                         <span className="min-w-0">
                           <span className="block truncate text-sm font-bold">{item.productName}</span>
-                          <span className="block text-xs text-[#6B7685]">x {item.quantity}</span>
+                          <span className="block text-xs text-[#657080]">x {item.quantity}</span>
                         </span>
                         <span className="text-sm font-black tabular-nums">{formatGel(item.lineTotal)}</span>
                       </div>

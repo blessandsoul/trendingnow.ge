@@ -177,7 +177,7 @@
   }
 
   .tn-kicker {
-    color: #ff4057;
+    color: #b4233a;
     font-size: 0.72rem;
     font-weight: 900;
     letter-spacing: 0.16em;
@@ -187,13 +187,13 @@
 
   .tn-primary-action {
     border-radius: 0.75rem;
-    background: #ff4057;
+    background: #d92f49;
     color: #ffffff;
-    box-shadow: 0 12px 28px rgb(255 64 87 / 0.22);
+    box-shadow: 0 12px 28px rgb(217 47 73 / 0.22);
   }
 
   .tn-primary-action:hover {
-    background: #e9344c;
+    background: #b4233a;
   }
 
   .tn-secondary-action {
@@ -216,12 +216,12 @@
   }
 
   .tn-field:focus-visible {
-    border-color: #ff4057;
-    box-shadow: 0 0 0 3px rgb(255 64 87 / 0.14);
+    border-color: #d92f49;
+    box-shadow: 0 0 0 3px rgb(217 47 73 / 0.14);
   }
 
   .tn-soft-icon {
-    color: #ff4057;
+    color: #b4233a;
     background: linear-gradient(135deg, #fff0f3 0%, #f1eaff 100%);
   }
 }

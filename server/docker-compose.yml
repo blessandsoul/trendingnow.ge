@@ -1,0 +1,110 @@
+# WARNING: These credentials are for LOCAL DEVELOPMENT ONLY.
+# Change all passwords and secrets before using in any shared or production environment.
+#
+# Security posture:
+# - All published ports are bound to 127.0.0.1 — nothing is reachable from the
+#   network (an unpassworded Redis or root-password MySQL on 0.0.0.0 is an open
+#   door on shared networks/VPS dev boxes). Don't remove the 127.0.0.1 prefix.
+# - The admin UIs (phpMyAdmin, Redis Commander) are behind the "tools" profile
+#   and do NOT start by default:
+#     docker compose up -d                  → MySQL + Redis only
+#     docker compose --profile tools up -d  → also phpMyAdmin + Redis Commander
+
+name: trendingnow
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: trendingnow-mysql
+    restart: unless-stopped
+    # Local-dev resource bounds. mem_limit is a cgroup ceiling (a runaway container is
+    # OOM-killed in isolation instead of wedging the whole WSL2/Docker engine); the flags
+    # dev-tune MySQL 8 to a small, fast-warming footprint. Production reaches MySQL as a
+    # separate Coolify resource via DATABASE_URL — none of this touches prod.
+    mem_limit: 900m
+    command:
+      - --innodb-buffer-pool-size=128M    # default is fine for dev; keeps RSS small
+      - --performance-schema=OFF          # saves ~hundreds of MB on its own
+      - --skip-name-resolve               # no reverse-DNS per connection (faster, leaner)
+      - --max-connections=60              # well above DATABASE_POOL_MAX (10) + headroom
+      - --innodb-flush-log-at-trx-commit=2 # dev durability/throughput trade — not for prod
+    ports:
+      - '127.0.0.1:${MYSQL_PORT:-3315}:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: trendingnow_db
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - trendingnow-network
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: trendingnow-phpmyadmin
+    restart: unless-stopped
+    profiles: ["tools"]
+    ports:
+      - '127.0.0.1:${PHPMYADMIN_PORT:-8089}:80'
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: rootpassword
+      PMA_ARBITRARY: 0
+      HIDE_PHP_VERSION: 'true'
+    volumes:
+      - ./phpmyadmin-config.php:/etc/phpmyadmin/config.user.inc.php
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - trendingnow-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: trendingnow-redis
+    restart: unless-stopped
+    # Local-dev resource bounds. Layer two ceilings: Redis's own --maxmemory (150mb) trips
+    # FIRST and refuses writes loudly (noeviction — create-tigra also keeps rate-limit/queue
+    # keys in Redis, so silent LRU eviction would be a dev data-loss trap), while the 200m
+    # cgroup mem_limit sits above it as a hard backstop. --save "" drops RDB snapshot fork/IO.
+    mem_limit: 200m
+    command: ['redis-server', '--maxmemory', '150mb', '--maxmemory-policy', 'noeviction', '--save', '']
+    ports:
+      - '127.0.0.1:${REDIS_PORT:-6388}:6379'
+    volumes:
+      - redis_data:/data
+    networks:
+      - trendingnow-network
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: trendingnow-redis-commander
+    restart: unless-stopped
+    profiles: ["tools"]
+    ports:
+      - '127.0.0.1:${REDIS_COMMANDER_PORT:-8090}:8081'
+    environment:
+      REDIS_HOSTS: local:redis:6379
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - trendingnow-network
+
+volumes:
+  mysql_data:
+  redis_data:
+
+networks:
+  trendingnow-network:
+    driver: bridge

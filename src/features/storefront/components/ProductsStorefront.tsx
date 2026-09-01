@@ -1,9 +1,9 @@
 'use client';
 
 import type React from 'react';
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { ChevronDown, Grid3X3, ListFilter, Search, SlidersHorizontal, X } from 'lucide-react';
+import { ChevronDown, ListFilter, Search, SlidersHorizontal, X } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -11,6 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useLocaleCopy } from '@/i18n/context';
 import { cn } from '@/lib/utils';
 import { NewsletterBand } from './NewsletterBand';
+import { BuyerNeedFinder } from './BuyerNeedFinder';
 import { ProductCard } from './ProductCard';
 import { PromoCard, promoBanners } from './PromoBanners';
 import { StorefrontFooter } from './StorefrontFooter';
@@ -49,12 +50,18 @@ function FilterSidebar({
   activeSearch,
   onSetParam,
   onSetPriceRange,
+  className,
+  id,
+  onClose,
 }: {
   categories: StorefrontCategory[];
   activeCategory?: string;
   activeSearch?: string;
   onSetParam: (name: string, value?: string, options?: { scrollToCatalog?: boolean }) => void;
   onSetPriceRange: (min: string, max: string) => void;
+  className?: string;
+  id?: string;
+  onClose?: () => void;
 }): React.ReactElement {
   const copy = useLocaleCopy();
   const [searchValue, setSearchValue] = useState(activeSearch ?? '');
@@ -77,7 +84,23 @@ function FilterSidebar({
   };
 
   return (
-    <aside className="rounded-[8px] border border-[#DFE6EF] bg-white p-4 lg:sticky lg:top-[150px] lg:self-start">
+    <aside
+      id={id}
+      className={cn('rounded-[8px] border border-[#DFE6EF] bg-white p-4 lg:sticky lg:top-[150px] lg:self-start', className)}
+    >
+      <div className="mb-4 flex items-center justify-between gap-3 border-b border-[#E3E8EF] pb-3 lg:hidden">
+        <span className="text-sm font-black text-[#11141B]">{copy.products.filters}</span>
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon-sm"
+          className="rounded-full"
+          onClick={onClose}
+          aria-label={copy.products.closeFiltersAria}
+        >
+          <X className="size-4" />
+        </Button>
+      </div>
       <form onSubmit={submitSearch} className="mb-5 border-b border-[#E3E8EF] pb-4">
         <label htmlFor="catalog-filter-search" className="mb-2 block text-sm font-bold text-[#11141B]">
           {copy.products.filterSearchLabel}
@@ -203,10 +226,21 @@ export function ProductsStorefront(): React.ReactElement {
   const searchParams = useSearchParams();
   const copy = useLocaleCopy();
   const catalogProductsRef = useRef<HTMLDivElement>(null);
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const params = useProductParams();
   const { data: home } = useStorefrontHome();
   const { data, isLoading, error } = useProducts(params);
   const productsHeroPromo = copy.promoBanners[2] ?? copy.promoBanners[0] ?? promoBanners[0];
+  const totalPages = data?.pagination.totalPages ?? 0;
+  const currentPage = data?.pagination.page ?? params.page ?? 1;
+  const pageNumbers = Array.from({ length: totalPages }, (_, index) => index + 1);
+
+  useEffect(() => {
+    if (!data || totalPages < 1 || (params.page ?? 1) <= totalPages) return;
+    const next = new URLSearchParams(searchParams.toString());
+    next.set('page', String(totalPages));
+    router.replace(`${pathname}?${next.toString()}`, { scroll: false });
+  }, [data, params.page, pathname, router, searchParams, totalPages]);
 
   const scrollToCatalogProducts = (): void => {
     window.requestAnimationFrame(() => {
@@ -250,28 +284,33 @@ export function ProductsStorefront(): React.ReactElement {
       <main>
         <section className="storefront-container grid gap-5 py-7 lg:grid-cols-[minmax(0,1fr)_minmax(420px,0.84fr)]">
           <div>
-            <p className="text-sm text-[#6B7685]">{copy.products.breadcrumb}</p>
+            <p className="text-sm text-[#657080]">{copy.products.breadcrumb}</p>
             <h1 className="mt-5 text-3xl font-black tracking-[-0.035em] text-[#11141B] text-balance sm:text-4xl">{copy.products.title}</h1>
-            <p className="mt-3 max-w-[620px] text-sm leading-6 text-[#6B7685]">
+            <p className="mt-3 max-w-[620px] text-sm leading-6 text-[#657080]">
               {copy.products.intro}
             </p>
           </div>
           <PromoCard banner={productsHeroPromo} className="hidden min-h-[144px] lg:block" priority />
         </section>
 
+        <BuyerNeedFinder />
+
         <section className="storefront-container grid gap-6 lg:grid-cols-[260px_1fr]">
           <FilterSidebar
             key={params.search ?? ''}
+            id="catalog-filters"
+            className={cn(!mobileFiltersOpen && 'hidden lg:block')}
             categories={home?.categories ?? []}
             activeCategory={params.category}
             activeSearch={params.search}
             onSetParam={setParam}
             onSetPriceRange={setPriceRange}
+            onClose={() => setMobileFiltersOpen(false)}
           />
 
           <div ref={catalogProductsRef} id="catalog-products" className="min-w-0 scroll-mt-[112px] lg:scroll-mt-[150px]">
             <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-              <div className="text-sm text-[#6B7685]">
+              <div className="text-sm text-[#657080]">
                 {copy.products.shownProducts(data?.pagination.totalItems ?? 0)}
               </div>
               <div className="flex flex-wrap items-center gap-2">
@@ -286,11 +325,16 @@ export function ProductsStorefront(): React.ReactElement {
                     <SelectItem value="price-desc">{copy.products.sortPriceDesc}</SelectItem>
                   </SelectContent>
                 </Select>
-                <Button type="button" size="icon-lg" variant="outline" className="rounded-[7px] border-[#DFE6EF]">
-                  <Grid3X3 className="size-5" />
-                </Button>
-                <Button type="button" size="icon-lg" variant="outline" className="rounded-[7px] border-[#DFE6EF] lg:hidden">
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="h-10 rounded-[7px] border-[#DFE6EF] px-3 lg:hidden"
+                  onClick={() => setMobileFiltersOpen((value) => !value)}
+                  aria-expanded={mobileFiltersOpen}
+                  aria-controls="catalog-filters"
+                >
                   <SlidersHorizontal className="size-5" />
+                  {copy.products.filters}
                 </Button>
               </div>
             </div>
@@ -320,20 +364,24 @@ export function ProductsStorefront(): React.ReactElement {
               </div>
             )}
 
-            <div className="mt-6 flex items-center justify-center gap-2">
-              {[1, 2, 3, 4].map((page) => (
+            {totalPages > 1 && (
+              <nav className="mt-6 flex items-center justify-center gap-2" aria-label={copy.products.paginationAria}>
+              {pageNumbers.map((page) => (
                 <Button
                   key={page}
                   type="button"
-                  variant={params.page === page ? 'default' : 'outline'}
+                  variant={currentPage === page ? 'default' : 'outline'}
                   size="icon-sm"
-                  className={cn('rounded-[8px]', params.page === page ? 'bg-[#11141B] text-white hover:bg-[#252A33]' : 'border-[#DDE2E9]')}
+                  className={cn('rounded-[8px]', currentPage === page ? 'bg-[#11141B] text-white hover:bg-[#252A33]' : 'border-[#DDE2E9]')}
                   onClick={() => setParam('page', String(page))}
+                  aria-label={copy.products.pageAria(page)}
+                  aria-current={currentPage === page ? 'page' : undefined}
                 >
                   {page}
                 </Button>
               ))}
-            </div>
+              </nav>
+            )}
           </div>
         </section>
 

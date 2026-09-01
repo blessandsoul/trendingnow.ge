@@ -62,7 +62,7 @@ export function PromoCard({
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.99)_0%,rgba(255,255,255,0.92)_36%,rgba(255,255,255,0.18)_68%,rgba(255,255,255,0)_100%)]" />
       <div className="absolute left-0 top-0 h-16 w-1.5 -skew-x-[18deg] bg-[#FF4057]" aria-hidden="true" />
       <div className="relative z-10 flex min-h-[244px] max-w-[84%] flex-col justify-center px-5 py-6 sm:max-w-[56%] sm:px-8">
-        <p className="text-xs font-black uppercase tracking-[0.11em] text-[#FF4057]">{eyebrow}</p>
+        <p className="text-xs font-black uppercase tracking-[0.11em] text-[#B4233A]">{eyebrow}</p>
         <h3 className="mt-2 text-xl font-black leading-7 tracking-[-0.03em] text-[#11141B] text-balance sm:text-2xl">
           {title}
         </h3>
@@ -70,7 +70,7 @@ export function PromoCard({
           <Button
             asChild
             variant="outline"
-            className="mt-5 h-9 w-fit rounded-[8px] border-[#C8CFD9] bg-white px-4 text-xs font-black text-[#11141B] hover:border-[#FF4057] hover:bg-white hover:text-[#FF4057]"
+            className="mt-5 h-9 w-fit rounded-[8px] border-[#C8CFD9] bg-white px-4 text-xs font-black text-[#11141B] hover:border-[#D92F49] hover:bg-white hover:text-[#B4233A]"
           >
             <Link href={localizeHref(ctaHref)}>
               {displayCtaLabel}

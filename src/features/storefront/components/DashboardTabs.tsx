@@ -40,7 +40,7 @@ export function DashboardTabs({ active, className }: DashboardTabsProps): React.
             className={cn(
               'inline-flex h-11 min-w-0 items-center justify-center gap-1.5 rounded-[12px] px-2 text-xs font-black leading-tight transition-colors sm:flex-none sm:gap-2 sm:px-4 sm:text-sm',
               isActive
-                ? 'bg-[#FF4057] text-white shadow-[0_8px_20px_rgba(255,64,87,0.24)]'
+                ? 'bg-[#D92F49] text-white shadow-[0_8px_20px_rgba(217,47,73,0.24)]'
                 : 'text-[#526071] hover:bg-[#F7F2FF] hover:text-[#5B2DB6]',
             )}
           >

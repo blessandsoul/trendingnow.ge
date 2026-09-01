@@ -296,6 +296,10 @@ export interface CreateStorefrontOrderRequest {
   phone: string;
   deliveryAddress: string;
   deliveryZone: DeliveryZone;
+  items: Array<{
+    productSlug: string;
+    quantity: number;
+  }>;
 }
 
 export interface StorefrontOrderCreateResult {

@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import {
   ArrowLeft,
   Box,
+  CircleAlert,
   Check,
   ChevronDown,
   ChevronLeft,
@@ -38,6 +39,7 @@ import { cn } from '@/lib/utils';
 import { publicMediaUrl } from '@/lib/utils/media';
 import { useAddCartItem, useFavoriteIds, useProduct, useToggleFavorite } from '../hooks/useStorefront';
 import { formatGel, htmlToPlainText, toStorefrontUppercase } from '../lib/format';
+import { buildSupportMailto } from '../lib/support-mailto';
 import type {
   StorefrontProduct,
   StorefrontProductBenefit,
@@ -46,8 +48,11 @@ import type {
   StorefrontProductGalleryItem,
   StorefrontProductQuestion,
 } from '../types/storefront.types';
+import { AiImageMark } from './AiImageMark';
+import { BuyerDecisionPassport } from './BuyerDecisionPassport';
 import { NewsletterBand } from './NewsletterBand';
 import { ProductCard } from './ProductCard';
+import { ProductComparisonLedger } from './ProductComparisonLedger';
 import { BuyerConfidenceRail } from './BuyerConfidenceRail';
 import { Reveal } from './Reveal';
 import { RichText } from './RichText';
@@ -110,7 +115,7 @@ function Breadcrumb({ product }: { product: StorefrontProductDetailProduct }): R
   const localizeHref = useLocalizedPath();
 
   return (
-    <nav className="storefront-container py-4 text-xs font-medium text-[#6B7685] sm:text-sm">
+    <nav className="storefront-container py-4 text-xs font-medium text-[#657080] sm:text-sm">
       <ol className="flex min-w-0 flex-wrap items-center gap-2">
         <li>
           <Link href={localizeHref(ROUTES.HOME)} className="hover:text-[#07152A]">
@@ -250,6 +255,13 @@ function ProductGallery({
             <TrendingNowLogoMark className="size-4" />
             <span>{Math.min(selectedIndex + 1, gallery.length)}/{gallery.length}</span>
           </div>
+          {selectedMedia.type === 'image' && (
+            <AiImageMark
+              label={copy.product.aiImageAria}
+              variant="gallery"
+              className="absolute bottom-3 right-3 z-10"
+            />
+          )}
         </div>
 
         {gallery.length > 1 && (
@@ -297,11 +309,8 @@ function ProductGallery({
         ))}
       </div>
       {gallery.length > 1 && (
-        <p className="mt-2 text-xs font-semibold text-[#6B7685] sm:hidden">{copy.product.swipeMediaHint}</p>
+        <p className="mt-2 text-xs font-semibold text-[#657080] sm:hidden">{copy.product.swipeMediaHint}</p>
       )}
-      <p className="mt-2 text-[11px] font-semibold leading-5 text-[#7A8492]">
-        AI ვიზუალიზაცია · პროდუქტის რეალური დეტალები და კომპლექტაცია დასტურდება შეკვეთამდე
-      </p>
     </section>
   );
 }
@@ -316,9 +325,6 @@ function descriptionExcerpt(description: string | null): string {
 
 function ProductInfo({ product }: { product: StorefrontProductDetailProduct }): React.ReactElement {
   const copy = useLocaleCopy();
-  const discountPercent = product.originalPrice
-    ? Math.max(0, Math.round(((product.originalPrice - product.salePrice) / product.originalPrice) * 100))
-    : 0;
   const excerpt = descriptionExcerpt(product.description);
 
   return (
@@ -339,14 +345,6 @@ function ProductInfo({ product }: { product: StorefrontProductDetailProduct }): 
         <span className="text-3xl font-black tabular-nums text-[#07152A] sm:text-4xl">
           {formatGel(product.salePrice)}
         </span>
-        {product.originalPrice && (
-          <span className="pb-1 text-lg font-semibold text-[#8B96A5] line-through">
-            {formatGel(product.originalPrice)}
-          </span>
-        )}
-        {discountPercent > 0 && (
-          <Badge className="mb-1 border-[#FFC6CE] bg-[#FFF0F3] text-[#C72D42]">-{discountPercent}%</Badge>
-        )}
       </div>
 
       {product.attributes.highlights.length > 0 && (
@@ -421,6 +419,12 @@ function PurchasePanel({
   const toggleFavorite = useToggleFavorite();
   const isFavorite = favoriteIds.data?.productIds.includes(product.id) ?? false;
   const isFavoritePending = toggleFavorite.isPending && toggleFavorite.variables?.productId === product.id;
+  const passport = copy.product.decisionPassport;
+  const supportHref = buildSupportMailto(
+    passport.emailSubject(product.name, product.attributes.sku),
+    passport.emailBody(product.name, product.attributes.sku),
+  );
+  const factsToConfirm = [passport.fit.label, passport.compatibility.label, passport.material.label, passport.package.label];
 
   const addToCart = (): void => {
     addCartItem.mutate({ productSlug: product.slug, quantity });
@@ -459,6 +463,27 @@ function PurchasePanel({
         </div>
       </div>
 
+      <div data-pain-id="TN-BX-11 TN-BX-12 TN-BX-15 TN-BX-16" className="mt-4 rounded-[12px] border border-[#FFD0D6] bg-[#FFF7F8] p-3.5">
+        <div className="flex gap-2.5">
+          <CircleAlert className="mt-0.5 size-4 shrink-0 text-[#B4233A]" aria-hidden="true" />
+          <div className="min-w-0">
+            <p className="text-sm font-black text-[#11141B]">{passport.beforeOrderTitle}</p>
+            <p className="mt-1 text-xs leading-5 text-[#657080]">{passport.beforeOrderText}</p>
+          </div>
+        </div>
+        <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-xs font-bold text-[#303844]">
+          {factsToConfirm.map((label) => (
+            <li key={label} className="min-w-0 break-words">• {label}</li>
+          ))}
+        </ul>
+        <a
+          href={supportHref}
+          className="mt-3 inline-flex min-h-10 w-full items-center justify-center rounded-[8px] border border-[#C9D1DB] bg-white px-3 py-2 text-center text-sm font-black leading-5 text-[#11141B] hover:border-[#B4233A] hover:text-[#B4233A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D92F49]/35"
+        >
+          {passport.supportCta} · SKU {product.attributes.sku}
+        </a>
+      </div>
+
       <div className="mt-4">
         <label className="mb-2 block text-sm font-bold text-[#07152A]">{copy.product.quantity}</label>
         <QuantityStepper quantity={quantity} onChange={onQuantityChange} />
@@ -469,7 +494,7 @@ function PurchasePanel({
           type="button"
           disabled={addCartItem.isPending}
           onClick={addToCart}
-          className="h-12 rounded-[10px] bg-[#FF4057] text-base font-black text-white shadow-[0_10px_22px_rgba(255,64,87,0.22)] hover:bg-[#F02F48]"
+          className="h-12 rounded-[10px] bg-[#D92F49] text-base font-black text-white shadow-[0_10px_22px_rgba(217,47,73,0.22)] hover:bg-[#B4233A]"
         >
           <ShoppingCart className="size-5" />
           {copy.product.addToCart}
@@ -505,7 +530,7 @@ function PurchasePanel({
             </span>
             <div className="min-w-0">
               <p className="text-sm font-bold text-[#07152A]">{item.title}</p>
-              <p className="text-xs leading-5 text-[#6B7685]">{item.text}</p>
+              <p className="text-xs leading-5 text-[#657080]">{item.text}</p>
             </div>
           </div>
         ))}
@@ -550,7 +575,7 @@ function BenefitStrip({ benefits }: { benefits: StorefrontProductBenefit[] }): R
             </span>
             <div className="min-w-0">
               <p className="text-sm font-bold text-[#07152A]">{benefit.title}</p>
-              <p className="text-xs leading-5 text-[#6B7685]">{benefit.text}</p>
+              <p className="text-xs leading-5 text-[#657080]">{benefit.text}</p>
             </div>
           </div>
         ))}
@@ -693,7 +718,7 @@ function ProductRail({
     <section className="storefront-container mt-8">
       <div className="mb-4 flex items-center justify-between gap-4">
         <h2 className="text-xl font-black text-[#07152A] sm:text-2xl">{title}</h2>
-        <Link href={localizeHref(ROUTES.PRODUCTS)} className="hidden text-sm font-bold text-[#11141B] hover:text-[#FF4057] sm:inline">
+        <Link href={localizeHref(ROUTES.PRODUCTS)} className="hidden text-sm font-bold text-[#11141B] hover:text-[#B4233A] sm:inline">
           {toStorefrontUppercase(copy.common.allProducts)}
         </Link>
       </div>
@@ -768,6 +793,7 @@ export function ProductDetailStorefront({
             </section>
 
             <BuyerConfidenceRail className="mt-6" tone="light" />
+            <BuyerDecisionPassport product={product} />
 
             <section className="storefront-container mt-4">
               <Button asChild variant="ghost" className="h-10 rounded-[7px] px-0 text-[#526071] hover:text-[#07152A]">
@@ -780,6 +806,7 @@ export function ProductDetailStorefront({
 
             <BenefitStrip benefits={product.attributes.benefits} />
             <DetailTabs product={product} />
+            <ProductComparisonLedger currentProduct={product} alternatives={relatedProducts} />
             <ProductRail title={copy.product.related} products={relatedProducts} />
             <ProductRail title={copy.product.recent} products={recentProducts} compact />
             <NewsletterBand />

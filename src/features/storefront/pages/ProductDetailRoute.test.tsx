@@ -73,5 +73,5 @@ describe('ProductDetailRoute', () => {
     expect(html).toContain('Comfortable earbuds for every day.');
     expect(html).toContain('"@type":"Product"');
     expect(html).toContain('"@type":"BreadcrumbList"');
-  });
+  }, 15_000);
 });

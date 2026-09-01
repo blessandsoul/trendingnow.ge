@@ -30,17 +30,37 @@ import type {
 
 class StorefrontService {
   async getHome(): Promise<StorefrontHome> {
-    return localStorefrontHome;
+    try {
+      const response = await apiClient.get<ApiResponse<StorefrontHome>>(API_ENDPOINTS.STOREFRONT.HOME);
+      return response.data.data;
+    } catch {
+      return localStorefrontHome;
+    }
   }
 
   async getProducts(params: ProductListParams = {}): Promise<PaginatedApiResponse<StorefrontProduct>['data']> {
-    return getLocalProducts(params);
+    try {
+      const response = await apiClient.get<PaginatedApiResponse<StorefrontProduct>>(
+        API_ENDPOINTS.STOREFRONT.PRODUCTS,
+        { params },
+      );
+      return response.data.data;
+    } catch {
+      return getLocalProducts(params);
+    }
   }
 
   async getProduct(slug: string): Promise<StorefrontProductDetail> {
-    const product = getLocalProduct(slug);
-    if (!product) throw new Error('Product not found');
-    return product;
+    try {
+      const response = await apiClient.get<ApiResponse<StorefrontProductDetail>>(
+        API_ENDPOINTS.STOREFRONT.PRODUCT_DETAIL(slug),
+      );
+      return response.data.data;
+    } catch {
+      const product = getLocalProduct(slug);
+      if (!product) throw new Error('Product not found');
+      return product;
+    }
   }
 
   async getFavorites(params: FavoriteListParams = {}): Promise<PaginatedApiResponse<StorefrontProduct>['data']> {
@@ -107,6 +127,7 @@ class StorefrontService {
       API_ENDPOINTS.STOREFRONT.ORDERS,
       data,
     );
+    clearLocalCart();
     return response.data.data;
   }
 

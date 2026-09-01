@@ -81,7 +81,7 @@ const enPublicCopy = {
       },
       eyebrow: 'Delivery',
       title: 'Delivery terms',
-      intro: 'Delivery time and cost depend on the address and the time when the order is placed.',
+      intro: 'Delivery cost is calculated by zone, while exact timing is confirmed after checking the address and product availability.',
       cards: [
         { label: 'Tbilisi', value: '5 GEL' },
         { label: 'Rustavi', value: '5 GEL' },
@@ -91,24 +91,25 @@ const enPublicCopy = {
         {
           title: 'Delivery in Tbilisi',
           items: [
-            'Delivery in Tbilisi takes place on the same day if the order is placed before 10:00 in the morning.',
-            'Orders placed after 10:00 in the morning are delivered in Tbilisi on the next day.',
             'Delivery in Tbilisi costs 5 GEL.',
+            'We confirm delivery timing after receiving the order request.',
+            'No payment is taken when you send the request.',
           ],
         },
         {
           title: 'Delivery in Rustavi',
           items: [
-            'Delivery in Rustavi takes place on the same day if the order is placed before 10:00 in the morning.',
-            'Orders placed after 10:00 in the morning are delivered in Rustavi on the next day.',
             'Delivery in Rustavi costs 5 GEL.',
+            'We confirm delivery timing after receiving the order request.',
+            'No payment is taken when you send the request.',
           ],
         },
         {
           title: 'Regional delivery',
           items: [
-            'Delivery to any city or village is completed within 3 business days.',
             'Regional delivery costs 8 GEL.',
+            'Exact timing depends on the address and product availability and is confirmed before the order.',
+            'No payment is taken when you send the request.',
           ],
         },
       ],
@@ -156,7 +157,7 @@ const enPublicCopy = {
         {
           title: 'Order receipt',
           items: [
-            'The consumer can purchase goods through the payment system integrated into the website. Paying the courier in cash may also be available if that method is active.',
+            'No payment is taken when an order request is sent on the site. The team confirms availability, the final amount, and the payment method in advance.',
             'The order is considered completed once the goods are handed over to the consumer.',
             'If delivery to the consumer is impossible, the order will be canceled and the paid amount will be refunded to the customer.',
             'The consumer is obliged to check the quality and characteristics of the goods when receiving the order.',
@@ -195,33 +196,25 @@ const enPublicCopy = {
         description: 'TrendingNow.ge payment methods and order payment terms.',
       },
       eyebrow: 'Payment methods',
-      title: 'Flexible payment options for online orders',
-      intro: 'This page lists the main payment options. Specific methods will appear during checkout.',
+      title: 'How payment works',
+      intro: 'The site sends an order request without payment. After checking availability, the final amount, and delivery timing, we confirm the payment method.',
       cards: [
-        { label: 'Card payment', value: 'Visa and Mastercard' },
-        { label: 'Other methods', value: 'To be confirmed' },
+        { label: 'Payment on site', value: 'Not taken at this stage' },
+        { label: 'Payment method', value: 'Confirmed with the order' },
         { label: 'Support', value: 'contact@ainow.ge' },
       ],
       sections: [
         {
-          title: 'Card payment',
+          title: 'Order request',
           items: [
-            'Order payment will be possible by bank card if this method is active during checkout.',
-            'After payment is completed, the consumer will receive an order confirmation.',
-            'If payment cannot be completed, the consumer should check the card details or contact the bank.',
+            'After you fill in contact details and an address in the cart, the site sends an order request.',
+            'No money is taken at this stage, and the site does not ask for card details.',
+            'The team confirms availability, the final amount, delivery timing, and the payment method in advance.',
           ],
         },
         {
-          title: 'Payment to courier or by bank transfer',
-          text: ['Cash payment, courier payment, or bank transfer will be added only if the company officially confirms these methods.'],
-        },
-        {
-          title: 'Digital wallets',
-          blocks: [
-            { title: 'Apple Pay', text: 'Availability depends on the payment provider and the customer device.' },
-            { title: 'Google Pay', text: 'Availability depends on the payment provider and the customer account.' },
-            { title: 'Confirmation', text: 'Actual terms will be added after final payment system activation.' },
-          ],
+          title: 'Payment confirmation',
+          text: ['The specific method is agreed while processing the order. Until then, card payment, Apple Pay, and Google Pay are not presented on the site as active methods.'],
         },
       ],
     },
@@ -246,9 +239,9 @@ const enPublicCopy = {
         {
           title: 'How soon will I receive my order?',
           items: [
-            'Delivery time in Tbilisi depends on when the order is placed.',
-            'Regional delivery usually requires several business days.',
-            'The exact time is confirmed according to the order details.',
+            'Exact timing depends on the address and product availability.',
+            'We confirm the timing after receiving the order request.',
+            'No payment is taken on the site before confirmation.',
           ],
         },
         {
@@ -261,7 +254,7 @@ const enPublicCopy = {
         },
         {
           title: 'Which payment methods are available?',
-          text: ['Available payment methods will appear during checkout. Details are also listed on the payment methods page.'],
+          text: ['The order request is sent on the site without payment. The specific method is agreed when availability, the final amount, and delivery timing are confirmed.'],
         },
       ],
     },
@@ -287,8 +280,8 @@ const enPublicCopy = {
           ],
         },
         {
-          title: 'Working hours',
-          text: ['Working hours and fast support terms will be confirmed by the company. Until then, use phone or email.'],
+          title: 'Email support',
+          text: ['You can email contact@ainow.ge at any time. A guaranteed response time has not been published yet; include the order code or product SKU for faster handling.'],
         },
         {
           title: 'When to write to us',
@@ -486,6 +479,8 @@ const enPublicCopy = {
     filterSearchPlaceholder: 'Search products',
     clearSearchAria: 'Clear catalog search',
     searchCatalogAria: 'Search catalog',
+    filters: 'Filters',
+    closeFiltersAria: 'Close filters',
     categories: 'Categories',
     toggleSubcategoriesAria: (name: string) => `Show subcategories of ${name}`,
     price: 'Price',
@@ -497,7 +492,23 @@ const enPublicCopy = {
     sortPriceDesc: 'Price: high to low',
     loadingError: 'Products could not be loaded.',
     empty: 'No products were found with these filters.',
-    recent: 'Recently viewed',
+    paginationAria: 'Catalog pages',
+    pageAria: (page: number) => `Catalog page ${page}`,
+    recent: 'New in the catalog',
+    needFinder: {
+      title: 'What do you need the product for?',
+      intro: 'Choose an everyday task or gift budget. We will open a real catalog filter.',
+      options: [
+        'Home care',
+        'For the car',
+        'Everyday style',
+        'Useful technology',
+        'For an active day',
+        'Gift up to 30 ₾',
+        'Gift up to 60 ₾',
+      ],
+      giftTerms: 'Gift exchange terms',
+    },
   },
   product: {
     tabs: {
@@ -516,6 +527,7 @@ const enPublicCopy = {
     nextMediaAria: 'Next media',
     showMediaAria: (index: number) => `Show media ${index}`,
     swipeMediaHint: 'Swipe left or right to browse the photos',
+    aiImageAria: 'AI-generated product photo',
     highlights: 'Key benefits',
     total: 'Total',
     online: 'Online',
@@ -537,8 +549,69 @@ const enPublicCopy = {
     shareFailed: 'Could not share product',
     descriptionHeading: 'Product description',
     related: 'Related products',
-    recent: 'Recently viewed',
+    recent: 'More from the catalog',
     backToProducts: 'Back to products',
+    decisionPassport: {
+      title: 'Purchase passport',
+      intro: 'This separates what we know from what must be checked before payment.',
+      states: {
+        confirmed: 'Confirmed',
+        needsConfirmation: 'Needs confirmation',
+        unavailable: 'Information unavailable',
+      },
+      fit: {
+        label: 'Size and fit',
+        detail: 'Exact dimensions or sizing are not in this record. Tell us where or how you plan to use it.',
+      },
+      compatibility: {
+        label: 'Compatibility',
+        detail: 'Model compatibility must be checked. Send us the device or vehicle brand and model.',
+      },
+      material: {
+        label: 'Material and care',
+        detail: 'Material, care, and use limitations must be confirmed. We do not infer them from the image.',
+      },
+      package: {
+        label: 'Package contents',
+        detail: 'Exact contents must be confirmed. The short catalog record says:',
+      },
+      price: {
+        label: 'Price evidence',
+        current: 'Catalog price',
+        previous: 'Previous displayed price',
+        checked: 'Data date',
+        detail: 'This is not a claim about the market average or best price. We confirm the final amount before payment.',
+      },
+      visual: {
+        label: 'Images and real characteristics',
+        detail: 'Images are illustrative. We confirm the actual product characteristics before payment.',
+      },
+      confirmCta: 'Confirm product details',
+      supportCta: 'Order support',
+      contactHint: 'Send the product code so we can check the detail you need.',
+      beforeOrderTitle: 'Confirm 4 details before ordering',
+      beforeOrderText: 'Size, compatibility, material, and package contents are not confirmed in the catalog record.',
+      emailSubject: (name: string, sku: string) => `TrendingNow.ge · product ${sku} · ${name}`,
+      emailBody: (name: string, sku: string) => [
+        `Product: ${name}`,
+        `SKU: ${sku}`,
+        '',
+        'Please confirm:',
+      ],
+    },
+    comparison: {
+      title: 'Compare similar options',
+      intro: 'The comparison uses catalog facts only. We do not add unknown characteristics.',
+      current: 'Currently viewing',
+      product: 'Product',
+      price: 'Price',
+      category: 'Category',
+      summary: 'Short description',
+      checked: 'Data date',
+      view: 'View product',
+      scrollHint: 'Swipe the table sideways',
+      scrollAria: 'Similar product comparison table',
+    },
   },
   productCard: {
     new: 'New',
@@ -658,9 +731,14 @@ const enPublicCopy = {
     text: 'We received the request and will contact you to confirm availability, the final amount, and delivery timing.',
     continueShopping: 'Continue shopping',
     viewOrders: 'My orders',
+    supportTitle: 'Need help?',
+    supportText: 'Write to contact@ainow.ge and include your order code.',
+    supportCta: 'Contact us',
+    supportSubject: (code: string) => `TrendingNow.ge · order ${code}`,
+    supportBody: (code: string) => [`Order code: ${code}`, '', 'I need help with:'],
   },
   infoPageShell: {
-    supportText: 'If you have questions, contact us during working hours or write to us by email.',
+    supportText: 'For an order or product question, email contact@ainow.ge and include the order code or SKU.',
     catalogCta: 'Back to catalog',
   },
   auth: {

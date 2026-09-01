@@ -16,6 +16,8 @@ out/
 # Tooling output
 coverage/
 .nyc_output/
+dist/
+uploads/
 *.tsbuildinfo
 npm-debug.log*
 yarn-debug.log*

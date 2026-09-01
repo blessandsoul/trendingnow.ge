@@ -7,8 +7,12 @@ pnpm-debug.log*
 
 # Build output (will be built fresh in Docker)
 .next
+.next.before-continuum-copy
 out
 *.tsbuildinfo
+
+# Backend is built by its own Coolify application from /server
+server
 
 # Environment files (use Docker env vars instead)
 .env

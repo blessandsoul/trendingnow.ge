@@ -14,7 +14,7 @@ export function NewsletterBand({ newsletter }: { newsletter?: StorefrontHomeNews
     <section className="storefront-container mt-8">
       <div className="tn-signal-edge flex flex-col gap-5 overflow-hidden rounded-[18px] bg-[#11141B] px-6 py-6 text-white shadow-[0_18px_42px_rgba(17,20,27,0.12)] lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div className="flex min-w-0 items-center gap-4">
-          <div className="grid size-12 shrink-0 place-items-center rounded-[12px] bg-[#FF4057] text-white">
+          <div className="grid size-12 shrink-0 place-items-center rounded-[12px] bg-[#D92F49] text-white">
             <Mail className="size-7" />
           </div>
           <div className="min-w-0">
@@ -31,7 +31,7 @@ export function NewsletterBand({ newsletter }: { newsletter?: StorefrontHomeNews
             placeholder={newsletter?.placeholder ?? copy.newsletter.placeholder}
             className="h-11 border-white/14 bg-white text-[#11141B] placeholder:text-[#7C8490]"
           />
-          <Button type="button" className="h-11 rounded-[9px] bg-[#FF4057] px-6 font-black text-white hover:bg-[#F02F48]">
+          <Button type="button" className="h-11 rounded-[9px] bg-[#D92F49] px-6 font-black text-white hover:bg-[#B4233A]">
             {newsletter?.buttonLabel ?? copy.newsletter.button}
           </Button>
         </form>

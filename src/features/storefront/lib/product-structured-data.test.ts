@@ -54,7 +54,7 @@ describe('buildProductStructuredData', () => {
         url: 'https://trendingnow.ge/products/wireless-earbuds',
       },
     });
-    expect(productJsonLd.image).toEqual(['http://localhost:8080/uploads/earbuds.png']);
+    expect(productJsonLd.image).toEqual(['http://localhost:8000/uploads/earbuds.png']);
     expect(breadcrumbJsonLd.itemListElement).toEqual([
       { '@type': 'ListItem', position: 1, name: 'TrendingNow.ge', item: 'https://trendingnow.ge/' },
       { '@type': 'ListItem', position: 2, name: 'Products', item: 'https://trendingnow.ge/products' },

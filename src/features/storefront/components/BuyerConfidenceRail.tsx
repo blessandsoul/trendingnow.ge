@@ -66,7 +66,7 @@ export function BuyerConfidenceRail({
                     <span
                       className={cn(
                         'grid size-9 shrink-0 place-items-center rounded-full text-xs font-black tabular-nums',
-                        isDark ? 'bg-[#FF4057] text-white' : 'bg-[#11141B] text-white',
+                        isDark ? 'bg-[#D92F49] text-white' : 'bg-[#11141B] text-white',
                       )}
                       aria-hidden="true"
                     >

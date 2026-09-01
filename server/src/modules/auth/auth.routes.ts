@@ -1,0 +1,122 @@
+import type { FastifyInstance } from 'fastify';
+import { authenticate } from '@libs/auth.js';
+import { RATE_LIMITS } from '@config/rate-limit.config.js';
+import * as authController from './auth.controller.js';
+import {
+  registerSchema,
+  loginSchema,
+  forgotPasswordSchema,
+  resetPasswordSchema, sendVerificationSchema, verifyAccountSchema } from './auth.schemas.js';
+import * as verificationController from "./verification.controller.js";
+
+export async function authRoutes(fastify: FastifyInstance): Promise<void> {
+  // Register - Strict rate limiting to prevent abuse
+  fastify.post('/auth/register', {
+    schema: {
+      body: registerSchema,
+    },
+    config: {
+      rateLimit: RATE_LIMITS.AUTH_REGISTER,
+    },
+    handler: authController.register,
+  });
+
+  // Login - Strict rate limiting to prevent brute force
+  fastify.post('/auth/login', {
+    schema: {
+      body: loginSchema,
+    },
+    config: {
+      rateLimit: RATE_LIMITS.AUTH_LOGIN,
+    },
+    handler: authController.login,
+  });
+
+  // Logout - reads refresh token from cookie, no body schema needed
+  fastify.post('/auth/logout', {
+    config: {
+      rateLimit: RATE_LIMITS.AUTH_LOGOUT,
+    },
+    handler: authController.logout,
+  });
+
+  // Refresh token - reads refresh token from cookie, no body schema needed
+  fastify.post('/auth/refresh', {
+    config: {
+      rateLimit: RATE_LIMITS.AUTH_REFRESH,
+    },
+    handler: authController.refresh,
+  });
+
+  // Forgot password - sends reset email
+  fastify.post('/auth/forgot-password', {
+    schema: {
+      body: forgotPasswordSchema,
+    },
+    config: {
+      rateLimit: RATE_LIMITS.AUTH_FORGOT_PASSWORD,
+    },
+    handler: authController.forgotPassword,
+  });
+
+  // Reset password - validates token and sets new password
+  fastify.post('/auth/reset-password', {
+    schema: {
+      body: resetPasswordSchema,
+    },
+    config: {
+      rateLimit: RATE_LIMITS.AUTH_RESET_PASSWORD,
+    },
+    handler: authController.resetPassword,
+  });
+
+  // Get current user
+  fastify.get('/auth/me', {
+    preValidation: [authenticate],
+    config: {
+      rateLimit: RATE_LIMITS.AUTH_ME,
+    },
+    handler: authController.me,
+  });
+
+  // Get user sessions
+  fastify.get('/auth/sessions', {
+    preValidation: [authenticate],
+    config: {
+      rateLimit: RATE_LIMITS.AUTH_SESSIONS,
+    },
+    handler: authController.getSessions,
+  });
+
+  // Logout from all sessions
+  fastify.post('/auth/logout-all', {
+    preValidation: [authenticate],
+    config: {
+      rateLimit: RATE_LIMITS.AUTH_LOGOUT_ALL,
+    },
+    handler: authController.logoutAllSessions,
+  });
+
+      // Send verification email (resend) - public, accepts email in body
+      fastify.post('/auth/send-verification', {
+        schema: {
+          body: sendVerificationSchema,
+        },
+        config: {
+          rateLimit: RATE_LIMITS.AUTH_SEND_VERIFICATION,
+        },
+        handler: verificationController.sendVerification,
+      });
+
+      // Verify account with token
+      fastify.post('/auth/verify-account', {
+        schema: {
+          body: verifyAccountSchema,
+        },
+        config: {
+          rateLimit: RATE_LIMITS.AUTH_VERIFY_ACCOUNT,
+        },
+        handler: verificationController.verifyAccount,
+      });
+
+}

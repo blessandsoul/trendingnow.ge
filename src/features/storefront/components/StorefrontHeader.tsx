@@ -168,22 +168,22 @@ export function StorefrontHeader(): React.ReactElement {
             <div className="storefront-container flex h-7 items-center justify-between gap-3">
               <nav className="no-scrollbar flex min-w-0 items-center gap-4 overflow-x-auto whitespace-nowrap font-semibold text-[#11141B]" aria-label={copy.header.storeInfoAria}>
                 {utilityLinks.map((item) => (
-                  <Link key={item.href} href={localizeHref(item.href)} className="shrink-0 transition-colors hover:text-[#FF4057]">
+                  <Link key={item.href} href={localizeHref(item.href)} className="shrink-0 transition-colors hover:text-[#B4233A]">
                     {item.label}
                   </Link>
                 ))}
               </nav>
               <div className="hidden items-center gap-5 whitespace-nowrap font-semibold text-[#11141B] md:flex">
                 <span className="inline-flex items-center gap-1">
-                  <Link href={localizeHref(ROUTES.LOGIN)} className="transition-colors hover:text-[#FF4057]">
+                  <Link href={localizeHref(ROUTES.LOGIN)} className="transition-colors hover:text-[#B4233A]">
                     {copy.header.login}
                   </Link>
                   <span aria-hidden="true">/</span>
-                  <Link href={localizeHref(ROUTES.REGISTER)} className="transition-colors hover:text-[#FF4057]">
+                  <Link href={localizeHref(ROUTES.REGISTER)} className="transition-colors hover:text-[#B4233A]">
                     {copy.header.register}
                   </Link>
                 </span>
-                <Link href={localizeHref(ROUTES.DASHBOARD_ORDERS)} className="transition-colors hover:text-[#FF4057]">
+                <Link href={localizeHref(ROUTES.DASHBOARD_ORDERS)} className="transition-colors hover:text-[#B4233A]">
                   {copy.header.myOrders}
                 </Link>
                 <div className="group relative">
@@ -191,7 +191,7 @@ export function StorefrontHeader(): React.ReactElement {
                     type="button"
                     aria-label={copy.language.activeLabel}
                     title={copy.language.activeName}
-                    className="inline-flex h-6 items-center gap-1.5 rounded-[5px] px-1 text-[10px] font-black uppercase tracking-[0.04em] text-[#11141B] transition-colors hover:text-[#FF4057] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057]/35"
+                    className="inline-flex h-6 items-center gap-1.5 rounded-[5px] px-1 text-[10px] font-black uppercase tracking-[0.04em] text-[#11141B] transition-colors hover:text-[#B4233A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D92F49]/35"
                   >
                     <LanguageFlag code={localeFlagCode(locale)} />
                     <span>{copy.language.activeCode}</span>
@@ -300,10 +300,10 @@ export function StorefrontHeader(): React.ReactElement {
                 className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 overflow-hidden rounded-[8px] border border-[#DFE6EF] bg-white shadow-[0_18px_45px_rgba(7,21,42,0.14)]"
               >
                 {isSuggestionsFetching && (
-                  <div className="px-3 py-3 text-sm text-[#6B7685]">{copy.header.suggestionsLoading}</div>
+                  <div className="px-3 py-3 text-sm text-[#657080]">{copy.header.suggestionsLoading}</div>
                 )}
                 {!isSuggestionsFetching && suggestionItems.length === 0 && (
-                  <div className="px-3 py-3 text-sm text-[#6B7685]">{copy.header.suggestionsEmpty}</div>
+                  <div className="px-3 py-3 text-sm text-[#657080]">{copy.header.suggestionsEmpty}</div>
                 )}
                 {!isSuggestionsFetching &&
                   suggestionItems.map((product) => (
@@ -321,7 +321,7 @@ export function StorefrontHeader(): React.ReactElement {
                       </span>
                       <span className="min-w-0">
                         <span className="block truncate text-sm font-bold text-[#11141B]">{product.name}</span>
-                        <span className="block truncate text-xs text-[#6B7685]">{product.category.name}</span>
+                        <span className="block truncate text-xs text-[#657080]">{product.category.name}</span>
                       </span>
                       <span className="whitespace-nowrap text-sm font-black text-[#11141B]">{formatGel(product.salePrice)}</span>
                     </button>
@@ -332,7 +332,7 @@ export function StorefrontHeader(): React.ReactElement {
           <Button
             type="submit"
             size="icon"
-            className="h-11 w-12 shrink-0 rounded-l-none rounded-r-[10px] bg-[#FF4057] text-white hover:bg-[#F02F48]"
+            className="h-11 w-12 shrink-0 rounded-l-none rounded-r-[10px] bg-[#D92F49] text-white hover:bg-[#B4233A]"
             aria-label={copy.header.searchAria}
           >
             <Search className="size-5" />
@@ -348,12 +348,12 @@ export function StorefrontHeader(): React.ReactElement {
               : 'visible max-w-28 gap-2 opacity-100',
           )}
         >
-            <Button asChild variant="ghost" size="icon-lg" className="text-[#11141B] hover:bg-[#F1F3F6] hover:text-[#FF4057]">
+            <Button asChild variant="ghost" size="icon-lg" className="text-[#11141B] hover:bg-[#F1F3F6] hover:text-[#B4233A]">
               <Link href={localizeHref(ROUTES.DASHBOARD_FAVORITES)} aria-label={copy.header.favoritesAria}>
                 <Heart className="size-5" />
               </Link>
             </Button>
-            <Button asChild variant="ghost" size="icon-lg" className="text-[#11141B] hover:bg-[#F1F3F6] hover:text-[#FF4057]">
+            <Button asChild variant="ghost" size="icon-lg" className="text-[#11141B] hover:bg-[#F1F3F6] hover:text-[#B4233A]">
               <Link href={localizeHref(ROUTES.LOGIN)} aria-label={copy.header.accountAria}>
                 <UserRound className="size-5" />
               </Link>
@@ -370,7 +370,7 @@ export function StorefrontHeader(): React.ReactElement {
           <nav className="border-t border-[#E9EDF2]">
             <div className="storefront-container no-scrollbar flex h-11 items-center gap-8 overflow-x-auto text-[13px] font-bold text-[#11141B]">
               {navItems.map((item) => (
-                <Link key={item.slug} href={localizeHref(`${ROUTES.PRODUCTS}?category=${item.slug}`)} className="shrink-0 border-b-2 border-transparent py-3 hover:border-[#FF4057] hover:text-[#FF4057]">
+                <Link key={item.slug} href={localizeHref(`${ROUTES.PRODUCTS}?category=${item.slug}`)} className="shrink-0 border-b-2 border-transparent py-3 hover:border-[#D92F49] hover:text-[#B4233A]">
                   {item.name}
                 </Link>
               ))}
@@ -418,7 +418,7 @@ export function StorefrontHeader(): React.ReactElement {
                   <span className="relative">
                     <ShoppingCart className="size-5" aria-hidden="true" />
                     {itemCount > 0 && (
-                      <span className="absolute -right-2.5 -top-2.5 grid size-5 place-items-center rounded-full bg-[#FF4057] text-[10px] font-black text-white ring-2 ring-white">
+                      <span className="absolute -right-2.5 -top-2.5 grid size-5 place-items-center rounded-full bg-[#D92F49] text-[10px] font-black text-white ring-2 ring-white">
                         {itemCount}
                       </span>
                     )}

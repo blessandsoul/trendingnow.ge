@@ -64,7 +64,7 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
       <span className="relative">
         <ShoppingCart className="size-6" />
         {itemCount > 0 && (
-          <span className="absolute -right-2 -top-2 grid size-5 place-items-center rounded-full bg-[#FF4057] text-[11px] font-bold text-white">
+          <span className="absolute -right-2 -top-2 grid size-5 place-items-center rounded-full bg-[#D92F49] text-[11px] font-bold text-white">
             {itemCount}
           </span>
         )}
@@ -108,7 +108,7 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
                 <ShoppingBag className="size-7" />
               </span>
               <h3 className="mt-4 text-lg font-black">{copy.cart.emptyTitle}</h3>
-              <p className="mt-2 max-w-[300px] text-sm leading-6 text-[#6B7685]">
+              <p className="mt-2 max-w-[300px] text-sm leading-6 text-[#657080]">
                 {copy.cart.drawerEmptyText}
               </p>
               <SheetClose asChild>
@@ -116,7 +116,7 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
                   href={localizeHref(ROUTES.PRODUCTS)}
                   className={cn(
                     buttonVariants({ variant: 'default' }),
-                    'mt-5 h-10 rounded-[9px] bg-[#FF4057] px-5 font-bold text-white hover:bg-[#F02F48]',
+                    'mt-5 h-10 rounded-[9px] bg-[#D92F49] px-5 font-bold text-white hover:bg-[#B4233A]',
                   )}
                 >
                   {copy.common.browseProducts}
@@ -145,11 +145,11 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
                     <div className="min-w-0 flex-1">
                       <Link
                         href={localizeHref(ROUTES.PRODUCT_DETAIL(item.product.slug))}
-                        className="line-clamp-2 text-sm font-extrabold leading-5 text-[#11141B] hover:text-[#FF4057]"
+                        className="line-clamp-2 text-sm font-extrabold leading-5 text-[#11141B] hover:text-[#B4233A]"
                       >
                         {item.product.name}
                       </Link>
-                      <p className="mt-1 truncate text-xs text-[#6B7685]">{item.product.category.name}</p>
+                      <p className="mt-1 truncate text-xs text-[#657080]">{item.product.category.name}</p>
                       <div className="mt-2 flex flex-wrap items-center gap-2">
                         <span className="text-sm font-black tabular-nums">{formatGel(item.unitPrice)}</span>
                         <span className="text-xs text-[#8B96A5]">{copy.cart.drawerLineTotal(formatGel(item.lineTotal))}</span>
@@ -202,7 +202,7 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
         <SheetFooter className="border-t border-[#E3E8EF] bg-white px-4 py-4">
           <div className="space-y-2 text-sm">
             <div className="flex justify-between gap-3">
-              <span className="text-[#6B7685]">{copy.cart.products}</span>
+              <span className="text-[#657080]">{copy.cart.products}</span>
               <span className="font-semibold tabular-nums">{formatGel(cart?.summary.subtotal ?? 0)}</span>
             </div>
             {(cart?.summary.discount ?? 0) > 0 && (
@@ -213,7 +213,7 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
             )}
           </div>
           <div className="flex items-end justify-between gap-3 border-t border-dashed border-[#CFD8E4] pt-3">
-            <span className="text-sm text-[#6B7685]">{copy.cart.totalShort}</span>
+            <span className="text-sm text-[#657080]">{copy.cart.totalShort}</span>
             <strong className="text-2xl font-black tabular-nums">{formatGel(total)}</strong>
           </div>
 
@@ -222,7 +222,7 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
               href={localizeHref(ROUTES.CART)}
               className={cn(
                 buttonVariants({ variant: 'default' }),
-                'h-11 rounded-[9px] bg-[#FF4057] text-base font-black text-white hover:bg-[#F02F48]',
+                'h-11 rounded-[9px] bg-[#D92F49] text-base font-black text-white hover:bg-[#B4233A]',
               )}
             >
               {copy.cart.viewCart}

@@ -1,7 +1,7 @@
 'use client';
 
 import type React from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 import { RotateCcw, ShieldCheck, ShoppingBag, Trash2, Truck, WalletCards } from 'lucide-react';
 
@@ -31,6 +31,7 @@ export function CartStorefront(): React.ReactElement {
   const localizeHref = useLocalizedPath();
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [deliveryZone, setDeliveryZone] = useState<DeliveryZone | null>(null);
+  const checkoutButtonRef = useRef<HTMLButtonElement>(null);
   const { data: cart, isLoading } = useCart();
   const { data: home } = useStorefrontHome();
   const updateCartItem = useUpdateCartItem();
@@ -50,7 +51,7 @@ export function CartStorefront(): React.ReactElement {
       <StorefrontHeader />
 
       <main className="storefront-container py-7">
-        <p className="text-sm text-[#6B7685]">{copy.cart.breadcrumb}</p>
+        <p className="text-sm text-[#657080]">{copy.cart.breadcrumb}</p>
         <h1 className="mt-5 text-3xl font-black sm:text-4xl">{copy.cart.title}</h1>
 
         <BuyerConfidenceRail className="mt-6" contained={false} tone="light" />
@@ -70,10 +71,10 @@ export function CartStorefront(): React.ReactElement {
               <div className="flex min-h-[260px] flex-col items-center justify-center px-5 text-center">
                 <ShoppingBag className="mb-3 size-10 text-[#8B96A5]" />
                 <h2 className="text-lg font-bold">{copy.cart.emptyTitle}</h2>
-                <p className="mt-1 max-w-[420px] text-sm text-[#6B7685]">
+                <p className="mt-1 max-w-[420px] text-sm text-[#657080]">
                   {copy.cart.emptyText}
                 </p>
-                <Button asChild className="mt-5 rounded-[9px] bg-[#FF4057] text-white hover:bg-[#F02F48]">
+                <Button asChild className="mt-5 rounded-[9px] bg-[#D92F49] text-white hover:bg-[#B4233A]">
                   <Link href={localizeHref(ROUTES.PRODUCTS)}>{copy.common.browseProducts}</Link>
                 </Button>
               </div>
@@ -91,11 +92,11 @@ export function CartStorefront(): React.ReactElement {
                   <div className="min-w-0">
                     <Link
                       href={localizeHref(ROUTES.PRODUCT_DETAIL(item.product.slug))}
-                      className="line-clamp-2 text-sm font-bold text-[#11141B] hover:text-[#FF4057]"
+                      className="line-clamp-2 text-sm font-bold text-[#11141B] hover:text-[#B4233A]"
                     >
                       <h2>{item.product.name}</h2>
                     </Link>
-                    <p className="mt-1 text-xs text-[#6B7685]">{item.product.category.name}</p>
+                    <p className="mt-1 text-xs text-[#657080]">{item.product.category.name}</p>
                     <p className="mt-2 text-xs font-semibold text-[#2A9D4A]">{copy.cart.deliveryEstimate}</p>
                   </div>
                 </div>
@@ -165,7 +166,7 @@ export function CartStorefront(): React.ReactElement {
                 <legend className="text-sm font-bold text-[#07152A]">
                   {copy.cart.deliveryZoneTitle} <span aria-hidden="true">*</span>
                 </legend>
-                <p id="delivery-zone-hint" className="mt-1 text-xs leading-5 text-[#6B7685]">
+                <p id="delivery-zone-hint" className="mt-1 text-xs leading-5 text-[#657080]">
                   {copy.cart.deliveryZoneHint}
                 </p>
                 <div className="mt-3 grid gap-2">
@@ -199,10 +200,10 @@ export function CartStorefront(): React.ReactElement {
                 </div>
               </fieldset>
               <div className="mt-4 space-y-3 text-sm">
-                <div className="flex justify-between gap-3"><span className="text-[#6B7685]">{copy.cart.subtotal}</span><span>{formatGel(cart?.summary.subtotal ?? 0)}</span></div>
+                <div className="flex justify-between gap-3"><span className="text-[#657080]">{copy.cart.subtotal}</span><span>{formatGel(cart?.summary.subtotal ?? 0)}</span></div>
                 <div className="flex justify-between gap-3 text-[#2A9D4A]"><span>{copy.cart.discount}</span><span>- {formatGel(cart?.summary.discount ?? 0)}</span></div>
                 <div className="flex justify-between gap-3">
-                  <span className="text-[#6B7685]">{copy.cart.shipping}</span>
+                  <span className="text-[#657080]">{copy.cart.shipping}</span>
                   {deliveryZone ? (
                     <span>+ {formatGel(deliveryPrice)}</span>
                   ) : (
@@ -212,7 +213,7 @@ export function CartStorefront(): React.ReactElement {
               </div>
 
               <div className="mt-5 flex items-end justify-between gap-3 border-t border-[#E3E8EF] pt-4">
-                <span className="text-sm text-[#6B7685]">{copy.cart.estimatedTotal}</span>
+                <span className="text-sm text-[#657080]">{copy.cart.estimatedTotal}</span>
                 <strong className="text-3xl tabular-nums">{formatGel(grandTotal)}</strong>
               </div>
 
@@ -221,8 +222,10 @@ export function CartStorefront(): React.ReactElement {
               </p>
 
               <Button
+                ref={checkoutButtonRef}
+                data-checkout-trigger="true"
                 type="button"
-                className="mt-5 h-11 w-full rounded-[9px] bg-[#FF4057] font-black text-white hover:bg-[#F02F48]"
+                className="mt-5 h-11 w-full rounded-[9px] bg-[#D92F49] font-black text-white hover:bg-[#B4233A]"
                 disabled={!cart || cart.items.length === 0 || !deliveryZone}
                 onClick={() => setIsCheckoutOpen(true)}
               >
@@ -240,7 +243,7 @@ export function CartStorefront(): React.ReactElement {
                     <Icon className="size-6 shrink-0 text-[#07152A]" />
                     <div>
                       <p className="text-sm font-bold">{title}</p>
-                      <p className="text-xs text-[#6B7685]">{text}</p>
+                      <p className="text-xs text-[#657080]">{text}</p>
                     </div>
                   </div>
                 ))}
@@ -265,6 +268,7 @@ export function CartStorefront(): React.ReactElement {
         open={isCheckoutOpen}
         onOpenChange={setIsCheckoutOpen}
         deliveryZone={deliveryZone}
+        returnFocusRef={checkoutButtonRef}
       />
     </div>
   );
