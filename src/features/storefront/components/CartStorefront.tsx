@@ -15,6 +15,7 @@ import { OrderCheckoutDialog } from './OrderCheckoutDialog';
 import { ProductCard } from './ProductCard';
 import { StorefrontFooter } from './StorefrontFooter';
 import { StorefrontHeader } from './StorefrontHeader';
+import { BuyerConfidenceRail } from './BuyerConfidenceRail';
 import {
   useCart,
   useClearCart,
@@ -51,6 +52,8 @@ export function CartStorefront(): React.ReactElement {
       <main className="storefront-container py-7">
         <p className="text-sm text-[#6B7685]">{copy.cart.breadcrumb}</p>
         <h1 className="mt-5 text-3xl font-black sm:text-4xl">{copy.cart.title}</h1>
+
+        <BuyerConfidenceRail className="mt-6" contained={false} tone="light" />
 
         <section className="mt-7 grid gap-6 xl:grid-cols-[1fr_360px]">
           <div className="overflow-hidden rounded-[8px] border border-[#DFE6EF] bg-white">
@@ -209,9 +212,13 @@ export function CartStorefront(): React.ReactElement {
               </div>
 
               <div className="mt-5 flex items-end justify-between gap-3 border-t border-[#E3E8EF] pt-4">
-                <span className="text-sm text-[#6B7685]">{copy.cart.grandTotal}</span>
+                <span className="text-sm text-[#6B7685]">{copy.cart.estimatedTotal}</span>
                 <strong className="text-3xl tabular-nums">{formatGel(grandTotal)}</strong>
               </div>
+
+              <p className="mt-2 rounded-[10px] bg-[#FFF3F5] px-3 py-2 text-xs font-semibold leading-5 text-[#7A3240]">
+                {copy.cart.totalNotice}
+              </p>
 
               <Button
                 type="button"

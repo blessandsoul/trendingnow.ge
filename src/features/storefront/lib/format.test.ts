@@ -3,11 +3,11 @@ import { describe, expect, it } from 'vitest';
 import { toStorefrontUppercase } from './format';
 
 describe('toStorefrontUppercase', () => {
-  it('converts Georgian card text to Mtavruli', () => {
-    expect(toStorefrontUppercase('მაგალითად ასეთი')).toBe('ᲛᲐᲒᲐᲚᲘᲗᲐᲓ ᲐᲡᲔᲗᲘ');
+  it('keeps Georgian text in readable Mkhedruli', () => {
+    expect(toStorefrontUppercase('მაგალითად ასეთი')).toBe('მაგალითად ასეთი');
   });
 
-  it('uppercases mixed Latin and Georgian card text', () => {
-    expect(toStorefrontUppercase('Baseus მაგნიტური ქეისი')).toBe('BASEUS ᲛᲐᲒᲜᲘᲢᲣᲠᲘ ᲥᲔᲘᲡᲘ');
+  it('uppercases Latin while preserving Georgian', () => {
+    expect(toStorefrontUppercase('Baseus მაგნიტური ქეისი')).toBe('BASEUS მაგნიტური ქეისი');
   });
 });

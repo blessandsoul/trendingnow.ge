@@ -3,7 +3,7 @@
 import type React from 'react';
 import { useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { Loader2, ShoppingBag, X } from 'lucide-react';
+import { CircleCheck, Loader2, ShoppingBag, X } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -156,6 +156,16 @@ export function OrderCheckoutDialog({
                 </div>
               </div>
             )}
+          </div>
+
+          <div className="rounded-[14px] border border-[#DDE8E0] bg-[#F5FBF6] p-4">
+            <div className="flex gap-3">
+              <CircleCheck className="mt-0.5 size-5 shrink-0 text-[#237A3E]" aria-hidden="true" />
+              <div className="min-w-0">
+                <h3 className="text-sm font-black text-[#193E25]">{copy.checkout.confirmationTitle}</h3>
+                <p className="mt-1 text-xs leading-5 text-[#52695A]">{copy.checkout.confirmationText}</p>
+              </div>
+            </div>
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2">

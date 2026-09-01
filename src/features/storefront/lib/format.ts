@@ -3,7 +3,7 @@ export function formatGel(value: number): string {
 }
 
 export function toStorefrontUppercase(value: string): string {
-  return value.toLocaleUpperCase('ka-GE');
+  return value.replace(/[a-z]+/gi, (part) => part.toUpperCase());
 }
 
 /** Strips tags + decodes common entities without any DOM dependency (SSR-safe). */

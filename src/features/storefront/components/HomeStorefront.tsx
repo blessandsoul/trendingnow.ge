@@ -3,7 +3,7 @@
 import type React from 'react';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ChevronLeft, ChevronRight, Heart, ShieldCheck, Truck, WalletCards, type LucideIcon } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight, ShieldCheck } from 'lucide-react';
 
 import { SafeImage } from '@/components/common/SafeImage';
 import { Button } from '@/components/ui/button';
@@ -12,6 +12,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { cn } from '@/lib/utils';
 import { publicMediaUrl } from '@/lib/utils/media';
 import { CategoryRail } from './CategoryRail';
+import { BuyerConfidenceRail } from './BuyerConfidenceRail';
 import { NewsletterBand } from './NewsletterBand';
 import { ProductCard } from './ProductCard';
 import { PromoBanners } from './PromoBanners';
@@ -20,7 +21,7 @@ import { StorefrontFooter } from './StorefrontFooter';
 import { StorefrontHeader } from './StorefrontHeader';
 import { useStorefrontHome } from '../hooks/useStorefront';
 import { toStorefrontUppercase } from '../lib/format';
-import type { StorefrontHomeHero, StorefrontHomeProductRow, StorefrontHomeServiceItem } from '../types/storefront.types';
+import type { StorefrontHomeHero, StorefrontHomeProductRow } from '../types/storefront.types';
 
 const productGridClass = 'storefront-container mt-5 grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 2xl:grid-cols-6';
 const heroSlideStepSeconds = 5.2;
@@ -30,15 +31,6 @@ const heroSlides = [
   '/storefront/trendingnow/hero-fashion-city-v2.webp',
   '/storefront/trendingnow/hero-home-care-v2.webp',
 ] as const;
-
-const serviceIconMap: Record<string, LucideIcon> = {
-  shield: ShieldCheck,
-  shieldcheck: ShieldCheck,
-  truck: Truck,
-  wallet: WalletCards,
-  walletcards: WalletCards,
-  heart: Heart,
-};
 
 function SectionHeader({ title, href }: { title: string; href?: string }): React.ReactElement {
   const copy = useLocaleCopy();
@@ -186,10 +178,6 @@ function ProductRowSection({ row }: { row: StorefrontHomeProductRow }): React.Re
   );
 }
 
-function serviceIcon(icon: string): LucideIcon {
-  return serviceIconMap[icon.toLowerCase().replace(/[^a-z]/g, '')] ?? ShieldCheck;
-}
-
 export function HomeStorefront(): React.ReactElement {
   const copy = useLocaleCopy();
   const localizeHref = useLocalizedPath();
@@ -197,14 +185,6 @@ export function HomeStorefront(): React.ReactElement {
   const hero = data?.hero;
   const aboveRows = (data?.productRows ?? []).filter((row) => row.placement === 'ABOVE_BANNERS');
   const belowRows = (data?.productRows ?? []).filter((row) => row.placement === 'BELOW_BANNERS');
-  const serviceItems = [
-    { icon: ShieldCheck, ...copy.home.serviceItems[0] },
-    { icon: Truck, ...copy.home.serviceItems[1] },
-    { icon: WalletCards, ...copy.home.serviceItems[2] },
-  ];
-  const serviceStripItems = data?.serviceItems.length
-    ? data.serviceItems.map((item: StorefrontHomeServiceItem) => ({ ...item, icon: serviceIcon(item.icon) }))
-    : serviceItems;
   const catalogProductCount = data?.categories.reduce((sum, category) => sum + category.productCount, 0) ?? 0;
   const catalogCategoryCount = data?.categories.length ?? 0;
   const snapshotDate = data?.featuredProducts[0]?.updatedAt
@@ -262,6 +242,8 @@ export function HomeStorefront(): React.ReactElement {
           </div>
         </section>
 
+        <BuyerConfidenceRail className="mt-5" />
+
         {data?.categories && <CategoryRail categories={data.categoryRail.length ? data.categoryRail : data.categories} />}
 
         {isLoading && <LoadingGrid />}
@@ -277,20 +259,6 @@ export function HomeStorefront(): React.ReactElement {
         <PromoBanners banners={data?.promoBanners.length ? data.promoBanners : undefined} />
 
         {belowRows.map((row) => <ProductRowSection key={row.id} row={row} />)}
-
-        <section className="storefront-container mt-8">
-          <div className="grid gap-4 rounded-[20px] bg-white px-4 py-5 shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_8px_26px_rgba(17,20,27,0.05)] md:grid-cols-3">
-            {serviceStripItems.map(({ icon: Icon, title, text }) => (
-              <div key={title} className="flex items-center gap-3">
-                <span className="grid size-11 shrink-0 place-items-center rounded-[12px] bg-[#11141B] text-white"><Icon className="size-5" /></span>
-                <div className="min-w-0">
-                  <p className="text-sm font-bold">{title}</p>
-                  <p className="text-pretty text-xs text-[#69717E]">{text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
 
         <NewsletterBand newsletter={data?.newsletter} />
       </main>

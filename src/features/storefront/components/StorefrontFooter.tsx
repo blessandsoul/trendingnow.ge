@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Mail, Phone } from 'lucide-react';
 
 import { useLocaleCopy, useLocalizedPath } from '@/i18n/context';
+import { ROUTES } from '@/lib/constants/routes';
 import { TrendingNowWordmark } from './TrendingNowWordmark';
 
 interface FooterLink {
@@ -66,13 +67,13 @@ export function StorefrontFooter(): React.ReactElement {
 
         <div>
           <h3 className="mb-3 text-sm font-black text-white">{copy.footer.paymentMethods}</h3>
-          <div className="grid grid-cols-2 gap-2 text-xs font-black text-white/78">
-            {copy.footer.paymentBadges.map((item) => (
-              <span key={item} className="rounded-[8px] border border-white/12 bg-white/[0.055] px-3 py-2 text-center">
-                {item}
-              </span>
-            ))}
-          </div>
+          <p className="text-sm leading-6 text-white/56">{copy.footer.paymentStatus}</p>
+          <Link
+            href={localizeHref(ROUTES.PAYMENT_METHODS)}
+            className="mt-3 inline-flex min-h-10 items-center rounded-[8px] border border-white/14 px-3 text-xs font-black text-white transition-colors hover:border-[#FF4057] hover:text-[#FF7A8A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057]/55"
+          >
+            {copy.footer.paymentDetails}
+          </Link>
         </div>
       </div>
 

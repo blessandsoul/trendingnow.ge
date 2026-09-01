@@ -48,6 +48,7 @@ import type {
 } from '../types/storefront.types';
 import { NewsletterBand } from './NewsletterBand';
 import { ProductCard } from './ProductCard';
+import { BuyerConfidenceRail } from './BuyerConfidenceRail';
 import { Reveal } from './Reveal';
 import { RichText } from './RichText';
 import { StorefrontFooter } from './StorefrontFooter';
@@ -231,6 +232,7 @@ function ProductGallery({
             alt={selectedMedia.alt}
             fill
             priority
+            loading="eager"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 58vw, 780px"
             className="object-cover"
           />
@@ -444,7 +446,17 @@ function PurchasePanel({
             {formatGel(product.salePrice * quantity)}
           </p>
         </div>
-        <Badge className="border-[#DCF2DF] bg-[#F1FFF3] text-[#2A9D4A]">{copy.product.online}</Badge>
+        <Badge className="border-[#DCF2DF] bg-[#F1FFF3] text-[#237A3E]">{copy.product.orderStatusLabel}</Badge>
+      </div>
+
+      <div className="mt-4 rounded-[14px] border border-[#DDE8E0] bg-[#F5FBF6] p-3.5">
+        <div className="flex gap-2.5">
+          <Check className="mt-0.5 size-4 shrink-0 text-[#237A3E]" aria-hidden="true" />
+          <div className="min-w-0">
+            <p className="text-sm font-black text-[#193E25]">{copy.product.orderStatusLabel}</p>
+            <p className="mt-1 text-xs leading-5 text-[#52695A]">{copy.product.orderStatusText}</p>
+          </div>
+        </div>
       </div>
 
       <div className="mt-4">
@@ -470,6 +482,19 @@ function PurchasePanel({
         >
           {copy.product.buyNow}
         </Button>
+      </div>
+
+      <div className="mt-4 rounded-[14px] border border-[#E1E5EA] bg-[#F7F9FB] p-3.5">
+        <p className="text-xs font-black text-[#11141B]">{copy.product.priceStatusLabel}</p>
+        <p className="mt-1 text-xs leading-5 text-[#657080]">{copy.product.priceStatusText}</p>
+        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs font-black">
+          <Link href={localizeHref(ROUTES.DELIVERY)} className="text-[#D92F49] underline-offset-4 hover:underline">
+            {copy.product.deliveryDetails}
+          </Link>
+          <Link href={localizeHref(ROUTES.WARRANTY)} className="text-[#D92F49] underline-offset-4 hover:underline">
+            {copy.product.returnDetails}
+          </Link>
+        </div>
       </div>
 
       <div className="mt-5 divide-y divide-[#E3E8EF] border-y border-[#E3E8EF]">
@@ -741,6 +766,8 @@ export function ProductDetailStorefront({
                 <PurchasePanel product={product} quantity={quantity} onQuantityChange={setQuantity} onShare={handleShare} />
               </Reveal>
             </section>
+
+            <BuyerConfidenceRail className="mt-6" tone="light" />
 
             <section className="storefront-container mt-4">
               <Button asChild variant="ghost" className="h-10 rounded-[7px] px-0 text-[#526071] hover:text-[#07152A]">

@@ -2,7 +2,7 @@
 
 import type React from 'react';
 import Link from 'next/link';
-import { Heart, ShoppingCart } from 'lucide-react';
+import { CircleCheck, Heart, ShoppingCart } from 'lucide-react';
 
 import { SafeImage } from '@/components/common/SafeImage';
 import { Badge } from '@/components/ui/badge';
@@ -121,6 +121,12 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
               </p>
             )}
           </div>
+          {!compact && (
+            <p className="mt-2 flex items-center gap-1.5 text-[11px] font-bold leading-4 text-[#476052]">
+              <CircleCheck className="size-3.5 shrink-0 text-[#2A8C47]" aria-hidden="true" />
+              {copy.productCard.orderOnDemand}
+            </p>
+          )}
           {!compact && (
             <Button
               type="button"
