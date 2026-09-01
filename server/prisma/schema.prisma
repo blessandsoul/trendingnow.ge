@@ -37,7 +37,7 @@ model User {
   password  String
   firstName String
   lastName  String
-  avatarUrl String? // SEO-friendly path: /uploads/users/{userId}/avatar/{firstName-lastName}-avatar.webp
+  avatarUrl String? // SEO-friendly path: /uploads/users/{userId}/avatar/{firstName-lastName}-avatar.png
   role      UserRole  @default(USER)
   isActive  Boolean   @default(true)
   deletedAt DateTime?

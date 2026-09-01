@@ -1,57 +1,65 @@
-# TrendingNow.ge server readiness
+# TrendingNow.ge production readiness
 
 Date: 2026-09-01
 
-Status: ready for local review, not ready for live buyer traffic.
+Status: production marketplace API is live and the manual-confirmation MVP commerce path is verified.
 
-## What is implemented
+## Production topology
 
-- Public catalog: homepage data, product list, product detail.
-- Guest and authenticated checkout with server-owned prices and delivery totals.
-- Order snapshots so later catalog edits do not rewrite past orders.
-- Authenticated favorites and order history.
-- Admin product, category, order, status and summary endpoints.
-- MySQL schema and deploy migration with the current 18-product catalog.
-- Persistent browser cart that sends only product slug and quantity to checkout.
-- Rate limits for storefront writes.
+- Storefront: `https://trendingnow.ge`
+- API: `https://api.trendingnow.ge/api/v1`
+- Runtime: separate Coolify frontend and API applications.
+- Data: private MySQL 8.0 and Redis services.
+- Uploads: persistent `trendingnow-api-uploads` volume mounted at `/app/uploads`.
+- Edge: `api.trendingnow.ge` is proxied through Cloudflare with valid HTTPS.
+- Email: the configured Resend domain `ainow.ge` reports `verified`; inbox delivery was not asserted without sending an unsolicited message.
+
+## Implemented commerce path
+
+- Six active categories and the current 18-product catalog are provisioned by an audited Prisma migration.
+- Homepage, catalog search/filter/sort and product details use the production database API.
+- Guest and authenticated checkout calculate prices and delivery totals on the server.
+- Order items retain immutable product and price snapshots.
+- Authenticated favorites and order history persist in MySQL.
+- Admin order list/detail and status transitions are live.
+- Public order confirmation pages render the generated `TN-*` receipt code.
+- Avatar uploads accept JPEG/PNG, enforce a 25-megapixel input ceiling, strip source metadata, resize to 512 px and persist as PNG without a native CPU-specific image dependency.
 
 ## Verified locally
 
-- Prisma schema format and validation: pass.
-- Server unit tests: 132 passed in 8 files.
-- Server typecheck, lint and production TypeScript build: pass.
-- Server dependency audit: 0 known vulnerabilities.
-- Client tests: 58 passed in 24 files.
-- Client typecheck, lint and Next production build: pass; 38 routes generated.
+- Server: 135 tests in 9 files, typecheck, lint and production build pass.
+- Server dependency audit: 0 known vulnerabilities at the configured high-severity gate.
+- Client: 58 tests in 24 files, typecheck, lint and production Next build pass; 38 routes generated.
+- Client clean-install gate: `npm ci` succeeds from only `package.json` and `package-lock.json`.
 
-## Confirmed live blockers
+## Verified live through Cloudflare
 
-1. `api.trendingnow.ge` has no Cloudflare DNS record.
-2. `https://trendingnow.ge/api/v1/health` returns the frontend HTML shell, not backend JSON.
-3. The currently deployed browser bundle contains `localhost:8080`; the source and Docker defaults are fixed locally but have not been deployed.
-4. The server directory is not connected to a Git repository, so Coolify has no verified source/revision for this backend build.
-5. Database-backed integration tests cannot start because Docker Desktop fails on the stale `dockerInference` reparse-point socket. The test harness reaches the container-runtime gate and stops before running assertions.
-6. Production MySQL, Redis, secrets, CORS/cookie settings, persistent upload storage and Resend sender credentials have not been verified.
+- `/live`: HTTP 200 and `alive=true`.
+- `/health`: HTTP 200 and overall `healthy`; database, Redis and memory checks are `up`.
+- Catalog: 6 categories, 18 active products, first product detail resolves.
+- CORS: the storefront origin is allowed with credentials; an unrelated origin receives no allow-origin header.
+- Guest order: HTTP 201; server total and Tbilisi delivery fee verified.
+- Receipt page: HTTP 200 and contains the generated order code.
+- User login: HTTP 200 with the secure access cookie.
+- Favorite creation/read: HTTP 201/200 and the product ID persists.
+- Authenticated order/history: HTTP 201/200 and region delivery total verified.
+- Admin login/list/status update: HTTP 200 and order state changed to `ACCEPTED`.
+- Avatar upload/read/delete: HTTP 200/200/200 and the stored output is PNG.
+- Smoke cleanup: 2 temporary users, 2 temporary orders and 1 temporary favorite were deleted; no `codex-*` test users or orders remain.
+- `contact@ainow.ge` exists as an active production administrator. Its random bootstrap password was not disclosed or stored; initial access should use the password-reset flow.
 
-## Required release gate
+## Storefront release evidence
 
-Release only after all items below are evidenced:
+- `/`, `/products`, `/register`, `/login` and `/contact` return HTTP 200 from production.
+- These pages contain `contact@ainow.ge` and no `Continuum` branding.
+- The deployed browser bundle contains `https://api.trendingnow.ge/api/v1` and contains neither the obsolete apex `/api/v1` target nor `localhost:8000`.
+- In-app visual automation was unavailable on the host during this release, so this document does not claim a fresh automated screenshot pass. Existing responsive behavior remains covered by the client tests, including mobile gallery swipe tests.
 
-- Repair Docker Desktop, then run `npm run test:integration` with MySQL and Redis containers and obtain a green result.
-- Put the server under an authoritative Git repository and push the exact tested revision.
-- Create a separate Coolify backend service from `server/Dockerfile`.
-- Provision production MySQL and Redis and set the variables from `.env.example.production` without copying local secrets.
-- Mount persistent storage at `/app/uploads`.
-- Route `api.trendingnow.ge` to the backend service through Cloudflare and Coolify.
-- Set the client build argument `NEXT_PUBLIC_API_BASE_URL=https://api.trendingnow.ge/api/v1` and rebuild the frontend.
-- Verify `GET https://api.trendingnow.ge/api/v1/live` and `/ready` return backend JSON.
-- Run one real browser smoke: catalog load, add to cart, checkout, order receipt, authenticated favorite and admin order status update.
-- Verify registration email delivery from the production Resend domain before keeping account verification mandatory.
+## Deliberately deferred
 
-## Deferred features that must not be advertised yet
+- Telegram order notifications remain disabled; orders use the `SKIPPED` notification state.
+- Cross-device cart sync is not implemented; cart persistence is browser-local.
+- Payment capture is not implemented; the current MVP records orders for manual confirmation.
+- Provider acceptance and real inbox delivery are different signals. The Resend domain is verified, but a real registration email should be confirmed by the owner during the first controlled account test.
 
-- Admin homepage section editor and storefront asset upload API.
-- Telegram order notifications; orders currently default to a skipped notification state.
-- Cross-device cart synchronization; the cart currently persists only in the buyer's browser.
-
-These deferred items do not block a manual order-confirmation MVP, but the UI and marketing copy must not promise them until they are implemented and tested.
+These deferred items do not block the verified manual-confirmation marketplace flow and must not be advertised as available.

@@ -47,18 +47,18 @@ export function sanitizeForFilename(text: string): string {
  *
  * @param firstName - User's first name
  * @param lastName - User's last name
- * @param extension - File extension (default: 'webp')
+ * @param extension - File extension (default: 'png')
  * @returns SEO-friendly filename
  *
  * @example
- * generateAvatarFilename("John", "Doe") // "john-doe-avatar.webp"
- * generateAvatarFilename("მარიამ", "გელაშვილი") // "მარიამ-გელაშვილი-avatar.webp"
+ * generateAvatarFilename("John", "Doe") // "john-doe-avatar.png"
+ * generateAvatarFilename("მარიამ", "გელაშვილი") // "მარიამ-გელაშვილი-avatar.png"
  * generateAvatarFilename("José", "García", "jpg") // "jose-garcia-avatar.jpg"
  */
 export function generateAvatarFilename(
   firstName: string,
   lastName: string,
-  extension: string = 'webp'
+  extension: string = 'png'
 ): string {
   const sanitizedFirst = sanitizeForFilename(firstName);
   const sanitizedLast = sanitizeForFilename(lastName);
