@@ -16,7 +16,11 @@ import { cn } from '@/lib/utils';
 import { publicMediaUrl } from '@/lib/utils/media';
 import { CartDrawer } from './CartDrawer';
 import { HeaderTransitionSection } from './HeaderTransitionSection';
-import { INITIAL_SCROLL_HEADER_STATE, nextScrollHeaderState } from './scroll-header';
+import {
+  INITIAL_SCROLL_HEADER_STATE,
+  nextScrollHeaderState,
+  settleScrollHeaderGesture,
+} from './scroll-header';
 import { TrendingNowWordmark } from './TrendingNowWordmark';
 import { useProductSearchSuggestions, useStorefrontHome } from '../hooks/useStorefront';
 import { formatGel } from '../lib/format';
@@ -27,6 +31,8 @@ type CategoryNavItem = Pick<StorefrontCategory, 'name' | 'slug'>;
 type FlagCode = 'ge' | 'gb' | 'ru';
 
 type BottomNavItemKey = 'home' | 'products' | 'cart' | 'favorites';
+
+const HEADER_GESTURE_SETTLE_MS = 420;
 
 function localeFlagCode(locale: ActiveLocale): FlagCode {
   return LOCALE_NAMES[locale].flagCode;
@@ -100,18 +106,19 @@ export function StorefrontHeader(): React.ReactElement {
 
   const bottomNavItemClassName = (key: BottomNavItemKey, isActive: boolean): string =>
     cn(
-      'relative flex h-16 min-w-0 flex-col items-center justify-center gap-1.5 rounded-[12px] border border-transparent px-1 text-[10px] font-black leading-[1.35] transition-colors min-[380px]:text-[11px]',
+      'relative flex h-16 min-w-0 flex-col items-center justify-center gap-1.5 rounded-[12px] border border-transparent px-1 text-[10px] font-bold leading-[1.35] transition-colors min-[380px]:text-[11px]',
       isActive
-        ? 'bg-[#11141B] text-white shadow-[0_10px_22px_rgba(17,20,27,0.16)]'
-        : 'text-[#69717E] hover:bg-[#F1F3F6] hover:text-[#11141B]',
+        ? 'bg-[#101010] text-white shadow-[0_10px_22px_rgba(17,20,27,0.16)]'
+        : 'text-[#69717E] hover:bg-[#F1F3F6] hover:text-[#101010]',
       key === 'cart' && 'bg-transparent',
-      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057]/60',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4]/60',
     );
   const bottomNavLabelClassName =
     'block w-full max-w-full overflow-hidden text-ellipsis whitespace-nowrap pb-0.5 text-center leading-[1.35]';
 
   useEffect(() => {
     let frameId: number | null = null;
+    let settleTimerId: number | null = null;
 
     const updateScrollState = (): void => {
       frameId = null;
@@ -119,6 +126,12 @@ export function StorefrontHeader(): React.ReactElement {
     };
 
     const handleScroll = (): void => {
+      if (settleTimerId !== null) window.clearTimeout(settleTimerId);
+      settleTimerId = window.setTimeout(() => {
+        settleTimerId = null;
+        setScrollHeaderState(settleScrollHeaderGesture);
+      }, HEADER_GESTURE_SETTLE_MS);
+
       if (frameId !== null) return;
       frameId = window.requestAnimationFrame(updateScrollState);
     };
@@ -129,6 +142,7 @@ export function StorefrontHeader(): React.ReactElement {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       if (frameId !== null) window.cancelAnimationFrame(frameId);
+      if (settleTimerId !== null) window.clearTimeout(settleTimerId);
     };
   }, []);
 
@@ -157,33 +171,34 @@ export function StorefrontHeader(): React.ReactElement {
   return (
     <>
       <header
+        data-header-mode={scrollHeaderState.mode}
         className={cn(
-          'sticky top-0 z-50 transform-gpu border-b border-[#DDE2E9] bg-white/94 shadow-[0_10px_30px_rgba(17,20,27,0.045)] backdrop-blur-xl',
+          'fixed inset-x-0 top-0 z-50 transform-gpu border-b border-[#DDE2E9] bg-white/94 shadow-[0_10px_30px_rgba(17,20,27,0.045)] backdrop-blur-xl',
           'transition-transform duration-300 ease-out motion-reduce:transition-none',
           scrollHeaderState.isVisible ? 'translate-y-0' : '-translate-y-full',
         )}
       >
         <HeaderTransitionSection expanded={!scrollHeaderState.isCompact}>
-          <div className="border-b border-[#E9EDF2] bg-[#F5F7FA] text-[11px] text-[#69717E]">
+          <div className="border-b border-[#E9EDF2] bg-[#F4F2ED] text-[11px] text-[#69717E]">
             <div className="storefront-container flex h-7 items-center justify-between gap-3">
-              <nav className="no-scrollbar flex min-w-0 items-center gap-4 overflow-x-auto whitespace-nowrap font-semibold text-[#11141B]" aria-label={copy.header.storeInfoAria}>
+              <nav className="no-scrollbar flex min-w-0 items-center gap-4 overflow-x-auto whitespace-nowrap font-semibold text-[#101010]" aria-label={copy.header.storeInfoAria}>
                 {utilityLinks.map((item) => (
-                  <Link key={item.href} href={localizeHref(item.href)} className="shrink-0 transition-colors hover:text-[#B4233A]">
+                  <Link key={item.href} href={localizeHref(item.href)} className="shrink-0 transition-colors hover:text-[#061E81]">
                     {item.label}
                   </Link>
                 ))}
               </nav>
-              <div className="hidden items-center gap-5 whitespace-nowrap font-semibold text-[#11141B] md:flex">
+              <div className="hidden items-center gap-5 whitespace-nowrap font-semibold text-[#101010] md:flex">
                 <span className="inline-flex items-center gap-1">
-                  <Link href={localizeHref(ROUTES.LOGIN)} className="transition-colors hover:text-[#B4233A]">
+                  <Link href={localizeHref(ROUTES.LOGIN)} className="transition-colors hover:text-[#061E81]">
                     {copy.header.login}
                   </Link>
                   <span aria-hidden="true">/</span>
-                  <Link href={localizeHref(ROUTES.REGISTER)} className="transition-colors hover:text-[#B4233A]">
+                  <Link href={localizeHref(ROUTES.REGISTER)} className="transition-colors hover:text-[#061E81]">
                     {copy.header.register}
                   </Link>
                 </span>
-                <Link href={localizeHref(ROUTES.DASHBOARD_ORDERS)} className="transition-colors hover:text-[#B4233A]">
+                <Link href={localizeHref(ROUTES.DASHBOARD_ORDERS)} className="transition-colors hover:text-[#061E81]">
                   {copy.header.myOrders}
                 </Link>
                 <div className="group relative">
@@ -191,7 +206,7 @@ export function StorefrontHeader(): React.ReactElement {
                     type="button"
                     aria-label={copy.language.activeLabel}
                     title={copy.language.activeName}
-                    className="inline-flex h-6 items-center gap-1.5 rounded-[5px] px-1 text-[10px] font-black uppercase tracking-[0.04em] text-[#11141B] transition-colors hover:text-[#B4233A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D92F49]/35"
+                    className="inline-flex h-6 items-center gap-1.5 rounded-[5px] px-1 text-[10px] font-bold uppercase tracking-[0.04em] text-[#101010] transition-colors hover:text-[#061E81] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4]/35"
                   >
                     <LanguageFlag code={localeFlagCode(locale)} />
                     <span>{copy.language.activeCode}</span>
@@ -201,7 +216,7 @@ export function StorefrontHeader(): React.ReactElement {
                     {ACTIVE_LOCALES.map((option) => {
                       const isActive = option === locale;
                       const label = LOCALE_NAMES[option].switcherCode;
-                      const className = 'flex w-full items-center gap-2 rounded-[5px] px-2 py-1.5 text-left font-black uppercase tracking-[0.04em] text-[#11141B] hover:bg-[#F1F3F6]';
+                      const className = 'flex w-full items-center gap-2 rounded-[5px] px-2 py-1.5 text-left font-bold uppercase tracking-[0.04em] text-[#101010] hover:bg-[#F1F3F6]';
                       const content = (
                         <>
                           <LanguageFlag code={localeFlagCode(option)} />
@@ -228,13 +243,16 @@ export function StorefrontHeader(): React.ReactElement {
 
         <div
           className={cn(
-            'storefront-container flex flex-wrap items-center gap-x-3 transition-[padding,row-gap] duration-300 ease-out md:flex-nowrap',
-            scrollHeaderState.isCompact ? 'gap-y-0 py-2' : 'gap-y-3 py-3',
+            'storefront-container flex items-center gap-x-3 transition-[padding,row-gap] duration-300 ease-out md:flex-nowrap',
+            scrollHeaderState.isCompact ? 'flex-nowrap gap-y-0 py-2' : 'flex-wrap gap-y-3 py-3',
           )}
         >
         <Link
           href={localizeHref(ROUTES.HOME)}
-          className="mr-auto shrink-0 rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057]/55 focus-visible:ring-offset-4 md:mr-0"
+          className={cn(
+            'mr-auto shrink-0 rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4]/55 focus-visible:ring-offset-4 md:mr-0',
+            scrollHeaderState.isCompact && 'hidden md:block',
+          )}
           aria-label={copy.header.homeAria}
         >
           <TrendingNowWordmark
@@ -251,8 +269,8 @@ export function StorefrontHeader(): React.ReactElement {
           asChild
           aria-hidden={scrollHeaderState.isCompact}
           className={cn(
-            'hidden h-10 max-w-48 shrink-0 overflow-hidden whitespace-nowrap rounded-[9px] bg-[#11141B] font-bold text-white',
-            'transition-[max-width,padding,opacity] duration-300 ease-out hover:bg-[#252A33] lg:inline-flex',
+            'hidden h-10 max-w-48 shrink-0 overflow-hidden whitespace-nowrap rounded-[9px] bg-[#101010] font-bold text-white',
+            'transition-[max-width,padding,opacity] duration-300 ease-out hover:bg-[#1A1A1A] lg:inline-flex',
             scrollHeaderState.isCompact
               ? 'invisible max-w-0 border-0 px-0 opacity-0'
               : 'visible max-w-48 px-4 opacity-100',
@@ -265,13 +283,14 @@ export function StorefrontHeader(): React.ReactElement {
         </Button>
 
         <form
+          data-header-search="true"
           onSubmit={submitSearch}
           className={cn(
-            'relative order-3 flex w-full min-w-0 overflow-hidden transition-[max-height,opacity] duration-300 ease-out',
-            'md:visible md:order-none md:mx-auto md:w-auto md:max-w-[520px] md:flex-1 md:overflow-visible md:opacity-100 lg:max-w-[620px] xl:max-w-[700px]',
+            'relative flex min-w-0 transition-[max-height,opacity] duration-300 ease-out',
+            'md:order-none md:mx-auto md:w-auto md:max-w-[520px] md:flex-1 md:overflow-visible lg:max-w-[620px] xl:max-w-[700px]',
             scrollHeaderState.isCompact
-              ? 'invisible max-h-0 opacity-0'
-              : 'visible max-h-24 opacity-100',
+              ? 'order-none max-h-14 w-full flex-1 overflow-visible opacity-100'
+              : 'order-3 max-h-24 w-full overflow-visible opacity-100',
           )}
         >
           <div className="relative min-w-0 flex-1">
@@ -292,7 +311,7 @@ export function StorefrontHeader(): React.ReactElement {
             autoComplete="off"
             aria-expanded={isSuggestionsOpen && trimmedSearch.length >= 2}
             aria-controls="storefront-search-suggestions"
-            className="h-11 rounded-l-[10px] rounded-r-none border-[#D4DAE3] bg-[#F7F8FA] text-sm focus-visible:border-[#FF4057] focus-visible:ring-[#FF4057]/15"
+            className="h-11 rounded-l-[10px] rounded-r-none border-[#D4DAE3] bg-[#F8F7F2] text-sm focus-visible:border-[#092BB4] focus-visible:ring-[#092BB4]/15"
             />
             {isSuggestionsOpen && trimmedSearch.length >= 2 && (
               <div
@@ -316,14 +335,14 @@ export function StorefrontHeader(): React.ReactElement {
                       }}
                       className="grid w-full grid-cols-[44px_minmax(0,1fr)_auto] items-center gap-3 border-b border-[#EEF2F6] px-3 py-2 text-left last:border-b-0 hover:bg-[#F7F9FB] focus-visible:bg-[#F7F9FB] focus-visible:outline-none"
                     >
-                      <span className="relative block aspect-square overflow-hidden rounded-[7px] bg-[#F5F7FA]">
+                      <span className="relative block aspect-square overflow-hidden rounded-[7px] bg-[#F4F2ED]">
                         <SafeImage src={publicMediaUrl(product.imageUrl)} alt="" fill sizes="44px" className="object-contain p-1" />
                       </span>
                       <span className="min-w-0">
-                        <span className="block truncate text-sm font-bold text-[#11141B]">{product.name}</span>
+                        <span className="block truncate text-sm font-bold text-[#101010]">{product.name}</span>
                         <span className="block truncate text-xs text-[#657080]">{product.category.name}</span>
                       </span>
-                      <span className="whitespace-nowrap text-sm font-black text-[#11141B]">{formatGel(product.salePrice)}</span>
+                      <span className="whitespace-nowrap text-sm font-bold text-[#101010]">{formatGel(product.salePrice)}</span>
                     </button>
                   ))}
               </div>
@@ -332,7 +351,7 @@ export function StorefrontHeader(): React.ReactElement {
           <Button
             type="submit"
             size="icon"
-            className="h-11 w-12 shrink-0 rounded-l-none rounded-r-[10px] bg-[#D92F49] text-white hover:bg-[#B4233A]"
+            className="h-11 w-12 shrink-0 rounded-l-none rounded-r-[10px] bg-[#092BB4] text-white hover:bg-[#061E81]"
             aria-label={copy.header.searchAria}
           >
             <Search className="size-5" />
@@ -348,29 +367,31 @@ export function StorefrontHeader(): React.ReactElement {
               : 'visible max-w-28 gap-2 opacity-100',
           )}
         >
-            <Button asChild variant="ghost" size="icon-lg" className="text-[#11141B] hover:bg-[#F1F3F6] hover:text-[#B4233A]">
+            <Button asChild variant="ghost" size="icon-lg" className="text-[#101010] hover:bg-[#F1F3F6] hover:text-[#061E81]">
               <Link href={localizeHref(ROUTES.DASHBOARD_FAVORITES)} aria-label={copy.header.favoritesAria}>
                 <Heart className="size-5" />
               </Link>
             </Button>
-            <Button asChild variant="ghost" size="icon-lg" className="text-[#11141B] hover:bg-[#F1F3F6] hover:text-[#B4233A]">
+            <Button asChild variant="ghost" size="icon-lg" className="text-[#101010] hover:bg-[#F1F3F6] hover:text-[#061E81]">
               <Link href={localizeHref(ROUTES.LOGIN)} aria-label={copy.header.accountAria}>
                 <UserRound className="size-5" />
               </Link>
             </Button>
         </div>
 
-        <CartDrawer />
+        <div className={cn(scrollHeaderState.isCompact && 'hidden md:block')}>
+          <CartDrawer />
+        </div>
         </div>
 
         <HeaderTransitionSection
           expanded={!scrollHeaderState.isCompact}
           className="hidden md:grid"
         >
-          <nav className="border-t border-[#E9EDF2]">
-            <div className="storefront-container no-scrollbar flex h-11 items-center gap-8 overflow-x-auto text-[13px] font-bold text-[#11141B]">
+          <nav className="border-t border-white/20 bg-[#101010] text-white">
+            <div className="storefront-container no-scrollbar flex h-11 items-center gap-8 overflow-x-auto text-[13px] font-bold">
               {navItems.map((item) => (
-                <Link key={item.slug} href={localizeHref(`${ROUTES.PRODUCTS}?category=${item.slug}`)} className="shrink-0 border-b-2 border-transparent py-3 hover:border-[#D92F49] hover:text-[#B4233A]">
+                <Link key={item.slug} href={localizeHref(`${ROUTES.PRODUCTS}?category=${item.slug}`)} className="shrink-0 border-b-2 border-transparent py-3 hover:border-[#FFE622] hover:text-[#FFE622]">
                   {item.name}
                 </Link>
               ))}
@@ -378,6 +399,8 @@ export function StorefrontHeader(): React.ReactElement {
           </nav>
         </HeaderTransitionSection>
       </header>
+
+      <div className="h-[154px] md:h-[143px]" aria-hidden="true" />
 
       <nav
         aria-label={copy.common.mobileNavigation}
@@ -418,7 +441,7 @@ export function StorefrontHeader(): React.ReactElement {
                   <span className="relative">
                     <ShoppingCart className="size-5" aria-hidden="true" />
                     {itemCount > 0 && (
-                      <span className="absolute -right-2.5 -top-2.5 grid size-5 place-items-center rounded-full bg-[#D92F49] text-[10px] font-black text-white ring-2 ring-white">
+                      <span className="absolute -right-2.5 -top-2.5 grid size-5 place-items-center rounded-full bg-[#092BB4] text-[10px] font-bold text-white ring-2 ring-white">
                         {itemCount}
                       </span>
                     )}

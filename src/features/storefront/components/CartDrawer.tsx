@@ -36,8 +36,8 @@ function CartDrawerSkeleton(): React.ReactElement {
   return (
     <div className="space-y-3">
       {Array.from({ length: 3 }).map((_, index) => (
-        <div key={index} className="flex gap-3 rounded-[8px] border border-[#E3E8EF] p-3">
-          <div className="size-20 animate-pulse rounded-[8px] bg-[#EEF2F6]" />
+        <div key={index} className="flex gap-3 rounded-none border border-[#E3E8EF] p-3">
+          <div className="size-20 animate-pulse rounded-none bg-[#EEF2F6]" />
           <div className="flex-1 space-y-2 py-1">
             <div className="h-4 w-3/4 animate-pulse rounded bg-[#EEF2F6]" />
             <div className="h-3 w-1/2 animate-pulse rounded bg-[#EEF2F6]" />
@@ -60,18 +60,18 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
   const trigger = renderTrigger ? (
     renderTrigger({ itemCount, total })
   ) : (
-    <Button type="button" variant="ghost" className="relative h-11 shrink-0 gap-2 px-2 text-[#11141B] sm:min-w-20">
+    <Button type="button" variant="ghost" className="relative h-11 shrink-0 gap-2 px-2 text-[#101010] sm:min-w-20">
       <span className="relative">
         <ShoppingCart className="size-6" />
         {itemCount > 0 && (
-          <span className="absolute -right-2 -top-2 grid size-5 place-items-center rounded-full bg-[#D92F49] text-[11px] font-bold text-white">
+          <span className="absolute -right-2 -top-2 grid size-5 place-items-center rounded-full bg-[#092BB4] text-[11px] font-bold text-white">
             {itemCount}
           </span>
         )}
       </span>
       <span className="hidden text-left text-xs font-semibold sm:block">
         {copy.cart.title}
-        <span className="block text-[12px] text-[#11141B]">{formatGel(total)}</span>
+        <span className="block text-[12px] text-[#101010]">{formatGel(total)}</span>
       </span>
     </Button>
   );
@@ -82,9 +82,9 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
         {trigger}
       </SheetTrigger>
 
-      <SheetContent side="right" className="w-full bg-white p-0 text-[#11141B] sm:max-w-[460px]">
+      <SheetContent side="right" className="w-full bg-white p-0 text-[#101010] sm:max-w-[460px]">
         <SheetHeader className="border-b border-[#E3E8EF] px-5 py-5 pr-12">
-          <SheetTitle className="flex items-center gap-2 text-xl font-black">
+          <SheetTitle className="flex items-center gap-2 text-xl font-bold">
             <ShoppingBag className="size-5" />
             {copy.cart.title}
           </SheetTitle>
@@ -97,17 +97,17 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
           {isLoading && <CartDrawerSkeleton />}
 
           {!isLoading && error && (
-            <div className="rounded-[8px] border border-[#F2D0D0] bg-[#FFF5F5] px-4 py-3 text-sm text-[#A23A3A]">
+            <div className="rounded-none border border-[#D9DDE7] bg-[#EEF2FF] px-4 py-3 text-sm text-[#061E81]">
               {copy.home.loadingError}
             </div>
           )}
 
           {!isLoading && !error && cart?.items.length === 0 && (
             <div className="flex min-h-[360px] flex-col items-center justify-center px-4 text-center">
-              <span className="grid size-14 place-items-center rounded-full bg-[#F7F9FB] text-[#8B96A5]">
+              <span className="grid size-14 place-items-center rounded-full bg-[#F4F2ED] text-[#657080]">
                 <ShoppingBag className="size-7" />
               </span>
-              <h3 className="mt-4 text-lg font-black">{copy.cart.emptyTitle}</h3>
+              <h3 className="mt-4 text-lg font-bold">{copy.cart.emptyTitle}</h3>
               <p className="mt-2 max-w-[300px] text-sm leading-6 text-[#657080]">
                 {copy.cart.drawerEmptyText}
               </p>
@@ -116,7 +116,7 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
                   href={localizeHref(ROUTES.PRODUCTS)}
                   className={cn(
                     buttonVariants({ variant: 'default' }),
-                    'mt-5 h-10 rounded-[9px] bg-[#D92F49] px-5 font-bold text-white hover:bg-[#B4233A]',
+                    'mt-5 h-10 rounded-none bg-[#092BB4] px-5 font-bold text-white hover:bg-[#061E81]',
                   )}
                 >
                   {copy.common.browseProducts}
@@ -128,11 +128,11 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
           {cart && cart.items.length > 0 && (
             <div className="space-y-3">
               {cart.items.map((item) => (
-                <article key={item.id} className="rounded-[8px] border border-[#DFE6EF] bg-white p-3">
+                <article key={item.id} className="rounded-none border border-[#DFE6EF] bg-white p-3">
                   <div className="flex min-w-0 gap-3">
                     <Link
                       href={localizeHref(ROUTES.PRODUCT_DETAIL(item.product.slug))}
-                      className="relative size-20 shrink-0 overflow-hidden rounded-[8px] bg-[#F8FAFC]"
+                      className="relative size-20 shrink-0 overflow-hidden rounded-none bg-[#F4F2ED]"
                     >
                       <SafeImage
                         src={publicMediaUrl(item.product.imageUrl)}
@@ -145,21 +145,21 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
                     <div className="min-w-0 flex-1">
                       <Link
                         href={localizeHref(ROUTES.PRODUCT_DETAIL(item.product.slug))}
-                        className="line-clamp-2 text-sm font-extrabold leading-5 text-[#11141B] hover:text-[#B4233A]"
+                        className="line-clamp-2 text-sm font-semibold leading-5 text-[#101010] hover:text-[#061E81]"
                       >
                         {item.product.name}
                       </Link>
                       <p className="mt-1 truncate text-xs text-[#657080]">{item.product.category.name}</p>
                       <div className="mt-2 flex flex-wrap items-center gap-2">
-                        <span className="text-sm font-black tabular-nums">{formatGel(item.unitPrice)}</span>
-                        <span className="text-xs text-[#8B96A5]">{copy.cart.drawerLineTotal(formatGel(item.lineTotal))}</span>
+                        <span className="text-sm font-bold tabular-nums">{formatGel(item.unitPrice)}</span>
+                        <span className="text-xs text-[#657080]">{copy.cart.drawerLineTotal(formatGel(item.lineTotal))}</span>
                       </div>
                     </div>
                     <Button
                       type="button"
                       variant="ghost"
                       size="icon-xs"
-                      className="text-[#8B96A5] hover:text-[#B42318]"
+                      className="text-[#657080] hover:text-[#B42318]"
                       disabled={removeCartItem.isPending}
                       onClick={() => removeCartItem.mutate(item.id)}
                       aria-label={copy.cart.removeItemAria}
@@ -180,7 +180,7 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
                       >
                         <Minus className="size-3.5" />
                       </Button>
-                      <span className="w-9 text-center text-sm font-black tabular-nums">{item.quantity}</span>
+                      <span className="w-9 text-center text-sm font-bold tabular-nums">{item.quantity}</span>
                       <Button
                         type="button"
                         variant="ghost"
@@ -214,7 +214,7 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
           </div>
           <div className="flex items-end justify-between gap-3 border-t border-dashed border-[#CFD8E4] pt-3">
             <span className="text-sm text-[#657080]">{copy.cart.totalShort}</span>
-            <strong className="text-2xl font-black tabular-nums">{formatGel(total)}</strong>
+            <strong className="text-2xl font-bold tabular-nums">{formatGel(total)}</strong>
           </div>
 
           <SheetClose asChild>
@@ -222,7 +222,7 @@ export function CartDrawer({ renderTrigger }: CartDrawerProps = {}): React.React
               href={localizeHref(ROUTES.CART)}
               className={cn(
                 buttonVariants({ variant: 'default' }),
-                'h-11 rounded-[9px] bg-[#D92F49] text-base font-black text-white hover:bg-[#B4233A]',
+                'h-11 rounded-none bg-[#092BB4] text-base font-bold text-white hover:bg-[#061E81]',
               )}
             >
               {copy.cart.viewCart}

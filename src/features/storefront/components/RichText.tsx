@@ -40,14 +40,14 @@ export function RichText({
         className={cn(
           'prose max-w-none',
           phoneLayout ? 'text-sm leading-6' : 'text-sm leading-7 sm:text-base',
-          'prose-headings:font-black prose-headings:tracking-tight prose-headings:text-foreground',
+          'prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-foreground',
           phoneLayout
             ? 'prose-h2:mb-3 prose-h2:mt-6 prose-h2:text-lg prose-h3:mb-2 prose-h3:mt-4 prose-h3:text-base prose-p:mb-3 prose-p:leading-6'
             : 'prose-h2:mb-3 prose-h2:mt-7 prose-h2:text-xl prose-h3:mb-2 prose-h3:mt-5 prose-h3:text-lg prose-p:mb-4 prose-p:leading-7',
           'prose-p:text-muted-foreground',
           'prose-a:font-bold prose-a:text-info prose-a:no-underline hover:prose-a:underline',
           'prose-li:text-muted-foreground prose-li:marker:text-warning',
-          'prose-strong:font-black prose-strong:text-foreground',
+          'prose-strong:font-bold prose-strong:text-foreground',
           '[&_img]:my-5 [&_img]:block [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-xl',
           '[&_img[data-align=left]]:mr-auto [&_img[data-align=center]]:mx-auto [&_img[data-align=right]]:ml-auto',
           '[&_[data-description-image-row]]:my-5 [&_[data-description-image-row]]:grid [&_[data-description-image-row]]:gap-3',

@@ -146,83 +146,149 @@
     left: 0;
     width: 0.38rem;
     z-index: 2;
-    background: #ff4057;
+    background: #ffe622;
     clip-path: polygon(0 0, 100% 0, 58% 100%, 0 100%);
     pointer-events: none;
   }
 
   .tn-page {
     min-height: 100dvh;
-    color: #11141b;
-    background:
-      radial-gradient(circle at 8% 2%, rgb(255 64 87 / 0.12), transparent 30rem),
-      radial-gradient(circle at 92% 10%, rgb(124 58 237 / 0.12), transparent 32rem),
-      linear-gradient(180deg, #ffffff 0%, #f6f7fb 22rem, #f4f5f8 100%);
+    color: #101010;
+    background: linear-gradient(180deg, #faf9f6 0%, #f4f2ed 30rem, #f4f2ed 100%);
   }
 
   .tn-surface {
     border: 1px solid rgb(214 217 226 / 0.9);
-    border-radius: 1.25rem;
+    border-radius: 0.25rem;
     background: rgb(255 255 255 / 0.94);
-    box-shadow: 0 22px 70px rgb(17 20 27 / 0.08);
-    backdrop-filter: blur(18px);
+    box-shadow:
+      0 0 0 1px rgb(17 20 27 / 0.02),
+      0 12px 32px rgb(17 20 27 / 0.07);
+    backdrop-filter: blur(12px);
   }
 
   .tn-dark-panel {
     color: #ffffff;
-    background:
-      radial-gradient(circle at 88% 12%, rgb(255 64 87 / 0.36), transparent 22rem),
-      radial-gradient(circle at 18% 88%, rgb(25 198 166 / 0.2), transparent 20rem),
-      linear-gradient(145deg, #11141b 0%, #24183e 54%, #4a194c 100%);
+    background: #092bb4;
   }
 
   .tn-kicker {
-    color: #b4233a;
+    color: #092bb4;
     font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.16em;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     line-height: 1.2;
     text-transform: uppercase;
   }
 
+  .tn-page-intro {
+    display: grid;
+    gap: 1.5rem;
+    align-items: end;
+  }
+
+  .tn-page-title {
+    max-width: 54rem;
+    color: #101010;
+    font-size: clamp(1.875rem, 4vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.12;
+    text-wrap: balance;
+  }
+
+  .tn-page-lede {
+    max-width: 48rem;
+    color: #596473;
+    font-size: 1rem;
+    line-height: 1.75;
+    text-wrap: pretty;
+  }
+
+  .tn-section-title {
+    color: #101010;
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .tn-body-copy {
+    color: #596473;
+    line-height: 1.75;
+    text-wrap: pretty;
+  }
+
+  .tn-commerce-card {
+    border: 1px solid #dde2e9;
+    border-radius: 0.25rem;
+    background: #ffffff;
+    box-shadow:
+      0 0 0 1px rgb(17 20 27 / 0.015),
+      0 8px 24px rgb(17 20 27 / 0.055);
+  }
+
+  @media (min-width: 1024px) {
+    .tn-page-intro {
+      grid-template-columns: minmax(0, 0.92fr) minmax(20rem, 0.4fr);
+    }
+  }
+
   .tn-primary-action {
-    border-radius: 0.75rem;
-    background: #d92f49;
+    min-height: 2.75rem;
+    border-radius: 0.125rem;
+    background: #092bb4;
     color: #ffffff;
-    box-shadow: 0 12px 28px rgb(217 47 73 / 0.22);
+    box-shadow: 0 12px 28px rgb(9 43 180 / 0.2);
+    transition-property: background-color, box-shadow, transform;
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
   }
 
   .tn-primary-action:hover {
-    background: #b4233a;
+    background: #061e81;
+  }
+
+  .tn-primary-action:active {
+    transform: scale(0.96);
   }
 
   .tn-secondary-action {
+    min-height: 2.75rem;
     border: 1px solid #d8dbe4;
-    border-radius: 0.75rem;
+    border-radius: 0.125rem;
     background: #ffffff;
-    color: #11141b;
+    color: #101010;
+    transition-property: background-color, border-color, color, transform;
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
   }
 
   .tn-secondary-action:hover {
-    border-color: #8c5cf6;
-    background: #f8f5ff;
+    border-color: #092bb4;
+    background: #eef2ff;
+  }
+
+  .tn-secondary-action:active {
+    transform: scale(0.96);
   }
 
   .tn-field {
     border-color: #d8dbe4;
-    border-radius: 0.75rem;
+    border-radius: 0.125rem;
     background: #ffffff;
-    color: #11141b;
+    color: #101010;
   }
 
   .tn-field:focus-visible {
-    border-color: #d92f49;
-    box-shadow: 0 0 0 3px rgb(217 47 73 / 0.14);
+    border-color: #092bb4;
+    box-shadow: 0 0 0 3px rgb(9 43 180 / 0.14);
   }
 
   .tn-soft-icon {
-    color: #b4233a;
-    background: linear-gradient(135deg, #fff0f3 0%, #f1eaff 100%);
+    color: #092bb4;
+    background: linear-gradient(135deg, #eef2ff 0%, #f4f2ed 100%);
   }
 }
 

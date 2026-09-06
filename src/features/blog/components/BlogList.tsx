@@ -18,20 +18,26 @@ export function BlogList({ posts, locale, topTags = [] }: BlogListProps): React.
   return (
     <div>
       {posts.length > 0 ? (
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {posts.map((post, index) => (
-            <BlogCard key={post.id} post={post} locale={locale} index={index} />
+            <BlogCard
+              key={post.id}
+              post={post}
+              locale={locale}
+              index={index}
+              className={index === 0 ? 'sm:col-span-2 xl:col-span-2' : undefined}
+            />
           ))}
         </div>
       ) : (
-        <div className="tn-surface rounded-[20px] px-5 py-14 text-center text-[#526071]">
+        <div className="tn-surface px-5 py-14 text-center text-[#526071]">
           {copy.noPostsForTag}
         </div>
       )}
 
       {topTags.length > 0 && (
         <section aria-labelledby="blog-topics" className="mt-14">
-          <h2 id="blog-topics" className="mb-4 text-center text-xl font-black tracking-tight text-[#11141B]">
+          <h2 id="blog-topics" className="mb-4 text-center text-xl font-bold tracking-tight text-[#101010]">
             {copy.topicsHeading}
           </h2>
           <div className="mb-4 flex flex-wrap justify-center gap-2">
@@ -39,7 +45,7 @@ export function BlogList({ posts, locale, topTags = [] }: BlogListProps): React.
               <Link
                 key={slug}
                 href={localizedPath(locale, `/blog/tags/${slug}`)}
-                className="rounded-full border border-[#E8E0F8] bg-white px-4 py-1.5 text-sm font-semibold text-[#526071] transition-colors hover:border-[#8C5CF6] hover:bg-[#F7F2FF] hover:text-[#5B2DB6]"
+                className="inline-flex min-h-10 items-center rounded-full border border-[#DDE2E9] bg-white px-4 py-1.5 text-sm font-semibold text-[#526071] transition-colors hover:border-[#092BB4] hover:bg-[#EEF2FF] hover:text-[#061E81]"
               >
                 {tag}
               </Link>
@@ -51,7 +57,7 @@ export function BlogList({ posts, locale, topTags = [] }: BlogListProps): React.
       <div className="text-center">
         <Link
           href={localizedPath(locale, '/blog/tags')}
-          className="text-sm font-semibold text-[#5B2DB6] underline-offset-4 transition-colors hover:text-[#FF4057] hover:underline"
+          className="inline-flex min-h-11 items-center text-sm font-semibold text-[#061E81] underline-offset-4 transition-colors hover:text-[#092BB4] hover:underline"
         >
           {copy.viewAllTags}
         </Link>

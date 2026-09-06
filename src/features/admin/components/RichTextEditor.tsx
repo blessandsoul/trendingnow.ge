@@ -131,7 +131,7 @@ function DescriptionImageNodeView({ node, selected, updateAttributes, deleteNode
         onClick={() => setOpen(true)}
         className={cn(
           'group w-full overflow-hidden rounded-xl border bg-white text-left shadow-sm transition hover:border-warning hover:shadow-md',
-          selected ? 'border-warning ring-2 ring-warning/30' : 'border-[#DCE4EF]',
+          selected ? 'border-warning ring-2 ring-warning/30' : 'border-[#D9DDE7]',
         )}
       >
         <div className={cn('grid gap-2 bg-[#F4F7FA] p-2', images.length === 2 && 'grid-cols-2')}>
@@ -144,9 +144,9 @@ function DescriptionImageNodeView({ node, selected, updateAttributes, deleteNode
         </div>
         <div className="flex items-center justify-between gap-3 border-t border-[#E7ECF2] px-3 py-2.5">
           <span className="text-xs font-bold text-[#526071]">{images.length === 2 ? adminCopy.richTextImageTwo : adminCopy.richTextImageOne}</span>
-          <span className="inline-flex items-center gap-1.5 text-xs font-black text-[#07152A]">
+          <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#101010]">
             {adminCopy.richTextImageEdit}
-            <ImagePlus className="size-3.5 text-[#8C5CF6]" />
+            <ImagePlus className="size-3.5 text-[#092BB4]" />
           </span>
         </div>
       </button>
@@ -343,8 +343,8 @@ export default function RichTextEditor({
           'focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50',
           'max-h-96 min-h-32 overflow-y-auto',
           '[&_.ProseMirror]:min-h-28 [&_.ProseMirror]:px-3 [&_.ProseMirror]:py-2 [&_.ProseMirror]:outline-none',
-          '[&_.ProseMirror_h2]:mb-2 [&_.ProseMirror_h2]:mt-4 [&_.ProseMirror_h2]:text-lg [&_.ProseMirror_h2]:font-black',
-          '[&_.ProseMirror_h3]:mb-1.5 [&_.ProseMirror_h3]:mt-3 [&_.ProseMirror_h3]:text-base [&_.ProseMirror_h3]:font-black',
+          '[&_.ProseMirror_h2]:mb-2 [&_.ProseMirror_h2]:mt-4 [&_.ProseMirror_h2]:text-lg [&_.ProseMirror_h2]:font-bold',
+          '[&_.ProseMirror_h3]:mb-1.5 [&_.ProseMirror_h3]:mt-3 [&_.ProseMirror_h3]:text-base [&_.ProseMirror_h3]:font-bold',
           '[&_.ProseMirror_p]:my-1.5 [&_.ProseMirror_p]:leading-6',
           '[&_.ProseMirror_a]:font-bold [&_.ProseMirror_a]:text-info [&_.ProseMirror_a]:underline',
           '[&_.ProseMirror_ol]:my-1.5 [&_.ProseMirror_ol]:list-decimal [&_.ProseMirror_ol]:pl-5',

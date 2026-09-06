@@ -47,34 +47,34 @@ export function CartStorefront(): React.ReactElement {
   ];
 
   return (
-    <div className="min-h-dvh bg-[#F5F7FA] text-[#11141B]">
+    <div className="tn-page min-h-dvh text-[#101010]">
       <StorefrontHeader />
 
       <main className="storefront-container py-7">
         <p className="text-sm text-[#657080]">{copy.cart.breadcrumb}</p>
-        <h1 className="mt-5 text-3xl font-black sm:text-4xl">{copy.cart.title}</h1>
+        <h1 className="tn-page-title mt-5">{copy.cart.title}</h1>
 
-        <BuyerConfidenceRail className="mt-6" contained={false} tone="light" />
+        <BuyerConfidenceRail className="mt-6" contained={false} tone="light" mobileLayout="stack" />
 
         <section className="mt-7 grid gap-6 xl:grid-cols-[1fr_360px]">
-          <div className="overflow-hidden rounded-[8px] border border-[#DFE6EF] bg-white">
-            <div className="hidden grid-cols-[1fr_120px_150px_110px] border-b border-[#E3E8EF] bg-[#F8FAFC] px-5 py-4 text-sm font-bold text-[#526071] lg:grid">
+          <div className="tn-commerce-card overflow-hidden">
+            <div className="hidden grid-cols-[1fr_120px_150px_110px] border-b border-[#E3E8EF] bg-[#F4F2ED] px-5 py-4 text-sm font-bold text-[#526071] lg:grid">
               <span>{copy.cart.columns.product}</span>
               <span>{copy.cart.columns.price}</span>
               <span>{copy.cart.columns.quantity}</span>
               <span className="text-right">{copy.cart.columns.total}</span>
             </div>
 
-            {isLoading && <div className="h-[300px] animate-pulse bg-[#F8FAFC]" />}
+            {isLoading && <div className="h-[300px] animate-pulse bg-[#F4F2ED]" />}
 
             {!isLoading && cart?.items.length === 0 && (
               <div className="flex min-h-[260px] flex-col items-center justify-center px-5 text-center">
-                <ShoppingBag className="mb-3 size-10 text-[#8B96A5]" />
-                <h2 className="text-lg font-bold">{copy.cart.emptyTitle}</h2>
+                <ShoppingBag className="mb-3 size-10 text-[#657080]" />
+                <h2 className="text-lg font-semibold">{copy.cart.emptyTitle}</h2>
                 <p className="mt-1 max-w-[420px] text-sm text-[#657080]">
                   {copy.cart.emptyText}
                 </p>
-                <Button asChild className="mt-5 rounded-[9px] bg-[#D92F49] text-white hover:bg-[#B4233A]">
+                <Button asChild className="mt-5 rounded-none bg-[#092BB4] text-white hover:bg-[#061E81]">
                   <Link href={localizeHref(ROUTES.PRODUCTS)}>{copy.common.browseProducts}</Link>
                 </Button>
               </div>
@@ -85,14 +85,14 @@ export function CartStorefront(): React.ReactElement {
                 <div className="flex min-w-0 gap-4">
                   <Link
                     href={localizeHref(ROUTES.PRODUCT_DETAIL(item.product.slug))}
-                    className="relative size-[92px] shrink-0 overflow-hidden rounded-[8px] bg-[#F8FAFC]"
+                    className="relative size-[92px] shrink-0 overflow-hidden rounded-none bg-[#F4F2ED]"
                   >
                     <SafeImage src={publicMediaUrl(item.product.imageUrl)} alt={item.product.name} fill sizes="92px" className="object-contain p-2" />
                   </Link>
                   <div className="min-w-0">
                     <Link
                       href={localizeHref(ROUTES.PRODUCT_DETAIL(item.product.slug))}
-                      className="line-clamp-2 text-sm font-bold text-[#11141B] hover:text-[#B4233A]"
+                      className="line-clamp-2 text-sm font-semibold text-[#101010] hover:text-[#061E81]"
                     >
                       <h2>{item.product.name}</h2>
                     </Link>
@@ -101,7 +101,7 @@ export function CartStorefront(): React.ReactElement {
                   </div>
                 </div>
 
-                <div className="font-bold tabular-nums">{formatGel(item.unitPrice)}</div>
+                <div className="font-semibold tabular-nums">{formatGel(item.unitPrice)}</div>
 
                 <div className="flex w-fit items-center rounded-[7px] border border-[#DFE6EF]">
                   <Button
@@ -113,7 +113,7 @@ export function CartStorefront(): React.ReactElement {
                   >
                     -
                   </Button>
-                  <span className="w-9 text-center text-sm font-bold">{item.quantity}</span>
+                  <span className="w-9 text-center text-sm font-semibold">{item.quantity}</span>
                   <Button
                     type="button"
                     variant="ghost"
@@ -126,12 +126,12 @@ export function CartStorefront(): React.ReactElement {
                 </div>
 
                 <div className="flex items-center justify-between gap-3 lg:justify-end">
-                  <span className="font-extrabold tabular-nums">{formatGel(item.lineTotal)}</span>
+                  <span className="font-semibold tabular-nums">{formatGel(item.lineTotal)}</span>
                   <Button
                     type="button"
                     variant="ghost"
                     size="icon-sm"
-                    className="text-[#8B96A5] hover:text-[#B42318]"
+                    className="text-[#657080] hover:text-[#B42318]"
                     onClick={() => removeCartItem.mutate(item.id)}
                     aria-label={copy.cart.removeItemAria}
                   >
@@ -152,7 +152,7 @@ export function CartStorefront(): React.ReactElement {
                   <Trash2 className="size-4" />
                   {copy.cart.clear}
                 </Button>
-                <Button type="button" variant="ghost" className="text-[#1D5FD3]">
+                <Button type="button" variant="ghost" className="text-[#061E81] hover:text-[#092BB4]">
                   {copy.cart.refresh} <RotateCcw className="size-4" />
                 </Button>
               </div>
@@ -160,10 +160,10 @@ export function CartStorefront(): React.ReactElement {
           </div>
 
           <aside className="space-y-4">
-            <div className="rounded-[8px] border border-[#DFE6EF] bg-white p-5 shadow-[0_8px_24px_rgba(8,21,42,0.05)]">
-              <h2 className="text-xl font-extrabold">{copy.cart.summaryTitle}</h2>
+            <div className="tn-commerce-card p-5">
+              <h2 className="tn-section-title">{copy.cart.summaryTitle}</h2>
               <fieldset className="mt-4" aria-describedby="delivery-zone-hint" aria-required="true">
-                <legend className="text-sm font-bold text-[#07152A]">
+                <legend className="text-sm font-bold text-[#101010]">
                   {copy.cart.deliveryZoneTitle} <span aria-hidden="true">*</span>
                 </legend>
                 <p id="delivery-zone-hint" className="mt-1 text-xs leading-5 text-[#657080]">
@@ -178,22 +178,22 @@ export function CartStorefront(): React.ReactElement {
                         key={zone}
                         className={`flex cursor-pointer items-center justify-between gap-3 rounded-[7px] border px-3 py-2.5 text-sm transition-colors ${
                           isSelected
-                            ? 'border-[#8C5CF6] bg-[#F7F2FF]'
+                            ? 'border-[#092BB4] bg-[#EEF2FF]'
                             : 'border-[#DFE6EF] hover:border-[#B9C4D2]'
                         }`}
                       >
-                        <span className="flex items-center gap-2.5 font-bold text-[#07152A]">
+                        <span className="flex items-center gap-2.5 font-bold text-[#101010]">
                           <input
                             type="radio"
                             name="delivery-zone"
                             value={zone}
                             checked={isSelected}
                             onChange={() => setDeliveryZone(zone)}
-                            className="size-4 accent-[#07152A]"
+                            className="size-4 accent-[#101010]"
                           />
                           {copy.cart.deliveryZones[zone]}
                         </span>
-                        <span className="font-black tabular-nums">{formatGel(storefrontDeliveryPrices[zone])}</span>
+                        <span className="font-bold tabular-nums">{formatGel(storefrontDeliveryPrices[zone])}</span>
                       </label>
                     );
                   })}
@@ -207,7 +207,7 @@ export function CartStorefront(): React.ReactElement {
                   {deliveryZone ? (
                     <span>+ {formatGel(deliveryPrice)}</span>
                   ) : (
-                    <span className="font-semibold text-[#8B96A5]">{copy.cart.deliveryZoneRequired}</span>
+                    <span className="font-semibold text-[#657080]">{copy.cart.deliveryZoneRequired}</span>
                   )}
                 </div>
               </div>
@@ -217,7 +217,7 @@ export function CartStorefront(): React.ReactElement {
                 <strong className="text-3xl tabular-nums">{formatGel(grandTotal)}</strong>
               </div>
 
-              <p className="mt-2 rounded-[10px] bg-[#FFF3F5] px-3 py-2 text-xs font-semibold leading-5 text-[#7A3240]">
+              <p className="mt-2 rounded-none bg-[#F3F6FF] px-3 py-2 text-xs font-semibold leading-5 text-[#061E81]">
                 {copy.cart.totalNotice}
               </p>
 
@@ -225,24 +225,24 @@ export function CartStorefront(): React.ReactElement {
                 ref={checkoutButtonRef}
                 data-checkout-trigger="true"
                 type="button"
-                className="mt-5 h-11 w-full rounded-[9px] bg-[#D92F49] font-black text-white hover:bg-[#B4233A]"
+                className="tn-primary-action mt-5 h-11 w-full font-semibold"
                 disabled={!cart || cart.items.length === 0 || !deliveryZone}
                 onClick={() => setIsCheckoutOpen(true)}
               >
                 {copy.cart.checkout}
               </Button>
-              <Button asChild type="button" variant="outline" className="mt-2 h-10 w-full rounded-[7px] border-[#07152A]">
+              <Button asChild type="button" variant="outline" className="tn-secondary-action mt-2 h-11 w-full">
                 <Link href={localizeHref(ROUTES.PRODUCTS)}>{copy.cart.continueShopping}</Link>
               </Button>
             </div>
 
-            <div className="rounded-[8px] border border-[#DFE6EF] bg-white p-5">
+            <div className="tn-commerce-card p-5">
               <div className="space-y-4">
                 {trustItems.map(({ icon: Icon, title, text }) => (
                   <div key={title} className="flex gap-3">
-                    <Icon className="size-6 shrink-0 text-[#07152A]" />
+                    <Icon className="size-6 shrink-0 text-[#101010]" />
                     <div>
-                      <p className="text-sm font-bold">{title}</p>
+                      <p className="text-sm font-semibold">{title}</p>
                       <p className="text-xs text-[#657080]">{text}</p>
                     </div>
                   </div>
@@ -253,7 +253,7 @@ export function CartStorefront(): React.ReactElement {
         </section>
 
         <section className="mt-8">
-          <h2 className="mb-4 text-xl font-extrabold">{copy.cart.mayAlsoLike}</h2>
+          <h2 className="tn-section-title mb-4">{copy.cart.mayAlsoLike}</h2>
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4 2xl:grid-cols-5">
             {(home?.featuredProducts ?? []).slice(0, 5).map((product) => (
               <ProductCard key={product.id} product={product} />

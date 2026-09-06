@@ -11,7 +11,7 @@ import { RegisterForm } from '@/features/auth/components/RegisterForm';
 import { AuthPageShell } from '@/features/auth/components/AuthPageShell';
 import { CartStorefront } from '@/features/storefront/components/CartStorefront';
 import { FavoritesDashboard } from '@/features/storefront/components/FavoritesDashboard';
-import { HomeStorefront } from '@/features/storefront/components/HomeStorefront';
+import { BoldDiscoveryHome } from '@/features/storefront/components/BoldDiscoveryHome';
 import { ProductDetailRoute } from '@/features/storefront/pages/ProductDetailRoute';
 import { ProductsStorefront } from '@/features/storefront/components/ProductsStorefront';
 import { OrderSuccessPage } from '@/features/storefront/components/OrderSuccessPage';
@@ -135,7 +135,7 @@ export default async function Page({ params }: PageProps): Promise<React.ReactEl
   const locale = resolvePrefixedLocale(rawLocale, segments);
   const copy = getCopy(locale);
 
-  if (segments.length === 0) return <HomeStorefront />;
+  if (segments.length === 0) return <BoldDiscoveryHome />;
 
   const infoPageKey = getInfoPageKey(segments);
   if (infoPageKey) return <StorefrontInfoPage {...copy.infoPages[infoPageKey]} />;
@@ -295,9 +295,9 @@ function VerifyAccountRoute({
         <span className="tn-soft-icon mx-auto grid size-16 place-items-center rounded-[16px]">
           <MailCheck className="size-7" aria-hidden="true" />
         </span>
-        <h1 className="mt-5 text-3xl font-black tracking-[-0.035em] text-[#11141B]">{copy.auth.verify.title}</h1>
+        <h1 className="mt-5 text-3xl font-semibold tracking-[-0.035em] text-[#101010]">{copy.auth.verify.title}</h1>
         <p className="mt-2 text-sm leading-6 text-[#69717E]">{copy.auth.verify.description}</p>
-        <Button asChild className="tn-primary-action mt-6 h-12 px-6 font-black">
+        <Button asChild className="tn-primary-action mt-6 h-12 px-6 font-semibold">
           <Link href={localizedPath(locale, ROUTES.LOGIN)}>{copy.auth.verify.backToLogin}</Link>
         </Button>
       </div>

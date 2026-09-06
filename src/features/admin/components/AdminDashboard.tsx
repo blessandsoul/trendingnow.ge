@@ -293,8 +293,8 @@ function TogglePill({
       className={cn(
         'inline-flex h-8 items-center gap-1 rounded-full border px-3 text-xs font-bold transition disabled:opacity-60',
         active
-          ? 'border-[#BFA4FF] bg-[#FFF0F3] text-[#07152A]'
-          : 'border-[#DCE4EF] bg-white text-[#657286] hover:border-[#8C5CF6]',
+          ? 'border-[#D9DDE7] bg-[#EEF2FF] text-[#101010]'
+          : 'border-[#D9DDE7] bg-white text-[#69717E] hover:border-[#092BB4]',
       )}
     >
       {active ? <Eye className="size-3.5" /> : <EyeOff className="size-3.5" />}
@@ -319,13 +319,13 @@ function MetricCard({
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.08em] text-[#7A8595]">{title}</p>
-          <p className="mt-2 text-3xl font-black tabular-nums text-[#07152A]">{value}</p>
+          <p className="mt-2 text-3xl font-bold tabular-nums text-[#101010]">{value}</p>
         </div>
-        <span className="grid size-10 place-items-center rounded-[6px] bg-[#F2EAFF] text-[#07152A]">
+        <span className="grid size-10 place-items-center rounded-[6px] bg-[#EEF2FF] text-[#101010]">
           <Icon className="size-5" />
         </span>
       </div>
-      <p className="mt-3 text-xs leading-5 text-[#657286]">{hint}</p>
+      <p className="mt-3 text-xs leading-5 text-[#69717E]">{hint}</p>
     </article>
   );
 }
@@ -347,8 +347,8 @@ function Panel({
     <section className={cn('rounded-[6px] border border-[#DDE5EF] bg-white shadow-[0_12px_30px_rgba(8,21,42,0.04)]', className)}>
       <div className="flex flex-col gap-3 border-b border-[#E8EDF4] px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
         <div className="min-w-0">
-          <h2 className="text-base font-black text-[#07152A]">{title}</h2>
-          {description && <p className="mt-1 text-sm leading-5 text-[#657286]">{description}</p>}
+          <h2 className="text-base font-bold text-[#101010]">{title}</h2>
+          {description && <p className="mt-1 text-sm leading-5 text-[#69717E]">{description}</p>}
         </div>
         {action}
       </div>
@@ -475,11 +475,11 @@ function AdminSidebar({ page, mobile = false }: { page: AdminPage; mobile?: bool
   return (
     <div className={cn('tn-dark-panel flex h-full flex-col rounded-none text-white', mobile ? 'p-4' : 'p-4')}>
       <Link href={ROUTES.HOME} className="mb-7 inline-flex items-center gap-3" aria-label={adminCopy.homeAria}>
-        <span className="grid size-10 place-items-center rounded-[12px] bg-[#FF4057] text-white">
+        <span className="grid size-10 place-items-center rounded-[12px] bg-[#092BB4] text-white">
           <ShoppingBag className="size-5" />
         </span>
         <span>
-          <span className="block text-sm font-black leading-4">TrendingNow.ge</span>
+          <span className="block text-sm font-bold leading-4">TrendingNow.ge</span>
           <span className="text-xs text-white/55">{adminCopy.storeAdmin}</span>
         </span>
       </Link>
@@ -491,7 +491,7 @@ function AdminSidebar({ page, mobile = false }: { page: AdminPage; mobile?: bool
             href={href}
             className={cn(
               'flex h-10 items-center gap-3 rounded-[10px] px-3 text-sm font-bold text-white/68 transition hover:bg-white/8 hover:text-white',
-              page === itemPage && 'bg-white text-[#07152A] shadow-[0_10px_22px_rgba(0,0,0,0.16)] hover:bg-white hover:text-[#07152A]',
+              page === itemPage && 'bg-white text-[#101010] shadow-[0_10px_22px_rgba(0,0,0,0.16)] hover:bg-white hover:text-[#101010]',
             )}
           >
             <Icon className="size-4" />
@@ -518,7 +518,7 @@ function DashboardShell({ page, children }: { page: AdminPage; children: React.R
       </aside>
 
       <div className="lg:pl-[254px]">
-        <header className="sticky top-0 z-30 border-b border-[#E8E0F8] bg-white/92 backdrop-blur">
+        <header className="sticky top-0 z-30 border-b border-[#D9DDE7] bg-white/92 backdrop-blur">
           <div className="flex min-h-16 items-center justify-between gap-3 px-4 py-3 lg:px-6">
             <div className="flex min-w-0 items-center gap-3">
               <Sheet>
@@ -527,7 +527,7 @@ function DashboardShell({ page, children }: { page: AdminPage; children: React.R
                     <Menu className="size-4" />
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="left" className="w-[294px] border-0 bg-[#07152A] p-0">
+                <SheetContent side="left" className="w-[294px] border-0 bg-[#101010] p-0">
                   <SheetHeader className="sr-only">
                     <SheetTitle>{adminCopy.adminMenu}</SheetTitle>
                     <SheetDescription>{adminCopy.adminNavigation}</SheetDescription>
@@ -536,8 +536,8 @@ function DashboardShell({ page, children }: { page: AdminPage; children: React.R
                 </SheetContent>
               </Sheet>
               <div className="min-w-0">
-                <p className="text-xs font-black uppercase tracking-[0.14em] text-[#8C5CF6]">{adminCopy.adminTitle}</p>
-                <h1 className="truncate text-xl font-black text-[#11141B] sm:text-2xl">{pageLabel}</h1>
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-[#092BB4]">{adminCopy.adminTitle}</p>
+                <h1 className="truncate text-xl font-bold text-[#11141B] sm:text-2xl">{pageLabel}</h1>
               </div>
             </div>
 
@@ -549,10 +549,10 @@ function DashboardShell({ page, children }: { page: AdminPage; children: React.R
                 </Link>
               </Button>
               <div className="hidden text-right md:block">
-                <p className="text-sm font-black">{user?.firstName} {user?.lastName}</p>
-                <p className="text-xs text-[#657286]">{user?.email}</p>
+                <p className="text-sm font-bold">{user?.firstName} {user?.lastName}</p>
+                <p className="text-xs text-[#69717E]">{user?.email}</p>
               </div>
-              <Badge className="border-[#D9ECFF] bg-[#F0F7FF] text-[#174A98]">{copy.admin.adminBadge}</Badge>
+              <Badge className="border-[#D9DDE7] bg-[#F4F2ED] text-[#303844]">{copy.admin.adminBadge}</Badge>
               <Button
                 type="button"
                 variant="outline"
@@ -588,8 +588,8 @@ function AccessState(): React.ReactElement {
 
   if (isInitializing) {
     return (
-      <div className="grid min-h-dvh place-items-center bg-[#F5F7FA]">
-        <div className="flex items-center gap-3 rounded-[6px] border border-[#DDE5EF] bg-white px-5 py-4 text-sm font-bold text-[#657286]">
+      <div className="grid min-h-dvh place-items-center bg-[#F4F2ED]">
+        <div className="flex items-center gap-3 rounded-[6px] border border-[#DDE5EF] bg-white px-5 py-4 text-sm font-bold text-[#69717E]">
           <Loader2 className="size-4 animate-spin" />
           {copy.admin.checkingAccess}
         </div>
@@ -599,15 +599,15 @@ function AccessState(): React.ReactElement {
 
   if (!user || user.role !== 'ADMIN') {
     return (
-      <div className="grid min-h-dvh place-items-center bg-[#F5F7FA] px-5">
+      <div className="grid min-h-dvh place-items-center bg-[#F4F2ED] px-5">
         <div className="w-full max-w-[460px] rounded-[6px] border border-[#DDE5EF] bg-white p-6 text-center shadow-[0_18px_60px_rgba(8,21,42,0.08)]">
           <ShieldCheck className="mx-auto size-10 text-[#7A8595]" />
-          <h1 className="mt-4 text-2xl font-black">{copy.admin.accessRequiredTitle}</h1>
-          <p className="mt-2 text-sm leading-6 text-[#657286]">
+          <h1 className="mt-4 text-2xl font-bold">{copy.admin.accessRequiredTitle}</h1>
+          <p className="mt-2 text-sm leading-6 text-[#69717E]">
             {copy.admin.accessRequiredText}
           </p>
           <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:justify-center">
-            <Button asChild className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]">
+            <Button asChild className="rounded-[10px] bg-[#092BB4] text-white hover:bg-[#061E81]">
               <Link href={ROUTES.LOGIN}>{copy.admin.signInAsAdmin}</Link>
             </Button>
             {user && (
@@ -653,34 +653,34 @@ function OverviewPage({
         <Panel title={adminCopy.homepageCms} description={adminCopy.homepageCmsHint}>
           <div className="grid gap-3 sm:grid-cols-3">
             <div className="rounded-[6px] border border-[#E4EAF2] bg-[#FAFBFC] p-4">
-              <p className="text-2xl font-black">{homepageCounts.rows}</p>
-              <p className="text-sm font-bold text-[#657286]">{adminCopy.productRowsCount}</p>
+              <p className="text-2xl font-bold">{homepageCounts.rows}</p>
+              <p className="text-sm font-bold text-[#69717E]">{adminCopy.productRowsCount}</p>
             </div>
             <div className="rounded-[6px] border border-[#E4EAF2] bg-[#FAFBFC] p-4">
-              <p className="text-2xl font-black">{homepageCounts.banners}</p>
-              <p className="text-sm font-bold text-[#657286]">{adminCopy.promoBannersCount}</p>
+              <p className="text-2xl font-bold">{homepageCounts.banners}</p>
+              <p className="text-sm font-bold text-[#69717E]">{adminCopy.promoBannersCount}</p>
             </div>
             <div className="rounded-[6px] border border-[#E4EAF2] bg-[#FAFBFC] p-4">
-              <p className="text-2xl font-black">{homepageCounts.services}</p>
-              <p className="text-sm font-bold text-[#657286]">{adminCopy.serviceItemsCount}</p>
+              <p className="text-2xl font-bold">{homepageCounts.services}</p>
+              <p className="text-sm font-bold text-[#69717E]">{adminCopy.serviceItemsCount}</p>
             </div>
           </div>
-          <Button asChild className="mt-4 rounded-[6px] bg-[#07152A] text-white hover:bg-[#142238]">
+          <Button asChild className="mt-4 rounded-[6px] bg-[#101010] text-white hover:bg-[#1A1A1A]">
             <Link href={ROUTES.ADMIN.HOMEPAGE}>{adminCopy.openHomepageEditor}</Link>
           </Button>
         </Panel>
 
         <Panel title={adminCopy.storefrontHealth} description={adminCopy.storefrontHealthHint}>
           <div className="grid gap-2 text-sm">
-            <div className="flex items-center justify-between rounded-[6px] bg-[#F7F9FB] px-3 py-2">
+            <div className="flex items-center justify-between rounded-[6px] bg-[#F4F2ED] px-3 py-2">
               <span>{adminCopy.sourceLabels.FEATURED}</span>
               <strong>{summary?.featuredProductCount ?? 0}</strong>
             </div>
-            <div className="flex items-center justify-between rounded-[6px] bg-[#F7F9FB] px-3 py-2">
+            <div className="flex items-center justify-between rounded-[6px] bg-[#F4F2ED] px-3 py-2">
               <span>{adminCopy.sourceLabels.BESTSELLER}</span>
               <strong>{summary?.bestsellerProductCount ?? 0}</strong>
             </div>
-            <div className="flex items-center justify-between rounded-[6px] bg-[#F7F9FB] px-3 py-2">
+            <div className="flex items-center justify-between rounded-[6px] bg-[#F4F2ED] px-3 py-2">
               <span>{adminCopy.newProducts}</span>
               <strong>{summary?.newProductCount ?? 0}</strong>
             </div>
@@ -751,7 +751,7 @@ function HeroEditor(): React.ReactElement {
           </div>
           <div className="flex items-center justify-between gap-3">
             <TogglePill active={heroDraft.isActive} label={heroDraft.isActive ? copy.admin.live : copy.admin.hidden} onClick={() => setHeroDraft((prev) => ({ ...prev, isActive: !prev.isActive }))} />
-            <Button type="submit" className="rounded-[6px] bg-[#07152A] text-white hover:bg-[#142238]" disabled={updateHero.isPending}>
+            <Button type="submit" className="rounded-[6px] bg-[#101010] text-white hover:bg-[#1A1A1A]" disabled={updateHero.isPending}>
               {updateHero.isPending ? <Loader2 className="size-4 animate-spin" /> : <Save className="size-4" />}
               {adminCopy.saveHero}
             </Button>
@@ -779,7 +779,7 @@ function HeroEditor(): React.ReactElement {
                 <Input value={slideDraft.imageUrl} onChange={(event) => setSlideDraft((prev) => ({ ...prev, imageUrl: event.target.value }))} placeholder="/uploads/storefront/hero/x.webp" />
               </Field>
               <AssetUploadButton kind="hero" label={adminCopy.heroSlide} compact onUploaded={(url) => setSlideDraft((prev) => ({ ...prev, imageUrl: url }))} />
-              <Button type="submit" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]" disabled={createSlide.isPending}>
+              <Button type="submit" className="rounded-[10px] bg-[#092BB4] text-white hover:bg-[#061E81]" disabled={createSlide.isPending}>
                 <Plus className="size-4" />
                 {adminCopy.add}
               </Button>
@@ -794,7 +794,7 @@ function HeroEditor(): React.ReactElement {
             {(slide: IAdminHomeHeroSlide, index) => (
               <article className="rounded-[6px] border border-[#E4EAF2] bg-white p-3 pl-14">
                 <div className="flex gap-3">
-                  <div className="relative size-16 shrink-0 overflow-hidden rounded-[6px] bg-[#F7F9FB]">
+                  <div className="relative size-16 shrink-0 overflow-hidden rounded-[6px] bg-[#F4F2ED]">
                     <SafeImage src={publicMediaUrl(slide.imageUrl)} alt={slide.altText ?? ''} fill sizes="64px" className="object-cover" />
                   </div>
                   <div className="grid min-w-0 flex-1 gap-2">
@@ -879,7 +879,7 @@ function ProductRowsEditor({
             {categories.map((category) => <option key={category.id} value={category.id}>{category.name}</option>)}
           </NativeSelect>
         )}
-        <Button type="submit" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]" disabled={createRow.isPending}>
+        <Button type="submit" className="rounded-[10px] bg-[#092BB4] text-white hover:bg-[#061E81]" disabled={createRow.isPending}>
           <Plus className="size-4" />
           {adminCopy.addRow}
         </Button>
@@ -1004,7 +1004,7 @@ function ProductRowCard({
           )}
           <Button
             type="button"
-            className="rounded-[6px] bg-[#07152A] text-white hover:bg-[#142238]"
+            className="rounded-[6px] bg-[#101010] text-white hover:bg-[#1A1A1A]"
             onClick={() => onSave({
               title: draft.title,
               source: draft.source,
@@ -1029,7 +1029,7 @@ function ProductRowCard({
             </NativeSelect>
             <Button
               type="button"
-              className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]"
+              className="rounded-[10px] bg-[#092BB4] text-white hover:bg-[#061E81]"
               disabled={!manualProductId || manualIds.includes(manualProductId)}
               onClick={() => {
                 const next = [...manualIds, manualProductId];
@@ -1119,7 +1119,7 @@ function PromoBannersEditor(): React.ReactElement {
           <option value="WARM">{adminCopy.toneLabels.WARM}</option>
           <option value="BLUE">{adminCopy.toneLabels.BLUE}</option>
         </NativeSelect>
-        <Button type="submit" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]" disabled={createBanner.isPending}>
+        <Button type="submit" className="rounded-[10px] bg-[#092BB4] text-white hover:bg-[#061E81]" disabled={createBanner.isPending}>
           <Plus className="size-4" />
           {adminCopy.add}
         </Button>
@@ -1132,7 +1132,7 @@ function PromoBannersEditor(): React.ReactElement {
         {(banner: IAdminHomePromoBanner) => (
           <article className="rounded-[6px] border border-[#E4EAF2] bg-white p-3 pl-14">
             <div className="flex flex-col gap-3 md:flex-row">
-              <div className="relative h-24 w-full overflow-hidden rounded-[6px] bg-[#F7F9FB] md:w-44">
+              <div className="relative h-24 w-full overflow-hidden rounded-[6px] bg-[#F4F2ED] md:w-44">
                 <SafeImage src={publicMediaUrl(banner.imageUrl)} alt="" fill sizes="176px" className="object-cover" />
               </div>
               <div className="grid min-w-0 flex-1 gap-2">
@@ -1202,7 +1202,7 @@ function ServiceNewsletterEditor(): React.ReactElement {
           <Input value={serviceDraft.icon} onChange={(event) => setServiceDraft((prev) => ({ ...prev, icon: event.target.value }))} placeholder={adminCopy.icon} />
           <Input value={serviceDraft.title} onChange={(event) => setServiceDraft((prev) => ({ ...prev, title: event.target.value }))} placeholder={adminCopy.title} />
           <Input value={serviceDraft.text} onChange={(event) => setServiceDraft((prev) => ({ ...prev, text: event.target.value }))} placeholder={adminCopy.text} />
-          <Button type="submit" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]">
+          <Button type="submit" className="rounded-[10px] bg-[#092BB4] text-white hover:bg-[#061E81]">
             <Plus className="size-4" />
             {adminCopy.add}
           </Button>
@@ -1253,7 +1253,7 @@ function ServiceNewsletterEditor(): React.ReactElement {
           </div>
           <div className="flex items-center justify-between gap-3">
             <TogglePill active={newsletterDraft.isActive} label={newsletterDraft.isActive ? copy.admin.live : copy.admin.hidden} onClick={() => setNewsletterDraft((prev) => ({ ...prev, isActive: !prev.isActive }))} />
-            <Button type="submit" className="rounded-[6px] bg-[#07152A] text-white hover:bg-[#142238]" disabled={updateNewsletter.isPending}>
+            <Button type="submit" className="rounded-[6px] bg-[#101010] text-white hover:bg-[#1A1A1A]" disabled={updateNewsletter.isPending}>
               <Save className="size-4" />
               {adminCopy.saveNewsletter}
             </Button>
@@ -1319,7 +1319,7 @@ function CategoryCard({
   return (
     <article className="rounded-[6px] border border-[#E4EAF2] bg-white p-3 pl-14">
       <div className="grid gap-3">
-        <div className="relative grid size-[84px] place-items-center overflow-hidden rounded-[6px] bg-[#F7F9FB]">
+        <div className="relative grid size-[84px] place-items-center overflow-hidden rounded-[6px] bg-[#F4F2ED]">
           {draft.imageUrl ? (
             <SafeImage src={publicMediaUrl(draft.imageUrl)} alt={draft.name} fill sizes="84px" className="object-contain p-2" />
           ) : (
@@ -1334,7 +1334,7 @@ function CategoryCard({
           <Input value={draft.description} onChange={(event) => setDraft((prev) => ({ ...prev, description: event.target.value }))} placeholder={adminCopy.description} />
           <Field label={adminCopy.categoryParent}>
             {hasChildren ? (
-              <span className="flex h-9 items-center rounded-md border border-input bg-[#F7F9FB] px-3 text-sm text-[#657286]">
+              <span className="flex h-9 items-center rounded-md border border-input bg-[#F4F2ED] px-3 text-sm text-[#69717E]">
                 {adminCopy.categoryParentNone}
               </span>
             ) : (
@@ -1354,7 +1354,7 @@ function CategoryCard({
           <TogglePill active={draft.isActive} label={draft.isActive ? copy.admin.live : copy.admin.hidden} onClick={() => setDraft((prev) => ({ ...prev, isActive: !prev.isActive }))} />
           <Button
             type="button"
-            className="rounded-[6px] bg-[#07152A] text-white hover:bg-[#142238]"
+            className="rounded-[6px] bg-[#101010] text-white hover:bg-[#1A1A1A]"
             disabled={updateCategory.isPending}
             onClick={() => updateCategory.mutate({
               categoryId: category.id,
@@ -1439,7 +1439,7 @@ function CategoriesPage({ categories }: { categories: IAdminStorefrontCategory[]
               {topLevelCategories(categories).map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}
             </NativeSelect>
           </Field>
-          <Button type="submit" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]" disabled={createCategory.isPending}>
+          <Button type="submit" className="rounded-[10px] bg-[#092BB4] text-white hover:bg-[#061E81]" disabled={createCategory.isPending}>
             <Plus className="size-4" />
             {adminCopy.createCategory}
           </Button>
@@ -1778,7 +1778,7 @@ function ProductEditor({
         <TogglePill active={Boolean(draft.isActive)} label={draft.isActive ? copy.admin.live : copy.admin.hidden} onClick={() => setDraft((prev) => ({ ...prev, isActive: !prev.isActive }))} />
       </div>
       <div className="mt-2 grid gap-2 sm:grid-cols-2">
-        <Button type="submit" className="rounded-[6px] bg-[#07152A] text-white hover:bg-[#142238]" disabled={isSaving || !categories.length}>
+        <Button type="submit" className="rounded-[6px] bg-[#101010] text-white hover:bg-[#1A1A1A]" disabled={isSaving || !categories.length}>
           {isSaving ? <Loader2 className="size-4 animate-spin" /> : <Save className="size-4" />}
           {product ? adminCopy.saveProduct : adminCopy.createProduct}
         </Button>
@@ -1790,7 +1790,7 @@ function ProductEditor({
           <Button
             type="button"
             variant="outline"
-            className="rounded-[6px] border-[#F2D0D0] text-[#B42318] hover:bg-[#FFF5F5] hover:text-[#B42318] sm:col-span-2"
+            className="rounded-[6px] border-[#D9DDE7] text-[#B42318] hover:bg-[#EEF2FF] hover:text-[#B42318] sm:col-span-2"
             disabled={isDeleting || !product.isActive}
             onClick={() => {
               if (!window.confirm(`${adminCopy.delete}: ${product.name}?`)) return;
@@ -1834,7 +1834,7 @@ function ProductsPage({ categories }: { categories: IAdminStorefrontCategory[] }
       action={(
         <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
           <SheetTrigger asChild>
-            <Button type="button" className="rounded-[10px] bg-[#FF4057] text-white hover:bg-[#E9344C]" onClick={() => setEditingProduct(undefined)}>
+            <Button type="button" className="rounded-[10px] bg-[#092BB4] text-white hover:bg-[#061E81]" onClick={() => setEditingProduct(undefined)}>
               <PackagePlus className="size-4" />
               {adminCopy.newProduct}
             </Button>
@@ -1891,12 +1891,12 @@ function ProductsPage({ categories }: { categories: IAdminStorefrontCategory[] }
               <TableRow key={product.id}>
                 <TableCell>
                   <div className="flex min-w-[260px] items-center gap-3">
-                    <div className="relative size-12 shrink-0 overflow-hidden rounded-[6px] bg-[#F7F9FB]">
+                    <div className="relative size-12 shrink-0 overflow-hidden rounded-[6px] bg-[#F4F2ED]">
                       <SafeImage src={publicMediaUrl(product.imageUrl)} alt={product.name} fill sizes="48px" className="object-contain p-1.5" />
                     </div>
                     <div className="min-w-0">
                       <p className="line-clamp-1 font-bold">{product.name}</p>
-                      <p className="text-xs text-[#657286]">{product.category.name} · {product.brand}</p>
+                      <p className="text-xs text-[#69717E]">{product.category.name} · {product.brand}</p>
                     </div>
                   </div>
                 </TableCell>
@@ -1951,7 +1951,7 @@ function UsersPage(): React.ReactElement {
               <TableRow key={adminUser.id}>
                 <TableCell>
                   <p className="font-bold">{adminUser.firstName} {adminUser.lastName}</p>
-                  <p className="text-xs text-[#657286]">{adminUser.email}</p>
+                  <p className="text-xs text-[#69717E]">{adminUser.email}</p>
                 </TableCell>
                 <TableCell><Badge>{adminUser.role}</Badge></TableCell>
                 <TableCell>{adminUser.isActive ? copy.admin.active : copy.admin.inactive}</TableCell>
@@ -1981,12 +1981,12 @@ function SessionsPage(): React.ReactElement {
   return (
     <Panel title={adminCopy.nav.sessions} description={adminCopy.sessionsHint}>
       <div className="grid gap-2">
-        {isLoading && <div className="rounded-[6px] border border-[#E4EAF2] bg-white p-4 text-sm text-[#657286]">{adminCopy.loadingSessions}</div>}
+        {isLoading && <div className="rounded-[6px] border border-[#E4EAF2] bg-white p-4 text-sm text-[#69717E]">{adminCopy.loadingSessions}</div>}
         {sessions.map((session) => (
           <article key={session.id} className="flex items-start justify-between gap-3 rounded-[6px] border border-[#E4EAF2] bg-white p-4">
             <div className="min-w-0">
               <p className="truncate text-sm font-bold">{session.user.email}</p>
-              <p className="mt-1 text-xs text-[#657286]">{formatDate(session.lastActiveAt)} · {session.ipAddress ?? adminCopy.unknownIp}</p>
+              <p className="mt-1 text-xs text-[#69717E]">{formatDate(session.lastActiveAt)} · {session.ipAddress ?? adminCopy.unknownIp}</p>
               <p className="mt-1 truncate text-xs text-[#8B96A5]">{session.deviceInfo ?? adminCopy.unknownDevice}</p>
             </div>
             <Button type="button" size="sm" variant="outline" className="rounded-[6px]" disabled={expireSession.isExpiring} onClick={() => expireSession.expireSession(session.id)}>
@@ -2004,14 +2004,14 @@ function OrderItemsPreview({ order }: { order: IAdminOrder }): React.ReactElemen
     <div className="grid gap-2">
       {order.items.map((item) => (
         <div key={item.id} className="grid grid-cols-[42px_minmax(0,1fr)_auto] items-center gap-2">
-          <span className="relative block aspect-square overflow-hidden rounded-[6px] bg-[#F8FAFC]">
+          <span className="relative block aspect-square overflow-hidden rounded-[6px] bg-[#F4F2ED]">
             <SafeImage src={publicMediaUrl(item.productImageUrl)} alt="" fill sizes="42px" className="object-contain p-1" />
           </span>
           <span className="min-w-0">
-            <span className="block truncate text-xs font-bold text-[#07152A]">{item.productName}</span>
-            <span className="block text-[11px] text-[#657286]">x {item.quantity}</span>
+            <span className="block truncate text-xs font-bold text-[#101010]">{item.productName}</span>
+            <span className="block text-[11px] text-[#69717E]">x {item.quantity}</span>
           </span>
-          <span className="text-xs font-black tabular-nums">{formatGel(item.lineTotal)}</span>
+          <span className="text-xs font-bold tabular-nums">{formatGel(item.lineTotal)}</span>
         </div>
       ))}
     </div>
@@ -2071,21 +2071,21 @@ function OrdersPage(): React.ReactElement {
             {orders.map((order) => (
               <TableRow key={order.id} className="align-top">
                 <TableCell className="min-w-[180px]">
-                  <p className="font-black">{order.publicCode}</p>
-                  <p className="mt-1 text-xs text-[#657286]">{order.user?.email ?? adminCopy.guestCustomer}</p>
+                  <p className="font-bold">{order.publicCode}</p>
+                  <p className="mt-1 text-xs text-[#69717E]">{order.user?.email ?? adminCopy.guestCustomer}</p>
                 </TableCell>
                 <TableCell className="min-w-[230px]">
                   <p className="font-bold">{order.firstName} {order.lastName}</p>
-                  <p className="mt-1 text-xs text-[#657286]">{order.phone}</p>
-                  <p className="mt-2 max-w-[260px] text-xs leading-5 text-[#657286]">
-                    <span className="font-bold text-[#07152A]">{adminCopy.deliveryAddress}: </span>
+                  <p className="mt-1 text-xs text-[#69717E]">{order.phone}</p>
+                  <p className="mt-2 max-w-[260px] text-xs leading-5 text-[#69717E]">
+                    <span className="font-bold text-[#101010]">{adminCopy.deliveryAddress}: </span>
                     {order.deliveryAddress}
                   </p>
                 </TableCell>
                 <TableCell className="min-w-[280px]">
                   <OrderItemsPreview order={order} />
                 </TableCell>
-                <TableCell className="whitespace-nowrap font-black tabular-nums">{formatGel(order.total)}</TableCell>
+                <TableCell className="whitespace-nowrap font-bold tabular-nums">{formatGel(order.total)}</TableCell>
                 <TableCell className="min-w-[190px]">
                   <NativeSelect
                     value={order.status}
@@ -2098,10 +2098,10 @@ function OrdersPage(): React.ReactElement {
                   </NativeSelect>
                 </TableCell>
                 <TableCell className="min-w-[150px]">
-                  <Badge className="border-[#D9ECFF] bg-[#F0F7FF] text-[#174A98]">{order.telegramStatus}</Badge>
-                  {order.telegramError && <p className="mt-1 max-w-[220px] text-xs leading-5 text-[#A23A3A]">{order.telegramError}</p>}
+                  <Badge className="border-[#D9DDE7] bg-[#F4F2ED] text-[#303844]">{order.telegramStatus}</Badge>
+                  {order.telegramError && <p className="mt-1 max-w-[220px] text-xs leading-5 text-[#061E81]">{order.telegramError}</p>}
                 </TableCell>
-                <TableCell className="whitespace-nowrap text-xs text-[#657286]">{formatDate(order.createdAt)}</TableCell>
+                <TableCell className="whitespace-nowrap text-xs text-[#69717E]">{formatDate(order.createdAt)}</TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -18,7 +18,7 @@ export function RelatedPosts({ posts, locale }: RelatedPostsProps): React.ReactE
 
   return (
     <aside className="mt-16 border-t border-[#DFE6EF] pt-10" aria-label={copy.relatedPosts}>
-      <h2 className="mb-6 text-xl font-black tracking-tight text-[#07152A]">{copy.relatedPosts}</h2>
+      <h2 className="mb-6 text-xl font-bold tracking-tight text-[#101010]">{copy.relatedPosts}</h2>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {posts.map((post) => (
           <Link
@@ -26,11 +26,11 @@ export function RelatedPosts({ posts, locale }: RelatedPostsProps): React.ReactE
             href={localizedPath(locale, `/blog/${post.slug}`)}
             className="group flex gap-3 rounded-[8px] border border-[#DFE6EF] bg-white p-3 transition-all hover:bg-[#FAFBFC] hover:shadow-md"
           >
-            <div className="relative size-20 shrink-0 overflow-hidden rounded-[7px] bg-[#F5F7FA]">
+            <div className="relative size-20 shrink-0 overflow-hidden rounded-[7px] bg-[#F4F2ED]">
               <Image src={post.coverImage} alt={post.title} fill className="object-cover transition-transform group-hover:scale-105" sizes="80px" unoptimized={post.coverImage.startsWith('/api/og')} />
             </div>
             <div className="flex min-w-0 flex-col justify-center">
-              <h3 className="line-clamp-2 text-sm font-bold text-[#07152A] transition-colors group-hover:text-[#174A98]">
+              <h3 className="line-clamp-2 text-sm font-semibold text-[#101010] transition-colors group-hover:text-[#061E81]">
                 {post.title}
               </h3>
               <time dateTime={post.date} className="mt-1 text-xs text-[#8B96A5]">

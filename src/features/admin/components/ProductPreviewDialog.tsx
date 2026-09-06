@@ -32,19 +32,19 @@ export function ProductPreviewDialog({
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-[#07152A]/55 backdrop-blur-sm" />
-        <Dialog.Content className="fixed inset-x-3 top-1/2 z-50 max-h-[calc(100dvh-1.5rem)] -translate-y-1/2 overflow-hidden rounded-2xl border border-[#DFE6EF] bg-[#F6F8FB] shadow-[0_28px_90px_rgba(7,21,42,0.32)] sm:inset-x-6 lg:left-1/2 lg:right-auto lg:w-[min(1120px,calc(100vw-3rem))] lg:-translate-x-1/2">
-          <header className="flex items-center gap-3 border-b border-[#DFE6EF] bg-white px-4 py-3 sm:px-5">
+        <Dialog.Overlay className="fixed inset-0 z-50 bg-[#101010]/55 backdrop-blur-sm" />
+        <Dialog.Content className="fixed inset-x-3 top-1/2 z-50 max-h-[calc(100dvh-1.5rem)] -translate-y-1/2 overflow-hidden rounded-2xl border border-[#D9DDE7] bg-[#F4F2ED] shadow-[0_28px_90px_rgba(7,21,42,0.32)] sm:inset-x-6 lg:left-1/2 lg:right-auto lg:w-[min(1120px,calc(100vw-3rem))] lg:-translate-x-1/2">
+          <header className="flex items-center gap-3 border-b border-[#D9DDE7] bg-white px-4 py-3 sm:px-5">
             <div className="min-w-0">
-              <Dialog.Title className="truncate font-black tracking-tight text-[#07152A]">{adminCopy.previewProductTitle}</Dialog.Title>
+              <Dialog.Title className="truncate font-bold tracking-tight text-[#101010]">{adminCopy.previewProductTitle}</Dialog.Title>
               <Dialog.Description className="sr-only">{adminCopy.previewProductTitle}</Dialog.Description>
             </div>
-            <div className="ml-auto flex items-center gap-1 rounded-lg border border-[#DFE6EF] bg-[#F7F9FB] p-1">
+            <div className="ml-auto flex items-center gap-1 rounded-lg border border-[#D9DDE7] bg-[#F4F2ED] p-1">
               <button
                 type="button"
                 aria-pressed={viewport === 'desktop'}
                 onClick={() => setViewport('desktop')}
-                className={cn('inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-xs font-bold transition', viewport === 'desktop' ? 'bg-white text-[#07152A] shadow-sm' : 'text-[#657184] hover:text-[#07152A]')}
+                className={cn('inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-xs font-bold transition', viewport === 'desktop' ? 'bg-white text-[#101010] shadow-sm' : 'text-[#657184] hover:text-[#101010]')}
               >
                 <Monitor className="size-3.5" />
                 <span className="hidden sm:inline">{adminCopy.previewDesktop}</span>
@@ -53,14 +53,14 @@ export function ProductPreviewDialog({
                 type="button"
                 aria-pressed={viewport === 'phone'}
                 onClick={() => setViewport('phone')}
-                className={cn('inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-xs font-bold transition', viewport === 'phone' ? 'bg-white text-[#07152A] shadow-sm' : 'text-[#657184] hover:text-[#07152A]')}
+                className={cn('inline-flex h-8 items-center gap-1.5 rounded-md px-2.5 text-xs font-bold transition', viewport === 'phone' ? 'bg-white text-[#101010] shadow-sm' : 'text-[#657184] hover:text-[#101010]')}
               >
                 <Smartphone className="size-3.5" />
                 <span className="hidden sm:inline">{adminCopy.previewPhone}</span>
               </button>
             </div>
             <Dialog.Close asChild>
-              <button type="button" aria-label={adminCopy.previewClose} className="grid size-9 place-items-center rounded-full text-[#526071] transition hover:bg-[#EEF2F6] hover:text-[#07152A]">
+              <button type="button" aria-label={adminCopy.previewClose} className="grid size-9 place-items-center rounded-full text-[#526071] transition hover:bg-[#EEF2F6] hover:text-[#101010]">
                 <X className="size-4" />
               </button>
             </Dialog.Close>
@@ -69,11 +69,11 @@ export function ProductPreviewDialog({
           <div className="max-h-[calc(100dvh-5.75rem)] overflow-y-auto p-4 sm:p-6">
             <div
               className={cn(
-                'mx-auto overflow-hidden rounded-xl border border-[#DFE6EF] bg-white shadow-[0_14px_40px_rgba(7,21,42,0.08)] transition-[width]',
+                'mx-auto overflow-hidden rounded-xl border border-[#D9DDE7] bg-white shadow-[0_14px_40px_rgba(7,21,42,0.08)] transition-[width]',
                 isPhoneViewport ? 'w-full max-w-[390px]' : 'w-full max-w-[1040px]',
               )}
             >
-              <div className={cn('border-b border-[#E7ECF2] py-3 text-xs font-black uppercase tracking-[0.14em] text-[#526071]', isPhoneViewport ? 'px-4' : 'px-4 sm:px-6')}>
+              <div className={cn('border-b border-[#E7ECF2] py-3 text-xs font-bold uppercase tracking-[0.14em] text-[#526071]', isPhoneViewport ? 'px-4' : 'px-4 sm:px-6')}>
                 TrendingNow.ge
               </div>
               <article className={cn(
@@ -91,16 +91,16 @@ export function ProductPreviewDialog({
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs font-bold uppercase tracking-[0.13em] text-[#6B7685]">{draft.brand || 'TrendingNow.ge'}</p>
-                  <h2 className={cn('mt-2 font-black tracking-tight text-[#07152A]', isPhoneViewport ? 'text-2xl leading-tight' : 'text-2xl sm:text-3xl')}>{draft.name || adminCopy.product}</h2>
+                  <h2 className={cn('mt-2 font-bold tracking-tight text-[#101010]', isPhoneViewport ? 'text-2xl leading-tight' : 'text-2xl sm:text-3xl')}>{draft.name || adminCopy.product}</h2>
                   <div className={cn('flex flex-wrap items-end gap-x-3 gap-y-1', isPhoneViewport ? 'mt-4' : 'mt-5')}>
-                    <span className={cn('font-black text-[#07152A]', isPhoneViewport ? 'text-xl' : 'text-2xl')}>{formatGel(price)}</span>
+                    <span className={cn('font-bold text-[#101010]', isPhoneViewport ? 'text-xl' : 'text-2xl')}>{formatGel(price)}</span>
                     {originalPrice && originalPrice > price && <span className="text-sm font-semibold text-[#8490A0] line-through">{formatGel(originalPrice)}</span>}
                   </div>
                 </div>
               </article>
               <section className={cn('border-t border-[#E7ECF2]', isPhoneViewport ? 'px-4 py-5' : 'px-4 py-6 sm:px-8 sm:py-8')}>
                 <div className={cn(!isPhoneViewport && 'mx-auto max-w-[760px]')}>
-                  <p className={cn('font-black uppercase tracking-[0.12em] text-[#526071]', isPhoneViewport ? 'mb-2 text-[11px]' : 'mb-3 text-xs')}>{adminCopy.description}</p>
+                  <p className={cn('font-bold uppercase tracking-[0.12em] text-[#526071]', isPhoneViewport ? 'mb-2 text-[11px]' : 'mb-3 text-xs')}>{adminCopy.description}</p>
                   <RichText html={String(draft.description ?? '')} responsiveMode={isPhoneViewport ? 'phone' : 'auto'} />
                 </div>
               </section>

@@ -14,34 +14,29 @@ interface TagsIndexPageProps {
 export async function TagsIndexPage({ locale }: TagsIndexPageProps): Promise<React.ReactElement> {
   const tags = await getAllTags(locale);
   const copy = getBlogCopy(locale);
-  const maxCount = tags[0]?.count ?? 1;
 
   return (
     <BlogShell>
       <div className="storefront-container py-10 md:py-16">
-        <div className="tn-surface mx-auto mb-12 max-w-4xl rounded-[24px] px-6 py-10 text-center sm:px-10 md:py-14">
+        <header className="mb-12 max-w-4xl">
           <p className="tn-kicker mb-3">{copy.title}</p>
-          <h1 className="text-4xl font-black leading-tight tracking-tight text-[#11141B] sm:text-5xl md:text-6xl">
+          <h1 className="tn-page-title">
             {copy.tagsTitle}
           </h1>
-          <p className="mt-4 text-lg leading-8 text-[#526071] md:text-xl">{copy.subtitle}</p>
-        </div>
+          <p className="tn-page-lede mt-4">{copy.subtitle}</p>
+        </header>
 
-        <div className="mx-auto flex max-w-5xl flex-wrap justify-center gap-3">
-          {tags.map(({ tag, slug, count }) => {
-            const scale = 0.9 + (count / maxCount) * 0.45;
-            return (
-              <Link
-                key={slug}
-                href={localizedPath(locale, `/blog/tags/${slug}`)}
-                className="rounded-full border border-[#E8E0F8] bg-white px-4 py-2 font-semibold text-[#11141B] shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#8C5CF6] hover:bg-[#F7F2FF]"
-                style={{ fontSize: `${scale}rem` }}
-              >
-                {tag}
-                <span className="ml-2 text-sm text-[#8B96A5]">({count})</span>
-              </Link>
-            );
-          })}
+        <div className="mx-auto grid max-w-5xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {tags.map(({ tag, slug, count }) => (
+            <Link
+              key={slug}
+              href={localizedPath(locale, `/blog/tags/${slug}`)}
+              className="tn-commerce-card flex min-h-20 items-center justify-between gap-3 px-4 py-3 font-semibold text-[#101010] transition-[background-color,border-color,transform] hover:-translate-y-0.5 hover:border-[#092BB4] hover:bg-[#EEF2FF] motion-reduce:transform-none"
+            >
+              <span>{tag}</span>
+              <span className="shrink-0 rounded-full bg-[#F4F2ED] px-2 py-1 text-sm font-medium tabular-nums text-[#657080]">{count}</span>
+            </Link>
+          ))}
         </div>
       </div>
     </BlogShell>

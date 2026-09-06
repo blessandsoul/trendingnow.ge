@@ -54,7 +54,6 @@ import { NewsletterBand } from './NewsletterBand';
 import { ProductCard } from './ProductCard';
 import { ProductComparisonLedger } from './ProductComparisonLedger';
 import { BuyerConfidenceRail } from './BuyerConfidenceRail';
-import { Reveal } from './Reveal';
 import { RichText } from './RichText';
 import { StorefrontFooter } from './StorefrontFooter';
 import { StorefrontHeader } from './StorefrontHeader';
@@ -84,10 +83,9 @@ function DetailSkeleton(): React.ReactElement {
   return (
     <div className="storefront-container py-6">
       <div className="mb-5 h-5 w-64 animate-pulse rounded bg-[#EEF2F6]" />
-      <div className="grid gap-5 xl:grid-cols-[minmax(0,0.95fr)_minmax(340px,0.78fr)_330px]">
-        <div className="h-[420px] animate-pulse rounded-[8px] border border-[#E3E8EF] bg-white" />
-        <div className="h-[420px] animate-pulse rounded-[8px] border border-[#E3E8EF] bg-white" />
-        <div className="h-[360px] animate-pulse rounded-[8px] border border-[#E3E8EF] bg-white" />
+      <div className="grid gap-6 xl:grid-cols-[minmax(0,1.08fr)_minmax(420px,0.92fr)]">
+        <div className="h-[620px] animate-pulse rounded-none border border-[#E3E8EF] bg-white" />
+        <div className="h-[620px] animate-pulse rounded-none border border-[#E3E8EF] bg-white" />
       </div>
     </div>
   );
@@ -99,10 +97,10 @@ function DetailError(): React.ReactElement {
 
   return (
     <div className="storefront-container py-12">
-      <div className="rounded-[8px] border border-[#F2D0D0] bg-[#FFF5F5] px-5 py-6 text-[#A23A3A]">
+      <div className="rounded-none border border-[#D9DDE7] bg-[#EEF2FF] px-5 py-6 text-[#061E81]">
         <p className="font-bold">{copy.product.loadingErrorTitle}</p>
         <p className="mt-1 text-sm">{copy.product.loadingErrorText}</p>
-        <Button asChild className="mt-4 rounded-[9px] bg-[#11141B] text-white hover:bg-[#252A33]">
+        <Button asChild className="mt-4 rounded-none bg-[#101010] text-white hover:bg-[#1A1A1A]">
           <Link href={localizeHref(ROUTES.PRODUCTS)}>{copy.product.backToProducts}</Link>
         </Button>
       </div>
@@ -115,27 +113,27 @@ function Breadcrumb({ product }: { product: StorefrontProductDetailProduct }): R
   const localizeHref = useLocalizedPath();
 
   return (
-    <nav className="storefront-container py-4 text-xs font-medium text-[#657080] sm:text-sm">
+    <nav className="storefront-container py-3 text-xs font-medium text-[#657080] sm:text-sm">
       <ol className="flex min-w-0 flex-wrap items-center gap-2">
         <li>
-          <Link href={localizeHref(ROUTES.HOME)} className="hover:text-[#07152A]">
+          <Link href={localizeHref(ROUTES.HOME)} className="hover:text-[#101010]">
             {copy.common.home}
           </Link>
         </li>
         <li>/</li>
         <li>
-          <Link href={localizeHref(ROUTES.PRODUCTS)} className="hover:text-[#07152A]">
+          <Link href={localizeHref(ROUTES.PRODUCTS)} className="hover:text-[#101010]">
             {copy.common.products}
           </Link>
         </li>
         <li>/</li>
         <li>
-          <Link href={localizeHref(`${ROUTES.PRODUCTS}?category=${product.category.slug}`)} className="hover:text-[#07152A]">
+          <Link href={localizeHref(`${ROUTES.PRODUCTS}?category=${product.category.slug}`)} className="hover:text-[#101010]">
             {product.category.name}
           </Link>
         </li>
         <li>/</li>
-        <li className="min-w-0 truncate text-[#07152A]">{product.name}</li>
+        <li className="min-w-0 truncate text-[#101010]">{product.name}</li>
       </ol>
     </nav>
   );
@@ -187,10 +185,10 @@ function ProductGallery({
 
   return (
     <section className="min-w-0">
-      <div className="relative overflow-hidden rounded-[8px] border border-[#DFE6EF] bg-white">
+      <div className="relative overflow-hidden rounded-none border border-[#DFE6EF] bg-white">
         <div className="absolute left-3 top-3 z-10 flex flex-wrap gap-2">
           {product.isNew && (
-            <Badge className="border-[#D9ECFF] bg-[#F0F7FF] text-[#174A98]">{copy.product.new}</Badge>
+            <Badge className="border-[#D9DDE7] bg-[#EEF2FF] text-[#061E81]">{copy.product.new}</Badge>
           )}
           {product.isBestseller && (
             <Badge className="border-[#DCF2DF] bg-[#F1FFF3] text-[#2A9D4A]">{copy.product.bestseller}</Badge>
@@ -201,8 +199,8 @@ function ProductGallery({
           <button
             type="button"
             className={cn(
-              'grid size-10 place-items-center rounded-full border border-[#DFE6EF] bg-white/90 text-[#526071] shadow-[0_4px_14px_rgba(8,21,42,0.08)] hover:text-[#07152A] disabled:cursor-not-allowed disabled:opacity-70',
-              isFavorite && 'text-[#D91F3C] hover:text-[#B91531]',
+              'grid size-10 place-items-center rounded-full border border-[#DFE6EF] bg-white/90 text-[#526071] shadow-[0_4px_14px_rgba(8,21,42,0.08)] hover:text-[#101010] disabled:cursor-not-allowed disabled:opacity-70',
+              isFavorite && 'text-[#092BB4] hover:text-[#061E81]',
             )}
             disabled={isFavoritePending}
             onClick={() => toggleFavorite.toggleFavorite({ productId: product.id, productSlug: product.slug, isFavorite })}
@@ -212,7 +210,7 @@ function ProductGallery({
           </button>
           <button
             type="button"
-            className="grid size-10 place-items-center rounded-full border border-[#DFE6EF] bg-white/90 text-[#526071] shadow-[0_4px_14px_rgba(8,21,42,0.08)] hover:text-[#07152A]"
+            className="grid size-10 place-items-center rounded-full border border-[#DFE6EF] bg-white/90 text-[#526071] shadow-[0_4px_14px_rgba(8,21,42,0.08)] hover:text-[#101010]"
             onClick={() => {
               void onShare();
             }}
@@ -223,7 +221,7 @@ function ProductGallery({
         </div>
 
         <div
-          className="relative aspect-[4/5] min-h-[360px] touch-pan-y select-none sm:min-h-[520px] xl:min-h-[620px]"
+          className="relative aspect-[4/5] min-h-[360px] touch-pan-y select-none sm:min-h-[520px] lg:aspect-square xl:min-h-[620px]"
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerEnd}
           onPointerCancel={() => {
@@ -238,18 +236,19 @@ function ProductGallery({
             fill
             priority
             loading="eager"
+            fetchPriority="high"
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 58vw, 780px"
             className="object-cover"
           />
           {selectedMedia.type === 'video' && (
-            <div className="absolute inset-0 grid place-items-center bg-[#07152A]/5">
-              <span className="grid size-16 place-items-center rounded-full bg-white/92 text-[#07152A] shadow-[0_14px_36px_rgba(8,21,42,0.16)]">
+            <div className="absolute inset-0 grid place-items-center bg-[#101010]/5">
+              <span className="grid size-16 place-items-center rounded-full bg-white/92 text-[#101010] shadow-[0_14px_36px_rgba(8,21,42,0.16)]">
                 <PlayCircle className="size-9" />
               </span>
             </div>
           )}
           <div
-            className="pointer-events-none absolute bottom-3 left-3 z-10 flex items-center gap-1.5 rounded-full border border-white/70 bg-white/92 px-2.5 py-1 text-[11px] font-black tabular-nums text-[#11141B] shadow-[0_5px_18px_rgba(17,20,27,0.12)]"
+            className="pointer-events-none absolute bottom-3 left-3 z-10 flex items-center gap-1.5 rounded-full border border-white/70 bg-white/92 px-2.5 py-1 text-[11px] font-semibold tabular-nums text-[#101010] shadow-[0_5px_18px_rgba(17,20,27,0.12)]"
             aria-live="polite"
           >
             <TrendingNowLogoMark className="size-4" />
@@ -269,7 +268,7 @@ function ProductGallery({
             <button
               type="button"
               onClick={selectPrevious}
-              className="absolute left-3 top-1/2 hidden size-10 -translate-y-1/2 place-items-center rounded-full border border-[#DFE6EF] bg-white/90 text-[#07152A] shadow-[0_4px_16px_rgba(8,21,42,0.12)] hover:bg-[#F7F9FB] sm:grid"
+              className="absolute left-3 top-1/2 hidden size-10 -translate-y-1/2 place-items-center rounded-full border border-[#DFE6EF] bg-white/90 text-[#101010] shadow-[0_4px_16px_rgba(8,21,42,0.12)] hover:bg-[#F4F2ED] sm:grid"
               aria-label={copy.product.previousMediaAria}
             >
               <ChevronLeft className="size-5" />
@@ -277,7 +276,7 @@ function ProductGallery({
             <button
               type="button"
               onClick={selectNext}
-              className="absolute right-3 top-1/2 hidden size-10 -translate-y-1/2 place-items-center rounded-full border border-[#DFE6EF] bg-white/90 text-[#07152A] shadow-[0_4px_16px_rgba(8,21,42,0.12)] hover:bg-[#F7F9FB] sm:grid"
+              className="absolute right-3 top-1/2 hidden size-10 -translate-y-1/2 place-items-center rounded-full border border-[#DFE6EF] bg-white/90 text-[#101010] shadow-[0_4px_16px_rgba(8,21,42,0.12)] hover:bg-[#F4F2ED] sm:grid"
               aria-label={copy.product.nextMediaAria}
             >
               <ChevronRight className="size-5" />
@@ -293,15 +292,15 @@ function ProductGallery({
             type="button"
             onClick={() => onSelect(index)}
             className={cn(
-              'relative h-20 w-20 shrink-0 snap-start overflow-hidden rounded-[8px] border bg-white sm:h-24 sm:w-24',
-              selectedIndex === index ? 'border-[#FF4057] ring-2 ring-[#FF4057]/25' : 'border-[#DDE2E9]',
+              'relative h-20 w-20 shrink-0 snap-start overflow-hidden rounded-none border bg-white sm:h-24 sm:w-24',
+              selectedIndex === index ? 'border-[#092BB4] ring-2 ring-[#092BB4]/25' : 'border-[#D9DDE7]',
             )}
             aria-label={copy.product.showMediaAria(index + 1)}
             aria-current={selectedIndex === index ? 'true' : undefined}
           >
             <SafeImage src={item.thumbnailUrl} alt={item.alt} fill sizes="96px" className="object-cover" />
             {item.type === 'video' && (
-              <span className="absolute inset-0 grid place-items-center bg-[#07152A]/10 text-[#07152A]">
+              <span className="absolute inset-0 grid place-items-center bg-[#101010]/10 text-[#101010]">
                 <PlayCircle className="size-6" />
               </span>
             )}
@@ -323,45 +322,40 @@ function descriptionExcerpt(description: string | null): string {
   return `${text.slice(0, EXCERPT_MAX_LENGTH).trimEnd()}…`;
 }
 
-function ProductInfo({ product }: { product: StorefrontProductDetailProduct }): React.ReactElement {
-  const copy = useLocaleCopy();
+function ProductInfo({
+  product,
+  embedded = false,
+}: {
+  product: StorefrontProductDetailProduct;
+  embedded?: boolean;
+}): React.ReactElement {
   const excerpt = descriptionExcerpt(product.description);
 
   return (
-    <section className="min-w-0 rounded-[8px] border border-[#DFE6EF] bg-white p-4 sm:p-5 xl:p-6">
+    <section
+      className={cn(
+        'min-w-0 bg-white p-5',
+        !embedded && 'rounded-none border border-[#DFE6EF]',
+      )}
+    >
       <div className="flex flex-wrap items-center gap-2">
-        <Badge className="border-[#E3E8EF] bg-[#F7F9FB] text-[#526071]">{product.category.name}</Badge>
-        <span className="text-xs font-semibold text-[#8B96A5]">SKU: {product.attributes.sku}</span>
+        <Badge className="border-[#E3E8EF] bg-[#F4F2ED] text-[#526071]">{product.category.name}</Badge>
+        <span className="text-xs font-medium text-[#657080]">SKU: {product.attributes.sku}</span>
       </div>
 
-      <h1 className="mt-4 text-2xl font-black leading-tight text-[#07152A] text-balance sm:text-3xl xl:text-4xl">
+      <h1 className="mt-4 text-2xl font-bold leading-[1.16] text-[#101010] text-balance sm:text-3xl xl:text-[2.15rem]">
         {product.name}
       </h1>
       {excerpt.length > 0 && (
-        <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base">{excerpt}</p>
+        <p className="mt-3 max-w-[62ch] text-sm leading-6 text-[#526071] sm:text-base">{excerpt}</p>
       )}
 
-      <div className="mt-5 flex flex-wrap items-end gap-3">
-        <span className="text-3xl font-black tabular-nums text-[#07152A] sm:text-4xl">
+      <div className="mt-5 flex flex-wrap items-end gap-3 border-y border-[#E7EBF0] py-4">
+        <span className="text-3xl font-bold tabular-nums text-[#101010] sm:text-4xl">
           {formatGel(product.salePrice)}
         </span>
       </div>
 
-      {product.attributes.highlights.length > 0 && (
-        <div className="mt-6">
-          <h2 className="text-base font-extrabold text-foreground">{copy.product.highlights}</h2>
-          <ul className="mt-3 grid gap-2 text-sm text-muted-foreground">
-            {product.attributes.highlights.map((highlight) => (
-              <li key={highlight} className="flex min-w-0 gap-2">
-                <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground">
-                  <Check className="size-3.5" />
-                </span>
-                <span className="min-w-0 break-words">{highlight}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </section>
   );
 }
@@ -376,22 +370,22 @@ function QuantityStepper({
   const copy = useLocaleCopy();
 
   return (
-    <div className="grid grid-cols-[44px_1fr_44px] overflow-hidden rounded-[8px] border border-[#DFE6EF] bg-white">
+    <div className="grid grid-cols-[44px_1fr_44px] overflow-hidden rounded-none border border-[#DFE6EF] bg-white">
       <button
         type="button"
         onClick={() => onChange(Math.max(1, quantity - 1))}
-        className="grid h-12 place-items-center text-[#07152A] hover:bg-[#F7F9FB]"
+        className="grid h-12 place-items-center text-[#101010] hover:bg-[#F4F2ED]"
         aria-label={copy.product.decreaseQuantityAria}
       >
         <Minus className="size-4" />
       </button>
-      <div className="grid h-12 place-items-center border-x border-[#DFE6EF] text-base font-black tabular-nums">
+      <div className="grid h-12 place-items-center border-x border-[#DFE6EF] text-base font-semibold tabular-nums">
         {quantity}
       </div>
       <button
         type="button"
         onClick={() => onChange(Math.min(99, quantity + 1))}
-        className="grid h-12 place-items-center text-[#07152A] hover:bg-[#F7F9FB]"
+        className="grid h-12 place-items-center text-[#101010] hover:bg-[#F4F2ED]"
         aria-label={copy.product.increaseQuantityAria}
       >
         <Plus className="size-4" />
@@ -405,11 +399,13 @@ function PurchasePanel({
   quantity,
   onQuantityChange,
   onShare,
+  embedded = false,
 }: {
   product: StorefrontProductDetailProduct;
   quantity: number;
   onQuantityChange: (quantity: number) => void;
   onShare: () => Promise<void>;
+  embedded?: boolean;
 }): React.ReactElement {
   const copy = useLocaleCopy();
   const localizeHref = useLocalizedPath();
@@ -442,81 +438,95 @@ function PurchasePanel({
   };
 
   return (
-    <aside className="rounded-[8px] border border-[#DFE6EF] bg-white p-4 shadow-[0_10px_28px_rgba(8,21,42,0.05)] sm:p-5 xl:sticky xl:top-[150px] xl:self-start">
-      <div className="flex items-center justify-between gap-3 border-b border-[#E3E8EF] pb-4">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#8B96A5]">{copy.product.total}</p>
-          <p className="mt-1 text-2xl font-black tabular-nums text-[#07152A]">
-            {formatGel(product.salePrice * quantity)}
-          </p>
-        </div>
-        <Badge className="border-[#DCF2DF] bg-[#F1FFF3] text-[#237A3E]">{copy.product.orderStatusLabel}</Badge>
-      </div>
-
-      <div className="mt-4 rounded-[14px] border border-[#DDE8E0] bg-[#F5FBF6] p-3.5">
-        <div className="flex gap-2.5">
+    <aside
+      className={cn(
+        'bg-white p-5',
+        embedded
+          ? 'border-t border-[#E7EBF0]'
+          : 'rounded-none border border-[#DFE6EF] shadow-[0_10px_28px_rgba(8,21,42,0.05)] xl:sticky xl:top-[84px] xl:self-start',
+      )}
+    >
+      <div data-pain-id="TN-BX-11 TN-BX-12 TN-BX-15 TN-BX-16" className="rounded-none border border-[#D9DDE7] bg-[#FBFCFD] p-3.5">
+        <p className="flex gap-2 text-xs leading-5 text-[#52695A]">
           <Check className="mt-0.5 size-4 shrink-0 text-[#237A3E]" aria-hidden="true" />
+          <span><span className="font-semibold text-[#193E25]">{copy.product.orderStatusLabel}</span> · {copy.product.orderStatusText}</span>
+        </p>
+        <div className="mt-3 flex gap-2.5 border-t border-[#E7EBF0] pt-3">
+          <CircleAlert className="mt-0.5 size-4 shrink-0 text-[#061E81]" aria-hidden="true" />
           <div className="min-w-0">
-            <p className="text-sm font-black text-[#193E25]">{copy.product.orderStatusLabel}</p>
-            <p className="mt-1 text-xs leading-5 text-[#52695A]">{copy.product.orderStatusText}</p>
-          </div>
-        </div>
-      </div>
-
-      <div data-pain-id="TN-BX-11 TN-BX-12 TN-BX-15 TN-BX-16" className="mt-4 rounded-[12px] border border-[#FFD0D6] bg-[#FFF7F8] p-3.5">
-        <div className="flex gap-2.5">
-          <CircleAlert className="mt-0.5 size-4 shrink-0 text-[#B4233A]" aria-hidden="true" />
-          <div className="min-w-0">
-            <p className="text-sm font-black text-[#11141B]">{passport.beforeOrderTitle}</p>
+            <p className="text-sm font-semibold text-[#101010]">{passport.beforeOrderTitle}</p>
             <p className="mt-1 text-xs leading-5 text-[#657080]">{passport.beforeOrderText}</p>
           </div>
         </div>
-        <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-2 text-xs font-bold text-[#303844]">
+        <ul className="mt-3 flex flex-wrap gap-2 text-xs font-medium text-[#303844]">
           {factsToConfirm.map((label) => (
-            <li key={label} className="min-w-0 break-words">• {label}</li>
+            <li key={label} className="min-w-0 rounded-full border border-[#D9DDE7] bg-white px-2.5 py-1 break-words">{label}</li>
           ))}
         </ul>
         <a
           href={supportHref}
-          className="mt-3 inline-flex min-h-10 w-full items-center justify-center rounded-[8px] border border-[#C9D1DB] bg-white px-3 py-2 text-center text-sm font-black leading-5 text-[#11141B] hover:border-[#B4233A] hover:text-[#B4233A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D92F49]/35"
+          className="mt-3 inline-flex text-sm font-semibold leading-5 text-[#061E81] underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4]/35"
         >
           {passport.supportCta} · SKU {product.attributes.sku}
         </a>
       </div>
 
-      <div className="mt-4">
-        <label className="mb-2 block text-sm font-bold text-[#07152A]">{copy.product.quantity}</label>
-        <QuantityStepper quantity={quantity} onChange={onQuantityChange} />
+      <div className="mt-4 grid items-end gap-3 sm:grid-cols-[minmax(0,1fr)_auto]">
+        <div className="min-w-0">
+          <label className="mb-2 block text-sm font-semibold text-[#101010]">{copy.product.quantity}</label>
+          <QuantityStepper quantity={quantity} onChange={onQuantityChange} />
+        </div>
+        <div className="rounded-none bg-[#F4F2ED] px-4 py-2.5 sm:min-w-[136px] sm:text-right">
+          <p className="text-xs font-medium uppercase tracking-[0.06em] text-[#657080]">{copy.product.total}</p>
+          <p className="mt-1 text-xl font-bold tabular-nums text-[#101010]">{formatGel(product.salePrice * quantity)}</p>
+        </div>
       </div>
 
       <div className="mt-4 grid gap-3">
         <Button
           type="button"
           disabled={addCartItem.isPending}
-          onClick={addToCart}
-          className="h-12 rounded-[10px] bg-[#D92F49] text-base font-black text-white shadow-[0_10px_22px_rgba(217,47,73,0.22)] hover:bg-[#B4233A]"
+          onClick={buyNow}
+          className="h-12 rounded-none bg-[#092BB4] text-base font-semibold text-white shadow-[0_10px_22px_rgba(9,43,180,0.22)] hover:bg-[#061E81]"
         >
-          <ShoppingCart className="size-5" />
-          {copy.product.addToCart}
+          {copy.product.buyNow}
         </Button>
         <Button
           type="button"
           disabled={addCartItem.isPending}
-          onClick={buyNow}
-          className="h-12 rounded-[10px] bg-[#11141B] text-base font-black text-white hover:bg-[#252A33]"
+          onClick={addToCart}
+          variant="outline"
+          className="h-12 rounded-none border-[#C9D1DB] bg-white text-base font-semibold text-[#101010] hover:border-[#092BB4] hover:bg-[#EEF2FF] hover:text-[#061E81]"
         >
-          {copy.product.buyNow}
+          <ShoppingCart className="size-5" />
+          {copy.product.addToCart}
         </Button>
       </div>
 
-      <div className="mt-4 rounded-[14px] border border-[#E1E5EA] bg-[#F7F9FB] p-3.5">
-        <p className="text-xs font-black text-[#11141B]">{copy.product.priceStatusLabel}</p>
+      {product.attributes.highlights.length > 0 && (
+        <div className="mt-5 border-t border-[#E7EBF0] pt-5">
+          <h2 className="text-sm font-semibold text-[#101010]">{copy.product.highlights}</h2>
+          <ul className="mt-3 grid gap-2.5 text-sm leading-5 text-[#526071] sm:grid-cols-2">
+            {product.attributes.highlights.map((highlight) => (
+              <li key={highlight} className="flex min-w-0 gap-2">
+                <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-[#EAF7EE] text-[#237A3E]">
+                  <Check className="size-3.5" />
+                </span>
+                <span className="min-w-0 break-words">{highlight}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <div className="mt-4 border border-[#D9DDE7] bg-[#EEF2FF] p-3.5">
+        <p className="text-xs font-semibold text-[#101010]">{copy.product.priceStatusLabel}</p>
         <p className="mt-1 text-xs leading-5 text-[#657080]">{copy.product.priceStatusText}</p>
-        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs font-black">
-          <Link href={localizeHref(ROUTES.DELIVERY)} className="text-[#D92F49] underline-offset-4 hover:underline">
+        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs font-semibold">
+          <Link href={localizeHref(ROUTES.DELIVERY)} className="text-[#092BB4] underline-offset-4 hover:underline">
             {copy.product.deliveryDetails}
           </Link>
-          <Link href={localizeHref(ROUTES.WARRANTY)} className="text-[#D92F49] underline-offset-4 hover:underline">
+          <Link href={localizeHref(ROUTES.WARRANTY)} className="text-[#092BB4] underline-offset-4 hover:underline">
             {copy.product.returnDetails}
           </Link>
         </div>
@@ -525,11 +535,11 @@ function PurchasePanel({
       <div className="mt-5 divide-y divide-[#E3E8EF] border-y border-[#E3E8EF]">
         {product.attributes.delivery.map((item) => (
           <div key={`${item.title}-${item.text}`} className="flex items-center gap-3 py-3">
-            <span className="grid size-10 shrink-0 place-items-center rounded-[8px] bg-[#F7F9FB] text-[#07152A]">
+            <span className="grid size-10 shrink-0 place-items-center rounded-none bg-[#F4F2ED] text-[#101010]">
               <DetailIcon name={item.icon} className="size-5" />
             </span>
             <div className="min-w-0">
-              <p className="text-sm font-bold text-[#07152A]">{item.title}</p>
+              <p className="text-sm font-bold text-[#101010]">{item.title}</p>
               <p className="text-xs leading-5 text-[#657080]">{item.text}</p>
             </div>
           </div>
@@ -540,7 +550,7 @@ function PurchasePanel({
         <Button
           type="button"
           variant="outline"
-          className={cn('rounded-[7px] border-[#DFE6EF]', isFavorite && 'text-[#D91F3C]')}
+          className={cn('rounded-[7px] border-[#DFE6EF]', isFavorite && 'text-[#092BB4]')}
           disabled={isFavoritePending}
           onClick={() => toggleFavorite.toggleFavorite({ productId: product.id, productSlug: product.slug, isFavorite })}
           aria-label={isFavorite ? copy.product.removeFromWishlistAria : copy.product.addToWishlistAria}
@@ -570,11 +580,11 @@ function BenefitStrip({ benefits }: { benefits: StorefrontProductBenefit[] }): R
       <div className="grid gap-3 border-y border-[#E3E8EF] py-4 sm:grid-cols-2 xl:grid-cols-4">
         {benefits.map((benefit) => (
           <div key={`${benefit.title}-${benefit.text}`} className="flex min-w-0 items-center gap-3">
-            <span className="grid size-11 shrink-0 place-items-center rounded-[8px] bg-[#F7F9FB] text-[#07152A]">
+            <span className="grid size-11 shrink-0 place-items-center rounded-none bg-[#F4F2ED] text-[#101010]">
               <DetailIcon name={benefit.icon} className="size-5" />
             </span>
             <div className="min-w-0">
-              <p className="text-sm font-bold text-[#07152A]">{benefit.title}</p>
+              <p className="text-sm font-bold text-[#101010]">{benefit.title}</p>
               <p className="text-xs leading-5 text-[#657080]">{benefit.text}</p>
             </div>
           </div>
@@ -592,12 +602,12 @@ function QuestionsAccordion({ questions }: { questions: StorefrontProductQuestio
       {questions.map((entry, index) => {
         const isOpen = openIndex === index;
         return (
-          <div key={`${entry.question}-${index}`} className="overflow-hidden rounded-[8px] border border-border bg-card">
+          <div key={`${entry.question}-${index}`} className="overflow-hidden rounded-none border border-border bg-card">
             <button
               type="button"
               aria-expanded={isOpen}
               onClick={() => setOpenIndex(isOpen ? -1 : index)}
-              className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left text-sm font-extrabold text-foreground hover:bg-secondary sm:text-base"
+              className="flex w-full items-center justify-between gap-3 px-4 py-4 text-left text-sm font-semibold text-foreground hover:bg-secondary sm:text-base"
             >
               <span className="min-w-0 break-words">{entry.question}</span>
               <ChevronDown className={cn('size-4 shrink-0 text-muted-foreground transition-transform', isOpen && 'rotate-180')} />
@@ -643,7 +653,7 @@ function DetailTabs({ product }: { product: StorefrontProductDetailProduct }): R
               type="button"
               onClick={() => setActiveTab(tab.id)}
               className={cn(
-                'relative shrink-0 py-4 text-sm font-extrabold text-muted-foreground hover:text-foreground',
+                'relative shrink-0 py-4 text-sm font-semibold text-muted-foreground hover:text-foreground',
                 effectiveTab === tab.id && 'text-foreground',
               )}
             >
@@ -657,7 +667,7 @@ function DetailTabs({ product }: { product: StorefrontProductDetailProduct }): R
       <div className="py-6">
         {effectiveTab === 'description' && (
           <div className="min-w-0 lg:max-w-4xl">
-            <h2 className="text-xl font-black text-foreground">{copy.product.descriptionHeading}</h2>
+            <h2 className="text-xl font-bold text-foreground">{copy.product.descriptionHeading}</h2>
             <div className="mt-3">
               <RichText html={description} />
             </div>
@@ -677,8 +687,8 @@ function DetailTabs({ product }: { product: StorefrontProductDetailProduct }): R
         {effectiveTab === 'specs' && (
           <div className="grid gap-4 md:grid-cols-2">
             {product.attributes.specificationGroups.map((group) => (
-              <div key={group.title} className="rounded-[8px] border border-border bg-card">
-                <h3 className="border-b border-border px-4 py-3 text-base font-black text-foreground">
+              <div key={group.title} className="rounded-none border border-border bg-card">
+                <h3 className="border-b border-border px-4 py-3 text-base font-bold text-foreground">
                   {group.title}
                 </h3>
                 <dl className="divide-y divide-border">
@@ -717,8 +727,8 @@ function ProductRail({
   return (
     <section className="storefront-container mt-8">
       <div className="mb-4 flex items-center justify-between gap-4">
-        <h2 className="text-xl font-black text-[#07152A] sm:text-2xl">{title}</h2>
-        <Link href={localizeHref(ROUTES.PRODUCTS)} className="hidden text-sm font-bold text-[#11141B] hover:text-[#B4233A] sm:inline">
+        <h2 className="text-xl font-bold text-[#101010] sm:text-2xl">{title}</h2>
+        <Link href={localizeHref(ROUTES.PRODUCTS)} className="hidden text-sm font-bold text-[#101010] hover:text-[#061E81] sm:inline">
           {toStorefrontUppercase(copy.common.allProducts)}
         </Link>
       </div>
@@ -771,7 +781,7 @@ export function ProductDetailStorefront({
   }, [copy.product.linkCopied, copy.product.shareFailed, product]);
 
   return (
-    <div className="min-h-dvh bg-[#F5F7FA] text-[#11141B]">
+    <div className="min-h-dvh bg-[#F4F2ED] text-[#101010]">
       <StorefrontHeader />
 
       <main>
@@ -780,23 +790,23 @@ export function ProductDetailStorefront({
         {product && (
           <>
             <Breadcrumb product={product} />
-            <section className="storefront-container grid gap-5 xl:grid-cols-[minmax(0,0.95fr)_minmax(340px,0.78fr)_330px]">
-              <Reveal className="min-w-0">
+            <section className="storefront-container grid gap-6 xl:grid-cols-[minmax(0,1.08fr)_minmax(420px,0.92fr)] xl:items-start">
+              <div className="min-w-0">
                 <ProductGallery product={product} selectedIndex={selectedIndex} onSelect={setSelectedIndex} onShare={handleShare} />
-              </Reveal>
-              <Reveal className="min-w-0" delay={0.04}>
-                <ProductInfo product={product} />
-              </Reveal>
-              <Reveal className="min-w-0" delay={0.08}>
-                <PurchasePanel product={product} quantity={quantity} onQuantityChange={setQuantity} onShare={handleShare} />
-              </Reveal>
+              </div>
+              <div className="min-w-0 xl:sticky xl:top-[84px] xl:self-start">
+                <div className="overflow-hidden rounded-none border border-[#DFE6EF] bg-white shadow-[0_18px_48px_rgba(17,20,27,0.07)]">
+                  <ProductInfo product={product} embedded />
+                  <PurchasePanel product={product} quantity={quantity} onQuantityChange={setQuantity} onShare={handleShare} embedded />
+                </div>
+              </div>
             </section>
 
             <BuyerConfidenceRail className="mt-6" tone="light" />
             <BuyerDecisionPassport product={product} />
 
             <section className="storefront-container mt-4">
-              <Button asChild variant="ghost" className="h-10 rounded-[7px] px-0 text-[#526071] hover:text-[#07152A]">
+              <Button asChild variant="ghost" className="h-10 rounded-[7px] px-0 text-[#526071] hover:text-[#101010]">
                 <Link href={localizeHref(ROUTES.PRODUCTS)}>
                   <ArrowLeft className="size-4" />
                   {copy.product.backToProducts}

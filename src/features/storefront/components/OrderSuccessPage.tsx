@@ -27,15 +27,15 @@ export function OrderSuccessPage({ orderCode, locale = 'ka' }: OrderSuccessPageP
   );
 
   return (
-    <div className="tn-page min-h-dvh text-[#11141B]">
+    <div className="tn-page min-h-dvh text-[#101010]">
       <StorefrontHeader />
       <main className="px-4 py-10 sm:py-14">
         <section className="mx-auto grid min-h-[56dvh] max-w-[720px] place-items-center">
-          <div className="tn-surface w-full rounded-[24px] p-6 text-center sm:p-10">
+          <div className="tn-commerce-card w-full p-6 text-center sm:p-10">
           <span className="mx-auto grid size-16 place-items-center rounded-full bg-[#EAF8EF] text-[#2A9D4A]">
             <CheckCircle2 className="size-9" aria-hidden="true" />
           </span>
-          <h1 className="mt-5 text-3xl font-black leading-tight text-[#11141B] sm:text-4xl">
+          <h1 className="tn-page-title mx-auto mt-5">
             {copy.orderSuccess.title(orderCode)}
           </h1>
           <p className="mx-auto mt-3 max-w-[520px] text-sm leading-6 text-[#526071] sm:text-base">
@@ -54,12 +54,12 @@ export function OrderSuccessPage({ orderCode, locale = 'ka' }: OrderSuccessPageP
               </Button>
             ) : null}
           </div>
-          <div data-pain-id="TN-BX-20" className="mt-6 rounded-[12px] border border-[#DDE3EA] bg-[#F7F9FB] p-4 text-left sm:flex sm:items-center sm:justify-between sm:gap-5">
+          <div data-pain-id="TN-BX-20" className="mt-6 rounded-none border border-[#D9DDE7] bg-[#F4F2ED] p-4 text-left sm:flex sm:items-center sm:justify-between sm:gap-5">
             <div className="min-w-0">
-              <p className="text-sm font-black text-[#11141B]">{copy.orderSuccess.supportTitle}</p>
+              <p className="text-sm font-semibold text-[#101010]">{copy.orderSuccess.supportTitle}</p>
               <p className="mt-1 text-sm leading-6 text-[#657080]">{copy.orderSuccess.supportText}</p>
             </div>
-            <Button asChild variant="outline" className="mt-3 h-10 shrink-0 rounded-[8px] border-[#C9D1DB] bg-white font-black sm:mt-0">
+            <Button asChild variant="outline" className="tn-secondary-action mt-3 h-11 shrink-0 font-semibold sm:mt-0">
               <a href={supportHref}>
                 <Mail className="size-4" aria-hidden="true" />
                 {copy.orderSuccess.supportCta}

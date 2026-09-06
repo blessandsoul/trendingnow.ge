@@ -14,7 +14,7 @@ interface BlogShellProps {
 
 export function BlogShell({ children }: BlogShellProps): React.ReactElement {
   return (
-    <div className="tn-page min-h-dvh text-[#11141B]">
+    <div className="tn-page min-h-dvh text-[#101010]">
       <Suspense fallback={<HeaderFallback />}>
         <StorefrontHeader />
       </Suspense>

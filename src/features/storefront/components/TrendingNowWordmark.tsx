@@ -31,8 +31,8 @@ export function TrendingNowWordmark({ className, tone = 'light' }: TrendingNowLo
   return (
     <span
       className={cn(
-        'inline-flex h-10 w-[190px] shrink-0 items-center gap-1.5 whitespace-nowrap text-[16px] font-extrabold leading-none tracking-[-0.045em] sm:text-[17px] xl:text-[18px]',
-        tone === 'dark' ? 'text-white' : 'text-[#11141B]',
+        'inline-flex h-10 w-[190px] shrink-0 items-center gap-1.5 whitespace-nowrap text-[16px] font-semibold leading-none tracking-[-0.045em] sm:text-[17px] xl:text-[18px]',
+        tone === 'dark' ? 'text-white' : 'text-[#101010]',
         className,
       )}
       data-logo-format="png"
@@ -41,7 +41,7 @@ export function TrendingNowWordmark({ className, tone = 'light' }: TrendingNowLo
     >
       <TrendingNowLogoMark className="size-[1.85em]" tone={tone} />
       <span>
-        Trending<span className="text-[#FF4057]">Now</span><span className={tone === 'dark' ? 'text-white/62' : 'text-[#6B7280]'}>.ge</span>
+        Trending<span className="text-[#092BB4]">Now</span><span className={tone === 'dark' ? 'text-white/75' : 'text-[#6B7280]'}>.ge</span>
       </span>
     </span>
   );

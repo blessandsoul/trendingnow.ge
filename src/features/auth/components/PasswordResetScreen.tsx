@@ -14,7 +14,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { useForgotPassword, useResetPassword } from '../hooks/usePasswordReset';
 
 const fieldClass =
-  'tn-field h-12 px-4 text-[#11141B] placeholder:text-[#8B93A1]';
+  'tn-field h-12 px-4 text-[#101010] placeholder:text-[#8B93A1]';
 
 function PasswordResetInner(): React.ReactElement {
   const copy = useLocaleCopy();
@@ -36,13 +36,13 @@ function PasswordResetInner(): React.ReactElement {
         }}
       >
         <div className="space-y-2">
-          <h1 className="text-3xl font-black tracking-[-0.035em] text-[#11141B]">{copy.auth.reset.newPasswordTitle}</h1>
+          <h1 className="text-3xl font-semibold tracking-[-0.035em] text-[#101010]">{copy.auth.reset.newPasswordTitle}</h1>
           <p className="text-sm leading-6 text-[#69717E]">
             {copy.auth.reset.newPasswordDescription}
           </p>
         </div>
         <div className="space-y-2">
-          <Label htmlFor="newPassword" className="font-bold text-[#11141B]">{copy.auth.fields.newPassword}</Label>
+          <Label htmlFor="newPassword" className="font-semibold text-[#101010]">{copy.auth.fields.newPassword}</Label>
           <Input
             id="newPassword"
             type="password"
@@ -56,7 +56,7 @@ function PasswordResetInner(): React.ReactElement {
         </div>
         <Button
           type="submit"
-          className="tn-primary-action h-12 w-full font-black transition active:translate-y-px"
+          className="tn-primary-action h-12 w-full font-semibold"
           disabled={isResetting || newPassword.length < 8}
         >
           {isResetting && <Loader2 className="size-4 animate-spin" />}
@@ -75,13 +75,13 @@ function PasswordResetInner(): React.ReactElement {
       }}
     >
       <div className="space-y-2">
-        <h1 className="text-3xl font-black tracking-[-0.035em] text-[#11141B]">{copy.auth.reset.requestTitle}</h1>
+        <h1 className="text-3xl font-semibold tracking-[-0.035em] text-[#101010]">{copy.auth.reset.requestTitle}</h1>
         <p className="text-sm leading-6 text-[#69717E]">
           {copy.auth.reset.requestDescription}
         </p>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="email" className="font-bold text-[#11141B]">{copy.auth.fields.email}</Label>
+        <Label htmlFor="email" className="font-semibold text-[#101010]">{copy.auth.fields.email}</Label>
         <Input
           id="email"
           type="email"
@@ -95,7 +95,7 @@ function PasswordResetInner(): React.ReactElement {
       </div>
       <Button
         type="submit"
-        className="tn-primary-action h-12 w-full font-black transition active:translate-y-px"
+        className="tn-primary-action h-12 w-full font-semibold"
         disabled={isSending}
       >
         {isSending && <Loader2 className="size-4 animate-spin" />}
@@ -103,7 +103,7 @@ function PasswordResetInner(): React.ReactElement {
       </Button>
       <p className="text-center text-sm text-[#69717E]">
         {copy.auth.reset.remembered}{' '}
-        <Link href={localizeHref(ROUTES.LOGIN)} className="font-bold text-[#6D3AE8] hover:text-[#FF4057]">
+        <Link href={localizeHref(ROUTES.LOGIN)} className="font-semibold text-[#061E81] hover:text-[#092BB4]">
           {copy.auth.reset.login}
         </Link>
       </p>

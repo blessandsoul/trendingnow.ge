@@ -116,9 +116,9 @@ export function OrderCheckoutDialog({
   return (
     <Dialog.Root open={open} onOpenChange={handleOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-[80] bg-[#07152A]/55 backdrop-blur-sm data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
+        <Dialog.Overlay className="fixed inset-0 z-[80] bg-[#101010]/55 backdrop-blur-sm data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
         <Dialog.Content
-          className="fixed left-1/2 top-1/2 z-[81] max-h-[92dvh] w-[calc(100vw-1.5rem)] min-w-0 max-w-[560px] -translate-x-1/2 -translate-y-1/2 overflow-x-hidden overflow-y-auto rounded-[8px] border border-[#DFE6EF] bg-white shadow-[0_24px_70px_rgba(7,21,42,0.26)] focus:outline-none"
+          className="fixed left-1/2 top-1/2 z-[81] max-h-[92dvh] w-[calc(100vw-1.5rem)] min-w-0 max-w-[560px] -translate-x-1/2 -translate-y-1/2 overflow-x-hidden overflow-y-auto rounded-none border border-[#DFE6EF] bg-white shadow-[0_24px_70px_rgba(7,21,42,0.26)] focus:outline-none"
           onCloseAutoFocus={(event) => {
             if (!returnFocusRef?.current) return;
             event.preventDefault();
@@ -127,7 +127,7 @@ export function OrderCheckoutDialog({
         >
         <div className="flex items-start justify-between gap-3 border-b border-[#E3E8EF] px-5 py-4">
           <div className="min-w-0">
-            <Dialog.Title className="text-xl font-black text-[#07152A]">
+            <Dialog.Title className="text-xl font-bold text-[#101010]">
               {copy.checkout.title}
             </Dialog.Title>
             <Dialog.Description className="mt-1 text-sm leading-5 text-[#526071]">
@@ -149,42 +149,42 @@ export function OrderCheckoutDialog({
 
         <form className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4 p-4 sm:p-5" onSubmit={handleSubmit}>
           {showDeliveryError && !deliveryZone && (
-            <p role="alert" className="rounded-[7px] border border-[#F2D0D0] bg-[#FFF5F5] px-3 py-2 text-sm text-[#A23A3A]">
+            <p role="alert" className="rounded-[7px] border border-[#D9DDE7] bg-[#EEF2FF] px-3 py-2 text-sm text-[#061E81]">
               {copy.checkout.deliveryZoneRequired}
             </p>
           )}
-          <div className="min-w-0 rounded-[8px] border border-[#E3E8EF] bg-[#F8FAFC] p-4">
+          <div className="min-w-0 rounded-none border border-[#E3E8EF] bg-[#F4F2ED] p-4">
             {isLoading && <div className="h-16 animate-pulse rounded-[6px] bg-white" />}
             {!isLoading && !hasItems && (
               <div className="text-center">
-                <ShoppingBag className="mx-auto size-8 text-[#8B96A5]" />
-                <p className="mt-2 text-sm font-bold text-[#07152A]">{copy.checkout.emptyCart}</p>
+                <ShoppingBag className="mx-auto size-8 text-[#657080]" />
+                <p className="mt-2 text-sm font-bold text-[#101010]">{copy.checkout.emptyCart}</p>
               </div>
             )}
             {!isLoading && hasItems && (
               <div className="min-w-0 space-y-2">
                 {items.slice(0, 3).map((item) => (
                   <div key={item.id} className="flex min-w-0 items-center justify-between gap-3 text-sm">
-                    <span className="min-w-0 truncate font-bold text-[#07152A]">
+                    <span className="min-w-0 truncate font-bold text-[#101010]">
                       {item.product.name} x {item.quantity}
                     </span>
-                    <span className="shrink-0 font-black tabular-nums text-[#07152A]">{formatGel(item.lineTotal)}</span>
+                    <span className="shrink-0 font-bold tabular-nums text-[#101010]">{formatGel(item.lineTotal)}</span>
                   </div>
                 ))}
                 {items.length > 3 && <p className="text-xs font-semibold text-[#657080]">{copy.checkout.moreItems(items.length - 3)}</p>}
                 <div className="flex items-center justify-between border-t border-dashed border-[#CFD8E4] pt-3 text-sm">
                   <span className="font-bold text-[#526071]">{copy.cart.grandTotal}</span>
-                  <span className="text-xl font-black tabular-nums text-[#07152A]">{formatGel(total)}</span>
+                  <span className="text-xl font-bold tabular-nums text-[#101010]">{formatGel(total)}</span>
                 </div>
               </div>
             )}
           </div>
 
-          <div className="min-w-0 rounded-[14px] border border-[#DDE8E0] bg-[#F5FBF6] p-4">
+          <div className="min-w-0 border border-[#D9DDE7] bg-[#EEF2FF] p-4">
             <div className="flex gap-3">
               <CircleCheck className="mt-0.5 size-5 shrink-0 text-[#237A3E]" aria-hidden="true" />
               <div className="min-w-0">
-                <h3 className="text-sm font-black text-[#193E25]">{copy.checkout.confirmationTitle}</h3>
+                <h3 className="text-sm font-bold text-[#193E25]">{copy.checkout.confirmationTitle}</h3>
                 <p className="mt-1 text-xs leading-5 text-[#52695A]">{copy.checkout.confirmationText}</p>
               </div>
             </div>
@@ -192,7 +192,7 @@ export function OrderCheckoutDialog({
 
           <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2">
             <label className="grid min-w-0 gap-1.5">
-              <span className="text-sm font-bold text-[#07152A]">{copy.checkout.firstName}</span>
+              <span className="text-sm font-bold text-[#101010]">{copy.checkout.firstName}</span>
               <Input
                 required
                 value={draft.firstName}
@@ -202,7 +202,7 @@ export function OrderCheckoutDialog({
               />
             </label>
             <label className="grid min-w-0 gap-1.5">
-              <span className="text-sm font-bold text-[#07152A]">{copy.checkout.lastName}</span>
+              <span className="text-sm font-bold text-[#101010]">{copy.checkout.lastName}</span>
               <Input
                 required
                 value={draft.lastName}
@@ -214,7 +214,7 @@ export function OrderCheckoutDialog({
           </div>
 
           <label className="grid min-w-0 gap-1.5">
-            <span className="text-sm font-bold text-[#07152A]">{copy.checkout.phone}</span>
+            <span className="text-sm font-bold text-[#101010]">{copy.checkout.phone}</span>
             <Input
               required
               minLength={5}
@@ -227,7 +227,7 @@ export function OrderCheckoutDialog({
           </label>
 
           <label className="grid min-w-0 gap-1.5">
-            <span className="text-sm font-bold text-[#07152A]">{copy.checkout.deliveryAddress}</span>
+            <span className="text-sm font-bold text-[#101010]">{copy.checkout.deliveryAddress}</span>
             <textarea
               required
               minLength={5}
@@ -240,21 +240,21 @@ export function OrderCheckoutDialog({
           </label>
 
           {showGuestPrompt && (
-            <div className="rounded-[16px] border border-[#D9C7FF] bg-[#F7F2FF] p-4">
-              <h3 className="text-base font-black text-[#07152A]">{copy.checkout.guestTitle}</h3>
+            <div className="rounded-none border border-[#D9DDE7] bg-[#EEF2FF] p-4">
+              <h3 className="text-base font-bold text-[#101010]">{copy.checkout.guestTitle}</h3>
               <p className="mt-1 text-sm leading-5 text-[#526071]">{copy.checkout.guestText}</p>
               <div className="mt-3 grid min-w-0 grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-2">
                 <Button
                   type="button"
                   variant="outline"
-                  className="h-auto min-h-10 min-w-0 whitespace-normal rounded-[7px] border-[#07152A] text-center leading-5"
+                  className="h-auto min-h-10 min-w-0 whitespace-normal rounded-[7px] border-[#101010] text-center leading-5"
                   onClick={() => router.push(registerHref)}
                 >
                   {copy.checkout.loginToTrack}
                 </Button>
                 <Button
                   type="button"
-                  className="h-auto min-h-10 min-w-0 whitespace-normal rounded-[9px] bg-[#D92F49] text-center font-black leading-5 text-white hover:bg-[#B4233A]"
+                  className="h-auto min-h-10 min-w-0 whitespace-normal rounded-none bg-[#092BB4] text-center font-bold leading-5 text-white hover:bg-[#061E81]"
                   disabled={!deliveryZone || createOrder.isPending}
                   onClick={submitOrder}
                 >
@@ -268,7 +268,7 @@ export function OrderCheckoutDialog({
           {!showGuestPrompt && (
             <Button
               type="submit"
-              className="h-auto min-h-11 min-w-0 whitespace-normal rounded-[9px] bg-[#D92F49] px-4 py-2.5 text-center font-black leading-5 text-white hover:bg-[#B4233A]"
+              className="h-auto min-h-11 min-w-0 whitespace-normal rounded-none bg-[#092BB4] px-4 py-2.5 text-center font-bold leading-5 text-white hover:bg-[#061E81]"
               disabled={!hasItems || !deliveryZone || createOrder.isPending}
             >
               {createOrder.isPending ? <Loader2 className="size-4 animate-spin" /> : null}

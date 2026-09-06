@@ -31,10 +31,10 @@ function FactState({ state }: { state: BuyerFactState }): React.ReactElement {
   return (
     <span
       className={cn(
-        'inline-flex min-h-6 items-center rounded-full border px-2 py-0.5 text-[11px] font-black leading-4',
+        'inline-flex min-h-6 items-center rounded-full border px-2 py-0.5 text-[11px] font-bold leading-4',
         state === 'confirmed' && 'border-[#BFE4CA] bg-[#F0FAF3] text-[#237A3E]',
-        state === 'needs-confirmation' && 'border-[#FFD0D6] bg-[#FFF3F5] text-[#B4233A]',
-        state === 'unavailable' && 'border-[#DDE3EA] bg-[#F5F7FA] text-[#657080]',
+        state === 'needs-confirmation' && 'border-[#FFD0D6] bg-[#F3F6FF] text-[#061E81]',
+        state === 'unavailable' && 'border-[#DDE3EA] bg-[#F4F2ED] text-[#657080]',
       )}
     >
       {label}
@@ -78,7 +78,7 @@ export function BuyerDecisionPassport({ product }: { product: StorefrontProductD
     {
       painId: 'TN-BX-16',
       label: passport.package.label,
-      detail: <>{passport.package.detail} <strong className="font-extrabold text-[#303844]">{packageSummary}</strong></>,
+      detail: <>{passport.package.detail} <strong className="font-semibold text-[#303844]">{packageSummary}</strong></>,
       state: 'needs-confirmation',
       icon: PackageOpen,
     },
@@ -109,16 +109,16 @@ export function BuyerDecisionPassport({ product }: { product: StorefrontProductD
 
   return (
     <section className="storefront-container mt-7" aria-labelledby="buyer-passport-title">
-      <div className="overflow-hidden rounded-[14px] border border-[#DDE3EA] bg-white">
+      <div className="overflow-hidden border border-[#D9DDE7] bg-white">
         <div className="grid gap-4 border-b border-[#E3E8EF] bg-[#F8FAFC] px-4 py-5 sm:px-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="max-w-[720px]">
-            <h2 id="buyer-passport-title" className="text-xl font-black tracking-[-0.025em] text-[#11141B] sm:text-2xl">
+            <h2 id="buyer-passport-title" className="text-xl font-bold tracking-[-0.025em] text-[#101010] sm:text-2xl">
               {passport.title}
             </h2>
             <p className="mt-2 text-sm leading-6 text-[#657080]">{passport.intro}</p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <Button asChild className="h-10 rounded-[8px] bg-[#11141B] px-4 font-black text-white hover:bg-[#252A33]">
+            <Button asChild className="h-10 rounded-[8px] bg-[#101010] px-4 font-bold text-white hover:bg-[#1A1A1A]">
               <a href={supportHref}>{passport.confirmCta}</a>
             </Button>
           </div>
@@ -138,12 +138,12 @@ export function BuyerDecisionPassport({ product }: { product: StorefrontProductD
                   index < facts.length - 2 && 'md:border-b',
                 )}
               >
-                <span className="grid size-10 place-items-center rounded-[8px] bg-[#F1F4F7] text-[#11141B]">
+                <span className="grid size-10 place-items-center rounded-[8px] bg-[#F1F4F7] text-[#101010]">
                   <Icon className="size-5" aria-hidden={true} />
                 </span>
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2">
-                    <h3 className="text-sm font-black text-[#11141B] sm:text-base">{fact.label}</h3>
+                    <h3 className="text-sm font-bold text-[#101010] sm:text-base">{fact.label}</h3>
                     <FactState state={fact.state} />
                   </div>
                   <div className="mt-2 text-sm leading-6 text-[#657080]">{fact.detail}</div>

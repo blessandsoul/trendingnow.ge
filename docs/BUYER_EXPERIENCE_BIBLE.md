@@ -4,7 +4,7 @@ Status: canonical
 
 Owner: TrendingNow storefront
 
-Last reviewed: 2026-09-01
+Last reviewed: 2026-09-02
 
 This file is the single source of truth for buyer-facing product decisions. A component, public text, test, or operational workflow may extend this contract, but it must not contradict or silently redefine it.
 
@@ -32,12 +32,25 @@ No screen may leave an unknown fact as a dead end. Unknown size, compatibility, 
 - Palette: Graphite `#11141B`, Paper `#F5F7FA`, White `#FFFFFF`, Signal coral `#FF4057`, accessible action coral `#D92F49`, Trust green `#237A3E`, Mist border `#DDE3EA`.
 - Type: BOG for Georgian storefront copy, with the existing system fallbacks for utility text.
 - Radius system: 8 to 14 pixels for commerce surfaces; larger radii only for established page shells.
-- Primary attention path: product image and name, current price, order action.
-- Secondary attention path: buyer passport, verified facts, and facts requiring confirmation.
+- Primary attention path: product image and name, current price, one coral order action.
+- Secondary attention path: availability, the minimum facts that require confirmation, quantity, and the outline add-to-cart action.
 - Tertiary attention path: related products, editorial explanation, newsletter.
 - Signature component: the buyer passport is an evidence ledger, not a row of decorative feature cards.
 - Motion: short hover, press, and horizontal swipe feedback only. Reduced-motion support remains active.
 - Public Georgian copy uses natural Mkhedruli. Latin brand fragments may remain uppercase.
+- Public commerce typography uses weight `400` for body copy, `500` for supporting copy, `600` for labels and controls, and `700` only for product names, page titles, and prices. Weight `800` or `900` is not used to manufacture hierarchy.
+- Coral is reserved for the primary order action, active selection, or a true attention state. Graphite carries identity and trust, green is reserved for confirmed positive state, and neutral paper surfaces carry the browsing flow.
+- Familiar marketplace structure and progressive disclosure take priority over novelty. Decision facts are grouped by the question they answer, not scattered into equal-weight cards.
+- No fake urgency, scarcity, countdown, preselected paid option, or visually disguised secondary action may be used to increase conversion.
+
+Research basis for this hierarchy:
+
+- Iyengar and Lepper, Columbia University: extensive choice can attract attention while reducing purchase and satisfaction; curated choice and progressive disclosure are therefore preferred. https://business.columbia.edu/faculty/research/when-choice-demotivating-can-one-desire-too-much-good-thing
+- Milosavljevic et al., Caltech: visual saliency can bias choice, especially under rapid decisions and cognitive load; only the real primary action receives the strongest salience. https://www.rnl.caltech.edu/publications/pdf/milosavljevic2012.pdf
+- Krajbich, Armel, and Rangel: visual fixation participates in value comparison; product facts and the order action must stay inside one stable visual path. https://www.nature.com/articles/nn.2635
+- Stanford Web Credibility Research: visual design, layout, and typography strongly affect perceived credibility; consistent spacing, contrast, and weight are part of the trust model. https://credibility.stanford.edu/pdf/How_Do_People_Evaluate_a_Web_Site%27s_Credibility_v37.pdf
+- Tractinsky et al., Ben-Gurion University: perceived aesthetics affect perceived usability; visual quality is treated as functional quality, not decoration. https://cris.bgu.ac.il/en/publications/what-is-beautiful-is-usable-2/
+- Tuch et al., Google Research: lower visual complexity and familiar page structure improve first-impression appeal; the product page therefore uses two primary columns and one decision surface. https://research.google/pubs/the-role-of-visual-complexity-and-prototypicality-regarding-first-impression-of-websites-working-towards-understanding-aesthetic-judgments/
 
 ## 4. The 20 buyer pains
 
@@ -237,7 +250,10 @@ All slots use the same compact AI icon. Baked text is not used for factual claim
 ## 6. Responsive acceptance
 
 - No document-level horizontal overflow at 320, 390, 768, 1024, or 1440 CSS pixels.
-- Header search uses available space without forcing navigation or actions outside the viewport.
+- Header has three explicit scroll modes: hidden, search-only, and full.
+- The first distinct upward gesture from the hidden state reveals a 61-pixel search row with the 44-pixel input fully inside the header. A second distinct upward gesture reveals the full utilities and category navigation.
+- The fixed header uses an invariant page spacer, so changing between the 61-pixel search state and the full header (154 pixels on mobile, 143 pixels from the medium breakpoint) never changes document scroll position or creates a synthetic gesture.
+- Header search uses available space without forcing navigation or actions outside the viewport or overlapping page content.
 - Buyer passport becomes one column on narrow screens and a two-column evidence ledger when space allows.
 - Task finder and product comparison use contained horizontal scrolling, scroll snapping, and visible focus states on narrow screens.
 - Gallery swipe preserves vertical page scrolling and offers previous and next buttons.
@@ -273,6 +289,28 @@ All slots use the same compact AI icon. Baked text is not used for factual claim
 | TN-BX-13 | `ProductComparisonLedger` |
 | TN-BX-20 | product support action, `OrderSuccessPage`, account orders |
 
+### 8.1 Site-wide commerce design system
+
+The product-detail decision hierarchy is the source pattern for every buyer-facing family:
+
+- Catalog and home: one page title, one practical next step, compact filters, and product cards that keep image, name, price, status, and action in the same order.
+- Product: gallery first, then one decision surface with one coral primary action; evidence and detailed explanations follow the decision surface.
+- Cart and order: order steps, cart contents, delivery choice, total, and confirmation action stay in one reading direction; mobile step cards stack instead of exposing clipped partial cards.
+- Account and authentication: the same paper surface, 14-pixel card radius, graphite hierarchy, coral action, and calm secondary links.
+- Information pages: a two-part introduction, at most two equal evidence cards per row, and one dark support panel where a next action is useful.
+- Blog: the same introduction and commerce palette, with editorial asymmetry only in the article grid; blog controls never reintroduce the old violet Continuum palette.
+- Loading, empty, error, verification, and order-success screens: one clear state, one next action, and the same surface and type hierarchy.
+
+Stable visual rules:
+
+1. Coral is reserved for the main action, selected state, or a short high-value link.
+2. Graphite carries navigation, identity, prices, and trust; green is limited to confirmed status.
+3. Page and section headings use weight 600; product names and prices may use 700. Public UI does not use 800 or 900.
+4. Cards use a 14-pixel radius and restrained layered shadow. Larger decorative radii do not define the interface.
+5. Interactive controls are at least 40 pixels high, with primary commerce actions at 44 to 48 pixels.
+6. Public product lists render local catalog data immediately and reconcile with the API in the background, so an unavailable API cannot leave the main catalog as a 30-second skeleton wall.
+7. Critical purchase information never depends on an entrance animation. Motion may support orientation but cannot hide a price, condition, form, or action.
+
 ## 9. Release gate
 
 A buyer-experience release passes only when:
@@ -284,6 +322,7 @@ A buyer-experience release passes only when:
 5. Typecheck, lint, unit tests, and production build pass.
 6. Browser checks pass at 320, 390, 768, 1024, and 1440 pixels.
 7. Frontend completion and operational dependency are reported separately.
+8. Product-detail first viewport has one primary coral action and no duplicated large price block.
 
 ## 10. Operational backlog
 

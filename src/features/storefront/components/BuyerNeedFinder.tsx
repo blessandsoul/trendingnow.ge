@@ -27,16 +27,16 @@ export function BuyerNeedFinder(): React.ReactElement {
       className="storefront-container mb-7"
       aria-labelledby="buyer-need-finder-title"
     >
-      <div className="overflow-hidden rounded-[14px] bg-[#11141B] text-white shadow-[0_16px_38px_rgba(17,20,27,0.14)]">
+      <div className="overflow-hidden border border-[#101010] bg-[#092BB4] text-white shadow-[0_16px_38px_rgba(9,43,180,0.2)]">
         <div className="grid gap-5 px-4 py-5 sm:px-6 lg:grid-cols-[minmax(220px,0.72fr)_minmax(0,1.4fr)] lg:items-end lg:px-7 lg:py-7">
           <div className="max-w-[460px]">
-            <h2 id="buyer-need-finder-title" className="text-xl font-black leading-tight tracking-[-0.025em] sm:text-2xl">
+            <h2 id="buyer-need-finder-title" className="text-xl font-semibold leading-tight tracking-[-0.025em] sm:text-2xl">
               {copy.products.needFinder.title}
             </h2>
-            <p className="mt-2 text-sm leading-6 text-[#C8D0DA]">{copy.products.needFinder.intro}</p>
+            <p className="mt-2 text-sm leading-6 text-white/80">{copy.products.needFinder.intro}</p>
             <Link
               href={localizeHref(ROUTES.WARRANTY)}
-              className="mt-3 inline-flex min-h-10 items-center gap-2 text-sm font-bold text-[#FF9DA9] underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF9DA9]"
+              className="mt-3 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#FFE622] underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FFE622]"
             >
               <Gift className="size-4" aria-hidden="true" />
               {copy.products.needFinder.giftTerms}
@@ -48,10 +48,10 @@ export function BuyerNeedFinder(): React.ReactElement {
               <Link
                 key={href}
                 href={localizeHref(href)}
-                className="group flex min-h-12 w-[220px] shrink-0 snap-start items-center justify-between gap-3 rounded-[10px] border border-white/15 bg-white/[0.07] px-4 py-3 text-sm font-extrabold text-white transition-colors hover:border-white/30 hover:bg-white/[0.12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6F80] lg:w-auto"
+                className="group flex min-h-12 w-[220px] shrink-0 snap-start items-center justify-between gap-3 border border-[#101010]/20 bg-[#FFE622] px-4 py-3 text-sm font-bold text-[#101010] transition-colors hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white lg:w-auto"
               >
                 <span>{copy.products.needFinder.options[index]}</span>
-                <ArrowUpRight className="size-4 shrink-0 text-[#FF7E8E] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+                <ArrowUpRight className="size-4 shrink-0 text-[#092BB4] transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
               </Link>
             ))}
           </div>

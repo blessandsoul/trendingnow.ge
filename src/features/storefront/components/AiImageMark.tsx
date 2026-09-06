@@ -18,7 +18,7 @@ export function AiImageMark({
       role="img"
       aria-label={label}
       className={cn(
-        'pointer-events-none grid place-items-center border border-white/70 bg-[#11141B]/84 font-black leading-none text-white shadow-[0_5px_16px_rgba(17,20,27,0.18)] backdrop-blur-sm',
+        'pointer-events-none grid place-items-center border border-white/70 bg-[#101010]/84 font-bold leading-none text-white shadow-[0_5px_16px_rgba(17,20,27,0.18)] backdrop-blur-sm',
         variant === 'card' && 'size-7 rounded-[9px] text-[9px] tracking-[-0.04em]',
         variant === 'compact' && 'size-6 rounded-[8px] text-[8px] tracking-[-0.04em]',
         variant === 'gallery' && 'size-8 rounded-[10px] text-[10px] tracking-[-0.04em]',

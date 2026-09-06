@@ -1,7 +1,7 @@
 'use client';
 
 import type React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, ChevronLeft, ChevronRight, ShieldCheck } from 'lucide-react';
 
@@ -38,11 +38,11 @@ function SectionHeader({ title, href }: { title: string; href?: string }): React
 
   return (
     <div className="storefront-container mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-      <h2 className="text-balance text-2xl font-black tracking-[-0.03em] text-[#11141B] md:text-3xl">{toStorefrontUppercase(title)}</h2>
+      <h2 className="text-balance text-2xl font-bold tracking-[-0.03em] text-[#101010] md:text-3xl">{toStorefrontUppercase(title)}</h2>
       {href && (
         <Link
           href={localizeHref(href)}
-          className="group flex min-h-10 w-fit items-center gap-2 rounded-[8px] px-1 text-sm font-bold text-[#11141B] transition-[color,transform] duration-150 ease-out hover:text-[#B4233A] active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D92F49]/55"
+          className="group flex min-h-10 w-fit items-center gap-2 rounded-none px-1 text-sm font-bold text-[#101010] transition-[color,transform] duration-150 ease-out hover:text-[#061E81] active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4]/55"
         >
           {toStorefrontUppercase(copy.common.viewAllProducts)} <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
         </Link>
@@ -55,7 +55,7 @@ function LoadingGrid(): React.ReactElement {
   return (
     <div className={productGridClass}>
       {Array.from({ length: 6 }).map((_, index) => (
-        <div key={index} className="h-[328px] animate-pulse rounded-[8px] border border-[#E3E8EF] bg-white" />
+        <div key={index} className="h-[328px] animate-pulse rounded-none border border-[#E3E8EF] bg-white" />
       ))}
     </div>
   );
@@ -66,29 +66,51 @@ function HeroImageSlider({ hero, className }: { hero?: StorefrontHomeHero | null
     ? hero.slides.map((slide) => ({ id: slide.id, src: publicMediaUrl(slide.imageUrl), alt: slide.altText ?? '' }))
     : heroSlides.map((src) => ({ id: src, src, alt: '' }));
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
+  const [isInView, setIsInView] = useState(true);
+  const sliderRef = useRef<HTMLDivElement>(null);
   const hasMultipleSlides = slides.length > 1;
   const activeSlideIndex = Math.min(activeIndex, slides.length - 1);
 
   useEffect(() => {
-    if (!hasMultipleSlides) return undefined;
+    const slider = sliderRef.current;
+    if (!slider || typeof IntersectionObserver === 'undefined') return undefined;
+
+    const observer = new IntersectionObserver(([entry]) => setIsInView(entry.isIntersecting), {
+      threshold: 0.15,
+    });
+    observer.observe(slider);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!hasMultipleSlides || isAutoplayPaused || !isInView) return undefined;
 
     const intervalId = window.setInterval(() => {
+      if (document.visibilityState !== 'visible') return;
       setActiveIndex((current) => (current + 1) % slides.length);
     }, heroSlideStepSeconds * 1000);
 
     return () => window.clearInterval(intervalId);
-  }, [hasMultipleSlides, slides.length]);
+  }, [hasMultipleSlides, isAutoplayPaused, isInView, slides.length]);
 
   const showPrevious = (): void => {
+    setIsAutoplayPaused(true);
     setActiveIndex((current) => (current - 1 + slides.length) % slides.length);
   };
 
   const showNext = (): void => {
+    setIsAutoplayPaused(true);
     setActiveIndex((current) => (current + 1) % slides.length);
   };
 
+  const showSlide = (index: number): void => {
+    setIsAutoplayPaused(true);
+    setActiveIndex(index);
+  };
+
   return (
-    <div data-hero-slider className={cn('relative min-h-[320px] overflow-hidden lg:min-h-[460px]', className)}>
+    <div ref={sliderRef} data-hero-slider className={cn('relative min-h-[320px] overflow-hidden lg:min-h-[460px]', className)}>
       {slides.map((slide, index) => (
         <SafeImage
           key={slide.id}
@@ -96,6 +118,8 @@ function HeroImageSlider({ hero, className }: { hero?: StorefrontHomeHero | null
           alt={slide.alt}
           fill
           priority={index === 0}
+          loading={index === 0 ? 'eager' : 'lazy'}
+          fetchPriority={index === 0 ? 'high' : 'auto'}
           sizes="(max-width: 1024px) 100vw, 1120px"
           className={cn(
             'object-cover object-center transition-[opacity,transform] duration-700 ease-out',
@@ -114,15 +138,15 @@ function HeroImageSlider({ hero, className }: { hero?: StorefrontHomeHero | null
             <button
               type="button"
               key={slide.id}
-              onClick={() => setActiveIndex(index)}
-              className="group/dot grid size-9 place-items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057]"
+              onClick={() => showSlide(index)}
+              className="group/dot grid size-9 place-items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4]"
               aria-label={`სურათი ${index + 1}`}
               aria-current={index === activeSlideIndex}
             >
               <span
                 className={cn(
                   'block h-2 rounded-full shadow-[0_0_0_1px_rgba(0,0,0,0.1)] transition-[width,background-color] duration-200 ease-out motion-reduce:transition-none',
-                  index === activeSlideIndex ? 'w-7 bg-[#FF4057]' : 'w-2 bg-[#C7CED8] group-hover/dot:bg-[#919BA8]',
+                  index === activeSlideIndex ? 'w-7 bg-[#092BB4]' : 'w-2 bg-[#C7CED8] group-hover/dot:bg-[#919BA8]',
                 )}
                 aria-hidden="true"
               />
@@ -135,7 +159,7 @@ function HeroImageSlider({ hero, className }: { hero?: StorefrontHomeHero | null
             <button
               type="button"
               onClick={showPrevious}
-              className="grid size-11 place-items-center rounded-full bg-white/92 text-[#11141B] shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_8px_24px_rgba(17,20,27,0.14)] transition-[background-color,transform,box-shadow] duration-150 ease-out hover:bg-white active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057] motion-reduce:transition-none"
+              className="grid size-11 place-items-center rounded-full bg-white/92 text-[#101010] shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_8px_24px_rgba(17,20,27,0.14)] transition-[background-color,transform,box-shadow] duration-150 ease-out hover:bg-white active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4] motion-reduce:transition-none"
               aria-label="წინა სურათი"
             >
               <ChevronLeft className="size-5" />
@@ -143,7 +167,7 @@ function HeroImageSlider({ hero, className }: { hero?: StorefrontHomeHero | null
             <button
               type="button"
               onClick={showNext}
-              className="grid size-11 place-items-center rounded-full bg-white/92 text-[#11141B] shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_8px_24px_rgba(17,20,27,0.14)] transition-[background-color,transform,box-shadow] duration-150 ease-out hover:bg-white active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4057] motion-reduce:transition-none"
+              className="grid size-11 place-items-center rounded-full bg-white/92 text-[#101010] shadow-[0_0_0_1px_rgba(0,0,0,0.08),0_8px_24px_rgba(17,20,27,0.14)] transition-[background-color,transform,box-shadow] duration-150 ease-out hover:bg-white active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4] motion-reduce:transition-none"
               aria-label="შემდეგი სურათი"
             >
               <ChevronRight className="size-5" />
@@ -198,7 +222,7 @@ export function HomeStorefront(): React.ReactElement {
   if (snapshotDate) heroFacts.push({ value: snapshotDate, label: 'ბოლო განახლება' });
 
   return (
-    <div className="min-h-dvh bg-[#F5F7FA] text-[#11141B]">
+    <div className="min-h-dvh bg-[#F4F2ED] text-[#101010]">
       <StorefrontHeader />
 
       <main>
@@ -208,9 +232,9 @@ export function HomeStorefront(): React.ReactElement {
             <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(255,255,255,0.99)_0%,rgba(255,255,255,0.96)_68%,rgba(255,255,255,0.72)_100%)] sm:bg-[linear-gradient(90deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0.96)_44%,rgba(255,255,255,0.62)_64%,rgba(255,255,255,0.12)_100%)]" />
             <div data-hero-content className="relative z-20 flex min-h-[600px] max-w-full flex-col justify-center px-5 pb-24 pt-10 max-[359px]:-translate-y-4 max-[359px]:pt-0 min-[390px]:px-6 sm:min-h-[560px] sm:max-w-[660px] sm:px-10 sm:pb-24 sm:pt-12 lg:min-h-[500px] lg:px-16">
                 {hero?.eyebrow && (
-                  <p className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-[0.14em] text-[#B4233A] before:h-px before:w-8 before:bg-current sm:mb-4">{hero.eyebrow}</p>
+                  <p className="mb-3 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[#061E81] before:h-px before:w-8 before:bg-current sm:mb-4">{hero.eyebrow}</p>
                 )}
-                <h1 className="max-w-[620px] text-balance text-[29px] font-black leading-[1.08] tracking-[-0.045em] text-[#11141B] max-[359px]:text-[26px] min-[390px]:text-[30px] sm:text-5xl lg:text-[56px]">
+                <h1 className="max-w-[620px] text-balance text-[29px] font-bold leading-[1.08] tracking-[-0.045em] text-[#101010] max-[359px]:text-[26px] min-[390px]:text-[30px] sm:text-5xl lg:text-[56px]">
                   {toStorefrontUppercase(hero?.title ?? copy.home.heroTitle)}
                 </h1>
                 <p className="mt-3 max-w-[540px] text-pretty text-sm leading-[1.45] text-[#5F6875] sm:mt-5 sm:text-base sm:leading-6">
@@ -221,15 +245,15 @@ export function HomeStorefront(): React.ReactElement {
                     {heroFacts.map((fact) => (
                       <div
                         key={fact.label}
-                        className="flex min-h-11 min-w-0 items-center gap-1.5 rounded-[12px] bg-white/86 px-2.5 shadow-[0_0_0_1px_rgba(0,0,0,0.07),0_6px_18px_rgba(17,20,27,0.06)] backdrop-blur-md max-[359px]:shrink-0 max-[359px]:snap-start sm:gap-2 sm:px-3.5"
+                        className="flex min-h-11 min-w-0 items-center gap-1.5 rounded-none bg-white/86 px-2.5 shadow-[0_0_0_1px_rgba(0,0,0,0.07),0_6px_18px_rgba(17,20,27,0.06)] backdrop-blur-md max-[359px]:shrink-0 max-[359px]:snap-start sm:gap-2 sm:px-3.5"
                       >
-                        <span className="tabular-nums text-sm font-black text-[#11141B]">{fact.value}</span>
+                        <span className="tabular-nums text-sm font-bold text-[#101010]">{fact.value}</span>
                         <span className="min-w-0 text-[11px] font-semibold leading-tight text-[#69717E]">{fact.label}</span>
                       </div>
                     ))}
                   </div>
                 )}
-                <Button asChild className="mt-4 h-12 w-fit rounded-[12px] bg-[#D92F49] pl-7 pr-6 font-black text-white shadow-[0_12px_26px_rgba(217,47,73,0.28)] hover:-translate-y-0.5 hover:bg-[#B4233A] max-[359px]:mt-2 sm:mt-7">
+                <Button asChild className="mt-4 h-12 w-fit rounded-none bg-[#092BB4] pl-7 pr-6 font-bold text-white shadow-[0_12px_26px_rgba(9,43,180,0.28)] hover:-translate-y-0.5 hover:bg-[#061E81] max-[359px]:mt-2 sm:mt-7">
                   <Link href={localizeHref(hero?.ctaHref ?? ROUTES.PRODUCTS)}>
                     {hero?.ctaLabel ?? copy.home.heroCta} <ArrowRight className="size-4" />
                   </Link>
@@ -249,7 +273,7 @@ export function HomeStorefront(): React.ReactElement {
         {isLoading && <LoadingGrid />}
         {error && (
           <div className="storefront-container mt-5">
-            <div className="rounded-[8px] border border-[#F2D0D0] bg-[#FFF5F5] px-4 py-3 text-sm text-[#A23A3A]">
+            <div className="rounded-none border border-[#D9DDE7] bg-[#EEF2FF] px-4 py-3 text-sm text-[#061E81]">
               {copy.home.loadingError}
             </div>
           </div>

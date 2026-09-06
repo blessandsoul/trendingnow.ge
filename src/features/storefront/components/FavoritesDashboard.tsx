@@ -20,7 +20,7 @@ function FavoritesSkeleton(): React.ReactElement {
       {Array.from({ length: 8 }).map((_, index) => (
         <div
           key={index}
-          className="h-[328px] animate-pulse rounded-[18px] border border-[#E8E0F8] bg-white shadow-[0_12px_30px_rgba(17,20,27,0.06)]"
+          className="h-[328px] animate-pulse rounded-[18px] border border-[#D9DDE7] bg-white shadow-[0_12px_30px_rgba(17,20,27,0.06)]"
         />
       ))}
     </div>
@@ -37,7 +37,7 @@ export function FavoritesDashboard(): React.ReactElement {
   const isLoading = isInitializing || favorites.isLoading;
 
   return (
-    <div className="tn-page min-h-dvh text-[#11141B]">
+    <div className="tn-page min-h-dvh text-[#101010]">
       <StorefrontHeader />
 
       <main>
@@ -46,16 +46,16 @@ export function FavoritesDashboard(): React.ReactElement {
 
           <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div className="min-w-0">
-              <h1 className="text-2xl font-black leading-tight text-[#11141B] sm:text-4xl">
+              <h1 className="tn-page-title">
                 {copy.dashboard.favorites.title}
               </h1>
-              <p className="mt-2 max-w-[680px] text-sm leading-6 text-[#526071] sm:text-base">
+              <p className="tn-page-lede mt-2 text-sm sm:text-base">
                 {copy.dashboard.favorites.intro}
               </p>
             </div>
             <div className="flex w-full flex-col gap-2 min-[430px]:flex-row sm:w-auto sm:items-center">
               {!isLoading && !favorites.error && (
-                <span className="inline-flex min-h-10 items-center justify-center rounded-full border border-[#E8E0F8] bg-white px-4 py-2 text-sm font-black leading-5 text-[#526071] min-[430px]:justify-start">
+                <span className="inline-flex min-h-10 items-center justify-center rounded-full border border-[#D9DDE7] bg-white px-4 py-2 text-sm font-semibold leading-5 text-[#526071] min-[430px]:justify-start">
                   {copy.dashboard.favorites.count(productCount)}
                 </span>
               )}
@@ -75,23 +75,23 @@ export function FavoritesDashboard(): React.ReactElement {
           {isLoading && <FavoritesSkeleton />}
 
           {!isLoading && favorites.error && (
-            <div className="tn-surface rounded-[18px] border-[#F2D6D6] p-6 text-[#7A1E1E]">
+            <div className="tn-commerce-card border-[#F2D6D6] p-6 text-[#7A1E1E]">
               <AlertCircle className="size-6" aria-hidden="true" />
-              <h2 className="mt-3 text-lg font-black">{copy.dashboard.favorites.errorTitle}</h2>
+              <h2 className="mt-3 text-lg font-bold">{copy.dashboard.favorites.errorTitle}</h2>
               <p className="mt-2 text-sm leading-6">{copy.dashboard.favorites.errorText}</p>
             </div>
           )}
 
           {!isLoading && !favorites.error && products.length === 0 && (
-            <div className="tn-surface rounded-[22px] p-8 text-center">
+            <div className="tn-commerce-card p-8 text-center">
               <span className="tn-soft-icon mx-auto grid size-14 place-items-center">
                 <Heart className="size-7" aria-hidden="true" />
               </span>
-              <h2 className="mt-4 text-xl font-black text-[#11141B]">{copy.dashboard.favorites.emptyTitle}</h2>
+              <h2 className="mt-4 text-xl font-bold text-[#101010]">{copy.dashboard.favorites.emptyTitle}</h2>
               <p className="mx-auto mt-2 max-w-[420px] text-sm leading-6 text-[#657080]">
                 {copy.dashboard.favorites.emptyText}
               </p>
-              <Button asChild className="mt-5 h-11 rounded-[9px] bg-[#D92F49] px-6 font-black text-white hover:bg-[#B4233A]">
+              <Button asChild className="mt-5 h-11 rounded-none bg-[#092BB4] px-6 font-bold text-white hover:bg-[#061E81]">
                 <Link href={localizeHref(ROUTES.PRODUCTS)}>{copy.dashboard.favorites.continueShopping}</Link>
               </Button>
             </div>

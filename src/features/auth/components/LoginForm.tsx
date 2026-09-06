@@ -30,7 +30,7 @@ function createLoginSchema(copy: AppCopy) {
 type LoginFormData = z.infer<ReturnType<typeof createLoginSchema>>;
 
 const fieldClass =
-  'tn-field h-12 px-4 text-[#11141B] placeholder:text-[#8B93A1]';
+  'tn-field h-12 px-4 text-[#101010] placeholder:text-[#8B93A1]';
 
 const LoginFormInner = (): React.ReactElement => {
   const copy = useLocaleCopy();
@@ -56,7 +56,7 @@ const LoginFormInner = (): React.ReactElement => {
   return (
     <div className="w-full space-y-5">
       <div className="space-y-2">
-        <h1 className="text-3xl font-black tracking-[-0.035em] text-[#11141B]">{copy.auth.login.title}</h1>
+        <h1 className="text-3xl font-semibold tracking-[-0.035em] text-[#101010]">{copy.auth.login.title}</h1>
         <p className="text-sm leading-6 text-[#69717E]">
           {copy.auth.login.description}
         </p>
@@ -64,7 +64,7 @@ const LoginFormInner = (): React.ReactElement => {
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
         <div className="space-y-2">
-          <Label htmlFor="email" className="font-bold text-[#11141B]">{copy.auth.fields.email}</Label>
+          <Label htmlFor="email" className="font-semibold text-[#101010]">{copy.auth.fields.email}</Label>
           <Input
             id="email"
             type="email"
@@ -81,7 +81,7 @@ const LoginFormInner = (): React.ReactElement => {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="password" className="font-bold text-[#11141B]">{copy.auth.fields.password}</Label>
+          <Label htmlFor="password" className="font-semibold text-[#101010]">{copy.auth.fields.password}</Label>
           <Input
             id="password"
             type="password"
@@ -99,7 +99,7 @@ const LoginFormInner = (): React.ReactElement => {
 
         <Button
           type="submit"
-          className="tn-primary-action h-12 w-full font-black transition active:translate-y-px"
+          className="tn-primary-action h-12 w-full font-semibold"
           disabled={isLoggingIn}
         >
           {isLoggingIn ? (
@@ -116,7 +116,7 @@ const LoginFormInner = (): React.ReactElement => {
       <div className="text-center text-sm">
         <Link
           href={localizeHref(ROUTES.RESET_PASSWORD)}
-          className="font-bold text-[#6D3AE8] transition-colors active:text-[#FF4057] md:hover:text-[#FF4057]"
+          className="font-semibold text-[#061E81] transition-colors hover:text-[#092BB4]"
         >
           {copy.auth.login.forgotPassword}
         </Link>
@@ -126,7 +126,7 @@ const LoginFormInner = (): React.ReactElement => {
         {copy.auth.login.noAccount}{' '}
         <Link
           href={localizeHref(ROUTES.REGISTER)}
-          className="font-bold text-[#6D3AE8] transition-colors active:text-[#FF4057] md:hover:text-[#FF4057]"
+          className="font-semibold text-[#061E81] transition-colors hover:text-[#092BB4]"
         >
           {copy.auth.login.register}
         </Link>

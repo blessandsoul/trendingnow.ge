@@ -79,4 +79,42 @@ describe('TrendingNow visual system', () => {
 
     expect(violations).toEqual([]);
   });
+
+  it('keeps commerce typography and accents inside the current hierarchy', () => {
+    const bannedTokens = [
+      'font-black',
+      'font-extrabold',
+      '#8C5CF6',
+      '#F8F5FF',
+      '#E8E0F8',
+      '#24183E',
+      '#4A194C',
+      '124 58 237',
+      '#6D3AE8',
+      '#5B2DB6',
+      '#F7F2FF',
+      '#D9C7FF',
+      '#DCCEFF',
+      '#BFA4FF',
+    ];
+    const sourceRoot = path.join(process.cwd(), 'src');
+    const violations: string[] = [];
+
+    for (const relativeRoot of roots) {
+      for (const filePath of activeUiFiles(path.join(sourceRoot, relativeRoot))) {
+        const source = fs.readFileSync(filePath, 'utf8');
+        for (const token of bannedTokens) {
+          // The owner explicitly selected heavy Georgian display typography for
+          // Bold Discovery. Preserve the original commerce guard everywhere else.
+          if (path.basename(filePath) === 'BoldDiscoveryHome.tsx'
+            && (token === 'font-black' || token === 'font-extrabold')) continue;
+          if (source.toLowerCase().includes(token.toLowerCase())) {
+            violations.push(`${path.relative(process.cwd(), filePath)}: ${token}`);
+          }
+        }
+      }
+    }
+
+    expect(violations).toEqual([]);
+  });
 });

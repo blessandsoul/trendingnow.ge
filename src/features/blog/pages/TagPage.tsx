@@ -76,32 +76,32 @@ export async function TagPage({ tag, locale }: TagPageProps): Promise<React.Reac
       />
 
       <div className="storefront-container py-10 md:py-16">
-        <nav className="mb-6 flex justify-center gap-2 text-sm font-semibold text-[#526071]">
-          <Link href={localizedPath(locale, '/blog')} className="hover:text-[#07152A]">{copy.title}</Link>
+        <nav className="mb-6 flex flex-wrap justify-start gap-2 text-sm font-medium text-[#526071]">
+          <Link href={localizedPath(locale, '/blog')} className="hover:text-[#101010]">{copy.title}</Link>
           <span>/</span>
-          <Link href={localizedPath(locale, '/blog/tags')} className="hover:text-[#07152A]">{copy.tagsTitle}</Link>
+          <Link href={localizedPath(locale, '/blog/tags')} className="hover:text-[#101010]">{copy.tagsTitle}</Link>
           <span>/</span>
-          <span className="text-[#07152A]">{result.tag}</span>
+          <span className="text-[#101010]">{result.tag}</span>
         </nav>
 
-        <div className="tn-surface mx-auto mb-14 max-w-4xl rounded-[24px] px-6 py-10 text-center sm:px-10">
+        <header className="mb-12 max-w-4xl">
           <p className="tn-kicker mb-3">TrendingNow.ge</p>
-          <h1 className="text-4xl font-black leading-tight tracking-tight text-[#11141B] sm:text-5xl md:text-6xl">
+          <h1 className="tn-page-title">
             {result.tag}
           </h1>
-          <p className="mt-4 text-lg text-[#526071]">
+          <p className="tn-page-lede mt-4">
             {result.posts.length} {copy.articlesLabel}
           </p>
-        </div>
+        </header>
 
         {result.posts.length > 0 ? (
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {result.posts.map((post, index) => (
-              <BlogCard key={post.id} post={post} locale={locale} index={index} />
+              <BlogCard key={post.id} post={post} locale={locale} index={index} className={index === 0 ? 'sm:col-span-2 xl:col-span-2' : undefined} />
             ))}
           </div>
         ) : (
-          <div className="tn-surface rounded-[20px] px-5 py-14 text-center text-[#526071]">
+          <div className="tn-commerce-card px-5 py-14 text-center text-[#526071]">
             {copy.noPostsForTag}
           </div>
         )}

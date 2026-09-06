@@ -25,7 +25,7 @@ export function GET(request: NextRequest): ImageResponse {
           width: '100%',
           height: '100%',
           display: 'flex',
-          background: '#11141B',
+          background: '#101010',
           color: '#FFFFFF',
           position: 'relative',
           fontFamily: 'Inter, Arial, sans-serif',

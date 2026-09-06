@@ -3,7 +3,6 @@
 import type React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { ChevronRightIcon, HomeIcon } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
@@ -24,63 +23,53 @@ export function BlogPost({ post, locale }: BlogPostProps): React.ReactElement {
 
   return (
     <article className="storefront-container max-w-5xl py-10 md:py-14">
-      <motion.header
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-        className="mb-8 md:mb-12"
-      >
-        <nav aria-label={copy.breadcrumbLabel} className="mb-6 flex justify-center md:justify-start">
+      <header className="mb-8 md:mb-12">
+        <nav aria-label={copy.breadcrumbLabel} className="mb-6 flex justify-start">
           <ol className="flex min-w-0 items-center gap-1.5 text-sm text-[#526071]">
             <li>
-              <Link href={localizedPath(locale, '/')} className="flex items-center gap-1 transition-colors hover:text-[#07152A]">
+              <Link href={localizedPath(locale, '/')} className="flex items-center gap-1 transition-colors hover:text-[#101010]">
                 <HomeIcon className="size-3.5" />
                 <span className="sr-only">{copy.homeLabel}</span>
               </Link>
             </li>
             <li><ChevronRightIcon className="size-3.5 text-[#8B96A5]" /></li>
             <li>
-              <Link href={localizedPath(locale, '/blog')} className="transition-colors hover:text-[#07152A]">
+              <Link href={localizedPath(locale, '/blog')} className="transition-colors hover:text-[#101010]">
                 {copy.title}
               </Link>
             </li>
             <li><ChevronRightIcon className="size-3.5 text-[#8B96A5]" /></li>
-            <li className="max-w-[220px] truncate font-semibold text-[#07152A] sm:max-w-none" aria-current="page">
+            <li className="max-w-[220px] truncate font-semibold text-[#101010] sm:max-w-none" aria-current="page">
               {post.title}
             </li>
           </ol>
         </nav>
 
-        <div className="mb-6 flex flex-wrap justify-center gap-2 md:justify-start">
+        <div className="mb-6 flex flex-wrap justify-start gap-2">
           {post.tags.map((tag) => (
             <Link
               key={tag}
               href={localizedPath(locale, `/blog/tags/${tagToSlug(tag)}`)}
-              className="rounded-full border border-[#FF4057]/40 bg-[#F7F2FF] px-3 py-1 text-xs font-bold text-[#5B2DB6] transition-colors hover:border-[#8C5CF6]"
+              className="inline-flex min-h-9 items-center rounded-full border border-[#092BB4]/35 bg-[#EEF2FF] px-3 py-1 text-xs font-semibold text-[#061E81] transition-colors hover:border-[#092BB4]"
             >
               {tag}
             </Link>
           ))}
         </div>
 
-        <h1 className="max-w-4xl text-center text-3xl font-black leading-tight tracking-tight text-[#11141B] text-balance sm:text-4xl md:text-left md:text-5xl lg:text-6xl">
+        <h1 className="tn-page-title max-w-4xl">
           {post.title}
         </h1>
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm font-semibold text-[#526071] md:justify-start">
+        <div className="mt-5 flex flex-wrap items-center justify-start gap-x-4 gap-y-2 text-sm font-medium text-[#526071]">
           <time dateTime={post.date}>{new Date(post.date).toLocaleDateString(dateLocale, { month: 'long', day: 'numeric', year: 'numeric' })}</time>
           <span aria-hidden="true">/</span>
           <span>{post.readTime}</span>
           <span aria-hidden="true">/</span>
           <span>{post.author.name}</span>
         </div>
-      </motion.header>
+      </header>
 
-      <motion.figure
-        initial={{ opacity: 0, scale: 0.97 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.55, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
-        className="relative mb-12 aspect-[16/9] w-full overflow-hidden rounded-[24px] border border-[#E8E0F8] bg-[#F5F7FA] shadow-xl"
-      >
+      <figure className="relative mb-12 aspect-[16/9] w-full overflow-hidden border border-[#D9DDE7] bg-[#F4F2ED] shadow-[0_14px_34px_rgba(17,20,27,0.09)]">
         <Image
           src={post.coverImage}
           alt={post.title}
@@ -101,38 +90,35 @@ export function BlogPost({ post, locale }: BlogPostProps): React.ReactElement {
             </a>
           </figcaption>
         )}
-      </motion.figure>
+      </figure>
 
       <div className="grid items-start gap-8 lg:grid-cols-[250px_minmax(0,1fr)]">
-        <motion.aside initial={{ opacity: 0, x: -16 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4, delay: 0.2 }} className="hidden lg:sticky lg:top-24 lg:block">
+        <aside className="hidden lg:sticky lg:top-24 lg:block">
           <TableOfContents content={post.content} locale={locale} />
-        </motion.aside>
+        </aside>
 
         <div className="lg:hidden">
           <TableOfContents content={post.content} locale={locale} />
         </div>
 
-        <motion.section
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.22 }}
+        <section
           className="prose prose-lg max-w-none
-            prose-headings:scroll-mt-28 prose-headings:font-black prose-headings:tracking-tight prose-headings:text-[#07152A]
+            prose-headings:scroll-mt-28 prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-[#101010]
             prose-h2:mb-4 prose-h2:mt-10 prose-h2:text-2xl prose-h2:md:text-3xl
             prose-h3:mb-3 prose-h3:mt-7 prose-h3:text-xl
             prose-p:mb-5 prose-p:leading-8 prose-p:text-[#526071]
-            prose-a:font-bold prose-a:text-[#5B2DB6] prose-a:no-underline hover:prose-a:underline
-            prose-li:text-[#526071] prose-li:marker:text-[#8C5CF6]
-            prose-strong:font-black prose-strong:text-[#07152A]
-            prose-blockquote:rounded-r-[16px] prose-blockquote:border-l-4 prose-blockquote:border-[#FF4057] prose-blockquote:bg-[#FFF0F3] prose-blockquote:px-5 prose-blockquote:py-2 prose-blockquote:not-italic
-            prose-code:rounded-md prose-code:bg-[#F5F7FA] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:text-[#174A98] prose-code:before:content-none prose-code:after:content-none
+            prose-a:font-semibold prose-a:text-[#061E81] prose-a:no-underline hover:prose-a:underline
+            prose-li:text-[#526071] prose-li:marker:text-[#092BB4]
+            prose-strong:font-semibold prose-strong:text-[#101010]
+            prose-blockquote:rounded-r-[16px] prose-blockquote:border-l-4 prose-blockquote:border-[#092BB4] prose-blockquote:bg-[#EEF2FF] prose-blockquote:px-5 prose-blockquote:py-2 prose-blockquote:not-italic
+            prose-code:rounded-md prose-code:bg-[#F4F2ED] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:text-[#303844] prose-code:before:content-none prose-code:after:content-none
             prose-hr:border-[#DFE6EF]
             [&>*:first-child]:!mt-0"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </div>
 
-      <motion.footer initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.3 }} className="mt-16 border-t border-[#DFE6EF] pt-8">
+      <footer className="mt-16 border-t border-[#DFE6EF] pt-8">
         <div className="flex flex-wrap items-center gap-2">
           {post.tags.map((tag) => (
             <Link key={tag} href={localizedPath(locale, `/blog/tags/${tagToSlug(tag)}`)}>
@@ -142,11 +128,11 @@ export function BlogPost({ post, locale }: BlogPostProps): React.ReactElement {
         </div>
 
         <div className="mt-8">
-          <Link href={localizedPath(locale, '/blog')} className="inline-flex items-center gap-2 text-sm font-black text-[#5B2DB6] transition-all hover:gap-3">
+          <Link href={localizedPath(locale, '/blog')} className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#061E81] transition-[gap,color] hover:gap-3 hover:text-[#092BB4]">
             &lt;- {copy.backToBlog}
           </Link>
         </div>
-      </motion.footer>
+      </footer>
     </article>
   );
 }

@@ -1,7 +1,7 @@
 # TrendingNow buyer UI/UX audit
 
-Date: 2026-09-01
-Scope: current local Georgian storefront at `http://localhost:3000`, audited at 320, 390, 768, 1024, and 1440 px.
+Date: 2026-09-02
+Scope: current local Georgian storefront, audited at 320, 390, 768, 1024, and 1440 px.
 Method: rendered-flow review, direct interaction, responsive geometry checks, code-to-UI trace, accessibility spot checks, and the current automated UI suite.
 
 ## Post-fix verdict
@@ -36,28 +36,34 @@ This is not a claim that all 20 buyer pains are commercially solved. Availabilit
 | TN-BX-16 | Partial | Missing package contents are now visible before the order buttons and lead to a SKU-prefilled confirmation action. Exact included-parts data are still missing. |
 | TN-BX-17 | Partial | Unsupported discount and savings framing has been removed from cards and the main product decision area. The passport shows dated catalog evidence without claiming a market ranking; compliant market snapshots are still absent. |
 | TN-BX-18 | Partial | Task shortcuts work as real category or price filters, but they are static category aliases rather than a guided need finder. |
-| TN-BX-19 | Not solved | Gift mode consists of two price caps and a link to return terms. There is no recipient, occasion, suitability, or exchange-oriented selection aid. |
+| TN-BX-19 | Partial | Gift mode provides truthful price shortcuts and a link to exchange and return terms. Recipient, occasion, and suitability guidance still require verified merchandising rules. |
 | TN-BX-20 | Partial | Product support now prefills product name and SKU; order-success support prefills the public order code. The contact page gives one email route without inventing a response SLA. Monitoring and response measurement remain operational dependencies. |
 
 ## Confirmed strengths
 
-- Header search no longer breaks the header at 320, 390, 768, 1024, or 1440 px; no document-level horizontal overflow was observed on catalog pages.
+- Header search fits at 320, 390, 768, 1024, and 1440 px. A 2026-09-02 regression audit found that the first upward-swipe state collapsed the form container to zero height while its 44-pixel input overflowed the 61-pixel header. The header now has explicit hidden, search-only, and full states; the compact form has real height, and a fixed header plus invariant page spacer prevents the height transition from changing document scroll position.
 - The visual system is coherent on desktop and mobile, with strong card consistency and clear primary actions.
 - Product galleries expose six images, thumbnail scrolling, a mobile swipe hint, `touch-action: pan-y`, pointer-based swipe handling, and passing swipe unit tests.
 - Guest ordering exists and the accessible modal clearly states that no payment occurs before price, availability, and delivery confirmation.
 - Contact information consistently uses `contact@ainow.ge`.
-- Post-fix automated verification passed: 24 test files, 56 tests, TypeScript type checking, and lint.
+- Post-fix automated verification passed: 24 test files, 61 tests, TypeScript type checking, lint, and the production build.
 
 ## Corrected structural risks
 
 1. Checkout reflow and modal accessibility corrected at 320/390.
 2. Pagination now comes from `totalPages`; the inert grid control was removed and the mobile filter control is labelled and functional.
 3. Payment and delivery use one order-request truth model across public buying surfaces.
-4. Size, compatibility, material, and package uncertainty now appears before the order actions.
+4. Size, compatibility, material, and package uncertainty appears immediately before the order actions inside the same decision surface.
 5. Comparison now accepts same-category substitutes only and hides without an alternative.
 6. Product and order support links now prefill SKU or public order code.
 7. Fake `Recently viewed` labels were renamed to truthful catalog labels.
 8. Unsupported discount percentages, crossed-out prices, and savings claims were removed from cards and the primary product decision area.
+9. The product-detail hero changed from three competing columns to a two-column layout: gallery on the left and one sticky decision surface on the right. The duplicate large total was removed, `Buy now` is the single coral primary action, and `Add to cart` is a secondary outline action.
+10. Public typography was normalized to weights 400 through 700, muted text contrast was raised, and old violet interface accents were replaced with the graphite, coral, green, and neutral commerce palette.
+11. The product-detail hierarchy was extended to catalog, cart, authentication, account, information, blog, and service-state families through shared page, surface, title, body, and action primitives.
+12. Catalog product data now has immediate local initial data while the public API reconciles in the background; an unreachable API no longer leaves the primary catalog grid as a 30-second skeleton wall.
+13. Critical gallery and purchase surfaces no longer use viewport-triggered entrance animation, so a mobile buyer cannot reach an apparently blank decision area before the observer fires.
+14. Mobile cart confidence steps stack into a complete reading order instead of showing a clipped next card that looks accidentally cut off.
 
 ## Accessibility evidence and limits
 
@@ -69,6 +75,10 @@ This is not a claim that all 20 buyer pains are commercially solved. Availabilit
 
 ## Post-fix rendered evidence
 
+- Header after first upward gesture: mode `search`, header `61 px`, search form and input `44 px`, both wholly within header bounds.
+- Header after second distinct upward gesture: mode `full`, header `153.33 px` at the audited 390-pixel viewport and `143 px` from the medium breakpoint.
+- Product detail at 1440 px: two primary columns, one price hierarchy, one coral primary order action, no document-level horizontal overflow.
+- Product detail at 390 px: gallery and decision surface stack to one column with no document-level horizontal overflow.
 - 320 px checkout: dialog `clientWidth=264`, `scrollWidth=264`; form `clientWidth=264`, `scrollWidth=264`.
 - 390 px checkout: dialog `clientWidth=334`, `scrollWidth=334`; form `clientWidth=334`, `scrollWidth=334`.
 - Checkout opens with focus inside, Escape closes it, and focus returns to the checkout button.
@@ -76,12 +86,23 @@ This is not a claim that all 20 buyer pains are commercially solved. Availabilit
 - Mobile filters expose `aria-expanded`, open and close visibly, and cause no document overflow.
 - Comparison rendered `მოვლა / მოვლა` for the audited care product; unrelated catalog categories were excluded.
 - Product support mail includes product name and SKU; order-success support mail includes the public order code.
+- A 63-check route matrix covered 21 public, protected-entry, and service routes at 320, 768, and 1024 pixels. No document overflow, header-search overflow, duplicate footer, or missing page heading was found. Protected account and admin entry points redirected to login as expected.
+- Representative home, catalog, product, cart, authentication, contact, blog, and tag pages also passed at 390 and 1440 pixels with one page heading and no document-level overflow.
+- Mobile and desktop viewport captures confirm that catalog, product, cart, authentication, information, and blog families use the same graphite, coral, green, and paper system without the old violet Continuum accents.
 
 ## Evidence files
 
 Screenshots are saved in:
 
 `C:\Users\User\.codex\visualizations\2026\08\29\01a04f02-8fbf-72a1-98da-9f57757b59a9\trendingnow-uiux-audit-2026-09-01`
+
+The 2026-09-02 regression and commerce-hierarchy captures are saved in:
+
+`C:\Users\User\Desktop\trendingnow\client\artifacts\ux-audit-2026-09-02`
+
+The site-wide family pass is saved in:
+
+`C:\Users\User\Desktop\trendingnow\client\artifacts\site-system-2026-09-02\final`
 
 Key captures:
 

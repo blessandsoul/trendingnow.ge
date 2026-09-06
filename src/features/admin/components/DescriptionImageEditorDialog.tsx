@@ -85,15 +85,15 @@ export function DescriptionImageEditorDialog({
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-[70] bg-[#07152A]/55 backdrop-blur-sm" />
-        <Dialog.Content className="fixed inset-x-3 top-1/2 z-[70] max-h-[calc(100dvh-1.5rem)] -translate-y-1/2 overflow-hidden rounded-2xl border border-[#DFE6EF] bg-[#F6F8FB] shadow-[0_28px_90px_rgba(7,21,42,0.32)] sm:inset-x-6 lg:left-1/2 lg:right-auto lg:w-[min(760px,calc(100vw-3rem))] lg:-translate-x-1/2">
-          <header className="flex items-start gap-3 border-b border-[#DFE6EF] bg-white px-4 py-3 sm:px-5">
+        <Dialog.Overlay className="fixed inset-0 z-[70] bg-[#101010]/55 backdrop-blur-sm" />
+        <Dialog.Content className="fixed inset-x-3 top-1/2 z-[70] max-h-[calc(100dvh-1.5rem)] -translate-y-1/2 overflow-hidden rounded-2xl border border-[#D9DDE7] bg-[#F4F2ED] shadow-[0_28px_90px_rgba(7,21,42,0.32)] sm:inset-x-6 lg:left-1/2 lg:right-auto lg:w-[min(760px,calc(100vw-3rem))] lg:-translate-x-1/2">
+          <header className="flex items-start gap-3 border-b border-[#D9DDE7] bg-white px-4 py-3 sm:px-5">
             <div className="min-w-0">
-              <Dialog.Title className="font-black tracking-tight text-[#07152A]">{adminCopy.richTextImageEditorTitle}</Dialog.Title>
-              <Dialog.Description className="mt-0.5 text-xs leading-5 text-[#657286]">{adminCopy.richTextImageEditorDescription}</Dialog.Description>
+              <Dialog.Title className="font-bold tracking-tight text-[#101010]">{adminCopy.richTextImageEditorTitle}</Dialog.Title>
+              <Dialog.Description className="mt-0.5 text-xs leading-5 text-[#69717E]">{adminCopy.richTextImageEditorDescription}</Dialog.Description>
             </div>
             <Dialog.Close asChild>
-              <button type="button" aria-label={adminCopy.previewClose} className="ml-auto grid size-9 shrink-0 place-items-center rounded-full text-[#526071] transition hover:bg-[#EEF2F6] hover:text-[#07152A]">
+              <button type="button" aria-label={adminCopy.previewClose} className="ml-auto grid size-9 shrink-0 place-items-center rounded-full text-[#526071] transition hover:bg-[#EEF2F6] hover:text-[#101010]">
                 <X className="size-4" />
               </button>
             </Dialog.Close>
@@ -102,13 +102,13 @@ export function DescriptionImageEditorDialog({
           <div className="max-h-[calc(100dvh-10rem)] overflow-y-auto p-4 sm:p-5">
             {onImageUpload && <input ref={inputRef} type="file" accept="image/*" className="sr-only" onChange={(event) => { void uploadImage(event); }} />}
 
-            <p className="mb-4 rounded-xl border border-[#DCE4EF] bg-white px-3 py-2 text-xs leading-5 text-[#657286]">
+            <p className="mb-4 rounded-xl border border-[#D9DDE7] bg-white px-3 py-2 text-xs leading-5 text-[#69717E]">
               {isPair ? adminCopy.richTextImagePairHint : adminCopy.richTextImageSingleHint}
             </p>
 
             <div className={cn('grid gap-4', isPair && 'sm:grid-cols-2')}>
               {images.map((image, index) => (
-                <section key={`${image.src}-${index}`} className="overflow-hidden rounded-xl border border-[#DCE4EF] bg-white">
+                <section key={`${image.src}-${index}`} className="overflow-hidden rounded-xl border border-[#D9DDE7] bg-white">
                   <div className="aspect-[4/3] bg-[#F4F7FA] p-3">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={publicMediaUrl(image.src)} alt={image.alt} className="h-full w-full object-contain" />
@@ -131,7 +131,7 @@ export function DescriptionImageEditorDialog({
                               key={preset}
                               type="button"
                               onClick={() => updateImage(index, { width })}
-                              className={cn('rounded-full border px-2.5 py-1 text-xs font-bold transition', image.width === width ? 'border-warning bg-warning/15 text-[#07152A]' : 'border-[#DCE4EF] text-[#657286] hover:border-warning')}
+                              className={cn('rounded-full border px-2.5 py-1 text-xs font-bold transition', image.width === width ? 'border-warning bg-warning/15 text-[#101010]' : 'border-[#D9DDE7] text-[#69717E] hover:border-warning')}
                             >
                               {adminCopy.richTextImagePresets[preset]}
                             </button>
@@ -144,7 +144,7 @@ export function DescriptionImageEditorDialog({
                               type="button"
                               aria-pressed={image.align === align}
                               onClick={() => updateImage(index, { align })}
-                              className={cn('rounded-md border px-2.5 py-1 text-xs font-bold transition', image.align === align ? 'border-warning bg-warning/15 text-[#07152A]' : 'border-[#DCE4EF] text-[#657286] hover:border-warning')}
+                              className={cn('rounded-md border px-2.5 py-1 text-xs font-bold transition', image.align === align ? 'border-warning bg-warning/15 text-[#101010]' : 'border-[#D9DDE7] text-[#69717E] hover:border-warning')}
                             >
                               {adminCopy.richTextImageAlign[align]}
                             </button>
@@ -155,7 +155,7 @@ export function DescriptionImageEditorDialog({
 
                     <div className="flex flex-wrap gap-2">
                       {onImageUpload && (
-                        <button type="button" disabled={isUploading} onClick={() => openImagePicker(index)} className="inline-flex h-8 items-center gap-1.5 rounded-md border border-[#DCE4EF] px-2.5 text-xs font-bold text-[#526071] transition hover:border-warning hover:text-[#07152A] disabled:opacity-60">
+                        <button type="button" disabled={isUploading} onClick={() => openImagePicker(index)} className="inline-flex h-8 items-center gap-1.5 rounded-md border border-[#D9DDE7] px-2.5 text-xs font-bold text-[#526071] transition hover:border-warning hover:text-[#101010] disabled:opacity-60">
                           {isUploading && pendingTarget === index ? <Loader2 className="size-3.5 animate-spin" /> : <Pencil className="size-3.5" />}
                           {adminCopy.richTextImageReplace}
                         </button>
@@ -172,18 +172,18 @@ export function DescriptionImageEditorDialog({
 
             <div className="mt-4 flex flex-wrap items-center gap-2">
               {onImageUpload && images.length < 2 && (
-                <button type="button" disabled={isUploading} onClick={() => openImagePicker('append')} className="inline-flex h-9 items-center gap-2 rounded-md bg-[#07152A] px-3 text-sm font-bold text-white transition hover:bg-[#182D4B] disabled:opacity-60">
+                <button type="button" disabled={isUploading} onClick={() => openImagePicker('append')} className="inline-flex h-9 items-center gap-2 rounded-md bg-[#101010] px-3 text-sm font-bold text-white transition hover:bg-[#061E81] disabled:opacity-60">
                   {isUploading && pendingTarget === 'append' ? <Loader2 className="size-4 animate-spin" /> : <ImagePlus className="size-4" />}
                   {adminCopy.richTextImageAddSecond}
                 </button>
               )}
               {images.length === 2 && (
-                <button type="button" onClick={() => onChange([images[1], images[0]])} className="inline-flex h-9 items-center gap-2 rounded-md border border-[#DCE4EF] bg-white px-3 text-sm font-bold text-[#526071] transition hover:border-warning hover:text-[#07152A]">
+                <button type="button" onClick={() => onChange([images[1], images[0]])} className="inline-flex h-9 items-center gap-2 rounded-md border border-[#D9DDE7] bg-white px-3 text-sm font-bold text-[#526071] transition hover:border-warning hover:text-[#101010]">
                   <ArrowLeftRight className="size-4" />
                   {adminCopy.richTextImageSwap}
                 </button>
               )}
-              <button type="button" onClick={() => onOpenChange(false)} className="ml-auto inline-flex h-9 items-center rounded-[10px] bg-[#FF4057] px-4 text-sm font-black text-white transition hover:bg-[#E9344C]">
+              <button type="button" onClick={() => onOpenChange(false)} className="ml-auto inline-flex h-9 items-center rounded-[10px] bg-[#092BB4] px-4 text-sm font-bold text-white transition hover:bg-[#061E81]">
                 {adminCopy.richTextImageDone}
               </button>
             </div>

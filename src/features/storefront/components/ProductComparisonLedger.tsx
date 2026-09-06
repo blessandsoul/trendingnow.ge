@@ -39,7 +39,7 @@ export function ProductComparisonLedger({
       aria-labelledby="product-comparison-title"
     >
       <div className="mb-4 max-w-[760px]">
-        <h2 id="product-comparison-title" className="text-xl font-black tracking-[-0.025em] text-[#11141B] sm:text-2xl">
+        <h2 id="product-comparison-title" className="text-xl font-bold tracking-[-0.025em] text-[#101010] sm:text-2xl">
           {copy.product.comparison.title}
         </h2>
         <p className="mt-2 text-sm leading-6 text-[#657080]">{copy.product.comparison.intro}</p>
@@ -58,15 +58,15 @@ export function ProductComparisonLedger({
         <table className="w-full min-w-[760px] table-fixed border-collapse text-left text-sm">
           <thead>
             <tr className="border-b border-[#DDE3EA] bg-[#F8FAFC]">
-              <th scope="col" className="w-[150px] px-4 py-4 font-black text-[#657080]">{copy.product.comparison.product}</th>
+              <th scope="col" className="w-[150px] px-4 py-4 font-bold text-[#657080]">{copy.product.comparison.product}</th>
               {products.map((product, index) => (
-                <th key={product.id} scope="col" className="px-4 py-4 align-top text-[#11141B]">
+                <th key={product.id} scope="col" className="px-4 py-4 align-top text-[#101010]">
                   {index === 0 ? (
-                    <span className="mb-2 inline-flex rounded-full bg-[#FFF0F3] px-2 py-1 text-[11px] font-black text-[#B4233A]">
+                    <span className="mb-2 inline-flex rounded-full bg-[#EEF2FF] px-2 py-1 text-[11px] font-bold text-[#061E81]">
                       {copy.product.comparison.current}
                     </span>
                   ) : null}
-                  <span className="block text-sm font-black leading-5">{product.name}</span>
+                  <span className="block text-sm font-bold leading-5">{product.name}</span>
                 </th>
               ))}
             </tr>
@@ -88,7 +88,7 @@ export function ProductComparisonLedger({
                 <td key={`link-${product.id}`} className="px-4 py-4">
                   <Link
                     href={localizeHref(ROUTES.PRODUCT_DETAIL(product.slug))}
-                    className="inline-flex min-h-10 items-center gap-1.5 py-2 font-black text-[#D92F49] underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6F80]"
+                    className="inline-flex min-h-10 items-center gap-1.5 py-2 font-bold text-[#092BB4] underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF6F80]"
                   >
                     {copy.product.comparison.view}
                     <ArrowUpRight className="size-4" aria-hidden="true" />

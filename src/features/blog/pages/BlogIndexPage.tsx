@@ -1,9 +1,11 @@
 import type React from 'react';
+import Link from 'next/link';
+import { ArrowRight, Newspaper } from 'lucide-react';
 
 import { getAllTags, getPosts } from '../lib/api';
 import { getBlogCopy } from '../lib/copy';
 import { BLOG_PAGE_SIZE, parsePage } from '../lib/metadata';
-import { DEFAULT_BLOG_LOCALE, type BlogLocale } from '../lib/locales';
+import { DEFAULT_BLOG_LOCALE, localizedPath, type BlogLocale } from '../lib/locales';
 import { BlogList } from '../components/BlogList';
 import { Pagination } from '../components/Pagination';
 import { BlogShell } from './BlogShell';
@@ -28,24 +30,36 @@ export async function BlogIndexPage({ locale, rawPage }: BlogIndexPageProps): Pr
   return (
     <BlogShell>
       <div className="storefront-container py-10 md:py-16">
-        <div className="tn-dark-panel relative mx-auto mb-14 max-w-5xl overflow-hidden px-6 py-12 text-center sm:px-10 md:py-16">
-          <div className="absolute -right-16 -top-20 size-64 rounded-full bg-[#8C5CF6]/35 blur-3xl" aria-hidden="true" />
-          <div className="absolute -bottom-24 -left-12 size-60 rounded-full bg-[#19C6A6]/20 blur-3xl" aria-hidden="true" />
-          <p className="tn-kicker relative mb-4 text-white/70">TrendingNow.ge</p>
-          <h1 className="relative text-4xl font-black leading-tight tracking-tight text-white text-balance sm:text-5xl md:text-6xl">
-            {copy.title}
-          </h1>
-          <p className="relative mx-auto mt-5 max-w-3xl text-lg leading-8 text-white/70 md:text-xl">{copy.subtitle}</p>
-        </div>
+        <header className="tn-page-intro mb-12">
+          <div>
+            <p className="tn-kicker">TrendingNow.ge</p>
+            <h1 className="tn-page-title mt-4">{copy.title}</h1>
+            <p className="tn-page-lede mt-4">{copy.subtitle}</p>
+          </div>
+          <aside className="tn-dark-panel p-5 shadow-[0_14px_38px_rgba(17,20,27,0.14)] sm:p-6">
+            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+              <Newspaper className="size-4 text-[#FFE622]" aria-hidden="true" />
+              {copy.topicsHeading}
+            </div>
+            <p className="mt-3 text-sm leading-6 text-white/70">{copy.subtitle}</p>
+            <Link
+              href={localizedPath(locale, '/blog/tags')}
+              className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-none bg-[#092BB4] px-5 text-sm font-semibold text-white shadow-[0_12px_28px_rgba(9,43,180,0.22)] transition-[background-color,transform] hover:bg-[#061E81] active:scale-[0.96]"
+            >
+              {copy.viewAllTags}
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
+          </aside>
+        </header>
 
         {isFallback && (
-          <div className="mx-auto mb-8 max-w-3xl rounded-[16px] border border-[#D9C7FF] bg-[#F7F2FF] p-4 text-center text-sm font-semibold text-[#5B2DB6]">
+          <div className="mx-auto mb-8 max-w-3xl rounded-none border border-[#D9DDE7] bg-[#EEF2FF] p-4 text-center text-sm font-semibold text-[#061E81]">
             {copy.fallbackNotice}
           </div>
         )}
 
         <section aria-labelledby="blog-latest">
-          <h2 id="blog-latest" className="mb-8 text-2xl font-black tracking-tight text-[#11141B]">
+          <h2 id="blog-latest" className="tn-section-title mb-8">
             {copy.latestHeading}
           </h2>
           <BlogList posts={pagePosts} locale={locale} topTags={topTags} />
