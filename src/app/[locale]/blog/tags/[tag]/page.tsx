@@ -13,6 +13,9 @@ import {
 import { buildTagMetadata } from '@/features/blog/lib/metadata';
 import { TagPage } from '@/features/blog/pages/TagPage';
 
+// Unknown localized tags redirect at request time instead of static fallback.
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   params: Promise<{ locale: string; tag: string }>;
 }

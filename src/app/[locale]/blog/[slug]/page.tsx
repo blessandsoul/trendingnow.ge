@@ -14,6 +14,10 @@ import {
 } from '@/features/blog/lib/locales';
 import { buildBlogPostMetadata } from '@/features/blog/lib/metadata';
 
+// See the default-locale post route: a missing translated slug must resolve
+// through the shared not-found boundary at request time.
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
 }

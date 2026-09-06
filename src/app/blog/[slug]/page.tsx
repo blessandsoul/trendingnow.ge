@@ -6,6 +6,11 @@ import { getPosts } from '@/features/blog/lib/api';
 import { DEFAULT_BLOG_LOCALE } from '@/features/blog/lib/locales';
 import { buildBlogPostMetadata } from '@/features/blog/lib/metadata';
 
+// A missing slug deliberately reaches the shared not-found boundary. The post
+// renderer also reads the request nonce for JSON-LD, so this route must stay
+// request-dynamic instead of failing during static fallback rendering.
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }

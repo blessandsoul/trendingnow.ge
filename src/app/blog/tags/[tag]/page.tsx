@@ -6,6 +6,9 @@ import { DEFAULT_BLOG_LOCALE } from '@/features/blog/lib/locales';
 import { buildTagMetadata } from '@/features/blog/lib/metadata';
 import { TagPage } from '@/features/blog/pages/TagPage';
 
+// Unknown tags redirect to the tag index; keep that decision at request time.
+export const dynamic = 'force-dynamic';
+
 interface PageProps {
   params: Promise<{ tag: string }>;
 }
