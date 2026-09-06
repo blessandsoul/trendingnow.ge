@@ -24,7 +24,7 @@ export function StorefrontFooter(): React.ReactElement {
   const footerColumns: readonly FooterColumn[] = copy.footer.columns;
 
   return (
-    <footer className="mt-12 border-t border-[#242932] bg-[#101010] text-white">
+    <footer className="mt-12 border-t border-[#242932] bg-[#101010] pb-[66px] text-white md:pb-0">
       <div className="storefront-container grid gap-9 py-11 xl:grid-cols-[1.1fr_1.7fr_0.8fr]">
         <div className="relative overflow-hidden">
           <span className="absolute -left-8 -top-16 h-44 w-10 rotate-[24deg] bg-[#092BB4]" aria-hidden="true" />

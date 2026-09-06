@@ -10,6 +10,7 @@ import { StorefrontHeader } from '@/features/storefront/components/StorefrontHea
 import { localizedPath } from '@/i18n/locales';
 import { getRequestCopy, getRequestLocale } from '@/i18n/server';
 import { ROUTES } from '@/lib/constants/routes';
+import styles from '@/features/storefront/components/BoldDiscoveryHome.module.css';
 
 interface AuthPanelItem {
   icon: LucideIcon;
@@ -43,18 +44,18 @@ async function AuthPageShellInner({
   const locale = await getRequestLocale();
 
   return (
-    <div className="tn-page">
+    <div className={`${styles.fonts} min-h-svh bg-[#faf9f6] text-[#101010]`}>
       <StorefrontHeader />
 
-      <main>
-        <section className="storefront-container py-7 sm:py-10 lg:py-12">
-          <div className="tn-surface mx-auto max-w-[560px] overflow-hidden lg:max-w-[1240px]">
-            <div className="grid lg:min-h-[620px] lg:grid-cols-[minmax(390px,0.78fr)_minmax(0,1.22fr)] xl:grid-cols-[minmax(450px,0.72fr)_minmax(0,1.28fr)]">
-              <section className="flex items-center justify-center bg-white/92 px-5 py-8 sm:px-8 lg:justify-start lg:px-11 lg:py-12">
+      <main className="border-b border-black/25">
+        <section className="mx-auto w-full max-w-[1680px] px-0 sm:px-5 lg:px-8 xl:px-12">
+          <div className="border-x border-black/25 bg-[#faf9f6]">
+            <div className="grid lg:min-h-[650px] lg:grid-cols-[minmax(390px,0.78fr)_minmax(0,1.22fr)] xl:grid-cols-[minmax(450px,0.72fr)_minmax(0,1.28fr)]">
+              <section className="flex items-center justify-center bg-[#faf9f6] px-5 py-10 sm:px-8 lg:justify-start lg:px-11 lg:py-12">
                 <div className="w-full max-w-[430px]">
-                  <div className="mb-6 hidden items-center justify-between gap-4 border-b border-[#ECEEF3] pb-5 lg:flex">
-                    <span className="tn-kicker">{copy.auth.shell.accountLabel}</span>
-                    <Link href={localizedPath(locale, ROUTES.HOME)} className="text-sm font-semibold text-[#69717E] transition hover:text-[#092BB4]">
+                  <div className="mb-7 hidden items-center justify-between gap-4 border-b border-black/20 pb-5 lg:flex">
+                    <span className="text-xs font-bold uppercase tracking-[0.12em] text-[#092bb4]">{copy.auth.shell.accountLabel}</span>
+                    <Link href={localizedPath(locale, ROUTES.HOME)} className="text-sm font-semibold text-neutral-600 transition hover:text-[#092bb4]">
                       {copy.auth.shell.backToStore}
                     </Link>
                   </div>
@@ -62,25 +63,20 @@ async function AuthPageShellInner({
                 </div>
               </section>
 
-              <aside className="tn-dark-panel relative hidden overflow-hidden lg:block">
+              <aside className="relative hidden overflow-hidden bg-[#092bb4] lg:block">
                 <Image
-                  src="/storefront/hero-products.png"
+                  src="/storefront/bold-discovery/hero-lamp.png"
                   alt=""
                   fill
                   priority
                   sizes="(max-width: 1280px) 58vw, 920px"
-                  className="object-cover object-center opacity-35 mix-blend-screen"
+                  className="pointer-events-none object-contain object-center opacity-95"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#101010] via-[#202731]/88 to-transparent" />
-                <div className="absolute right-8 top-8 flex items-end gap-1.5" aria-hidden="true">
-                  <span className="h-6 w-2 rounded-full bg-[#092BB4]" />
-                  <span className="h-10 w-2 rounded-full bg-[#092BB4]" />
-                  <span className="h-14 w-2 rounded-full bg-[#19C6A6]" />
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#092bb4] via-[#092bb4]/88 to-[#092bb4]/20" />
                 <div className="relative z-10 flex min-h-full flex-col justify-between px-10 py-10 xl:px-12">
                   <div className="max-w-[520px]">
-                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-[#FFE622]">TrendingNow.ge</p>
-                    <h2 className="text-4xl font-semibold leading-tight text-white text-balance xl:text-[46px]">
+                    <p className="mb-4 text-xs font-bold uppercase tracking-[0.14em] text-[#ffe622]">TrendingNow.ge</p>
+                    <h2 className={`${styles.display} text-4xl font-bold leading-tight text-white text-balance xl:text-[52px]`}>
                       {panelTitle}
                     </h2>
                     <p className="mt-4 max-w-[500px] text-base leading-7 text-white/78">
@@ -88,7 +84,7 @@ async function AuthPageShellInner({
                     </p>
                     <Button
                       asChild
-                      className="tn-primary-action mt-7 h-11 px-6 font-semibold"
+                      className="mt-7 h-12 rounded-none border border-black bg-[#ffe622] px-5 font-bold text-black hover:bg-white"
                     >
                       <Link href={localizedPath(locale, ROUTES.PRODUCTS)}>
                         {copy.auth.shell.browseProducts}
@@ -101,9 +97,9 @@ async function AuthPageShellInner({
                     {panelItems.map(({ icon: Icon, title, description }) => (
                       <article
                         key={title}
-                        className="grid grid-cols-[44px_minmax(0,1fr)] gap-3 border border-white/12 bg-white/8 p-3.5 backdrop-blur-md"
+                        className="grid grid-cols-[44px_minmax(0,1fr)] gap-3 border border-white/35 bg-[#101010]/35 p-3.5 backdrop-blur-md"
                       >
-                        <span className="grid size-11 place-items-center rounded-[12px] bg-white/12 text-[#FFE622]">
+                        <span className="grid size-11 place-items-center bg-[#ffe622] text-black">
                           <Icon className="size-5" aria-hidden="true" />
                         </span>
                         <div className="min-w-0">
@@ -120,7 +116,7 @@ async function AuthPageShellInner({
 
           <Link
             href={localizedPath(locale, ROUTES.HOME)}
-            className="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-[#69717E] transition hover:text-[#092BB4] lg:hidden"
+            className="m-5 inline-flex min-h-11 items-center border-b border-black text-sm font-semibold text-[#101010] transition hover:text-[#092bb4] lg:hidden"
           >
             {copy.auth.shell.backToStore}
           </Link>
