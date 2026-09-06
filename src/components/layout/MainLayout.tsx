@@ -9,7 +9,7 @@ interface MainLayoutProps {
 
 export const MainLayout = ({ children }: MainLayoutProps): React.ReactElement => {
   return (
-    <div className="flex min-h-dvh flex-col">
+    <div className="tn-page flex min-h-dvh flex-col">
       <Header />
       <main className="flex-1">{children}</main>
       <Footer />
