@@ -47,7 +47,7 @@ describe('curated collection detail', () => {
   it('shows exact products before the body, dated price, source, disclosure and local product link', () => {
     render(<CuratedCollectionPost collection={collection} locale="ka" />);
 
-    const productHeading = screen.getByRole('heading', { name: 'ზუსტი პროდუქტები' });
+    const productHeading = screen.getByRole('heading', { name: 'პროდუქტის მოკლე შეფასება' });
     const bodyText = screen.getByText('შეზღუდვები წყაროს მიხედვით.');
     expect(productHeading.compareDocumentPosition(bodyText) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
     expect(screen.getAllByRole('img', { name: collection.products[0].name })[0]).toHaveAttribute('src', collection.products[0].imageUrl);
@@ -56,5 +56,14 @@ describe('curated collection detail', () => {
     expect(screen.getByText(collection.disclosure)).toBeInTheDocument();
     expect(screen.getAllByRole('link', { name: /პროდუქტის დეტალები/ })[0]).toHaveAttribute('href', '/products/find-pcshop-1');
     expect(screen.queryByRole('link', { name: /კალათ/ })).not.toBeInTheDocument();
+    expect(screen.getByTestId('collection-products')).toHaveAttribute('data-collection-format', 'single-product-review');
+    expect(screen.getByRole('heading', { name: 'პროდუქტის მოკლე შეფასება' })).toBeInTheDocument();
+  });
+
+  it('keeps comparison layouts for articles with more than one exact product', () => {
+    render(<CuratedCollectionPost collection={{ ...collection, products: [collection.products[0], { ...collection.products[0], id: 'pcshop-2' }] }} locale="ka" />);
+
+    expect(screen.getByTestId('collection-products')).toHaveAttribute('data-collection-format', 'multi-product-collection');
+    expect(screen.getByRole('heading', { name: 'ზუსტი პროდუქტები' })).toBeInTheDocument();
   });
 });

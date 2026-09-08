@@ -14,6 +14,8 @@ export interface CuratedCollectionCopy {
   sourceDateUnavailable: string;
   disclosure: string;
   relatedProducts: string;
+  singleProduct: string;
+  productReview: string;
   noProducts: string;
   exactProduct: string;
   seller: string;
@@ -39,6 +41,8 @@ const copy: Record<BlogLocale, CuratedCollectionCopy> = {
     sourceDateUnavailable: 'წყაროს თარიღი ჯერ არ არის მითითებული',
     disclosure: 'როგორ მოვამზადეთ',
     relatedProducts: 'ზუსტი პროდუქტები',
+    singleProduct: 'ერთი ზუსტი პროდუქტი',
+    productReview: 'პროდუქტის მოკლე შეფასება',
     noProducts: 'ზუსტი პროდუქტები ამ ჩანაწერში ჯერ არ არის დაკავშირებული.',
     exactProduct: 'პროდუქტის დეტალები',
     seller: 'გამყიდველი',
@@ -62,6 +66,8 @@ const copy: Record<BlogLocale, CuratedCollectionCopy> = {
     sourceDateUnavailable: 'Source date is not listed yet',
     disclosure: 'How this was prepared',
     relatedProducts: 'Exact products',
+    singleProduct: 'One exact product',
+    productReview: 'Product review',
     noProducts: 'No exact products are linked to this entry yet.',
     exactProduct: 'Product details',
     seller: 'Seller',
@@ -88,6 +94,8 @@ const copy: Record<BlogLocale, CuratedCollectionCopy> = {
     sourceDateUnavailable: 'Дата источника пока не указана',
     disclosure: 'Как подготовлено',
     relatedProducts: 'Точные товары',
+    singleProduct: 'Один точный товар',
+    productReview: 'Краткий обзор товара',
     noProducts: 'К этой записи пока не привязаны точные товары.',
     exactProduct: 'Детали товара',
     seller: 'Продавец',

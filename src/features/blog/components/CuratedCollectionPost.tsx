@@ -18,24 +18,28 @@ export interface CuratedCollectionReviewMetadata {
   reviewedAt?: string;
 }
 
-function ProductCard({ collection, product, locale }: { collection: CuratedCollectionContent; product: CuratedCollectionContent['products'][number]; locale: BlogLocale }): React.ReactElement {
+function ProductCard({ collection, product, locale, featured = false }: { collection: CuratedCollectionContent; product: CuratedCollectionContent['products'][number]; locale: BlogLocale; featured?: boolean }): React.ReactElement {
   const copy = getCuratedCollectionCopy(locale);
   return (
-    <article className="grid min-w-0 grid-cols-[96px_minmax(0,1fr)] items-start border border-black/30 bg-[#FAF9F6] sm:flex sm:flex-col">
-      <div className="relative aspect-square w-full overflow-hidden bg-[#092BB4]">
-        <DiscoveryProductImage src={product.imageUrl} alt={product.name} sizes="(max-width: 640px) 96px, (max-width: 1024px) 50vw, 33vw" />
+    <article className={featured
+      ? 'grid min-w-0 overflow-hidden border border-black/30 bg-[#FAF9F6] sm:grid-cols-[minmax(220px,0.8fr)_minmax(0,1.2fr)]'
+      : 'grid min-w-0 grid-cols-[96px_minmax(0,1fr)] items-start border border-black/30 bg-[#FAF9F6] sm:flex sm:flex-col'}
+    >
+      <div className={featured ? 'relative aspect-square min-h-[220px] overflow-hidden bg-[#092BB4]' : 'relative aspect-square w-full overflow-hidden bg-[#092BB4]'}>
+        <DiscoveryProductImage src={product.imageUrl} alt={product.name} sizes={featured ? '(max-width: 640px) 100vw, 360px' : '(max-width: 640px) 96px, (max-width: 1024px) 50vw, 33vw'} />
       </div>
-      <div className="flex min-w-0 flex-1 flex-col p-4">
+      <div className={featured ? 'flex min-w-0 flex-1 flex-col p-5 sm:p-7' : 'flex min-w-0 flex-1 flex-col p-4'}>
         <p className="text-xs font-semibold text-[#092BB4]">{product.merchantName} · {getDiscoveryCategoryLabel(product.category, locale)}</p>
-        <h3 className="mt-2 break-words text-base font-semibold leading-7 text-[#101010] sm:text-lg">{product.name}</h3>
+        <h3 className={featured ? 'mt-2 break-words text-xl font-semibold leading-8 text-[#101010] sm:text-2xl' : 'mt-2 break-words text-base font-semibold leading-7 text-[#101010] sm:text-lg'}>{product.name}</h3>
         <dl className="mt-4 space-y-2 text-xs leading-5 text-[#526071]">
           <div className="flex min-w-0 gap-2"><dt className="shrink-0 font-semibold text-[#101010]">{copy.sku}</dt><dd className="break-all">{product.merchantSku}</dd></div>
           <div className="flex min-w-0 flex-wrap gap-x-2"><dt className="font-semibold text-[#101010]">{copy.checked}</dt><dd><time dateTime={product.checkedAt}>{formatDate(product.checkedAt.slice(0, 10), locale)}</time></dd></div>
           <div className="flex min-w-0 flex-wrap gap-x-2"><dt className="font-semibold text-[#101010]">{copy.observedPrice}</dt><dd>{product.price === null ? copy.priceUnavailable : `${product.price.toLocaleString(locale === 'ka' ? 'ka-GE' : locale === 'ru' ? 'ru-RU' : 'en-US')} ₾`}</dd></div>
         </dl>
+        <div className={featured ? 'mt-6 flex flex-wrap gap-3' : ''}>
         <Link
           href={localizedPath(locale, `/products/${product.slug}`)}
-          className="mt-5 inline-flex min-h-11 items-center justify-between gap-2 border-t border-black/20 pt-3 text-sm font-bold text-[#061E81] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-[#092BB4]"
+          className={featured ? 'inline-flex min-h-11 items-center gap-2 border border-[#092BB4] bg-[#092BB4] px-4 text-sm font-bold text-white hover:bg-[#061E81] focus-visible:outline-2 focus-visible:outline-[#092BB4] focus-visible:outline-offset-2' : 'mt-5 inline-flex min-h-11 items-center justify-between gap-2 border-t border-black/20 pt-3 text-sm font-bold text-[#061E81] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-[#092BB4]'}
         >
           {copy.exactProduct}
           <ArrowUpRight className="size-4 shrink-0" aria-hidden="true" />
@@ -44,10 +48,11 @@ function ProductCard({ collection, product, locale }: { collection: CuratedColle
           href={product.productUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-2 inline-flex min-h-10 items-center text-xs font-semibold text-[#526071] underline underline-offset-4 hover:text-[#061E81] focus-visible:outline-2 focus-visible:outline-[#092BB4]"
+          className={featured ? 'inline-flex min-h-11 items-center text-sm font-semibold text-[#061E81] underline underline-offset-4 hover:text-[#061E81] focus-visible:outline-2 focus-visible:outline-[#092BB4]' : 'mt-2 inline-flex min-h-10 items-center text-xs font-semibold text-[#526071] underline underline-offset-4 hover:text-[#061E81] focus-visible:outline-2 focus-visible:outline-[#092BB4]'}
         >
           {copy.source}: {product.merchantName}
         </a>
+        </div>
       </div>
       <span className="sr-only">{collection.slug}</span>
     </article>
@@ -56,6 +61,7 @@ function ProductCard({ collection, product, locale }: { collection: CuratedColle
 
 export function CuratedCollectionPost({ collection, locale, reviewMetadata }: { collection: CuratedCollectionContent; locale: BlogLocale; reviewMetadata?: CuratedCollectionReviewMetadata }): React.ReactElement {
   const copy = getCuratedCollectionCopy(locale);
+  const isSingleProduct = collection.products.length === 1;
 
   return (
     <article className="storefront-container max-w-6xl py-8 md:py-14">
@@ -72,7 +78,7 @@ export function CuratedCollectionPost({ collection, locale, reviewMetadata }: { 
       <header className="border-b border-black/20 pb-8">
         <div className="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[#092BB4]">
           <span className="bg-[#FFE622] px-2.5 py-1 text-[#101010]">{getCuratedCategoryLabel(collection.category, locale)}</span>
-          <span>{collection.products.length} {copy.relatedProducts.toLocaleLowerCase(locale)}</span>
+          <span>{isSingleProduct ? copy.singleProduct : `${collection.products.length} ${copy.relatedProducts.toLocaleLowerCase(locale)}`}</span>
         </div>
         <h1 className="tn-page-title mt-5 max-w-5xl">{collection.title}</h1>
         <p className="mt-5 max-w-3xl text-base leading-8 text-[#303844]">{collection.excerpt}</p>
@@ -82,16 +88,16 @@ export function CuratedCollectionPost({ collection, locale, reviewMetadata }: { 
         </div>
       </header>
 
-      <section className="mt-8 border-b border-black/20 pb-10" aria-labelledby="collection-products">
+      <section className={isSingleProduct ? 'mt-8 max-w-4xl border-b border-black/20 pb-10' : 'mt-8 border-b border-black/20 pb-10'} aria-labelledby="collection-products" data-testid="collection-products" data-collection-format={isSingleProduct ? 'single-product-review' : 'multi-product-collection'}>
         <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="tn-kicker text-[#092BB4]">{copy.eyebrow}</p>
-            <h2 id="collection-products" className="tn-section-title mt-2">{copy.relatedProducts}</h2>
+            <h2 id="collection-products" className="tn-section-title mt-2">{isSingleProduct ? copy.productReview : copy.relatedProducts}</h2>
           </div>
-          <p className="text-sm text-[#526071]">{copy.exactProducts}</p>
+          <p className="text-sm text-[#526071]">{isSingleProduct ? copy.singleProduct : copy.exactProducts}</p>
         </div>
-        {collection.products.length > 0 ? <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
-          {collection.products.map((product) => <ProductCard key={product.id} collection={collection} product={product} locale={locale} />)}
+        {collection.products.length > 0 ? <div className={isSingleProduct ? 'max-w-4xl' : 'grid gap-5 sm:grid-cols-2 xl:grid-cols-3'}>
+          {collection.products.map((product) => <ProductCard key={product.id} collection={collection} product={product} locale={locale} featured={isSingleProduct} />)}
         </div> : <p className="border border-dashed border-black/30 bg-[#FAF9F6] p-5 text-sm leading-7 text-[#526071]">{copy.noProducts}</p>}
       </section>
 
