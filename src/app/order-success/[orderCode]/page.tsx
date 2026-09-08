@@ -2,7 +2,7 @@ import type React from 'react';
 import type { Metadata } from 'next';
 
 import { OrderSuccessPage } from '@/features/storefront/components/OrderSuccessPage';
-import { getRequestCopy } from '@/i18n/server';
+import { getRequestCopy, getRequestLocale } from '@/i18n/server';
 import { buildPrivateMetadata } from '@/lib/seo/metadata';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -17,5 +17,5 @@ export default async function OrderSuccessRoute({
 }): Promise<React.ReactElement> {
   const { orderCode } = await params;
 
-  return <OrderSuccessPage orderCode={orderCode} />;
+  return <OrderSuccessPage orderCode={orderCode} locale={await getRequestLocale()} />;
 }

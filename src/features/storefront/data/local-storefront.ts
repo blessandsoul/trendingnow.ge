@@ -1,5 +1,6 @@
 import type { PaginatedApiResponse } from '@/lib/api/api.types';
 import { currentCatalog, type StoreCategory } from './currentCatalog';
+import { normalizeCatalogParams } from '../lib/catalog-navigation';
 import { getProductVisualEntries, getProductVisuals } from './product-media';
 import type {
   CartItem,
@@ -229,9 +230,11 @@ export const localStorefrontHome: StorefrontHome = {
 export function getLocalProducts(
   params: ProductListParams = {},
 ): PaginatedApiResponse<StorefrontProduct>['data'] {
+  params = normalizeCatalogParams(params);
   const normalizedSearch = params.search?.trim().toLocaleLowerCase('ka-GE');
+  const normalizedCategory = params.category === 'tech' ? 'technology' : params.category;
   let items = localProducts.filter((product) => {
-    if (params.category && product.category.slug !== params.category) return false;
+    if (normalizedCategory && product.category.slug !== normalizedCategory) return false;
     if (normalizedSearch) {
       const searchable = `${product.name} ${product.description ?? ''} ${product.category.name}`.toLocaleLowerCase('ka-GE');
       if (!searchable.includes(normalizedSearch)) return false;

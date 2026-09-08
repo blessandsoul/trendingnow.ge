@@ -3,6 +3,7 @@ import type React from 'react';
 
 import { BlogPostPage } from '@/features/blog/pages/BlogPostPage';
 import { getPosts } from '@/features/blog/lib/api';
+import { getAcceptedCollections } from '@/features/blog/lib/accepted-collections';
 import { DEFAULT_BLOG_LOCALE } from '@/features/blog/lib/locales';
 import { buildBlogPostMetadata } from '@/features/blog/lib/metadata';
 
@@ -17,7 +18,8 @@ interface PageProps {
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = await getPosts(DEFAULT_BLOG_LOCALE);
-  return posts.map((post) => ({ slug: post.slug }));
+  const collections = await getAcceptedCollections(DEFAULT_BLOG_LOCALE);
+  return [...posts.map((post) => ({ slug: post.slug })), ...collections.map((collection) => ({ slug: collection.slug }))];
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

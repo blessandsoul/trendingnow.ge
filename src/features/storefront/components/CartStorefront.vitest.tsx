@@ -49,10 +49,7 @@ vi.mock('@/components/common/SafeImage', () => ({
 
 vi.mock('../hooks/useStorefront', () => ({
   useCart: () => ({ data: storefrontMocks.cart, isLoading: false }),
-  useClearCart: () => ({ mutate: vi.fn(), isPending: false }),
-  useRemoveCartItem: () => ({ mutate: vi.fn(), isPending: false }),
   useStorefrontHome: () => ({ data: { featuredProducts: [] } }),
-  useUpdateCartItem: () => ({ mutate: vi.fn(), isPending: false }),
 }));
 
 vi.mock('./NewsletterBand', () => ({ NewsletterBand: () => null }));
@@ -69,5 +66,26 @@ describe('CartStorefront', () => {
 
     expect(productLinks).toHaveLength(2);
     productLinks.forEach((link) => expect(link).toHaveAttribute('href', '/products/ergonomic-chair'));
+  });
+
+  it('renders the legacy cart as a read-only archive without delivery or checkout claims', () => {
+    render(<CartStorefront />);
+
+    expect(screen.getByRole('heading', { name: 'ძველი კალათის არქივი' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'ისტორიული კალათის ჯამი' })).toBeInTheDocument();
+    expect(screen.getAllByText('129 ₾').length).toBeGreaterThanOrEqual(1);
+    expect(screen.queryByRole('radio')).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /checkout|delivery|clear|remove/i })).not.toBeInTheDocument();
+    expect(screen.queryByTestId('checkout-trigger')).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'შოპინგის გაგრძელება' })).toHaveAttribute('href', '/products');
+    expect(screen.getByRole('link', { name: 'კონტაქტი ჩანაწერზე' })).toHaveAttribute('href', '/contact');
+  });
+
+  it('keeps the main archive layout width-constrained at narrow viewports', () => {
+    render(<CartStorefront />);
+
+    expect(screen.getByRole('main')).toHaveClass('min-w-0');
+    expect(screen.getByRole('main').querySelector('section.mt-7')).toHaveClass('min-w-0');
+    expect(screen.getByRole('main').querySelector('.tn-commerce-card')).toHaveClass('min-w-0');
   });
 });

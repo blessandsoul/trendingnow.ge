@@ -2,13 +2,14 @@ import { ACTIVE_LOCALES, DEFAULT_LOCALE, type ActiveLocale, type InactiveLocale 
 import { enCopy } from './en';
 import { kaCopy } from './ka';
 import { ruCopy } from './ru';
+import { discoveryInfoPages, type DiscoveryInfoPage, type InfoPageKey } from './discovery-info';
 
-export type AppCopy = typeof kaCopy;
+export type AppCopy = Omit<typeof kaCopy, 'infoPages'> & { infoPages: Record<InfoPageKey, DiscoveryInfoPage> };
 
 export const localeCopy = {
-  ka: kaCopy,
-  en: enCopy,
-  ru: ruCopy,
+  ka: { ...kaCopy, infoPages: discoveryInfoPages.ka },
+  en: { ...enCopy, infoPages: discoveryInfoPages.en },
+  ru: { ...ruCopy, infoPages: discoveryInfoPages.ru },
 } satisfies Record<ActiveLocale, AppCopy>;
 
 export const inactiveLocaleCopyPlaceholders = {} satisfies Record<

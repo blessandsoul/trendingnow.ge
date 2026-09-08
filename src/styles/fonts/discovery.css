@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Discovery Georgian";
+  src: url("/fonts/NotoSansGeorgian-Variable.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 62.5% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Discovery Anton";
+  src: url("/fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --font-sans-value: "Discovery Georgian", Arial, sans-serif;
+  --font-heading-value: "Discovery Georgian", Arial, sans-serif;
+  --font-mono-value: ui-monospace, monospace;
+}

@@ -94,7 +94,7 @@ function buildCsp(nonce: string, isProd: boolean): string {
     `default-src 'self'`,
     `script-src ${scriptSrc}`,
     `style-src ${styleSrc}`,
-    `img-src 'self' blob: data: ${apiOrigin} https://img.kwcdn.com https://ir-20.ozone.ru`,
+    `img-src 'self' blob: data: ${apiOrigin} https://img.kwcdn.com https://ir-20.ozone.ru https://pcshop.ge https://static.ee.ge`,
     `font-src 'self' https://webstatic.bog.ge`,
     `connect-src ${connectSrc}`,
     `object-src 'none'`,
@@ -133,6 +133,15 @@ export function middleware(request: NextRequest): NextResponse {
   // only trusts scripts we (and Next) emit this request.
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64');
   const cspHeader = buildCsp(nonce, isProd);
+
+  // Reject the local reviewer before streaming can turn a not-found into HTTP 200.
+  if (isProd && isPathUnder(routePath, '/editorial-preview')) {
+    const response = new NextResponse(null, { status: 404 });
+    response.headers.set('content-security-policy', cspHeader);
+    response.headers.set('Cache-Control', 'no-store');
+    response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+    return applySecurityHeaders(response);
+  }
 
   // Propagate the nonce + CSP on the REQUEST headers. Next reads the CSP from
   // the request to extract the nonce and stamps it onto its own <script> tags;

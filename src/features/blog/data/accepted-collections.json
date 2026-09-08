@@ -1,0 +1,2128 @@
+{
+  "schemaVersion": 1,
+  "manualReceipt": {
+    "schemaVersion": 1,
+    "mode": "owner_authorized_manual",
+    "approvedAt": "2026-09-08T13:41:13.683Z",
+    "approvedBy": "owner",
+    "decision": "publish_selected_collections",
+    "selection": {
+      "path": "AGENT/agents/seo-autocontent/content/trendingnow-release-50-20260908/checks/release-selection-20260908.json",
+      "sha256": "875563d0b1afeb3bbd3140185c15f6c0ce5258e227f8a92431bf33e7740dce8b",
+      "selectedCount": 35,
+      "preservedCount": 50,
+      "supportingCount": 15,
+      "selectedSlugs": [
+        "buyer-decision-log-20260907",
+        "comparison-table-20260907",
+        "family-tech-budget-20260907",
+        "gift-scenarios-20260907",
+        "home-broadlink-neutral-wire",
+        "home-cleaning-routine-choice",
+        "home-espresso-workflow",
+        "home-eufy-homebase-check",
+        "home-eufy-outdoor-placement",
+        "home-kettle-capacity",
+        "home-mixer-attachments",
+        "home-morning-kitchen-pair",
+        "home-mova-pack-choice",
+        "home-mova-thermal-control",
+        "home-robot-app-wifi",
+        "home-robot-mop-surfaces",
+        "home-robot-vacuum-low-furniture",
+        "home-smart-camera-switch-choice",
+        "outbound-path-20260907",
+        "seasonal-home-20260907",
+        "shopping-truth-20260907",
+        "source-reading-20260907",
+        "workspace-cable-map",
+        "workspace-desk-audio-ports",
+        "workspace-desk-power-route",
+        "workspace-laptop-charger-verification",
+        "workspace-laptop-hp-lenovo",
+        "workspace-laptop-lenovo-dell",
+        "workspace-laptop-ports-three",
+        "workspace-laptop-travel-power",
+        "workspace-mic-phone-setup",
+        "workspace-mouse-ergonomic",
+        "workspace-mouse-gaming-work",
+        "workspace-power-strip-six-outlets",
+        "workspace-powerbank-laptop-check"
+      ]
+    },
+    "sourceSnapshot": {
+      "path": "AGENT/agents/seo-autocontent/content/trendingnow-release-50-20260908/sources/source-register-20260907.json",
+      "sha256": "c53478040843c661db57afe7b267a5b2667d0bf90e67bb9834d9c70c65ccea09",
+      "sourceDate": "2026-09-07"
+    },
+    "automaticGates": {
+      "status": "HOLD",
+      "evidencePath": "AGENT/agents/seo-autocontent/content/trendingnow-release-50-20260908/checks/gate-status.json",
+      "evidenceSha256": "ec70665269bdbb5d9dd757c7b9917b14d5bbae9589287564cccc4c4e7b5ed2b7",
+      "pending": [
+        {
+          "name": "mechanicalGeorgianLint",
+          "status": "FLAGS_REMAIN"
+        },
+        {
+          "name": "contentSafety",
+          "status": "PENDING_NOT_RUN"
+        },
+        {
+          "name": "productKnowledge",
+          "status": "PENDING_NOT_RUN"
+        },
+        {
+          "name": "nativeGeorgianReview",
+          "status": "PENDING"
+        },
+        {
+          "name": "imageRights",
+          "status": "UNKNOWN"
+        },
+        {
+          "name": "marketDemand",
+          "status": "UNKNOWN"
+        },
+        {
+          "name": "aiSearchObservation",
+          "status": "OBSERVED_ONLY_PRIORITY5"
+        },
+        {
+          "name": "rootAcceptance",
+          "status": "PENDING"
+        },
+        {
+          "name": "productionMapping",
+          "status": "NOT_GRANTED"
+        },
+        {
+          "name": "publication",
+          "status": "NOT_ATTEMPTED"
+        }
+      ]
+    },
+    "expectedCollectionCount": 35,
+    "collectionSlugs": [
+      "buyer-decision-log-20260907",
+      "comparison-table-20260907",
+      "family-tech-budget-20260907",
+      "gift-scenarios-20260907",
+      "home-broadlink-neutral-wire",
+      "home-cleaning-routine-choice",
+      "home-espresso-workflow",
+      "home-eufy-homebase-check",
+      "home-eufy-outdoor-placement",
+      "home-kettle-capacity",
+      "home-mixer-attachments",
+      "home-morning-kitchen-pair",
+      "home-mova-pack-choice",
+      "home-mova-thermal-control",
+      "home-robot-app-wifi",
+      "home-robot-mop-surfaces",
+      "home-robot-vacuum-low-furniture",
+      "home-smart-camera-switch-choice",
+      "outbound-path-20260907",
+      "seasonal-home-20260907",
+      "shopping-truth-20260907",
+      "source-reading-20260907",
+      "workspace-cable-map",
+      "workspace-desk-audio-ports",
+      "workspace-desk-power-route",
+      "workspace-laptop-charger-verification",
+      "workspace-laptop-hp-lenovo",
+      "workspace-laptop-lenovo-dell",
+      "workspace-laptop-ports-three",
+      "workspace-laptop-travel-power",
+      "workspace-mic-phone-setup",
+      "workspace-mouse-ergonomic",
+      "workspace-mouse-gaming-work",
+      "workspace-power-strip-six-outlets",
+      "workspace-powerbank-laptop-check"
+    ],
+    "bundleHash": "1d36b7c71fb6f847c257ce6261ecfe049d0fe09301a9b1f3afb3c8f9c2a47015",
+    "receiptHash": "14aca10bdba4d908574dd5d752e9502a1bdd246cf994a4b5d70ae1ca1af8ccd1"
+  },
+  "collections": [
+    {
+      "schemaVersion": 1,
+      "slug": "buyer-decision-log-20260907",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "სამუშაო აქსესუარი 100 GEL-მდე: M650L, Pebble 2 თუ BOYA",
+      "excerpt": "M650L 99 GEL, Pebble 2 M350S 75 GEL და BOYA BY-M100UC 79 GEL ერთ ფასის ზონაშია, მაგრამ არჩევანი კურსორისთვის, კომპაქტურობისთვის ან Type-C ხმისთვის კეთდება.",
+      "bodyMarkdown": "100 GEL-მდე კალათაში [Logitech M650L Bluetooth Graphite](/products/find-pcshop-1), [Logitech Pebble 2 M350S Bluetooth White](/products/find-pcshop-2) და [BOYA BY-M100UC Wired Mic Type-C](/products/find-pcshop-3) ერთმანეთის შემცვლელი არ არის. პირველი ორი მაუსია, BOYA კი სადენიანი მიკროფონი. ამიტომ ფასი მხოლოდ მაშინ არის შესადარებელი, როცა ჯერ გადაწყვეტთ: კურსორი გაჩერებთ, პატარა მრავალმოწყობილობიანი მაუსი გჭირდებათ თუ ხმა.\n\n## M650L — დიდი ხელისა და მუდმივი სამუშაო ფორმისთვის\n\nM650L აირჩიეთ, თუ დიდი ხელის ზომას და სამუშაო მაგიდაზე უფრო დიდ კორპუსს ამჯობინებთ. Logitech-ის საცალო გვერდი SmartWheel-სა და Bluetooth/Logi Bolt კავშირს აღწერს; ეს არ არის დამოუკიდებელი კომფორტის ტესტი და კონკრეტული ადგილობრივი კომპლექტაცია მაინც შეთავაზებაზე გადაამოწმეთ. 2026 წლის 7 სექტემბერს დაკვირვებული ფასი იყო **99 GEL**.\n\n## Pebble 2 — ჩანთისთვის და სამ მოწყობილობას შორის გადასართავად\n\nPebble 2 M350S აირჩიეთ, თუ მაუსი ხშირად მიგაქვთ სახლიდან ოფისში და მცირე კორპუსი გჭირდებათ. Logitech-ის ოფიციალური გვერდი Easy-Switch-ით სამ მოწყობილობამდე გადართვას უთითებს. ეს კომფორტი უფრო ძვირად ღირებულ, დიდი ხელისთვის განკუთვნილ კორპუსს ვერ ჩაანაცვლებს; USB მიმღების არსებობა ყუთში ცალკე დასადასტურებელია. დაკვირვებული ფასი იყო **75 GEL**.\n\n## BOYA — მხოლოდ ხმისთვის\n\nBOYA BY-M100UC აირჩიეთ, თუ Type-C-ით ტელეფონზე ან კომპიუტერზე ჩაწერა გჭირდებათ და გამოყენებული აპი გარე მიკროფონს იღებს. კონექტორის ფორმა მარტო სრულ თავსებადობას არ ამტკიცებს. მაუსის პრობლემის დროს BOYA არასწორი იაფი არჩევანია, თუნდაც მისი **79 GEL**-იანი დაკვირვებული ფასი მიმზიდველი ჩანდეს.\n\n## ჩემი გადაწყვეტილება\n\nკურსორის მთავარი პრობლემა და დიდი ხელი — [Logitech Signature M650L Bluetooth Graphite](/products/find-pcshop-1); პატარა ჩანთა და რამდენიმე მოწყობილობა — [Logitech Pebble 2 M350S Bluetooth White](/products/find-pcshop-2); ხმა და შესაბამისი Type-C აუდიო — [BOYA BY-M100UC Wired Mic Type-C](/products/find-pcshop-3). 7 სექტემბრის ფასები მიწოდების, მარაგისა და დაბრუნების პირობას არ ნიშნავს. შეკვეთამდე გახსენით [გარე შეთავაზება Logitech Signature M650L Bluetooth Graphite](https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/), [გარე შეთავაზება Logitech Pebble 2 M350S Bluetooth White](https://pcshop.ge/shop/logitech-pebble-2-m350s-bluetooth-white/) ან [გარე შეთავაზება BOYA BY-M100UC Wired Mic Type-C](https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/) და იმავე SKU-ს პირობები წაიკითხეთ.\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "არჩევა",
+      "tags": [
+        "M650L",
+        "Pebble 2",
+        "BOYA",
+        "100 GEL"
+      ],
+      "productIDs": [
+        "pcshop-1",
+        "pcshop-2",
+        "pcshop-3"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/",
+        "https://pcshop.ge/shop/logitech-pebble-2-m350s-bluetooth-white/",
+        "https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "0db2f9ec043d1c3bf11fa7db15381e61adf536727f472d6ceacd68ce7d51d182",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "ef0a77f878f53bc053b6289d4244cd75b7d785b999ebfb9d9fcce767c822038d",
+        "selectionRowSha256": "ef0a77f878f53bc053b6289d4244cd75b7d785b999ebfb9d9fcce767c822038d",
+        "contentHash": "0db2f9ec043d1c3bf11fa7db15381e61adf536727f472d6ceacd68ce7d51d182",
+        "receiptHash": "a46a610ce1e4b9f3c4466dbc1f8615b2be95958ea5b5dbc1eff7c6a0717cf1d9"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "comparison-table-20260907",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "Lenovo, DELL თუ HP: სამი სამუშაო ლეპტოპის რეალური არჩევანი",
+      "excerpt": "PCShop-ის დათარიღებული ჩანაწერი Lenovo-ს OLED/80Wh-ს, DELL-ის Windows 11 Home-ს და HP-ის 1.39 კგ-ს უთითებს; არჩევამდე ზუსტი ადგილობრივი კომპლექტაცია, განსაკუთრებით HP-ის ელემენტისა და წონის შესაბამისობა, დაადასტურეთ.",
+      "bodyMarkdown": "სამუშაო ლეპტოპის არჩევანში აქ სამი ზუსტი ჩანაწერი დგას: [Lenovo IdeaPad Slim 5 16IRH10](/products/find-pcshop-10), [DELL Pro 15 Essential PV15250](/products/find-pcshop-11) და [HP EliteBook 640 G11](/products/find-pcshop-12). ფასის 100 GEL-იანი სხვაობა Lenovo-სა და DELL-ს შორის მხოლოდ მაშინ ღირს, თუ გამყიდველის დათარიღებული კონფიგურაცია და OLED ეკრანი ნამდვილად ცვლის თქვენს სამუშაო დღეს.\n\n| მოდელი | რისთვის ავირჩევდი | რას ვთმობთ | 2026 წლის 7 სექტემბრის ფასი |\n|---|---|---|---|\n| Lenovo IdeaPad Slim 5, 83HS0024RK | 16-ინჩიანი 2880×1800 OLED, 120Hz, 16GB/512GB, 80Wh | FreeDOS და პრიალა ზედაპირი | 2299 GEL |\n| DELL Pro 15 Essential PV15250 | წინასწარ დაყენებული Windows 11 Home და დაბალი ჯამი | Full HD IPS; ზუსტი წონა გვერდზე უნდა დადასტურდეს | 2199 GEL |\n| HP EliteBook 640 G11 | PCShop-ის ჩანაწერში 1.39 კგ, 14-ინჩიანი 1920×1200 და სადენიანი ქსელის პორტი | FreeDOS და 45% NTSC ეკრანი; ელემენტისა და წონის შესაბამისობა დაადასტურეთ | 2999 GEL |\n\n## Lenovo თუ DELL\n\nLenovo-ს დამატებული 100 GEL აირჩიეთ, თუ ტექსტის, ცხრილის ან ვიზუალური მასალის დიდ OLED სივრცეში მუშაობა ყოველდღიური მოთხოვნაა. 83HS0024RK ზუსტად ჩაიწერეთ შეკვეთამდე: ოჯახის სხვა კონფიგურაციის OLED მონაცემი ამ ნაწილს არ ცვლის. DELL აირჩიეთ, თუ Windows 11 Home-ის მზადყოფნა და 2199 GEL-იანი დაკვირვებული ჯამი უფრო მნიშვნელოვანია, ვიდრე OLED-ის კონტრასტი.\n\n## როდის შეიძლება ღირდეს HP-ის ზედმეტი თანხა\n\nამ შედარებაში HP-ს დამატებული 800 GEL მხოლოდ მაშინ განიხილეთ, თუ 14-ინჩიანი ფორმა და სხვა დადასტურებული მახასიათებლები თქვენს სამუშაოს რეალურად ერგება. PCShop-ის ჩანაწერში ნაჩვენები 1.39 კგ და 56Wh-ის შესაბამისობა ამ კონკრეტულ შეთავაზებაზე დამოუკიდებლად დადასტურებული არ არის, ამიტომ ნაწილის კოდი და ყუთის მონაცემები შეკვეთამდე შეადარეთ. FreeDOS-ის შემთხვევაში წინასწარ უნდა გადაწყვიტოთ, რომელი ოპერაციული სისტემა გჭირდებათ და როგორია მისი დაყენების გზა; ზუსტი პირობები და შესაძლო ლიცენზიის საკითხი იმავე შეთავაზებაში გადაამოწმეთ. თუ ლეპტოპი ძირითადად მაგიდაზე დარჩება, ამ კონკრეტულ სამეულში DELL-ის მზა Windows ან Lenovo-ს OLED უფრო მკაფიო მიზეზია.\n\n## თუ ლეპტოპს გზისთვის აწყობთ\n\nმგზავრობისთვის კალათაც შეადარეთ: [HP EliteBook 640 G11](/products/find-pcshop-12)-ის 2999 GEL-იან ჩანაწერს [Logitech Pebble 2 M350S](/products/find-pcshop-2)-ის 75 GEL დაუმატეთ და 3074 GEL გამოდის, ხოლო [DELL Pro 15 Essential PV15250](/products/find-pcshop-11)-ის 2199 GEL-იან ჩანაწერთან იგივე მაუსი 2274 GEL-ს იძლევა. ორივე ჯამი 2026 წლის 7 სექტემბრის დაკვირვებაა და მიწოდებას არ მოიცავს. Pebble 2-ის Bluetooth გზა ორივე კალათაში გადაამოწმეთ; Logi Bolt მიმღები კომპლექტში არ შედის და მხოლოდ საჭიროების შემთხვევაში ცალკე დაგეგმეთ. ამ შედარებით HP-ის დამატებითი 800 GEL მხოლოდ მაშინ განიხილეთ, თუ თქვენთვის დადასტურებული დამატებითი მახასიათებლები ამ თანხას ამართლებს; HP-ის ზუსტი წონისა და ელემენტის შესაბამისობა შეკვეთამდე გადაამოწმეთ.\n\n## საბოლოო არჩევანი\n\nეკრანი და ბატარეა: [გარე შეთავაზება Lenovo IdeaPad Slim 5 16IRH10](https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/); მზა Windows და დაბალი ჯამი: [გარე შეთავაზება DELL Pro 15 Essential PV15250](https://pcshop.ge/shop/dell-pro-15-essential-pv15250/); 14-ინჩიანი ფორმა და RJ-45: [გარე შეთავაზება HP EliteBook 640 G11](https://pcshop.ge/shop/hp-elitebook-640-g11-3/). სამი ფასი მხოლოდ 7 სექტემბრის დაკვირვებაა, არა მიმდინარე შეთავაზება ან მარაგის დაპირება. TrendingNow-ის ზუსტ ჩანაწერში დაბრუნებამდე გადაამოწმეთ ნაწილის კოდი, ოპერაციული სისტემა, გარანტია და დაბრუნება.\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "ლეპტოპები",
+      "tags": [
+        "Lenovo",
+        "DELL",
+        "HP",
+        "შედარება"
+      ],
+      "productIDs": [
+        "pcshop-10",
+        "pcshop-11",
+        "pcshop-12",
+        "pcshop-2"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/",
+        "https://pcshop.ge/shop/dell-pro-15-essential-pv15250/",
+        "https://pcshop.ge/shop/logitech-pebble-2-m350s-bluetooth-white/",
+        "https://pcshop.ge/shop/logitech-pebble-2-m350s-bluetooth-white/",
+        "https://pcshop.ge/shop/hp-elitebook-640-g11-3/"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "3126d8a116774cb8c30fd6264a7350b9150c7ea05447b584eaa9e4ac17e396f1",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "dcc9f98ddc5ad9a413299be920c4ec62f12aac5ccd1656772144ff6647a98c9f",
+        "selectionRowSha256": "dcc9f98ddc5ad9a413299be920c4ec62f12aac5ccd1656772144ff6647a98c9f",
+        "contentHash": "3126d8a116774cb8c30fd6264a7350b9150c7ea05447b584eaa9e4ac17e396f1",
+        "receiptHash": "8f4563a53289699391c0eb8fb6da010048b61da4e44349d7ff57d49db4688c65"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "family-tech-budget-20260907",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "სამზარეულოს ორი კალათა: ყავა თუ გამოცხობა",
+      "excerpt": "EKL-F500L-ის 175.99 GEL-ს დაუმატეთ YCM-E1501 და მიიღეთ 545.98 GEL-იანი ყავის კალათა, ან KSTM-8041 და მიიღეთ 531.98 GEL-იანი საცხობი კალათა.",
+      "bodyMarkdown": "ჩაიდანი აქ სურვილისამებრ დამატებითი ცხელი წყლის ბლოკია; ძირითადი არჩევანი ორ განსხვავებულ ამოცანად იყოფა: [ARDESTO Kettle EKL-F500L](/products/find-elite-7) + [ARDESTO Coffee Maker YCM-E1501](/products/find-elite-6) ყავისთვის, ან [ARDESTO Kettle EKL-F500L](/products/find-elite-7) + [ARDESTO Mixer KSTM-8041](/products/find-elite-5) ცომისა და კრემისთვის. 2026 წლის 7 სექტემბრის ფასებით ორივე ჯამი მიწოდების გარეშეა დათვლილი.\n\n## კალათა A — სურვილისამებრ ცხელი წყალი და ყავა: 545.98 GEL\n\nEKL-F500L-ის დაკვირვებული ფასი იყო **175.99 GEL**, YCM-E1501-ის — **369.99 GEL**. ჯამი არის **545.98 GEL**. ჩაიდანი ამ კალათაში მხოლოდ მაშინ დატოვეთ, თუ ცხელი წყლის ცალკე საჭიროებაც გაქვთ; YCM-E1501-ის არჩევისთვის ის აუცილებელ ნაწილად არ ითვლება. ყავის აპარატი აირჩიეთ, თუ დილის ყავა სახლში ხშირად მზადდება და მისი გაწმენდა თქვენთვის მისაღები რუტინაა. YCM-E1501-ის კონკრეტულ შეთავაზებაში დაფქვის რეჟიმი და კომპლექტაცია პირდაპირ გადაამოწმეთ; მარცვლის გამოყენება ავტომატურად არ ივარაუდოთ.\n\n## კალათა B — სურვილისამებრ ცხელი წყალი და გამოცხობა: 531.98 GEL\n\nთუ ცხელი წყლის დამატებითი საჭიროება გაქვთ, იმავე ჩაიდანს დაუმატეთ KSTM-8041-ის **355.99 GEL**-იანი დაკვირვებული ფასი და მიიღებთ **531.98 GEL**-ს. ჩაიდნის გარეშე საცხობი არჩევანის თანხა ცალკე უნდა დაითვალოთ. ეს კალათა მხოლოდ მაშინ ღირს, თუ ხშირად ამზადებთ ცომს ან კრემს. ARDESTO-ს 2024 წლის ოფიციალურ ინსტრუქციაში აღწერილი საცმები და მოვლა იმ კონკრეტულ შეთავაზებას შეადარეთ.\n\n## რას ავირჩევდი\n\nყავის ყოველდღიური რიტმი — [გარე შეთავაზება ARDESTO Coffee Maker YCM-E1501](https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309); გამოცხობის განმეორებადი სამუშაო — [გარე შეთავაზება ARDESTO Mixer KSTM-8041](https://ee.ge/miqseri/ardesto-mixer-kstm-8041-p10312). ორივე შემთხვევაში საერთო ჩაიდანი [გარე შეთავაზება ARDESTO Kettle EKL-F500L](https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446)-ზე გადაამოწმეთ, ხოლო 545.98 და 531.98 GEL მხოლოდ 7 სექტემბრის დაკვირვებული ჯამებია. არ აირჩიოთ იაფი კალათა, თუ მისი მეორე ნივთი თაროზე დარჩება.\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "არჩევა",
+      "tags": [
+        "სამზარეულო",
+        "ბიუჯეტი",
+        "YCM-E1501",
+        "KSTM-8041"
+      ],
+      "productIDs": [
+        "elite-7",
+        "elite-6",
+        "elite-5"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446",
+        "https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309",
+        "https://ee.ge/miqseri/ardesto-mixer-kstm-8041-p10312"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "14ccc1281e0233bb36a1991594efceb34af5856062683aab6046d06a7a8c4b5b",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "70dfdae4cfac6c32e372cd1aeafe4e28bdd7c95e35ca1257c45538ea0384e1d4",
+        "selectionRowSha256": "70dfdae4cfac6c32e372cd1aeafe4e28bdd7c95e35ca1257c45538ea0384e1d4",
+        "contentHash": "14ccc1281e0233bb36a1991594efceb34af5856062683aab6046d06a7a8c4b5b",
+        "receiptHash": "e9eae3ff66eba9531d24a671d8c8f7b15d64cc97995accdb424757d5d3dc3064"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "gift-scenarios-20260907",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "ტექნიკის საჩუქარი ხუთი სცენარისთვის: რა მოუხდება ადამიანს",
+      "excerpt": "M650L სამუშაო კონტროლისთვისაა, BOYA Type-C ჩაწერისთვის, YCM-E1501 ყავის რიტუალისთვის, EKL-F500L ცხელი წყლისთვის, Defender კი მხოლოდ გაზომილი ოთახისთვის.",
+      "bodyMarkdown": "ტექნიკის საჩუქარი წარმატებულია მაშინ, როცა ნივთი მიმღების ყოველდღიურ მოქმედებას ერგება. ამ ხუთიდან [Logitech Signature M650L Bluetooth Graphite](/products/find-pcshop-1) და [BOYA BY-M100UC Wired Mic Type-C](/products/find-pcshop-3) სამუშაოსთვისაა, [ARDESTO Coffee Maker YCM-E1501](/products/find-elite-6) და [ARDESTO Kettle EKL-F500L](/products/find-elite-7) სამზარეულოსთვის, [Defender Spirit Gaming Desk](/products/find-pcshop-5) კი ოთახის სივრცეზეა დამოკიდებული.\n\n## ხუთი განსხვავებული სცენარი\n\n**ხანგრძლივი კომპიუტერული მუშაობა:** M650L აირჩიეთ დიდი ხელისთვის გათვლილი ფორმისა და SmartWheel-ის გამო. თუ ადამიანს უკვე აქვს კომფორტული მაუსი, ეს საჩუქარი ზედმეტი იქნება.\n\n**Type-C ჩაწერა:** BOYA BY-M100UC მხოლოდ მაშინ აჩუქეთ, თუ ტელეფონი ან კომპიუტერი გარე მიკროფონს იღებს. USB-C ფორმა საკმარისი მტკიცებულება არ არის.\n\n**ყავის მომზადება:** YCM-E1501 შეეფერება ადამიანს, ვინც დილის მომზადებასა და შემდგომ წმენდას ეთანხმება. აპარატი დაფქულ ყავაზეა გათვლილი; ცალკე საფქვავი მხოლოდ სურვილისამებრ დაგჭირდებათ, თუ მარცვლის გამოყენება გინდათ.\n\n**ცხელი წყლის ხშირი მოთხოვნა:** EKL-F500L აირჩიეთ, თუ 1.7 ლიტრი ოჯახის რიტმსა და სამზარეულოს ზედაპირს ერგება.\n\n**დიდი სამუშაო ზედაპირი:** Defender Spirit Gaming Desk-ს ნუ აჩუქებთ ოთახის გაზომვის გარეშე. 2026 წლის 7 სექტემბერს დაკვირვებული ფასი **549 GEL** იყო, მაგრამ ზომა და სივრცე ფასზე ადრე უნდა დაემთხვეს.\n\n## ვის არ ვუყიდიდი\n\nუცნობი პორტის მქონე ადამიანს BOYA-ს არ ვუყიდიდი; პატარა ოთახში Defender-ს; მოვლის პროცესის არმოყვარულს YCM-E1501-ს. ეს უარი მოდელის შეფასება კი არა, გამოყენების რისკია.\n\nსაჩუქრის წინ გახსენით [გარე შეთავაზება Logitech Signature M650L Bluetooth Graphite](https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/), [გარე შეთავაზება BOYA BY-M100UC Wired Mic Type-C](https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/), [გარე შეთავაზება ARDESTO Coffee Maker YCM-E1501](https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309), [გარე შეთავაზება ARDESTO Kettle EKL-F500L](https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446) ან [გარე შეთავაზება Defender Spirit Gaming Desk](https://pcshop.ge/shop/defender-spirit-gaming-desk/). ყველა ფასი 7 სექტემბრის ჩანაწერია, არა მიმდინარე მარაგის დადასტურება.\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "არჩევა",
+      "tags": [
+        "საჩუქარი",
+        "M650L",
+        "BOYA",
+        "სამზარეულო",
+        "მაგიდა"
+      ],
+      "productIDs": [
+        "pcshop-1",
+        "pcshop-3",
+        "elite-6",
+        "elite-7",
+        "pcshop-5"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/",
+        "https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/",
+        "https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309",
+        "https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446",
+        "https://pcshop.ge/shop/defender-spirit-gaming-desk/"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "c52919bd3f35317a0db7c9585e915002d832906fe9fee9dc7301a8b33878c870",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "3f79a1b8280103d7cb2b28516827514f2db0264dd70f7d4aa8d3007061031d2f",
+        "selectionRowSha256": "3f79a1b8280103d7cb2b28516827514f2db0264dd70f7d4aa8d3007061031d2f",
+        "contentHash": "c52919bd3f35317a0db7c9585e915002d832906fe9fee9dc7301a8b33878c870",
+        "receiptHash": "7cc8b06ca088e6d0719a7939f871ad4199c3d44de751e28a0ebaa3cf1636e312"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-broadlink-neutral-wire",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "BroadLink LC1 თუ ჩვეულებრივი ჩამრთველი: ვის ღირს ყიდვა",
+      "excerpt": "LC1 განიხილეთ მხოლოდ ზუსტი ადგილობრივი ვარიანტი-ის, ელექტრო ყუთის სქემისა და სასურველი ფუნქციისთვის S3 Hub-ის საჭიროების გადამოწმების შემდეგ; BroadLink-ის მიმდინარე გვერდი no-neutral ვარიანტს აჩვენებს.",
+      "bodyMarkdown": "თუ მიზანი მხოლოდ დაზიანებული ჩამრთველის შეცვლაა, BroadLink Smart Light Switch White 2-Gang LC1 შეიძლება ზედმეტი ხარჯი და მონტაჟი იყოს. თუ გინდათ განათების აპით, ტაიმერით ან ხმოვანი ბრძანებით მართვა, LC1-ს აზრი აქვს, მაგრამ მხოლოდ ორი წინაპირობის დადასტურების შემდეგ: თქვენი ელექტრო ყუთის სქემა და ის, სჭირდება თუ არა თქვენთვის სასურველ ფუნქციას S3 Hub. PCShop-ის ჩანაწერში ზუსტი მოდელია SKU I25751.\n\n## რას ყიდულობთ რეალურად\n\nBroadLink-ის მიმდინარე Smart Wi-Fi Switch გვერდი წერს, რომ LC1 ნეიტრალური მავთულის გარეშეა გათვლილი და აჩვენებს ვარიანტებს „LC1 Only“ და „LC1 + S3 Hub“. ცალკე S3 Hub-ის გვერდი რვა მოწყობილობის ზღვარს აღწერს; კონკრეტულ I25751-სა და თქვენს ფუნქციაში ჰაბის საჭიროება ადგილობრივ ყუთსა და ინსტრუქციაში გადაამოწმეთ. ეს არ არის დაპირება, რომ ყველა ძველი ჩამრთველი პირდაპირ შეიცვლება. ორი წრისთვის განკუთვნილი 2-Gang პანელი მხოლოდ მოდელის ფორმატს აღწერს; თქვენს კედელში არსებული მავთულები და დატვირთვა ცალკე უნდა შეამოწმოს კვალიფიციურმა ელექტრიკოსმა.\n\n## ვის შეეფერება და ვის არა\n\nაირჩიეთ LC1, თუ ხშირად გრჩებათ შუქი ჩართული, გჭირდებათ სცენა ან უკვე გაქვთ BroadLink-ის ეკოსისტემა. გამოტოვეთ ეს მოდელი, თუ ელექტრო სქემა უცნობია, ადგილობრივი კომპლექტაცია არ დასტურდება ან უბრალოდ მექანიკური ჩამრთველი გჭირდებათ. BroadLink-ის წყაროში ერთი S3 Hub-ისთვის 8 დაკავშირებული მოწყობილობის ლიმიტია მითითებული, ამიტომ არსებული სისტემაც დაითვალეთ.\n\n2026 წლის 7 სექტემბრის შეთავაზების ჩანაწერში PCShop-ის ფასი 67 GEL იყო. ეს თარიღიანი დაკვირვებაა და არა მიმდინარე ფასის, მარაგის ან მიწოდების დაპირება.\n\n## საბოლოო არჩევანი\n\nშეკვეთამდე ელექტრო ყუთის სქემა სპეციალისტს აჩვენეთ და გამყიდველთან/ინსტრუქციაში დაადასტურეთ ზუსტი LC1 ვარიანტი და სასურველი ფუნქციისთვის ჰაბის საჭიროება. თუ რომელიმე პასუხი უცნობია, არჩევანი შეაჩერეთ. ზუსტი პროდუქტი ნახეთ [BroadLink Smart Light Switch White 2-Gang LC1](/products/find-pcshop-6), ხოლო საბოლოო ფასი, მარაგი, მიწოდება და დაბრუნება გადაამოწმეთ [PCShop-ის შეთავაზებაზე](https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/).\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სახლი",
+      "tags": [
+        "BroadLink",
+        "LC1",
+        "ჭკვიანი ჩამრთველი",
+        "ნეიტრალური მავთული",
+        "S3 Hub"
+      ],
+      "productIDs": [
+        "pcshop-6"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/",
+        "https://www.broadlink.ae/smart-switch",
+        "https://www.broadlink.ae/product-page/broadlink-lc1-3-metallic-white",
+        "https://www.broadlink.ae/product-page/s3-hub"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "e24e3627fc311a03ebcc7ff9940832c33286624b40f9ef27cb14e472bd946d13",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "821729474f8d15900967eaf1d98756d93b2a41d05ec2ec8983e4ea514d421ac3",
+        "selectionRowSha256": "821729474f8d15900967eaf1d98756d93b2a41d05ec2ec8983e4ea514d421ac3",
+        "contentHash": "e24e3627fc311a03ebcc7ff9940832c33286624b40f9ef27cb14e472bd946d13",
+        "receiptHash": "ba71fe357d1d93224bf74528f3e163d37f638d0ae197e0450d2affee05f1ace3"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-cleaning-routine-choice",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "სახლში პირველი შენაძენი: იატაკის მოვლა თუ განათების მართვა?",
+      "excerpt": "ETA Rover და BroadLink LC1 სხვადასხვა პრობლემას აგვარებს. თუ ბიუჯეტი მხოლოდ ერთს ჰყოფნის, ჯერ იმ დეფიციტს მიხედეთ, რომელიც ყოველდღე მეორდება; ეს ტექნიკური შედარება არ არის.",
+      "bodyMarkdown": "ETA Robot Vacuum Cleaner ETA124890030 და BroadLink Smart Light Switch White 2-Gang LC1 სხვადასხვა სამუშაოსთვისაა. ეს არ არის ორი თანაბარი პროდუქტის ტექნიკური შედარება: ETA იატაკის რუტინას ეხება, LC1 კი კედლის განათების მართვას. ორი ბარათი ერთად მხოლოდ პრიორიტეტის დასადგენად გამოგადგებათ, როცა პირველ შენაძენად ერთი პრობლემის გადაწყვეტა უნდა აირჩიოთ.\n\n## აირჩიეთ ETA Rover, თუ იატაკი გიმეორებთ ერთსა და იმავე საქმეს\n\nETA-ის წყაროებში აღწერილია 2-in-1 მოდელი, 2.4 გიგაჰერცის Wi-Fi, 110 წუთამდე მუშაობა და 200 მილილიტრიანი მტვრის კონტეინერი. იმავე ოფიციალურ გვერდზე რეჟიმების რაოდენობა 3/4-ად და სიმაღლე 7.5/7.7 სმ-ად სხვადასხვა ადგილას ჩანს, ამიტომ ამ ტექსტში რეჟიმების ზუსტ რაოდენობას არ ვაფიქსირებ და გასასვლელის რეალურ ზომას გაზომეთ. ეს არჩევანი ლოგიკურია, თუ შეგიძლიათ კაბელებისა და პატარა საგნების მოშორება. კონტეინერი, ფილტრი და მოპის ქსოვილი მაინც მოსავლელია.\n\n## მეორე სცენარი: განათების მართვის დეფიციტი\n\nBroadLink-ის აღწერა აპს, ტაიმერებს, ჯგუფებსა და სცენებს ასახელებს. BroadLink-ის მიმდინარე გვერდი LC1 Only და LC1 + S3 Hub ვარიანტებს აჩვენებს, ხოლო S3 Hub-ის გვერდი რვა მოწყობილობის ზღვარს აღწერს. ადგილობრივ LC1-სა და თქვენთვის სასურველ ფუნქციაში ჰაბის საჭიროება ცალკე უნდა დადასტურდეს. ელექტრო ყუთის სქემა სპეციალისტმა უნდა შეამოწმოს.\n\n2026 წლის 7 სექტემბრის ჩანაწერში ETA-ის ფასი 549.99 GEL, LC1-ის ფასი კი 67 GEL იყო. ორივე მხოლოდ იმ დღის შეთავაზების დაკვირვებაა; მარაგი, მიწოდება და საბოლოო ფასი გამყიდველთან განაახლეთ.\n\n## პირველი შენაძენის რიგი\n\nპირველ შენაძენად ETA განიხილეთ, თუ იატაკის განმეორებადი მოვლა გაკლიათ და სივრცე რობოტისთვის მზადდება. LC1 შემდეგი ცალკე ნაბიჯია, როცა განათების პრობლემა ხშირია და ჰაბი და გაყვანილობა დადასტურებულია. თუ რომელიმე წინაპირობა უცნობია, ჯერ არც ერთი არ იყიდოთ. იხილეთ [ETA Rover 1248 90030](/products/find-elite-4) და [BroadLink LC1](/products/find-pcshop-6), შემდეგ გადაამოწმეთ ზუსტი პირობები [Elite-ის ბარათზე](https://ee.ge/mtversasruti/eta-robot-vacuum-cleaner-eta124890030-p21440) და [PCShop-ის ბარათზე](https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/).\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სახლი",
+      "tags": [
+        "სახლი",
+        "ETA",
+        "BroadLink",
+        "დასუფთავება",
+        "ჭკვიანი სახლი"
+      ],
+      "productIDs": [
+        "elite-4",
+        "pcshop-6"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/mtversasruti/eta-robot-vacuum-cleaner-eta124890030-p21440",
+        "https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/",
+        "https://www.eta.cz/shop/roboticky-vysavac-rover-1248-90030-ruzovy-eta124890030/p730137/",
+        "https://www.broadlink.ae/product-page/broadlink-lc1-3-metallic-white",
+        "https://www.broadlink.ae/product-page/s3-hub"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "233ca5f009f09453b841e1111783896b685296066834851e2ffc76ed72012eb3",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "02045589ce737f0bbd9a110983200e2b10c6aa6b21d2a2ed3c2c2d02d42030a3",
+        "selectionRowSha256": "02045589ce737f0bbd9a110983200e2b10c6aa6b21d2a2ed3c2c2d02d42030a3",
+        "contentHash": "233ca5f009f09453b841e1111783896b685296066834851e2ffc76ed72012eb3",
+        "receiptHash": "8869909cdcb7dd9ab8a731c086a5b07c0d0fb611da79223e3d434d1992475a89"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-espresso-workflow",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "ARDESTO YCM-E1501: ხელით ესპრესო თქვენი დილის რიტმია?",
+      "excerpt": "YCM-E1501 დაფქულ ყავას და ხელით მომზადებას ეყრდნობა. ყიდვამდე შეაფასეთ არა მხოლოდ ბარის რიცხვი, არამედ დრო, საფქვავი და რძის მილის მოვლა.",
+      "bodyMarkdown": "[ARDESTO YCM-E1501-ის შეთავაზება](/products/find-elite-6) შეეფერება მყიდველს, რომელსაც დაფქული ყავით ხელით ესპრესო და რძის ცალკე აქაფება სურს. ეს არ არის „ერთი ღილაკით მზა სასმელის“ დაპირება. გადაწყვეტილების მთავარი კითხვა პროცესია: მზად ხართ ყავა მოამზადოთ, ფილტრი დაამაგროთ, ექსტრაქცია გააკონტროლოთ და ორთქლის მილი გაწმინდოთ?\n\n## რას ამბობს მწარმოებელი\n\nARDESTO-ს ოფიციალურ გვერდზე YCM-E1501 მითითებულია როგორც დაფქული ყავის აპარატი, 1,4 ლიტრიანი წყლის ავზით, ხელით რძის აქაფებითა და ჭიქის გამათბობლით. ეს ტექნიკური აღწერაა და არა გარანტია, რომ ყველა ყავა ერთნაირ გემოს მოგვცემს.\n\nმარცვლის ადგილზე დაფქვა ამ მოდელის აღწერილ პროცესში არ შედის. თუ სახლში დაფქული ყავა არ გაქვთ, ცალკე საფქვავი დაგჭირდებათ ან უკვე დაფქული ყავა უნდა იყიდოთ. ოფიციალურ გვერდზე ცალკე საფქვავებიც არის რეკომენდებული, მაგრამ მათი ფასი და თავსებადობა ამ კანდიდატის ფარგლებში არ შემიმოწმებია.\n\n## ვის მოუხდება\n\nაირჩიეთ, თუ დილით რამდენიმე წუთის გამოყოფა, დაფქული ყავის შენახვა და რძის ქაფის ხელით მომზადება თქვენთვის მისაღებია. 1,4 ლიტრიანი ავზი და ჭიქის გამათბობელი შეიძლება მოსახერხებელი იყოს, მაგრამ ამაზე დაყრდნობით თქვენს ოჯახში ჭიქების რაოდენობას ვერ დავასკვნით.\n\nგამოტოვეთ, თუ მარცვლის ადგილზე დაფქვა და სწრაფი ავტომატური მომზადება გჭირდებათ, ან ორთქლის მილის გაწმენდა თქვენთვის მიუღებელია. ამ მოდელის აღწერილი პროცესი მომხმარებლის ყველა შეცდომას ვერ გამოასწორებს.\n\n## ადგილობრივი შეთავაზების შემოწმება\n\nElite-ის მიმდინარე შეთავაზების ჩანაწერში ARDESTO Coffee Maker YCM-E1501-ის ფასი 369,99 GEL-ად არის ნაჩვენები; ეს მნიშვნელობა 2026-09-08-ზე გადამოწმდა. ეს არის გამყიდველის განცხადება და არა დამოუკიდებლად დადასტურებული მარაგი. საბოლოო ფასი, მარაგი, მიწოდება და გარანტია შეკვეთამდე თავად გადაამოწმეთ.\n\n## სწრაფი გადაწყვეტილება\n\nთუ ხელით მომზადების პროცესი გსიამოვნებთ, შეადარეთ ზუსტი მოდელი [TrendingNow-ის გვერდზე](/products/find-elite-6), შემდეგ გახსენით [Elite-ის შეთავაზება](https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309) და SKU-ს YCM-E1501 შეადარეთ. თუ მხოლოდ სწრაფი ავტომატური სასმელი გჭირდებათ, ეს კანდიდატი ჯერ არ იყიდოთ. პროდუქტის გვერდი გამყიდველის გვერდზე ავტომატურად არ გადაგიყვანთ: გახსნილ ბარათზე თავად დააჭირეთ „ნახე მაღაზიაში“.\n\nეს სტატია არ არის ყავის გემოს, წნევის ან ტემპერატურის გამოყენების ტესტი. TrendingNow თავად არ ფლობს აპარატს და შეკვეთას არ იღებს. ფასი და პირობები შეიძლება შეიცვალოს. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "სამზარეულო",
+      "tags": [
+        "ყავის აპარატი",
+        "ARDESTO",
+        "ესპრესო",
+        "დაფქული ყავა",
+        "რძის ქაფი"
+      ],
+      "productIDs": [
+        "elite-6"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309",
+        "https://ardesto.com/en/products/coffee-maker-ardesto-ycm-e1501/",
+        "https://ardesto.com/wp-content/uploads/2025/04/67f8edea29d3f_ardesto_ycm-e1500-1501_ua_eng_a5_site.pdf",
+        "https://officemart.ge/ka/product/8161-%E1%83%A7%E1%83%90%E1%83%95%E1%83%98%E1%83%A1-%E1%83%90%E1%83%9E%E1%83%90%E1%83%A0%E1%83%90%E1%83%A2%E1%98%98-ardesto-ycm-e1501-%E1%83%AC%E1%83%98%E1%83%97%E1%83%94%E1%83%9A%E1%83%98?new=new",
+        "https://allmarket.ge/ka/product/109079-kavis-aparati-ardesto-ycm-e1501_-1350w_-1_4l_-coffee-machine_-red",
+        "https://primestore.ge/ardesto-coffe-maker-carob-ycm-e1501-1-4l-ground-hand-capuchino-maker-cup-warmer-red.html?sl=ka"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "15ea8f84e0b8ca9cb6b053b1a84d09c4471adabc2fb1f72a5a806b62c63827fe",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "28184c38100e8fa8d458441c570f70b4cd1f609481a466316beb8c50c6d37e43",
+        "selectionRowSha256": "28184c38100e8fa8d458441c570f70b4cd1f609481a466316beb8c50c6d37e43",
+        "contentHash": "15ea8f84e0b8ca9cb6b053b1a84d09c4471adabc2fb1f72a5a806b62c63827fe",
+        "receiptHash": "117b2e67dba614a706a000097faf6b0f194f3337ffb3d69fc512d4b192986219"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-eufy-homebase-check",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "Eufy 2C Add-On: HomeBase 2 გაქვთ თუ სრული ნაკრები გჭირდებათ",
+      "excerpt": "Eufy 2C Add-On დამატებითი კამერაა და არა დამოუკიდებელი საწყისი ნაკრები. ყიდვამდე თავსებადი HomeBase-ის მოდელი უნდა იცოდეთ.",
+      "bodyMarkdown": "[Eufy 2C Add-On Camera White-ის შეთავაზება](/products/find-pcshop-7) მხოლოდ მაშინ არის სწორი საწყისი, როცა უკვე გაქვთ თავსებადი Eufy სისტემა. კამერა არ არის სრული ნაკრები. Eufy-ის ოფიციალურ გვერდზე წერია, რომ Add-On კამერას HomeBase სჭირდება და HomeBase კომპლექტში არ შედის.\n\n## მთავარი წინაპირობა\n\nEufy-ის ოფიციალურ თავსებადობის ჩანაწერში 2C Add-On HomeBase 2-თან თავსებადად არის ნაჩვენები. სხვა HomeBase-ის ან სხვა თაობის კამერის არსებობა ავტომატურ თავსებადობას არ ნიშნავს. ყიდვამდე ჩაიწერეთ ჰაბის ზუსტი მოდელი, შემდეგ შეადარეთ Eufy-ის ოფიციალურ ცხრილს. თუ ჰაბის მოდელი არ იცით, Add-On-ის ყიდვა შეაჩერეთ.\n\nეს პროდუქტი შეიძლება განიხილოთ როგორც უკვე მოქმედი სისტემის დამატებითი ხედვა. Eufy-ის ოფიციალურ გვერდზე აღწერილია 1080p ვიდეო, 135 გრადუსის დიაგონალური ხედვა, ღამის ხედვა, IP67 დაცვა და 180-დღიანი ბატარეის ხანგრძლივობის მწარმოებლის პირობები. ეს მახასიათებლები არ გვპირდება, რომ კონკრეტულ ეზოში ყველა მოძრაობა ან შეტყობინება სწორად დაფიქსირდება.\n\n## რას ყიდულობთ ადგილობრივ შეთავაზებაში\n\nPCShop-ის ჩანაწერში ზუსტი მოდელია Eufy 2C Add-On Camera White, p/n T81133D3, SKU I26702. გვერდზე ნაჩვენებია 259 GEL, რომელიც 2026-09-08-ზე გადავამოწმე. გამყიდველის გვერდი მარაგს აჩვენებს, თუმცა დამოუკიდებელი დადასტურება არ გვაქვს. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნების პირობები შეკვეთამდე თავად გადაამოწმეთ.\n\nკამერის აღწერილი Wi-Fi კავშირი არ ცვლის HomeBase-ის წინაპირობას. ასევე, Add-On სახელწოდება არ ნიშნავს, რომ ყუთში შედის საწყისი ჰაბი, საჭირო კაბელები ან სრული სისტემის ყველა კომპონენტი. კონკრეტული ყუთის შემადგენლობა და გარანტია ისევ გამყიდველთან უნდა გადაამოწმოთ.\n\n## სწრაფი გადაწყვეტილება\n\nაირჩიეთ Add-On მხოლოდ მაშინ, თუ:\n\n- ზუსტად იცით, რომ გაქვთ HomeBase 2 ან ოფიციალურად თავსებადი ჰაბი;\n- გჭირდებათ დამატებითი კამერა მოქმედ სისტემაში;\n- მზად ხართ, ცალკე გადაამოწმოთ Wi-Fi-ის, სამონტაჟო ადგილისა და კვების პირობები.\n\nთუ ჯერ არც HomeBase გაქვთ და არც კამერის სისტემა, ეს პროდუქტი არ არის უსაფრთხო საწყისი არჩევანი. მოძებნეთ სრული ნაკრები, სადაც კამერა და შესაბამისი ჰაბი ერთად არის აღწერილი, ან ჯერ ჰაბის შეთავაზება შეადარეთ.\n\nგახსენით [TrendingNow-ის ზუსტი პროდუქტის გვერდი](/products/find-pcshop-7), შემდეგ გადადით [PCShop-ის გამყიდველის გვერდზე](https://pcshop.ge/shop/eufy-2c-add-on-camera-white/) და შეადარეთ SKU-ს. TrendingNow თავად არ ფლობს კამერას და შეკვეთას არ იღებს. ფასი და სავაჭრო პირობები შეიძლება შეიცვალოს. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "ჭკვიანი სახლი",
+      "tags": [
+        "Eufy",
+        "2C Add-On",
+        "HomeBase 2",
+        "უსაფრთხოების კამერა",
+        "ჭკვიანი სახლი"
+      ],
+      "productIDs": [
+        "pcshop-7"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/eufy-2c-add-on-camera-white/",
+        "https://www.eufy.com/au/products/eufy-cam-2c-wire-free-full-hd-security-add-on-camera",
+        "https://service.eufy.com/article-description/Can-I-buy-eufyCam-2C-add-on-cameras-to-work-with-the-eufyCam-2-system",
+        "https://service.eufy.com/ie/article-description/Compatibility-Between-eufy-Devices",
+        "https://service.eufy.com/article-description/eufyCam-2C-FAQ%3Fref%3DHome_Page"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "0b0a11318700a0b0f04d6da5c8986f72d7dbbfa503bcc71ecfd4903c231aa799",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "71b233f3dec4728ee1879e486998962b07f3992ebd569f20c5d145b5f1bd2f1e",
+        "selectionRowSha256": "71b233f3dec4728ee1879e486998962b07f3992ebd569f20c5d145b5f1bd2f1e",
+        "contentHash": "0b0a11318700a0b0f04d6da5c8986f72d7dbbfa503bcc71ecfd4903c231aa799",
+        "receiptHash": "b939fa2b389bfcb130aa2ae32ec75b9a38f41b2eca271f47d524955333a742cc"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-eufy-outdoor-placement",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "Eufy 2C Add-On ეზოსთვის: ღირს თუ არა ყიდვა",
+      "excerpt": "Eufy 2C Add-On ეზოსთვის გამოგადგებათ, თუ თავსებადი HomeBase გაქვთ და გჭირდებათ დამატებითი გარე ხედვა. სრული სისტემისთვის ეს ბარათი საკმარისი არ არის.",
+      "bodyMarkdown": "Eufy 2C Add-On Camera White ღირს იმ მყიდველისთვის, ვისაც ეზოს ან შესასვლელის მეორე ხედვა სჭირდება და უკვე აქვს თავსებადი HomeBase. ეს არ არის დამოუკიდებელი სრული კამერის ნაკრები. PCShop-ის ზუსტი ჩანაწერია SKU I26702, ამიტომ არჩევანი დაიწყეთ არა მხოლოდ ფასით, არამედ ჰაბის არსებობით.\n\n## ვის მოერგება\n\nEufy-ის ოფიციალური აღწერა ასახელებს 1080p ვიდეოს, 135 გრადუსის დიაგონალურ ხედვას, ღამის ხედვას, ადამიანის ამოცნობას, ორმხრივ აუდიოსა და IP67 დაცვას. ეს მახასიათებლები ამართლებს ეზოს, ჭიშკრის ან კარის სცენარს, თუ გარე კუთხე და HomeBase-თან კავშირი რეალურად გერგებათ. ფართო ხედვა ვერ გამოასწორებს კედელს, ღობეს ან განათებას, რომელიც მთავარ ზონას ფარავს.\n\nაირჩიეთ Add-On, თუ დამატებითი ხედვის წერტილი გჭირდებათ და თავსებადობის ცხრილში თქვენი HomeBase 2 ჩანს. გამოტოვეთ, თუ ცალკე კამერა გსურთ ჰაბის გარეშე, ან გჭირდებათ სრული საწყისი ნაკრები. ღამის ხედვა და IP67 პროდუქტის აღწერაა, არა გარანტია თქვენს ეზოში სახის ამოცნობისა ან შეტყობინების დროულობის შესახებ.\n\n2026 წლის 7 სექტემბრის შეთავაზების ჩანაწერში ფასი 259 GEL იყო. ეს თარიღიანი დაკვირვებაა; მარაგი, მიწოდება და საბოლოო ფასი გამყიდველთან განაახლეთ.\n\n## საბოლოო არჩევანი\n\nეზოსთვის დამატებითი კამერის შემთხვევაში ნახეთ [Eufy 2C Add-On Camera White](/products/find-pcshop-7). თუ HomeBase არ გაქვთ ან მისი მოდელი უცნობია, ეს პროდუქტი გამოტოვეთ და სრული კომპლექტი შეადარეთ. მიმდინარე პირობები გადაამოწმეთ [PCShop-ის ზუსტ შეთავაზებაზე](https://pcshop.ge/shop/eufy-2c-add-on-camera-white/).\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სახლი",
+      "tags": [
+        "Eufy",
+        "2C",
+        "გარე კამერა",
+        "HomeBase",
+        "IP67"
+      ],
+      "productIDs": [
+        "pcshop-7"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/eufy-2c-add-on-camera-white/",
+        "https://www.eufy.com/au/products/eufy-cam-2c-wire-free-full-hd-security-add-on-camera",
+        "https://service.eufy.com/expertsecure-system/article-description/What-eufy-devices-are-compatible-with-HomeBase-Professional-S1"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "57639dd1b683d619e2bbf26e707646ad429bd0e7bfebcca5429aef2504bb090a",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "dd7718e2044c2e454dc62101820b4479d989d0058b497a372eb3d2daf38bb358",
+        "selectionRowSha256": "dd7718e2044c2e454dc62101820b4479d989d0058b497a372eb3d2daf38bb358",
+        "contentHash": "57639dd1b683d619e2bbf26e707646ad429bd0e7bfebcca5429aef2504bb090a",
+        "receiptHash": "ddb471b8c47f6a144a009110e0c7d3517a49ff3dbb71a3d8e4289aeffb56e322"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-kettle-capacity",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "ARDESTO EKL-F500L: 1.7 ლიტრი თქვენს დილის რიტმს ერგება?",
+      "excerpt": "ARDESTO EKL-F500L-ს აქვს 1.7 ლიტრი და 1800-2150 ვატი. აირჩიეთ დიდი მოცულობა მხოლოდ მაშინ, როცა ერთ ჯერზე მართლა გჭირდებათ.",
+      "bodyMarkdown": "ARDESTO Kettle EKL-F500L-ის მთავარი არჩევანი არის არა ფერი, არამედ 1.7 ლიტრი თქვენს რეალურ მოხმარებაში. თუ დილით რამდენიმე ფინჯანს ამზადებთ, დიდი რეზერვუარი ხელახლა ავსებას ამცირებს. თუ ძირითადად ერთ ფინჯანს ადუღებთ, სრული მოცულობა უპირატესობა აღარ არის.\n\n## რა აქვს ამ მოდელს\n\nARDESTO-ის გვერდი და 2024 წლის ინსტრუქცია ასახელებს 1.7 ლიტრ ტევადობას, 1800-2150 ვატს, 360 გრადუსით მბრუნავ საფუძველს, დაფარულ გამაცხელებელს, მოხსნად ბადისებრ ფილტრს და ავტომატურ გამორთვას. ვატები არ გვპირდება ერთსა და იმავე ადუღების დროს, რადგან შედეგზე წყლის რაოდენობა და საწყისი ტემპერატურაც მოქმედებს.\n\n## ნადების მოვლის რეალური საზღვარი\n\nმოხსნადი ბადისებრი ფილტრი ხილულ ნაწილაკებს აჩერებს, მაგრამ წყლის შემადგენლობას არ ცვლის. დაფარული გამაცხელებელი ნადების დაგროვებას არ გამორიცხავს, ამიტომ ეს მოდელი მხოლოდ მაშინ აირჩიეთ, თუ ფილტრის რეგულარულად ამოღება და ინსტრუქციის მიხედვით წმენდა თქვენთვის მისაღებია. ზუსტი ტემპერატურის არჩევა აღწერილობაში არ ჩანს.\n\n## დილის რაოდენობა ჯერ გაზომეთ\n\nერთი ჩვეულებრივი დღის განმავლობაში ჩაინიშნეთ, რამდენ ფინჯანს ამზადებთ და რამდენჯერ ავსებთ ჩაიდანს. შემდეგ გაზომეთ თქვენი რეალური ჭიქით საჭირო წყალი და შეადარეთ 1.7 ლიტრიან ზღვარს; არ ჩათვალოთ, რომ ნომინალური მოცულობა ყოველთვის გამოსაყენებელი მაქსიმუმია. ერთ ადამიანს ან მცირე მოხმარებასაც შეუძლია ამ ჩაიდანში ნაკლები წყლის გამოყენება, მაგრამ მინიმალური და მაქსიმალური ნიშნულები ზუსტად კორპუსზე ან ინსტრუქციაში გადაამოწმეთ; ამ მასალაში მინიმალური დონე ცალკე დადასტურებული არ არის. თუ რამდენიმე მომზადება გჭირდებათ, 1.7 ლიტრი შეიძლება პრაქტიკული მარაგი იყოს; თუ არა, ნუ გადაიხდით მხოლოდ ნომინალური მოცულობის გამო.\n\nაირჩიეთ EKL-F500L, თუ ოჯახში ერთ ჯერზე რამდენიმე სასმელს ამზადებთ და ადგილი საკმარისია. გამოტოვეთ, თუ მხოლოდ მცირე რაოდენობას ადუღებთ ან გჭირდებათ ტემპერატურის ზუსტი არჩევა, რომელიც აღწერილობაში არ ჩანს.\n\n2026 წლის 7 სექტემბრის შეთავაზების ჩანაწერში ფასი 175.99 GEL იყო. ეს თარიღიანი წყაროს დაკვირვებაა და არა დღევანდელი ფასის ან მარაგის დაპირება.\n\n## საბოლოო არჩევანი\n\nგაზომეთ თქვენი დილის წყალი და მხოლოდ შემდეგ შეადარეთ 1.7 ლიტრს. პროდუქტი ნახეთ [ARDESTO EKL-F500L](/products/find-elite-7), ხოლო საბოლოო ფასი, მიწოდება და დაბრუნება გადაამოწმეთ [Elite-ის ბარათზე](https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446). თუ ტემპერატურის მართვა გჭირდებათ, მოძებნეთ ზუსტად ის მოდელი, რომლის დოკუმენტშიც ეს ფუნქცია წერია.\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამზარეულო",
+      "tags": [
+        "ARDESTO",
+        "EKL-F500L",
+        "ჩაიდანი",
+        "ტევადობა",
+        "სამზარეულო"
+      ],
+      "productIDs": [
+        "elite-7"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446",
+        "https://ardesto.com/en/products/electric-kettle-ardesto-1-7l-metal-matte-otter-purple/",
+        "https://ardesto.com/wp-content/uploads/2024/10/66475c8d48450_ekl-f500l_ua_en_a5_site.pdf"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "0f9e0683e2610ba846ba2bccc0db262ba606aa6b8c6831357495ef5ad9043bd2",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "1f64b7c0bd5c12342f091a59faa64fa6f4f3aed6525a432c45ae21595f9dfb63",
+        "selectionRowSha256": "1f64b7c0bd5c12342f091a59faa64fa6f4f3aed6525a432c45ae21595f9dfb63",
+        "contentHash": "0f9e0683e2610ba846ba2bccc0db262ba606aa6b8c6831357495ef5ad9043bd2",
+        "receiptHash": "176e3e3a7a8a6dfe969b5b4f002b035173663f534009c429be462c405b89b8f5"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-mixer-attachments",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "ARDESTO KSTM-8041: რომელი საცმი დაგჭირდებათ რეალურ რეცეპტში",
+      "excerpt": "KSTM-8041-ის სათქვეფი, ბრტყელი შემრევი და კაუჭი სხვადასხვა ნარევისთვისაა. არჩევანი თქვენს მთავარ რეცეპტს და არა მხოლოდ ვატებს უნდა დაეყრდნოს.",
+      "bodyMarkdown": "ARDESTO Mixer KSTM-8041 აირჩიეთ მაშინ, როცა ზუსტად იცით, რომელი ნარევისთვის გჭირდებათ სტაციონარული მიქსერი. ადგილობრივ ჩანაწერში ჩანს 800 ვატი, 4 ლიტრიანი ჯამი და 6 სიჩქარე. ოფიციალურ 2024 წლის ინსტრუქციაში აღწერილი სამივე ძირითადი საცმი განსხვავებულ საქმეს ასრულებს.\n\n## რომელი საცმი რომელი არჩევანია\n\nსათქვეფი შეეფერება კვერცხის ცილას, ნაღებსა და მსუბუქ მასას. ბრტყელი A-ფორმის შემრევი გამოიყენეთ კრემის, ბისკვიტის ან საშუალო სიმძიმის ნარევისთვის. კაუჭი არის სქელი და საფუარიანი ცომისთვის. ინსტრუქცია სათქვეფით მძიმე ცომის მოზელას არ გირჩევთ, ამიტომ ერთი საცმით ყველაფრის გაკეთება არასწორი არჩევანია.\n\nაირჩიეთ KSTM-8041, თუ თქვენს მთავარ რეცეპტს შესაბამისი საცმი და 4 ლიტრიანი ჯამი ერგება. ორი განსხვავებული საცმის ხშირი გამოყენება აქ მხოლოდ ადგილისა და ხარჯის ამოღების სარედაქციო შემოწმებაა და არა ტექნიკური მინიმუმი: ერთი სპეციალური რეცეპტისთვისაც შეიძლება ღირდეს, თუ მისი შედეგი სხვა ხელსაწყოთი ვერ მიიღება. თუ ეს ერთი რეცეპტიც იშვიათია, პატარა ან სპეციალიზებული მოწყობილობა შეიძლება უფრო რაციონალური იყოს. 4 ლიტრი არ ნიშნავს 4 ლიტრ მძიმე ცომს: დასაშვები რაოდენობა ზუსტ ინსტრუქციაში უნდა ნახოთ.\n\n2026 წლის 7 სექტემბრის შეთავაზების ჩანაწერში ფასი 355.99 GEL იყო. ეს თარიღიანი შეთავაზების დაკვირვებაა; კომპლექტაცია, მარაგი და დაბრუნება გამყიდველთან გადაამოწმეთ.\n\n## წმენდისა და დატვირთვის ზღვარი\n\nსამივე საცმი და ჯამი საკვებთან შეხების შემდეგ ინსტრუქციის მიხედვით უნდა გაიწმინდოს, ხოლო ძირითადი კორპუსი წყალში არ უნდა ჩაალბოთ. დამცავი თავსახური მოფრქვევას ამცირებს, მაგრამ ნარჩენს მთლიანად ვერ გამორიცხავს. უწყვეტი მუშაობა 6 წუთს არ უნდა გადააჭარბოს, ხოლო მძიმე დატვირთვას პაუზა და გაგრილება სჭირდება. ამიტომ 800 ვატი ყველა სქელი ცომის უსასრულოდ დამუშავებას არ ნიშნავს.\n\n## საბოლოო არჩევანი\n\nთუ ნამცხვარსა და პურს ორივეს ამზადებთ, კაუჭი და A-ფორმის შემრევი არჩევანს ამართლებს. პროდუქტი იხილეთ [ARDESTO KSTM-8041](/products/find-elite-5), ხოლო მიმდინარე პირობები ნახეთ [Elite-ის ზუსტ ბარათზე](https://ee.ge/miqseri/ardesto-mixer-kstm-8041-p10312).\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამზარეულო",
+      "tags": [
+        "ARDESTO",
+        "KSTM-8041",
+        "მიქსერი",
+        "საცმი",
+        "ცომი"
+      ],
+      "productIDs": [
+        "elite-5"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/miqseri/ardesto-mixer-kstm-8041-p10312",
+        "https://ardesto.com/wp-content/uploads/2024/10/669fdcf42ace2_667eb82f27f4a_kstm-8040_ua_en_a5_site.pdf",
+        "https://ardesto.com/wp-content/uploads/2019/10/KSTM-8040_ua_en_A5_site.pdf",
+        "https://isurve.ge/en/products/miqseri-ardesto-kstm-8041"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "22cd2135648faee8009949423e523368a2103134b637506dc6e87dcc7bbcb6ac",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "99df71ce7ce975803dc0dbaa4b4d1bda80045a5165ef418d4691748c99969de0",
+        "selectionRowSha256": "99df71ce7ce975803dc0dbaa4b4d1bda80045a5165ef418d4691748c99969de0",
+        "contentHash": "22cd2135648faee8009949423e523368a2103134b637506dc6e87dcc7bbcb6ac",
+        "receiptHash": "0be896d15ef24220feb7943dc90d271b93eed4d89ac1f57e054afaf210190eba"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-morning-kitchen-pair",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "დილის სამზარეულოს ორი რუტინა: ჩაიდანი და ხელით ესპრესო",
+      "excerpt": "EKL-F500L ცხელი წყლის რუტინას ემსახურება, YCM-E1501 კი დაფქულ ყავაზე ხელით ესპრესოს. ორი ნივთი მხოლოდ მაშინ დაამატეთ, როცა ორივე მოქმედება რეალურად მეორდება.",
+      "bodyMarkdown": "ARDESTO Kettle EKL-F500L და ARDESTO Coffee Maker YCM-E1501 ერთი არჩევანის ორი ალტერნატივა არ არის. ჩაიდანი ცხელი წყლის რუტინის პირველი ნივთია, YCM-E1501 კი ცალკე ხელით ესპრესოს პროცესს ამატებს. ამიტომ დილის ნაკრები ააწყვეთ მოქმედებების მიხედვით და არა ერთი ბრენდის სასარგებლოდ.\n\n## პირველი რუტინა: ცხელი წყალი\n\nEKL-F500L-ის წყაროები ასახელებს 1.7 ლიტრს, 1800-2150 ვატს, 360 გრადუსით მბრუნავ საფუძველს, დაფარულ გამაცხელებელსა და ავტომატურ გამორთვას. ეს მოდელი გამოგადგებათ, თუ ოჯახში სხვადასხვა ჩაი ან ხსნადი სასმელი მზადდება. ფილტრი მოვლას ეხმარება, მაგრამ ნადებს არ აქრობს.\n\n## მეორე რუტინა: ხელით ესპრესო\n\nYCM-E1501 მუშაობს დაფქულ ყავაზე და აქვს 1.4 ლიტრიანი რეზერვუარი, 1350 ვატი, 20 ბარის ULKA ტუმბო და ხელით კაპუჩინატორი. თქვენზეა დოზირება, ექსტრაქციის შეჩერება და რძის მილის წმენდა. ერთი ღილაკით მზა სასმელის მაძიებელმა ეს მოდელი გამოტოვოს.\n\n2026 წლის 7 სექტემბრის ჩანაწერში EKL-F500L-ის ფასი 175.99 GEL, YCM-E1501-ის კი 369.99 GEL იყო. ეს ორი თარიღიანი დაკვირვებაა, არა დღევანდელი შეთავაზების დაპირება.\n\n## დილის ნაკრების აწყობის რიგი\n\nპირველ ნაბიჯად [ARDESTO EKL-F500L](/products/find-elite-7) აირჩიეთ, თუ უმეტესად ცხელი წყალი გჭირდებათ. შემდეგ დაამატეთ [ARDESTO YCM-E1501](/products/find-elite-6) მხოლოდ მაშინ, როცა დაფქულ ყავაზე ხელით ესპრესო ცალკე განმეორებადი რუტინაა. ორივე ერთად მხოლოდ ორი რეალური მოქმედების შემთხვევაში შეიძინეთ. მიმდინარე პირობები გადაამოწმეთ [Elite-ის ჩაიდნის ბარათზე](https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446) და [ყავის აპარატის ბარათზე](https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309).\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამზარეულო",
+      "tags": [
+        "ARDESTO",
+        "ჩაიდანი",
+        "ესპრესო",
+        "YCM-E1501",
+        "EKL-F500L"
+      ],
+      "productIDs": [
+        "elite-7",
+        "elite-6"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446",
+        "https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309",
+        "https://ardesto.com/en/products/electric-kettle-ardesto-1-7l-metal-matte-otter-purple/",
+        "https://ardesto.com/en/products/coffee-maker-ardesto-ycm-e1501/"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "4538a9f11a111b0943697d00fca38f1b9b041bed7802c453f15f41884066628d",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "2a6a65739444bd2fa4140b6635ca54b02b80c4e31f13c7f61fba0eebaa099972",
+        "selectionRowSha256": "2a6a65739444bd2fa4140b6635ca54b02b80c4e31f13c7f61fba0eebaa099972",
+        "contentHash": "4538a9f11a111b0943697d00fca38f1b9b041bed7802c453f15f41884066628d",
+        "receiptHash": "1ff2c43ee28f7bf83c172fcacbad719c4639ac05330ed1d9e0fee71593221464"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-mova-pack-choice",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "საჩუქარი 400 GEL-მდე: MOVA, ARDESTO ყავის აპარატი თუ მიქსერი",
+      "excerpt": "400 GEL-მდე საჩუქრის არჩევანი ადამიანზეა დამოკიდებული: MOVA Aero C სტაილინგისთვის, ARDESTO YCM-E1501 ხელით ყავისთვის, KSTM-8041 კი ცხობისთვის.",
+      "bodyMarkdown": "თუ საჩუქრისთვის დაახლოებით 400 GEL გაქვთ, სამი განსხვავებული ნივთი უნდა შეადაროთ არა ფუნქციების რაოდენობით, არამედ მიმღების ყოველდღიური რიტმით. 2026 წლის 7 სექტემბრის შეთავაზების ჩანაწერებში MOVA Aero C AMSU10 399.99 GEL, ARDESTO YCM-E1501 369.99 GEL და ARDESTO KSTM-8041 355.99 GEL იყო. ეს ნივთები ერთმანეთის შემცვლელი არ არის: ერთი თმის სტაილინგისთვისაა, მეორე დაფქული ყავით ხელით ესპრესოსთვის, მესამე კი ცომისა და კრემისთვის.\n\n## ვის აჩუქოთ MOVA Aero C\n\nMOVA Hair Dryer-Mist Aero C AMSU10 აირჩიეთ, თუ მიმღებს თმის სტაილინგის კონკრეტული სცენარი აქვს. გლობალური MOVA გვერდი QuickSmooth ჯაგრისს, დიფუზორსა და კონცენტრატორს ასახელებს, მაგრამ Elite-ის EUA/AMSU10 ადგილობრივ ყუთში მათი არსებობა უცნობია, ამიტომ გამყიდველთან ან ყუთზე დაადასტურეთ. გამოტოვეთ, თუ ადამიანს მხოლოდ საბაზისო გაშრობა სჭირდება ან საჭირო დანართი ადგილობრივ კომპლექტში არ დასტურდება. [MOVA Aero C AMSU10](/products/find-elite-3) ნახეთ [Elite-ის ზუსტ შეთავაზებაში](https://ee.ge/tmis-feni/mova-hair-dryer-mist-aero-c-high-speed-pink-eua-amsu10-p21620).\n\n## დანართი შეადარეთ კონკრეტულ სცენარს\n\nQuickSmooth აირჩიეთ, თუ გინდათ მიმართულება და უფრო გლუვი იერი. დიფუზორი შეეფერება ტალღოვან ან ხვეულ თმას, როცა ჰაერის ნაკადის გაფანტვა გჭირდებათ. ვიწრო კონცენტრატორი გამოგადგებათ მცირე სექციაზე ან ბოლოების მიმართულებისთვის. MOVA-ს Coanda აღწერა მწარმოებლის მტკიცებაა და არა ყველა თმაზე დამოუკიდებლად დადასტურებული შედეგი. Aero C-ს აზრი აქვს მაშინ, თუ შეგიძლიათ დაასახელოთ ერთი ან მეტი დანართი, რომლის გამოყენებაც ამ ფასსა და შენახვის ადგილს ამართლებს.\n\n## ვის აჩუქოთ ARDESTO YCM-E1501\n\nYCM-E1501 შეეფერება ადამიანს, რომელსაც დაფქული ყავით ხელით ესპრესო და რძის ცალკე აქაფება სიამოვნებს. აპარატი მარცვალს არ ფქვავს, ამიტომ მზა დაფქული ყავა ან ცალკე საფქვავი დასჭირდება. ერთი ღილაკით მზა სასმელის მაძიებელმა ეს საჩუქარი გამოტოვოს. [ARDESTO YCM-E1501](/products/find-elite-6) და მისი [Elite-ის შეთავაზება](https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309) შეამოწმეთ.\n\n## ვის აჩუქოთ ARDESTO KSTM-8041\n\nKSTM-8041 კარგი არჩევანია იმ ადამიანისთვის, ვინც ხშირად აცხობს და გამოიყენებს სათქვეფს, A-ფორმის შემრევსა და კაუჭს. გამოტოვეთ, თუ მიმღებს სამზარეულოში ადგილი ან საცმების მოვლის დრო არ აქვს. ოფიციალური 2024 წლის ინსტრუქცია საცმების დანიშნულებასა და დატვირთვის წესებს ზღუდავს, ამიტომ მხოლოდ 4 ლიტრიანი ჯამით ნუ იმსჯელებთ. [ARDESTO KSTM-8041](/products/find-elite-5) იხილეთ [Elite-ის ბარათზე](https://ee.ge/miqseri/ardesto-mixer-kstm-8041-p10312).\n\n## საბოლოო არჩევანი\n\nთმის მოვლის რუტინა ნიშნავს MOVA-ს, ყავის რიტუალი YCM-E1501-ს, ცხობა კი KSTM-8041-ს. 400 GEL-ის ზღვარი ამ ჩანაწერების ფასებით არის დათვლილი და დღეს მოქმედ ფასს ან მარაგს არ ადასტურებს. საბოლოო შეთავაზება, მიწოდება და დაბრუნება თითოეულ გამყიდველთან გადაამოწმეთ.\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "მოვლა",
+      "tags": [
+        "საჩუქარი",
+        "MOVA",
+        "ARDESTO",
+        "ყავა",
+        "ცხობა"
+      ],
+      "productIDs": [
+        "elite-3",
+        "elite-6",
+        "elite-5"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/tmis-feni/mova-hair-dryer-mist-aero-c-high-speed-pink-eua-amsu10-p21620",
+        "https://www.mova.tech/products/aero-c-hair-dryer",
+        "https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309",
+        "https://ardesto.com/en/products/coffee-maker-ardesto-ycm-e1501/",
+        "https://ee.ge/miqseri/ardesto-mixer-kstm-8041-p10312",
+        "https://ardesto.com/wp-content/uploads/2024/10/669fdcf42ace2_667eb82f27f4a_kstm-8040_ua_en_a5_site.pdf"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "6cd020b3e719132dcc676da5738bd82f2664e8f0fa8514680d3938f84b307f26",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "464ea5bd68800d2a02ec2115a0595fcafa64e8e6326d213250102da5b894cf1d",
+        "selectionRowSha256": "464ea5bd68800d2a02ec2115a0595fcafa64e8e6326d213250102da5b894cf1d",
+        "contentHash": "6cd020b3e719132dcc676da5738bd82f2664e8f0fa8514680d3938f84b307f26",
+        "receiptHash": "428dbec28967e732e217aff3a8aad51757e6f8197af5436dec2c864bc915d4e6"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-mova-thermal-control",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "MOVA Aero C AMSU10: თერმული კონტროლი ყიდვის მიზეზია?",
+      "excerpt": "MOVA Aero C-ის Dual NTC და ტემპერატურის სკანირება ტექნიკური უპირატესობაა. ≤55°C მხოლოდ WarmCare და ScalpCare რეჟიმების ოფიციალურ შენიშვნას ეხება.",
+      "bodyMarkdown": "MOVA Hair Dryer-Mist Aero C AMSU10 აირჩიეთ თერმული კონტროლის გამო მხოლოდ მაშინ, როცა დაბალი სითბოს რეჟიმი თქვენთვის კონკრეტული მოთხოვნაა. MOVA-ის ოფიციალური გვერდი აღწერს Dual NTC კონტროლს და ტემპერატურის სკანირებას წამში 2000-ჯერ. ეს არის მწარმოებლის ტექნიკური აღწერა და არ იძლევა თქვენი თმის უსაფრთხოების ან დაზიანების არქონის გარანტიას.\n\n## რას ნიშნავს ≤55°C\n\nMOVA-ის ოფიციალურ შენიშვნაში ≤55°C-ის მაჩვენებელი WarmCare და ScalpCare რეჟიმებს უკავშირდება. ეს ზღვარი ყველა რეჟიმზე ზოგად დაპირებად არ გადაიტანოთ. თუ სწორედ ამ ორ რეჟიმს ეძებთ, ფუნქცია შეიძლება არჩევანის მიზეზი იყოს. თუ მხოლოდ სწრაფი გაშრობა გჭირდებათ, თერმული მახასიათებელი ზედმეტი კრიტერიუმი შეიძლება გახდეს.\n\nაირჩიეთ AMSU10, თუ მზად ხართ რეჟიმი და მანძილი თქვენი თმის მდგომარეობას მოარგოთ. გამოტოვეთ, თუ ელით, რომ სენსორი თავისით გადაწყვეტს ყველა თმის ტიპის პრობლემას. მწარმოებლის აღწერა არ არის ჩვენი გამოყენების ტესტი და არც სამედიცინო რჩევა.\n\n2026 წლის 7 სექტემბრის შეთავაზების ჩანაწერში ფასი 399.99 GEL იყო. ეს თარიღიანი დაკვირვებაა; მიმდინარე ფასი, მარაგი და კომპლექტაცია გამყიდველთან გადაამოწმეთ.\n\n## საბოლოო არჩევანი\n\nთუ WarmCare ან ScalpCare-ის გამოყენება თქვენს რუტინას შეესაბამება, ნახეთ [MOVA Aero C AMSU10](/products/find-elite-3). თუ მხოლოდ საბაზისო გაშრობა გჭირდებათ, სხვა ზუსტი მოდელიც შეადარეთ. გამყიდველის პირობები გადაამოწმეთ [Elite-ის ბარათზე](https://ee.ge/tmis-feni/mova-hair-dryer-mist-aero-c-high-speed-pink-eua-amsu10-p21620).\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "მოვლა",
+      "tags": [
+        "თმის საშრობი",
+        "MOVA",
+        "თერმული კონტროლი",
+        "თმის მოვლა",
+        "AMSU10"
+      ],
+      "productIDs": [
+        "elite-3"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/tmis-feni/mova-hair-dryer-mist-aero-c-high-speed-pink-eua-amsu10-p21620",
+        "https://www.mova.tech/products/aero-c-hair-dryer",
+        "https://fr.mova.tech/products/aero-c-seche-cheveux"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "17d14ae3cc6bbe2286698e60278109c1fe59ca47af8537518c3d640eb10a9821",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "7f1c88a236299ee64f41e5782fe8e1de1a9ac6e014714c32cf79a8c8bba56f76",
+        "selectionRowSha256": "7f1c88a236299ee64f41e5782fe8e1de1a9ac6e014714c32cf79a8c8bba56f76",
+        "contentHash": "17d14ae3cc6bbe2286698e60278109c1fe59ca47af8537518c3d640eb10a9821",
+        "receiptHash": "7d94c05b099671a93122e0cee277e3d1c602b68b8af5448ef8bcbf8934b01955"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-robot-app-wifi",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "ETA Rover 1248 90030: აპლიკაცია ყიდვის მიზეზია თუ დაბრკოლება",
+      "excerpt": "ETA Rover-ის აპი მხოლოდ მაშინ გაძლევთ დამატებით ღირებულებას, როცა 2.4 გიგაჰერცის ქსელი და დაგეგმვის საჭიროება დადასტურებულია; აპის გამოუყენებლობა თვითონ რობოტის ავტომატური უარყოფა არ არის.",
+      "bodyMarkdown": "ETA Robot Vacuum Cleaner ETA124890030 აირჩიეთ აპლიკაციის ფუნქციით მხოლოდ მაშინ, როცა თქვენი სახლის ქსელი და ჩვევა ამ შესაძლებლობას ერგება. ETA-ის ოფიციალურ აღწერაში ჩანს ETA SMART აპლიკაცია, 2.4 გიგაჰერცის Wi-Fi, დაგეგმილი დასუფთავება, დისტანციური მართვა და ბატარეის სტატუსი. ეს პრაქტიკული უპირატესობაა დაგეგმვისთვის, მაგრამ არა ყველა როუტერთან ავტომატური თავსებადობის მტკიცებულება.\n\n## ვის შეეფერება\n\nაირჩიეთ Rover, თუ 2.4 გიგაჰერცის ქსელი ხელმისაწვდომია და გსურთ დასუფთავების დროის დაგეგმვა. თუ სახლში მხოლოდ 5 გიგაჰერცის ქსელია ან დაწყვილების წესს ვერ ამოწმებთ, აპლიკაციის ფუნქცია ჯერ არ დაადასტუროთ. თუ აპლიკაციას საერთოდ არ გამოიყენებთ, ეს ავტომატურად არ გამორიცხავს თვითონ რობოტს, უბრალოდ აპის დაგეგმვა და დისტანციური მართვა თქვენთვის ღირებულებას არ ქმნის. ამ წყაროებში საბაზისო მართვის ყველა გზა ცალკე არ არის გაწერილი, ამიტომ მისი ხელმისაწვდომობაც შეთავაზების ინსტრუქციაში ან აღწერილობაში გადაამოწმეთ.\n\nETA-ის წყარო ასევე აღწერს 110 წუთამდე ბატარეას, მაგრამ ეს არ ნიშნავს, რომ თქვენი სახლის სრული ციკლი იმავე ხანგრძლივობას მოითხოვს ან დაასრულებს. აპლიკაციის ფუნქცია თქვენი ქსელის დაფარვასა და მოწყობილობის განთავსებაზეა დამოკიდებული.\n\n## აპის გარდა, მოვლის ვალდებულება\n\nოფიციალურ აღწერაში მითითებულია HEPA ფილტრი, ორი გვერდითი ჯაგრისი, 200 მილილიტრიანი მტვრის კონტეინერი და 230 მილილიტრიანი მოპის ავზი. 200 მილილიტრი მწარმოებლის მოცულობაა და არა დაპირება, რომ თქვენი სახლის სრული ციკლი დაცლის გარეშე დასრულდება. გამოყენების შემდეგ მოპის ქსოვილი უნდა მოიხსნას, გაშრეს და ინსტრუქციის მიხედვით გაიწმინდოს. ჯაგრისებზე თმა და ქვიშა შეიძლება დაგროვდეს, ამიტომ აპის დაგეგმვა მოვლის აუცილებლობას არ აუქმებს.\n\n2026 წლის 7 სექტემბრის შეთავაზების ჩანაწერში ფასი 549.99 GEL იყო. ეს თარიღიანი დაკვირვებაა და არა მიმდინარე ფასის, მარაგის ან კავშირის დაპირება.\n\n## საბოლოო არჩევანი\n\nთუ 2.4 გიგაჰერცის ქსელი და დაგეგმილი რეჟიმი ნამდვილად გჭირდებათ, იხილეთ [ETA Rover 1248 90030](/products/find-elite-4). მხოლოდ აპლიკაციის იმედით არ იყიდოთ, თუ ქსელის პირობა უცნობია. მიმდინარე შეთავაზება გადაამოწმეთ [Elite-ის ზუსტ ბარათზე](https://ee.ge/mtversasruti/eta-robot-vacuum-cleaner-eta124890030-p21440).\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სახლი",
+      "tags": [
+        "რობოტი მტვერსასრუტი",
+        "ETA SMART",
+        "Wi-Fi",
+        "2.4 გიგაჰერცი",
+        "დასუფთავება"
+      ],
+      "productIDs": [
+        "elite-4"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/mtversasruti/eta-robot-vacuum-cleaner-eta124890030-p21440",
+        "https://www.eta.cz/shop/roboticky-vysavac-rover-1248-90030-ruzovy-eta124890030/p730137/",
+        "https://www.eta.cz/shop/download/5911805"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "386689b4fc6867ce932e6f8a5ce0e22d8299f3cbcf873e108ca2797afb2b0915",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "a4a7bf94efcaf1d398e2778bea5a941843386ebb5b34f243633de34477ad16c4",
+        "selectionRowSha256": "a4a7bf94efcaf1d398e2778bea5a941843386ebb5b34f243633de34477ad16c4",
+        "contentHash": "386689b4fc6867ce932e6f8a5ce0e22d8299f3cbcf873e108ca2797afb2b0915",
+        "receiptHash": "e28ca08642792100cc53bd50d79b8f46c9941b4b651faf271c9ad619f590d7ad"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-robot-mop-surfaces",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "ETA Rover 1248 90030: მოპი თქვენს იატაკს მოერგება?",
+      "excerpt": "ETA Rover-ის მოპი მყარ იატაკზეა შესაფასებელი, ხოლო 1 სანტიმეტრამდე ბუსუსი მხოლოდ მშრალი მტვერსასრუტის სცენარს ეხება. სქელი ხალიჩისას არჩევანი შეაჩერეთ.",
+      "bodyMarkdown": "ETA Robot Vacuum Cleaner ETA124890030 აირჩიეთ მოპის ფუნქციით მაშინ, როცა სახლში ძირითადად მყარი იატაკია და წყლის ავზისა და ქსოვილის მოვლა თქვენთვის მისაღებია. ოფიციალურ აღწერაში 2-in-1 ფუნქცია და ხალიჩაზე 1 სანტიმეტრამდე ბუსუსის მითითებაა. ეს ბუსუსის ზღვარი მშრალი მტვერსასრუტის გადაადგილებას ეხება და არა ხალიჩაზე სველი მოპის გამოყენების უფლებას.\n\n## ვის შეეფერება და ვის არა\n\nაირჩიეთ ETA Rover-ის მოპი მყარ, შედარებით თავისუფალ ზედაპირზე, სადაც წყლის გამოყენება იატაკის მწარმოებლის წესით დასაშვებია. დაბალბუსუსიანი ხალიჩა 1 სანტიმეტრამდე შეიძლება მშრალი მტვერსასრუტის სცენარში მოერგოს, მაგრამ მოპის ავზი ხალიჩაზე არ გადაიტანოთ. გამოტოვეთ, თუ სახლში ბევრი სქელბუსუსიანი ხალიჩა, მაღალი ზღურბლი ან ტენიანობისადმი მგრძნობიარე საფარია.\n\nმწარმოებლის წყაროში 1.5 სანტიმეტრამდე გადასასვლელიც არის აღწერილი, მაგრამ თქვენი ზღურბლის კუთხე და ზედაპირი ცალკე უნდა შეაფასოთ. მოპის ქსოვილი და ავზი ყოველი გამოყენების შემდეგ დამატებით დროს მოითხოვს.\n\n2026 წლის 7 სექტემბრის შეთავაზების ჩანაწერში ფასი 549.99 GEL იყო. ეს ისტორიული ფასის დაკვირვებაა; მარაგი და მიწოდება გამყიდველთან განაახლეთ.\n\n## საბოლოო არჩევანი\n\nმყარი იატაკისა და ცალკე მშრალი ხალიჩის სცენარის შემთხვევაში იხილეთ [ETA Rover 1248 90030](/products/find-elite-4). თუ ზედაპირის ტენიანობის მიმართ უსაფრთხოება უცნობია, ჯერ არ შეიძინოთ. შეთავაზება გადაამოწმეთ [Elite-ის ზუსტ ბარათზე](https://ee.ge/mtversasruti/eta-robot-vacuum-cleaner-eta124890030-p21440).\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სახლი",
+      "tags": [
+        "რობოტი მტვერსასრუტი",
+        "მოპი",
+        "ETA",
+        "ხალიჩა",
+        "მყარი იატაკი"
+      ],
+      "productIDs": [
+        "elite-4"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/mtversasruti/eta-robot-vacuum-cleaner-eta124890030-p21440",
+        "https://www.eta.cz/shop/roboticky-vysavac-rover-1248-90030-ruzovy-eta124890030/p730137/",
+        "https://www.eta.cz/shop/download/4831632"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "700416a6a6e7bf4533bdfe3b839b8e8a62b17dec7937d9e3ed4d44f440c06d32",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "3c3eedae89b00fbbf3d9b94ca959e33af86d0ac5020d3113e65d7bd7b06845b7",
+        "selectionRowSha256": "3c3eedae89b00fbbf3d9b94ca959e33af86d0ac5020d3113e65d7bd7b06845b7",
+        "contentHash": "700416a6a6e7bf4533bdfe3b839b8e8a62b17dec7937d9e3ed4d44f440c06d32",
+        "receiptHash": "8085d483324b1123d1de3e928cb6cf2c8a4046f38ff1e5a8a256728ae4297d25"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-robot-vacuum-low-furniture",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "ETA Rover 1248 90030 დაბალი ავეჯისთვის: რომელი ზომა დავადასტუროთ?",
+      "excerpt": "ETA-ის ოფიციალურ გვერდზე სიმაღლე 7.5 სმ ზომების ველში და 7.7 სმ აღწერაში ჩანს. ავეჯქვეშ გასასვლელი გაზომეთ და მხოლოდ შემდეგ შეაფასეთ ყიდვა.",
+      "bodyMarkdown": "ETA Robot Vacuum Cleaner ETA124890030-ის არჩევა დაბალი ავეჯის ქვეშ შესვლის იმედით მხოლოდ მაშინ ღირს, როცა გასასვლელი რეალურად გაზომეთ. მწარმოებლის წყაროში კორპუსის სიმაღლე 7.7 სანტიმეტრია. ამ რიცხვს თქვენი ხალიჩის სისქე, იატაკის უსწორმასწორობა და ავეჯის ქვედა კიდე უნდა შეადაროთ.\n\n## ვის შეეფერება\n\nაირჩიეთ ETA Rover მხოლოდ მაშინ, როცა საწოლის ან კარადის ქვეშ თავისუფალი სიმაღლე ორივე ოფიციალურ ზომაზე პრაქტიკული მარაგით მეტია და დამტენი სადგურისთვის ცალკე ადგილი გაქვთ. მწარმოებელი 10 მოძრაობის სენსორს, ორ გვერდით ჯაგრისსა და სადგურზე დაბრუნებას აღწერს, მაგრამ ისინი არ ამტკიცებს, რომ თქვენს ოთახში დაბრკოლებები არ იქნება.\n\nგამოტოვეთ, თუ გასასვლელი ზღვარზეა, სქელი ხალიჩა ემატება ან იატაკზე ბევრი ნივთი და კაბელია. მოდელის ზომა არ არის გარანტია, რომ ყველა დაბალი ავეჯის ქვეშ შევა და უკან გამოვა.\n\n2026 წლის 7 სექტემბრის შეთავაზების ჩანაწერში ფასი 549.99 GEL იყო. ეს თარიღიანი დაკვირვებაა და არა მიმდინარე ფასის ან მიწოდების პირობა.\n\n## საბოლოო არჩევანი\n\nგაზომილი თავისუფალი სივრცის შემთხვევაში იხილეთ [ETA Rover 1248 90030](/products/find-elite-4). თუ გაზომვა არ გაკეთებულა ან სადგურის ადგილი არ გაქვთ, ყიდვა გადადეთ. მიმდინარე პირობები გადაამოწმეთ [Elite-ის ბარათზე](https://ee.ge/mtversasruti/eta-robot-vacuum-cleaner-eta124890030-p21440).\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სახლი",
+      "tags": [
+        "რობოტი მტვერსასრუტი",
+        "ETA",
+        "დაბალი ავეჯი",
+        "ზომა",
+        "დასუფთავება"
+      ],
+      "productIDs": [
+        "elite-4"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/mtversasruti/eta-robot-vacuum-cleaner-eta124890030-p21440",
+        "https://www.eta.cz/shop/roboticky-vysavac-rover-1248-90030-ruzovy-eta124890030/p730137/",
+        "https://www.eta.cz/shop/download/5911805"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "9a5d7fa897026e339e8c104fc6762d191437263a6106e8e69e44e5d7693ff688",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "948aed151e21df3ffc9a9051775cf10f9e372257bd764fbe4cd631a6d138ece2",
+        "selectionRowSha256": "948aed151e21df3ffc9a9051775cf10f9e372257bd764fbe4cd631a6d138ece2",
+        "contentHash": "9a5d7fa897026e339e8c104fc6762d191437263a6106e8e69e44e5d7693ff688",
+        "receiptHash": "2ba222ca679fd6952bd274895195e9d9873497b547219e63f638222d0acf888d"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "home-smart-camera-switch-choice",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "BroadLink LC1 თუ Eufy 2C: არსებული სახლის გაფართოების ორი ნაბიჯი",
+      "excerpt": "LC1 განათების მართვის გაფართოებაა, Eufy 2C კი თავსებადი HomeBase-ის დამატებითი კამერა. ორივე ცალკე წინაპირობას მოითხოვს, ამიტომ მხოლოდ ფასით ნუ აირჩევთ.",
+      "bodyMarkdown": "BroadLink Smart Light Switch White 2-Gang LC1 და Eufy 2C Add-On Camera White ერთი კატეგორიის კონკურენტები არ არის. LC1 აირჩიეთ, თუ განათების მართვა გაწუხებთ; Eufy 2C მაშინ, როცა უკვე გაქვთ თავსებადი HomeBase და ეზოს ან კარის დამატებითი ხედვა გჭირდებათ.\n\n## როდის აირჩიოთ BroadLink LC1\n\nოფიციალური წყაროები LC1-ის აპით მართვას, ტაიმერებს, ჯგუფებსა და სცენებს აღწერს. BroadLink-ის მიმდინარე Smart Wi-Fi Switch გვერდი LC1 Only და LC1 + S3 Hub ვარიანტებს აჩვენებს, ხოლო S3 Hub-ის გვერდი რვა მოწყობილობის ზღვარს აღწერს. ამიტომ LC1 გამოგადგებათ, თუ ელექტრო ყუთის სქემა სპეციალისტმა დაადასტურა და კონკრეტული ფუნქციისთვის ჰაბის საჭიროება გამყიდველის ჩანაწერით/ინსტრუქციით-ით გაირკვა. თუ ჩვეულებრივი ჩამრთველის შეცვლა გჭირდებათ ან სქემა უცნობია, გამოტოვეთ.\n\n## როდის აირჩიოთ Eufy 2C Add-On\n\nEufy-ის ოფიციალური გვერდი Add-On 2C-ს დამატებით კამერად აღწერს. HomeBase ცალკე წინაპირობაა და თავსებადობის ცხრილში კონკრეტული მოდელი უნდა გამოჩნდეს. 1080p, 135 გრადუსის დიაგონალური ხედვა, ღამის ხედვა და IP67 აღწერილი შესაძლებლობებია, მაგრამ ეს მახასიათებლები კონკრეტულ ეზოში შეტყობინების ხარისხს არ ადასტურებს. თუ HomeBase არ გაქვთ, ეს კამერა პირველი შენაძენი არ არის.\n\n2026 წლის 7 სექტემბრის ჩანაწერში LC1-ის ფასი 67 GEL, Eufy 2C-ის კი 259 GEL იყო. ეს ორი თარიღიანი შეთავაზების დაკვირვებაა და არა მიმდინარე ფასის დაპირება.\n\n## საბოლოო არჩევანი\n\nშუქის ავტომატიზაციისთვის ნახეთ [BroadLink LC1](/products/find-pcshop-6), ხოლო არსებული HomeBase-ის გაფართოებისთვის [Eufy 2C Add-On](/products/find-pcshop-7). მიმდინარე პირობები გადაამოწმეთ [PCShop-ის LC1 ბარათზე](https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/) და [Eufy 2C ბარათზე](https://pcshop.ge/shop/eufy-2c-add-on-camera-white/). თუ ორივე წინაპირობა უცნობია, ჯერ არც ერთი არ იყიდოთ.\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სახლი",
+      "tags": [
+        "სახლი",
+        "BroadLink",
+        "Eufy",
+        "ჭკვიანი სახლი",
+        "HomeBase"
+      ],
+      "productIDs": [
+        "pcshop-6",
+        "pcshop-7"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/",
+        "https://pcshop.ge/shop/eufy-2c-add-on-camera-white/",
+        "https://www.broadlink.ae/product-page/broadlink-lc1-3-metallic-white",
+        "https://service.eufy.com/ie/article-description/Compatibility-Between-eufy-Devices",
+        "https://www.broadlink.ae/product-page/s3-hub"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "6503d5538eefc2dbbf36aefe50ee0ebdfdf72b87632bc4b646c786ec57d60009",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "e6ca39cbba501804d4bf32b4af4c1d0426d605693e2e64fb43ef4d423a3cdebd",
+        "selectionRowSha256": "e6ca39cbba501804d4bf32b4af4c1d0426d605693e2e64fb43ef4d423a3cdebd",
+        "contentHash": "6503d5538eefc2dbbf36aefe50ee0ebdfdf72b87632bc4b646c786ec57d60009",
+        "receiptHash": "d68a8db51c04eb8307c5bd3f5a79cc1f3ef9847f0e564366543c738302aa119e"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "outbound-path-20260907",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "მომუშავე სამუშაო მაგიდის აქსესუარები 184 GEL-მდე: რა დაამატოთ",
+      "excerpt": "ეს არ არის სრული ვიდეოზარის ნაკრები: Pebble 2, BOYA და Gembird უკვე მომუშავე კომპიუტერსა და ზარის მოწყობილობებს ემატება მხოლოდ საჭიროების მიხედვით. დაკვირვებული ჯამი 184 GEL იყო.",
+      "bodyMarkdown": "ეს არის უკვე მომუშავე კომპიუტერისა და ვიდეოზარის ადგილის აქსესუარების კალათა, არა სრული ვიდეოზარის ნაკრები: კამერა, კომპიუტერი, ეკრანი და ყურსასმენი აქ არ შედის. თითოეული დამატება მხოლოდ იმ დეფიციტისთვის იყიდეთ, რომელიც უკვე დაადასტურეთ. [Logitech Pebble 2 M350S Bluetooth White](/products/find-pcshop-2), [BOYA BY-M100UC Wired Mic Type-C](/products/find-pcshop-3) და [Gembird SPG6-B-6C 6×1.8m Grey](/products/find-pcshop-9) სამ განსხვავებულ პრობლემას აგვარებს: კურსორს, Type-C ხმას და მაგიდის როზეტებს. 2026 წლის 7 სექტემბერს მათი დაკვირვებული ფასები იყო 75, 79 და 30 GEL, ჯამში **184 GEL**, მიწოდების გარეშე.\n\n## როდის ამართლებს 184 GEL-იანი ნაკრები\n\nPebble 2 აირჩიეთ, თუ კომპაქტური, გადასატანი მაუსი და Easy-Switch-ით 3 მოწყობილობა გჭირდებათ; BOYA BY-M100UC მხოლოდ მაშინ, როცა ტელეფონის ან კომპიუტერის აპი იღებს გარე მიკროფონს; Gembird SPG6-B-6C მაშინ, როცა სამუშაო მაგიდაზე ექვსი როზეტი და 1.8 მ კაბელი რეალურად გყოფნით. ამ სამის ერთად ყიდვა მხოლოდ მაშინ ქმნის თქვენთვის საჭირო სამუშაო ადგილს, როცა სამივე დეფიციტი გაქვთ; კომპონენტები ერთმანეთის შემცვლელი არ არის და არც ერთი არ არის აუცილებელი ყველა მყიდველისთვის.\n\n## როდის ჯობს M650L\n\n[Logitech Signature M650L Bluetooth Graphite](/products/find-pcshop-1) 2026 წლის 7 სექტემბერს 99 GEL ჩანდა. M650L-თან ერთად BOYA და Gembird-ის დაკვირვებული ჯამი **208 GEL** გამოდის. ორივე კალათაში BOYA და Gembird ერთნაირია; იცვლება მხოლოდ მაუსი. ეს 24 GEL დამატება აირჩიეთ, თუ Pebble 2-ის კომპაქტურობის ნაცვლად M650L-ის უფრო დიდი სამუშაო ფორმა და SmartWheel გჭირდებათ. Pebble 2-ის 184 GEL-იანი ვარიანტი დატოვეთ, თუ პატარა კორპუსი და Easy-Switch-ით გადართვა გჭირდებათ; Bluetooth-ის უპირატესობა ერთ მხარეს არ მივაწეროთ.\n\n## ორი შეზღუდვა\n\nBOYA-ს კონექტორი არ ამტკიცებს თქვენი აპის აუდიო-თავსებადობას. Gembird-ის ექვსი ადგილი არ ამტკიცებს ელექტრო უსაფრთხოებას ან დასაშვებ დატვირთვას. შეკვეთამდე გადაამოწმეთ პორტი, კომპლექტაცია, კაბელის გზა და გარე გამყიდველის პირობები.\n\n## რეკომენდაცია\n\nთუ სამივე მცირე პრობლემა ერთად გაქვთ, დაიწყეთ [Logitech Pebble 2 M350S Bluetooth White](/products/find-pcshop-2) + [BOYA BY-M100UC Wired Mic Type-C](/products/find-pcshop-3) + [Gembird SPG6-B-6C 6×1.8m Grey](/products/find-pcshop-9)-ით და გახსენით [გარე შეთავაზება Logitech Pebble 2 M350S Bluetooth White](https://pcshop.ge/shop/logitech-pebble-2-m350s-bluetooth-white/), [გარე შეთავაზება BOYA BY-M100UC Wired Mic Type-C](https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/) და [გარე შეთავაზება Gembird SPG6-B-6C 6×1.8m Grey](https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/). თუ იმავე სამი ამოცანისთვის უფრო დიდი ხელის მაუსი გჭირდებათ, 24 GEL-ის დამატება გამართლებულია [გარე შეთავაზება Logitech Signature M650L Bluetooth Graphite](https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/)-ზე. ყველა ფასი 7 სექტემბრის დაკვირვებაა, არა მიმდინარე ფასი ან მარაგის დადასტურება.\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "არჩევა",
+      "tags": [
+        "ვიდეოზარი",
+        "Pebble 2",
+        "BOYA",
+        "Gembird"
+      ],
+      "productIDs": [
+        "pcshop-2",
+        "pcshop-3",
+        "pcshop-9",
+        "pcshop-1"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/",
+        "https://pcshop.ge/shop/logitech-pebble-2-m350s-bluetooth-white/",
+        "https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/",
+        "https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/",
+        "https://www.logitech.com/en-us/shop/p/pebble-2-m350s-wireless-mouse",
+        "https://www.logitech.com/en-us/shop/p/m650-signature-wireless-mouse"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "8a810ba41a6c39286625dacc2cb055df6e06435968d1066b4a380cb524b6012d",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "b3b046808e9966d105052b20c894a6b6b77490d6c24091a6e9081453d6bca940",
+        "selectionRowSha256": "b3b046808e9966d105052b20c894a6b6b77490d6c24091a6e9081453d6bca940",
+        "contentHash": "8a810ba41a6c39286625dacc2cb055df6e06435968d1066b4a380cb524b6012d",
+        "receiptHash": "89c681da96c00d196168c32e4f885316f8041b34965d9663498fa7f437b6307d"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "seasonal-home-20260907",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "სეზონური სახლის არჩევანი: ოთხი ნივთიდან რომელი გჭირდებათ",
+      "excerpt": "Defender სამუშაო ზედაპირს ცვლის, EKL-F500L — წყლის რიტმს, ETA Rover — იატაკის რუტინას, BroadLink LC1 კი ორ განათების წრეს; ერთ კალათაში ოთხივე ავტომატურად არ უნდა მოხვდეს.",
+      "bodyMarkdown": "სეზონური ფასდაკლების სია ხშირად ოთხ სხვადასხვა საჭიროებას ერთ კალათად აჩენს. აქ [Defender Spirit Gaming Desk](/products/find-pcshop-5) ოთახის ზედაპირისთვისაა, [ARDESTO Kettle EKL-F500L](/products/find-elite-7) წყლისთვის, [ETA Robot Vacuum Cleaner ETA124890030](/products/find-elite-4) იატაკისთვის, [BroadLink Smart Light Switch White 2-Gang LC1](/products/find-pcshop-6) კი ორ განათების წრეზეა გათვლილი. აირჩიეთ ერთი განმეორებადი პრობლემა, არა ოთხივე ნივთი ერთდროულად.\n\n## რომელი ნივთი რომელ პრობლემას ხურავს\n\nDefender Spirit Gaming Desk-ს **549 GEL**-იანი 7 სექტემბრის ჩანაწერი ჰქონდა. აირჩიეთ მხოლოდ მას შემდეგ, რაც სიგანე, კედლიდან დაშორება და მონიტორის ზომა გაზომეთ. თუ ზედაპირი გყოფნით, ეს ხარჯი ვერ აგვარებს სხვა პრობლემას.\n\nEKL-F500L-ის დაკვირვებული ფასი **175.99 GEL** იყო. მისი 1.7 ლიტრი აირჩიეთ, თუ დილით და საღამოს წყლის მოთხოვნა მეორდება და სამზარეულოში ადგილი გაქვთ. ETA Rover-ის **549.99 GEL**-იანი ჩანაწერი მხოლოდ მაშინ გამართლდება, თუ იატაკის საფარი, ავეჯის ქვეშ გასავლელი სივრცე და მოვლა შეესაბამება.\n\nBroadLink LC1-ის **67 GEL**-იანი ფასი დაბალ ბარიერს ქმნის, მაგრამ ორი განათების წრე და თქვენი ელექტრო ყუთის შესაბამისი სქემა უნდა ემთხვეოდეს თქვენს სახლს; მიმდინარე BroadLink-ის გვერდი no-neutral ვარიანტს და LC1 Only/LC1 + S3 Hub არჩევანს აჩვენებს, ამიტომ ჰაბის საჭიროება ზუსტი ფუნქციასა და ადგილობრივ ყუთზე გადაამოწმეთ. ამ პირობების უცოდინრობისას LC1 სეზონური საჩუქარი არ არის.\n\n## ჩემი არჩევანი\n\nზედაპირის მუდმივი დეფიციტი — [გარე შეთავაზება Defender Spirit Gaming Desk](https://pcshop.ge/shop/defender-spirit-gaming-desk/); წყლის ხშირი ადუღება — [გარე შეთავაზება ARDESTO Kettle EKL-F500L](https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446); იატაკის გამეორებადი სამუშაო — [გარე შეთავაზება ETA Robot Vacuum Cleaner ETA124890030](https://ee.ge/mtversasruti/eta-robot-vacuum-cleaner-eta124890030-p21440); ორი განათების წრის მართვა და დადასტურებული სქემა — [გარე შეთავაზება BroadLink Smart Light Switch White 2-Gang LC1](https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/). ეს ოთხი ფასი იმ დღის დაკვირვებაა, არა მიმდინარე ფასი ან მარაგი.\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "სახლი",
+      "tags": [
+        "სახლი",
+        "სეზონური არჩევა",
+        "მაგიდა",
+        "ჩაიდანი",
+        "დასუფთავება"
+      ],
+      "productIDs": [
+        "pcshop-5",
+        "elite-7",
+        "elite-4",
+        "pcshop-6"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/defender-spirit-gaming-desk/",
+        "https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446",
+        "https://ee.ge/mtversasruti/eta-robot-vacuum-cleaner-eta124890030-p21440",
+        "https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/",
+        "https://www.broadlink.ae/smart-switch",
+        "https://www.broadlink.ae/product-page/s3-hub"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "e8a06632b676bde6370a3d5630df27f8e89e51940ecedf4e488090c22774f29e",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "ca865a36bc71afbb56257c560bcbd71e74cb3b545789c93db3b7e7735c2d84a1",
+        "selectionRowSha256": "ca865a36bc71afbb56257c560bcbd71e74cb3b545789c93db3b7e7735c2d84a1",
+        "contentHash": "e8a06632b676bde6370a3d5630df27f8e89e51940ecedf4e488090c22774f29e",
+        "receiptHash": "ad95333646165401c55224adc1388c93ad1b1a6d2f6f96dcac027a735db96df4"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "shopping-truth-20260907",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "სამი კოორდინირებული საჩუქარი: Eufy, BroadLink თუ BOYA",
+      "excerpt": "Eufy 2C Add-On, BroadLink LC1 და BOYA BY-M100UC-ის სამივე საჩუქარი 405 GEL გამოდის, მაგრამ თითოეულს თავისი წინაპირობა და გამორიცხვის მიზეზი აქვს.",
+      "bodyMarkdown": "სამი საჩუქრის ერთ ოჯახში შეხამება მხოლოდ მაშინ გამოდის, როცა მიმღებების ჩვევა და მოწყობილობის წინაპირობა წინასწარ იცით. [Eufy 2C Add-On Camera White](/products/find-pcshop-7) Eufy 2C Add-On კამერაა, [BroadLink Smart Light Switch White 2-Gang LC1](/products/find-pcshop-6) BroadLink LC1 ორი განათების წრისთვისაა, [BOYA BY-M100UC Wired Mic Type-C](/products/find-pcshop-3) BOYA კი Type-C მიკროფონი. 2026 წლის 7 სექტემბერს დაკვირვებული ფასები იყო 259, 67 და 79 GEL — ჯამში **405 GEL**, მიწოდების გარეშე.\n\n## ვის რა ვუყიდოთ\n\nEufy აირჩიეთ მხოლოდ იმ ადამიანს, ვისაც თავსებადი HomeBase უკვე აქვს ან მისი შეძენა დადასტურებულია. Add-On კამერა პირველი კამერის სრულ შემცვლელად არ ჩათვალოთ. BroadLink LC1 შეეფერება სახლს, სადაც ორი განათების წრეა და ელექტრო ყუთის ზუსტი სქემა ცნობილია; მიმდინარე BroadLink-ის გვერდი no-neutral ვარიანტსა და LC1 Only/LC1 + S3 Hub არჩევანს აჩვენებს, ამიტომ სასურველი ფუნქციისთვის ჰაბის საჭიროება ზუსტი ინსტრუქციით გადაამოწმეთ. BOYA აირჩიეთ Type-C ტელეფონზე ან კომპიუტერზე ჩაწერისთვის, თუ გამოყენებული აპი გარე აუდიოს იღებს.\n\n## როდის უნდა გააჩეროთ საჩუქარი\n\nEufy გამოტოვეთ უცნობი HomeBase-ისას; LC1 — თუ მხოლოდ ერთი ჩვეულებრივი ჩამრთველი გაქვთ ან ელექტრო სქემა არ დაგიდასტურებიათ; BOYA — თუ პორტი მხოლოდ დამუხტვისთვის მუშაობს. ამ სამ შემთხვევაში იაფი ფასი არ ამცირებს შეუსაბამო საჩუქრის რისკს.\n\nთუ პირობას ვერ ადასტურებთ, უფრო მარტივი ალტერნატივაა [Logitech Signature M650L Bluetooth Graphite](/products/find-pcshop-1) სამუშაო მაუსისთვის, [Logitech Pebble 2 M350S Bluetooth White](/products/find-pcshop-2) კომპაქტური სამუშაოსთვის ან [ARDESTO Kettle EKL-F500L](/products/find-elite-7) ცხელი წყლისთვის. ესენი სხვა საჩუქრებია და არა იგივე მოწყობილობის შემცვლელები.\n\nგადახდამდე გახსენით [გარე შეთავაზება Eufy 2C Add-On Camera White](https://pcshop.ge/shop/eufy-2c-add-on-camera-white/), [გარე შეთავაზება BroadLink Smart Light Switch White 2-Gang LC1](https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/) და [გარე შეთავაზება BOYA BY-M100UC Wired Mic Type-C](https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/). 405 GEL მხოლოდ 7 სექტემბრის დაკვირვებული ჯამია; მარაგი, მიწოდება და პირადი თავსებადობა ცალკე დასადასტურებელია.\n\nტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "არჩევა",
+      "tags": [
+        "საჩუქარი",
+        "Eufy",
+        "BroadLink",
+        "BOYA"
+      ],
+      "productIDs": [
+        "pcshop-7",
+        "pcshop-6",
+        "pcshop-3",
+        "pcshop-1",
+        "pcshop-2",
+        "elite-7"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/eufy-2c-add-on-camera-white/",
+        "https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/",
+        "https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/",
+        "https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/",
+        "https://pcshop.ge/shop/logitech-pebble-2-m350s-bluetooth-white/",
+        "https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446",
+        "https://www.broadlink.ae/smart-switch",
+        "https://www.broadlink.ae/product-page/s3-hub"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "fdf8a1c81d0facdb1dda61845e0dd8a297e7d74bcd36cad71052f9bd24824868",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "8a077d72809d46e8593a4fbea91646ed25933c2566d194121f62841b8b1929a6",
+        "selectionRowSha256": "8a077d72809d46e8593a4fbea91646ed25933c2566d194121f62841b8b1929a6",
+        "contentHash": "fdf8a1c81d0facdb1dda61845e0dd8a297e7d74bcd36cad71052f9bd24824868",
+        "receiptHash": "9fa49bfe9c746106bab3e90194c6766a737ed87c0c00f4c1f8f216eede9c4347"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "source-reading-20260907",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "სამუშაო სივრცის განახლება: ჯერ ზუსტი მოდელი, შემდეგ არჩევანი",
+      "excerpt": "მაგიდა, კურსორი და ძველი Micro-USB კაბელი სხვადასხვა პრობლემაა; Anker-ის ადგილობრივი შეთავაზება ზუსტი ერთეულის დადასტურებამდე რეკომენდაციაში არ შედის.",
+      "bodyMarkdown": "ლეპტოპის შეცვლა პირველი ნაბიჯი არ არის, თუ შეფერხება სამუშაო ზედაპირს, კურსორის მართვას ან კონკრეტულ კაბელს უკავშირდება. [Defender Spirit Gaming Desk](/products/find-pcshop-5) სივრცის პრობლემას ეხება, [Logitech Signature M650L Bluetooth Graphite](/products/find-pcshop-1) კურსორის მართვას, ხოლო [Hoco X21 Plus](/products/find-pcshop-8) მხოლოდ იმ ძველი მოწყობილობის კაბელია, რომელსაც Micro-USB სჭირდება. [Anker PowerCore III Elite 25600 Black-ის ადგილობრივი შეთავაზება](/products/find-pcshop-4) ცალკე იდენტიფიკაციას მოითხოვს.\n\n## ჯერ პრობლემა და ზუსტი მოდელი გამოყავით\n\nDefender Spirit Gaming Desk განიხილეთ მხოლოდ მას შემდეგ, რაც ოთახის ზომა, მაგიდის სიღრმე და მონიტორის განლაგება გაზომეთ. M650L შეარჩიეთ მაშინ, როცა ლეპტოპის სიჩქარე საკმარისია, მაგრამ კურსორის მართვა გაღლით; SmartWheel და Bluetooth/Logi Bolt გამყიდველისა და მწარმოებლის აღწერილი მახასიათებლებია, არა თქვენი ხელის კომფორტის ტესტი.\n\nHoco X21 Plus-ის გამყიდველის გვერდზე წერია USB-A to Micro-USB და 2 მეტრი. ეს არჩევანი მხოლოდ მაშინ ემთხვევა თქვენს საჭიროებას, თუ ძველ მოწყობილობას ნამდვილად Micro-USB შესაერთებელი აქვს და სიგრძე თქვენს განლაგებას ერგება. USB-C მოწყობილობასთან ეს კაბელი შესაბამისი არჩევანი არ იქნება.\n\nAnker-ის შეთავაზებაზე PCShop-ის გვერდი მიუთითებს p/n A1291H11-ს, ხოლო [Anker-ის ოფიციალური სახელმძღვანელო](https://lp.ankerjapan.com/hubfs/aoos/manual/A1291Manual.pdf) პროდუქტს A1291-ად ასახელებს. შემოწმებულ წყაროებში არ ჩანს, რომ ეს ორი აღნიშვნა ერთსა და იმავე გასაყიდ ერთეულს ეკუთვნის. ამიტომ სახელმძღვანელოს ტექნიკური მონაცემები ამ ადგილობრივი შეთავაზების დადასტურებულ მახასიათებლად არ უნდა გადაიქცეს. ამ შემოწმებისას გამყიდველის ქარხნული ეტიკეტის ფოტო ან წერილობითი დადასტურება ვერ მოვიპოვეთ, ამიტომ Anker ამ არჩევანში რეკომენდებული ნივთი არ არის.\n\n## როგორ ააწყოთ სამუშაო ნაკრები\n\nზედაპირის მუდმივი ნაკლებობისას ჯერ Defender-ის ზუსტი ზომები შეადარეთ ოთახს. მხოლოდ კურსორის პრობლემისას M650L-ის ზუსტი მოდელი და კავშირის მეთოდი გადაამოწმეთ. ძველი Micro-USB მოწყობილობისთვის Hoco-ს კაბელის ორივე ბოლო და სიგრძე შეადარეთ თქვენს მოწყობილობას. მოძრავი კვების საჭიროებისას ჯერ ლეპტოპის დოკუმენტში მოძებნეთ USB-C დამუხტვა და შესაბამისი Power Delivery რეჟიმი, შემდეგ კი მხოლოდ იმ power bank-ს დაუბრუნდით, რომლის მოდელიც და ქარხნული მარკირებაც დადასტურებულია.\n\n## ყიდვამდე მოკლე სია\n\n1. ჩაიწერეთ გამყიდველის გვერდზე ნაჩვენები ზუსტი კოდი და მოდელი.\n2. შეადარეთ ეს კოდი ყუთის ქარხნულ ეტიკეტს ან გამყიდველის წერილობით პასუხს.\n3. კაბელისთვის შეამოწმეთ მოწყობილობის ორივე შესაერთებელი და საჭირო სიგრძე.\n4. ლეპტოპისთვის ცალკე დაადასტურეთ USB-C დამუხტვა და კვების მოთხოვნა.\n5. თუ რომელიმე ველი უცნობია, Anker-ის ადგილობრივი შეთავაზება ნუ აქციეთ ლეპტოპის დამტენის შემცვლელად.\n\n## შეზღუდვა\n\nეს მასალა არ არის მაგიდის მორგების, მაუსის კომფორტის, კაბელის გამძლეობის ან power bank-ით დამუხტვის ტესტი. Anker-ის ადგილობრივი p/n და ოფიციალური A1291 დოკუმენტი ერთმანეთთან ჯერ არ არის დაკავშირებული, ამიტომ პროდუქტის ზუსტი იდენტობა უცნობია. ფასი, მარაგი, მიწოდება და დაბრუნება გამყიდველთან გადაამოწმეთ; სამოგზაურო გამოყენებისას ავიაკომპანიის მიმდინარე ბატარეის წესებიც ცალკე წაიკითხეთ. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "მაგიდა",
+        "M650L",
+        "Hoco X21 Plus",
+        "Anker",
+        "სამუშაო სივრცე"
+      ],
+      "productIDs": [
+        "pcshop-5",
+        "pcshop-1",
+        "pcshop-8",
+        "pcshop-4"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/defender-spirit-gaming-desk/",
+        "https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/",
+        "https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/",
+        "https://lp.ankerjapan.com/hubfs/aoos/manual/A1291Manual.pdf",
+        "https://pcshop.ge/shop/hoco-x21-plus-usb-to-micro-usb-charging-cable-blackred-2m/",
+        "https://www.usb.org/usb-type-cr-cable-and-connector-specification",
+        "https://www.iata.org/en/programs/cargo/dgr/lithium-batteries/"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "28d15e0dd0b110a29f4f185d6f6f15b7fcdbf10d53af9423f7addd9d384dfc87",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "02ce10babac9c147f2967c98e457358408082db289c2563971ef2685557ee54b",
+        "selectionRowSha256": "02ce10babac9c147f2967c98e457358408082db289c2563971ef2685557ee54b",
+        "contentHash": "28d15e0dd0b110a29f4f185d6f6f15b7fcdbf10d53af9423f7addd9d384dfc87",
+        "receiptHash": "a09022cac0ce65341ee663a0719565270c89dd4b0650e51953e494dac283df30"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-cable-map",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "USB-C, Micro-USB თუ როზეტი: რომელი ნივთი გჭირდებათ სამუშაო მაგიდაზე",
+      "excerpt": "BOYA მიკროფონისთვის, Hoco ძველი Micro-USB მოწყობილობისთვის, Gembird კი კედლის კვების გასანაწილებლადაა. არჩევანი დანიშნულებამ უნდა გადაწყვიტოს.",
+      "bodyMarkdown": "სამი ნივთი ერთ კატეგორიად არ უნდა ჩათვალოთ: [BOYA BY-M100UC](/products/find-pcshop-3) პირდაპირ USB-C პორტში მისაერთებელი მიკროფონია, [Hoco X21 Plus](/products/find-pcshop-8) USB-to-Micro-USB კაბელია, [Gembird SPG6-B-6C](/products/find-pcshop-9) კი ექვსროზეტიანი გამანაწილებელი. თუ ხმა გჭირდებათ, BOYA აირჩიეთ; ძველი Micro-USB აქსესუარისთვის Hoco განიხილეთ; კედლის ერთი წერტილის რამდენიმე მოწყობილობაზე გასაყოფად Gembird შეარჩიეთ. მათი ჩანაცვლება ერთმანეთით არ შეიძლება.\n\n## ჯერ მოწყობილობა დაასახელეთ\n\nBOYA-ს [მწარმოებლის გვერდი](https://cn.boya-mic.com/product/by-m100uc) აღწერს Type-C მიკროფონს. ამიტომ ის გამართლებულია მხოლოდ მაშინ, როცა თქვენს ტელეფონს ან სხვა წყაროს შესაბამისი აუდიო-შეყვანა აქვს. Hoco-ს [PCShop-ის ბარათში](https://pcshop.ge/shop/hoco-x21-plus-usb-to-micro-usb-charging-cable-blackred-2m/) წერია USB-to-Micro-USB და 2 მეტრი. ამ კაბელს ნუ იყიდით USB-C მოწყობილობისთვის მხოლოდ იმიტომ, რომ USB სახელში ჩანს.\n\nGembird-ის [PCShop-ის ბარათი](https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/) და [TME-ს ჩანაწერი](https://www.tme.eu/en/details/spg6-b-6c/socket-strips/gembird/) მიუთითებს ექვს როზეტსა და 1.8 მეტრ კაბელზე. ეს არჩევანი სამუშაო მაგიდის კვების გზას ეხება და არც მონაცემთა კაბელს ცვლის, არც მიკროფონის ადაპტერს.\n\n## რომელი არჩევანი უხდება რომელ მყიდველს\n\n**BOYA BY-M100UC:** აირჩიეთ, თუ გჭირდებათ სადენიანი Type-C მიკროფონი და წყაროს შესაბამისობას წინასწარ ამოწმებთ. გამოტოვეთ, თუ მხოლოდ 3.5 მილიმეტრიანი აუდიო-შეყვანა გაქვთ ან აპი გარე მიკროფონს არ აჩვენებს.\n\n**Hoco X21 Plus:** აირჩიეთ, თუ კონკრეტულ ძველ მოწყობილობას Micro-USB სჭირდება და 2 მეტრი თქვენს განლაგებას ერგება. გამოტოვეთ, თუ პორტი USB-C-ია ან მონაცემთა რეჟიმი თქვენთვის აუცილებელია და წყარო ამას არ ადასტურებს.\n\n**Gembird SPG6-B-6C:** აირჩიეთ, თუ პრობლემა კედლის როზეტების რაოდენობაა. გამოტოვეთ, თუ თქვენთვის საჭიროა USB დამუხტვა ან მონაცემთა გადაცემა, რადგან ამ ბარათებში ასეთი ფუნქცია არ დასტურდება.\n\n## საბოლოო არჩევანი\n\nერთი ნივთი აირჩიეთ მთავარი დაბრკოლების მიხედვით. აუდიოსთვის გახსენით [BOYA-ს ზუსტი გარე სავაჭრო გვერდი](https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/); ძველი Micro-USB კავშირისთვის გახსენით [Hoco X21 Plus-ის გვერდი](https://pcshop.ge/shop/hoco-x21-plus-usb-to-micro-usb-charging-cable-blackred-2m/); მაგიდის კვებისთვის გახსენით [Gembird SPG6-B-6C-ის გვერდი](https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/). გადახდამდე შესაბამისი SKU-ის პორტი, სიგრძე, კომპლექტაცია და პირობები შეადარეთ.\n\n## შეზღუდვა და შემოწმების წერტილი\n\nამ წყაროებში არ არის დამოუკიდებელი ტესტი, უნივერსალური თავსებადობის გარანტია ან დადასტურებული მარაგი. გამყიდველთან გადაამოწმეთ ზუსტი მოდელი, კომპლექტაცია, ფასი, მიწოდება და დაბრუნება. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "კაბელები",
+        "USB-C",
+        "Micro-USB",
+        "მიკროფონი",
+        "როზეტი"
+      ],
+      "productIDs": [
+        "pcshop-3",
+        "pcshop-8",
+        "pcshop-9"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/",
+        "https://pcshop.ge/shop/hoco-x21-plus-usb-to-micro-usb-charging-cable-blackred-2m/",
+        "https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/",
+        "https://cn.boya-mic.com/product/by-m100uc",
+        "https://www.tme.eu/en/details/spg6-b-6c/socket-strips/gembird/",
+        "https://www.usb.org/usb-type-cr-cable-and-connector-specification"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "dd00af22a30616dd385a6271ab6e287a1da10604cb7ccbfadf9360d58293fc65",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "c39a9d388e86783c7d62d3f5fe1a9e5e8a516e8356cedabbb182155a6a843759",
+        "selectionRowSha256": "c39a9d388e86783c7d62d3f5fe1a9e5e8a516e8356cedabbb182155a6a843759",
+        "contentHash": "dd00af22a30616dd385a6271ab6e287a1da10604cb7ccbfadf9360d58293fc65",
+        "receiptHash": "6e22fa2e7b74c2fd24b73c4333f2c2fd4cffc561000a0be0e7c76ce1a17f4683"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-desk-audio-ports",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "ონლაინ ზარის სამუშაო მაგიდა: მიკროფონის შემდეგ რა გჭირდებათ",
+      "excerpt": "BOYA აუდიოსთვისაა, Hoco კონკრეტული Micro-USB მოწყობილობისთვის, Gembird კი კვების განლაგებისთვის. ნივთები ეტაპებად შეარჩიეთ და არა როგორც ერთი პრობლემის შემცვლელები.",
+      "bodyMarkdown": "ონლაინ ზარის სამუშაო მაგიდაზე ეს სამი ნივთი ერთ პრობლემას არ ცვლის და ერთდროულად ყიდვა აუცილებელი არ არის. [BOYA BY-M100UC](/products/find-pcshop-3) არის პირველი კანდიდატი, როცა გჭირდებათ პირდაპირ USB-C პორტში მისაერთებელი მიკროფონი. [Hoco X21 Plus](/products/find-pcshop-8) მხოლოდ კონკრეტულ Micro-USB მოწყობილობას ემატება, [Gembird SPG6-B-6C](/products/find-pcshop-9) კი შემდეგი ნაბიჯია, თუ კვების განლაგება გიშლით ხელს.\n\n## პირველი ნაბიჯი: დაადასტურეთ აუდიოს გზა\n\nBOYA-ს [მწარმოებლის აღწერა](https://cn.boya-mic.com/product/by-m100uc) Type-C მიკროფონს და Android მოწყობილობიდან კვებას ასახელებს. ეს საკმარისი საფუძველია მოდელის განხილვისთვის, მაგრამ არა თქვენი ლეპტოპის ან კონკრეტული აპის გარანტია. შეხვედრისთვის BOYA აირჩიეთ მხოლოდ მას შემდეგ, რაც მოწყობილობის გარე აუდიოს წყაროს არჩევა შეგიძლიათ.\n\nHoco-ს [ადგილობრივ ბარათში](https://pcshop.ge/shop/hoco-x21-plus-usb-to-micro-usb-charging-cable-blackred-2m/) 2 მეტრიანი USB-to-Micro-USB კაბელია. თუ ზარის მოწყობილობა Type-C-ია, ეს კაბელი მიკროფონის პრობლემას ვერ დახურავს. Gembird-ის [ადგილობრივი ბარათი](https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/) ექვს როზეტსა და 1.8 მეტრ კაბელს აჩვენებს, ამიტომ ის მხოლოდ მაშინ იყიდეთ, როცა დენის წერტილი გიშლით ხელს.\n\n## შემდეგი ნაბიჯი: შესაბამისი კაბელი ან მაგიდის კვება\n\n**აირჩიეთ BOYA BY-M100UC**, თუ თქვენს ტელეფონს ან სხვა წყაროს აქვს შესაბამისი Type-C აუდიო გზა და ზარზე ცალკე აუდიოს წყაროს არჩევა გჭირდებათ. **გამოტოვეთ**, თუ პორტი ან აპი დადასტურებული არ არის.\n\n**აირჩიეთ Hoco X21 Plus**, თუ კონკრეტული ძველი აქსესუარის Micro-USB კაბელი დაგჭირდათ. **გამოტოვეთ**, თუ მხოლოდ ზარის მიკროფონის Type-C კავშირი გაკლიათ.\n\n**აირჩიეთ Gembird SPG6-B-6C**, თუ მაგიდაზე ცალკე დამტენებსა და სხვა მოწყობილობებს საკმარისი როზეტი აღარ ჰყოფნით. BOYA-ის USB-C კვება თვითონ მოწყობილობიდან მოდის; Gembird მას აუდიო-თავსებადობას ან მიკროფონის კვებას არ უმატებს. **გამოტოვეთ**, თუ ელით USB მონაცემთა კავშირს ან დამტენის ფუნქციას.\n\n## შესყიდვის რიგი შეხვედრამდე\n\nპირველ რიგში შეამოწმეთ თქვენი ტელეფონის ან ლეპტოპის დოკუმენტაცია და კონკრეტული ზარის აპის მხარდაჭერა გარე USB აუდიოსთვის. BOYA-ის გარეშე საცდელი ჩანაწერი თავსებადობას ვერ დაადასტურებს; თუ გამყიდველი შემოწმების საშუალებას იძლევა, შემოწმება მხოლოდ იქ ჩაატარეთ. დადასტურებული აუდიო-გზის შემდეგ განიხილეთ BOYA, როზეტების დეფიციტისას — Gembird, ხოლო Hoco მხოლოდ კონკრეტული Micro-USB მოწყობილობისთვის.\n\n## ზუსტი გადასვლა მაღაზიაში\n\nამ სტატიაში პირველი ნაბიჯი აუდიოს გზის დოკუმენტურად დადასტურებაა. BOYA-სთვის გახსენით [PCShop-ის ზუსტი გვერდი](https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/); Micro-USB მოწყობილობისთვის — [Hoco X21 Plus-ის გვერდი](https://pcshop.ge/shop/hoco-x21-plus-usb-to-micro-usb-charging-cable-blackred-2m/); როზეტების დეფიციტისთვის — [Gembird SPG6-B-6C-ის გვერდი](https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/). თითოეული გარე შეთავაზების ფასი, მარაგი, მიწოდება და დაბრუნება ცალკე გადაამოწმეთ.\n\n## შეზღუდვა\n\nწყაროები არ ადასტურებს თქვენს კონკრეტულ აპში აუდიოს მუშაობას, კაბელის უნივერსალურობას ან Gembird-ის დატვირთვის უსაფრთხო ზღვარს. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "მიკროფონი",
+        "კაბელი",
+        "როზეტი",
+        "ონლაინ შეხვედრა",
+        "USB-C"
+      ],
+      "productIDs": [
+        "pcshop-3",
+        "pcshop-8",
+        "pcshop-9"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/",
+        "https://pcshop.ge/shop/hoco-x21-plus-usb-to-micro-usb-charging-cable-blackred-2m/",
+        "https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/",
+        "https://cn.boya-mic.com/product/by-m100uc",
+        "https://www.usb.org/usb-type-cr-cable-and-connector-specification",
+        "https://www.tme.eu/en/details/spg6-b-6c/socket-strips/gembird/",
+        "https://www.electricalsafetyfirst.org.uk/guides-and-advice/"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "601551444eee3303330b245c15fcfdaa39ae2d4ef017e78e6c232707d2582456",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "f2d4b543e6b620a5fa617e90a6b8ec4dc37ef59678ebb1fd96b138fc6bae5feb",
+        "selectionRowSha256": "f2d4b543e6b620a5fa617e90a6b8ec4dc37ef59678ebb1fd96b138fc6bae5feb",
+        "contentHash": "601551444eee3303330b245c15fcfdaa39ae2d4ef017e78e6c232707d2582456",
+        "receiptHash": "95c8c3c93b27820839858d2d12a020652261cd773a82f92c5954b9978293109b"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-desk-power-route",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "სამუშაო მაგიდისთვის რა იყიდოთ პირველად: ზედაპირი, როზეტი თუ power bank",
+      "excerpt": "Defender Spirit Gaming Desk, Gembird SPG6-B-6C და Anker PowerCore III Elite 25600 ერთ პრობლემას არ აგვარებს. აირჩიეთ ის, რაც თქვენს მთავარ შეფერხებას ხურავს.",
+      "bodyMarkdown": "სამუშაო მაგიდის გაფართოება სამი სხვადასხვა გადაწყვეტილებაა. [Defender Spirit Gaming Desk](/products/find-pcshop-5) განიხილეთ მაშინ, როცა ზედაპირი ან განლაგება გაკლიათ. [Gembird SPG6-B-6C](/products/find-pcshop-9) აირჩიეთ კედლის როზეტების რაოდენობის პრობლემისას. [Anker PowerCore III Elite 25600](/products/find-pcshop-4) ჯერ არ განიხილოთ ლეპტოპის კვებისთვის: მისი ზუსტი ერთეული და თქვენს ლეპტოპთან შესაბამისობა ცალკე უნდა დადასტურდეს.\n\n## სამივე ნივთი ერთმანეთის შემცვლელი არაა\n\nDefender-ის [PCShop-ის ბარათი](https://pcshop.ge/shop/defender-spirit-gaming-desk/) კონკრეტულ მაგიდას ეხება, მაგრამ წყარო არ ზომავს თქვენს ოთახს. ამიტომ ჯერ მონიშნეთ სივრცე, მონიტორის ადგილი და კაბელის გასასვლელი. თუ ზედაპირი საკმარისია, მხოლოდ მაგიდის გამო ყიდვა არ ღირს.\n\nGembird-ის [PCShop-ის გვერდი](https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/) და [TME-ს აღწერა](https://www.tme.eu/en/details/spg6-b-6c/socket-strips/gembird/) ექვს როზეტსა და 1.8 მეტრ კაბელს აჩვენებს. ეს არის კვების განაწილების არჩევანი, არა USB ჰაბი და არა ლეპტოპის დამტენი.\n\nAnker-ის [ზუსტი გამყიდველის ჩანაწერი](https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/) ამ powerbank-ის კონკრეტულ განცხადებას ეხება, მაგრამ ამ ჩანაწერით თქვენი ლეპტოპის თავსებადობა არ დასტურდება. [A1291-ის ოფიციალური სახელმძღვანელო](https://lp.ankerjapan.com/hubfs/aoos/manual/A1291Manual.pdf) და [გამყიდველის გვერდი](https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/) ერთმანეთთან შესადარებელი წყაროებია; საბოლოო არჩევანამდე ზუსტი ერთეული, სახელწოდება, პორტის რეჟიმები და ქარხნული მარკირება ორივე წყაროში შეადარეთ. სანამ ეს შესაბამისობა არ დადასტურდება, Anker-ს ნუ აირჩევთ ლეპტოპის კვებისთვის.\n\n## უკვე არსებული მაგიდის დამატებების კალათა\n\nთუ კალათაში უკვე გაქვთ [Defender-ის მაგიდა](/products/find-pcshop-5), [Logitech M650L-ის მაუსი](/products/find-pcshop-1) და [Gembird-ის გამანაწილებელი](/products/find-pcshop-9), 2026 წლის 7 სექტემბრის ჩანაწერებით მათი ჯამი 678 GEL იყო. [BOYA BY-M100UC-ის](/products/find-pcshop-3) დამატებით ჯამი 757 GEL ხდებოდა, რადგან მიკროფონის ჩანაწერი 79 GEL-ს აჩვენებდა. ეს არის თარიღიანი სარედაქციო ჯამი და არა მიმდინარე ფასი. ყიდვამდე გააჩერეთ კალათა, თუ უკვე გაქვთ მაუსი, საკმარისი როზეტები ან შესაბამისი ზედაპირი. BOYA-სთვის კი ცალკე დაადასტურეთ ტელეფონის Type-C გარე აუდიოსა და თქვენი აპის მხარდაჭერა.\n\n## არჩევანი სიტუაციის მიხედვით\n\n**აირჩიეთ Defender**, თუ სამუშაო ნივთები ერთმანეთს ეჯახება ან ზედაპირი ვერ იტევს თქვენს მოწყობილობებს. **გამოტოვეთ**, თუ პრობლემა მხოლოდ ერთი კაბელია.\n\n**აირჩიეთ Gembird**, თუ დამტენების რაოდენობა კედლის როზეტებზე მეტია და 1.8 მეტრი თქვენს მარშრუტს სწვდება. **გამოტოვეთ**, თუ ელით USB დატენვას ან მონაცემთა გადაცემას.\n\n**Anker ჯერ არ აირჩიოთ**: მხოლოდ მაშინ განიხილეთ, როცა გადაადგილებისას დამატებითი კვება გჭირდებათ და ზუსტი ერთეული და ლეპტოპის თავსებადობა დოკუმენტით დადასტურდა. **ამ ეტაპზე გამოტოვეთ**, თუ მხოლოდ როზეტების პრობლემა გაქვთ ან შესაბამისობა უცნობია.\n\n## ჩემი არჩევანი ამ სცენარში\n\nთუ ერთი დაბრკოლება უნდა მოაგვაროთ, ჯერ Gembird-ისკენ წავიდოდი მხოლოდ იმ შემთხვევაში, როცა კედლის კვება ნამდვილად არ გყოფნით: ეს ყველაზე ვიწრო და შემოწმებადი მიზეზია. შემდეგ გახსენით [Gembird-ის ზუსტი სავაჭრო გვერდი](https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/). Defender ცალკე შესაბამისობას მოითხოვს. Anker-ს მხოლოდ მას შემდეგ დაუბრუნდით, რაც ზუსტი იდენტობა და ლეპტოპის შესაბამისობა დადასტურდება.\n\n## შეზღუდვა\n\nეს შედარება არ არის ოთახის გაზომვა, ელექტრო-უსაფრთხოების ტესტი ან Anker-ის ლეპტოპებთან თავსებადობის დადასტურება. ფასები, მარაგი, მიწოდება და დაბრუნება გარე გამყიდველთან გადაამოწმეთ. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "სამუშაო მაგიდა",
+        "გამანაწილებელი",
+        "power bank",
+        "კვება",
+        "არჩევა"
+      ],
+      "productIDs": [
+        "pcshop-5",
+        "pcshop-9",
+        "pcshop-4",
+        "pcshop-1",
+        "pcshop-3"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/defender-spirit-gaming-desk/",
+        "https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/",
+        "https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/",
+        "https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/",
+        "https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/",
+        "https://www.tme.eu/en/details/spg6-b-6c/socket-strips/gembird/",
+        "https://www.electricalsafetyfirst.org.uk/guides-and-advice/",
+        "https://lp.ankerjapan.com/hubfs/aoos/manual/A1291Manual.pdf"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "096718c672a8d5a66f8a70bf77985a3d16215ec1f3c53d05b232e920f9e72b83",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "9793ca035fa4c54bccef3a1931e31ed70b5b4ca12fa689405be45947e8214bdc",
+        "selectionRowSha256": "9793ca035fa4c54bccef3a1931e31ed70b5b4ca12fa689405be45947e8214bdc",
+        "contentHash": "096718c672a8d5a66f8a70bf77985a3d16215ec1f3c53d05b232e920f9e72b83",
+        "receiptHash": "e5861b4b282caaa1cd87953cb4dfbc10e8f6da02676ec89852c21e83b156f050"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-laptop-charger-verification",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "ლეპტოპის ყიდვისას რომელი კომპლექტაცია გჭირდებათ: Lenovo, DELL თუ HP",
+      "excerpt": "PCShop-ის ჩანაწერი Lenovo-ს OLED/80Wh/FreeDOS-ს, DELL-ს Windows 11 Home-ს და HP-ს გამყიდველის მიერ მითითებულ კომპლექტაციას მიაწერს; შეკვეთამდე ადგილობრივი კომპლექტაცია ყუთისა და ნაწილის კოდით შეამოწმეთ.",
+      "bodyMarkdown": "ლეპტოპის ყიდვისას დამტენი და ოპერაციული სისტემა ერთ პატარა დეტალად არ დატოვოთ. ამ სამ შეთავაზებას განსხვავებული გადაწყვეტილება აქვს: [Lenovo IdeaPad Slim 5 16IRH10](/products/find-pcshop-10), [DELL Pro 15 Essential PV15250](/products/find-pcshop-11) და [HP EliteBook 640 G11](/products/find-pcshop-12). Lenovo-ს ადგილობრივ ჩანაწერში SKU I37249 და ნაწილის კოდი 83HS0024RK-ია. PCShop-ის დათარიღებული ჩანაწერი ამ კონკრეტულ კოდს OLED 2880x1800 ეკრანს, 500 nit სიკაშკაშეს, 80Wh ელემენტსა და 1.76 კგ წონას, FreeDOS-თან ერთად, მიაწერს; Lenovo-ს სერიის PSREF სხვა ვარიანტებსაც აჩვენებს და ადგილობრივი ყუთის შიგთავსს ვერ ცვლის.\n\n## არჩევანი ოპერაციული სისტემით\n\nთუ ლეპტოპის ჩართვისთანავე Windows 11 Home გჭირდებათ, DELL Pro 15 Essential PV15250-ის შეთავაზებას შეხედეთ: PCShop-ის დათარიღებული ჩანაწერი ამ PV15250-ს Windows 11 Home-ს, 54Wh ელემენტსა და 1.94 კგ წონას მიაწერს. შეკვეთამდე ნაწილის/შეკვეთის კოდი და კორპუსი იმავე შეთავაზებას შეადარეთ. აქ უპირატესობა მზა სისტემაა; პროგრამების ან რეალური მუშაობის შედეგს ეს ტექსტი არ ამოწმებს.\n\nთუ FreeDOS-ის მიღება შეგიძლიათ და ეკრანი თქვენთვის მთავარია, Lenovo 83HS0024RK უფრო კონკრეტული კანდიდატია. OLED 2880x1800 და 500 nit წყაროში ამ SKU-ს ეკუთვნის, არა IdeaPad Slim 5-ის ყველა ვერსიას.\n\nPCShop-ის ჩანაწერი HP EliteBook 640 G11-ის ამ შეთავაზებას 56Wh, 1.39 კგ და FreeDOS-ს მიაწერს, მაგრამ HP-ის სერიის ცხრილი 56Wh-სა და 1.39 კგ-ს ამავე ერთეულთან არ აკავშირებს. ამიტომ ყუთისა და ნაწილის კოდი შეკვეთამდე შეადარეთ. HP-ის არჩევანი დატოვეთ მხოლოდ ამის შემდეგ, რაც ზუსტი ნაწილის კოდი და კომპლექტაცია გამყიდველთან დადასტურდება.\n\n## სად ჯდება Anker\n\n[Anker PowerCore III Elite 25600](/products/find-pcshop-4) ამ ეტაპზე ლეპტოპის დამტენის შემცვლელად არ გირჩევთ. [PCShop-ის ჩანაწერი](https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/) პროდუქტს p/n A1291H11-ად ასახელებს, ხოლო [Anker-ის ოფიციალური სახელმძღვანელო](https://lp.ankerjapan.com/hubfs/aoos/manual/A1291Manual.pdf) პროდუქტს A1291-ად აღნიშნავს. ეს აღნიშვნები თავისთავად ვერ ადასტურებს, რომ ადგილობრივი გვერდი იმავე გასაყიდ ერთეულს ეხება, ამიტომ ამ შეთავაზების ტექნიკური მონაცემები და ლეპტოპთან თავსებადობა დადასტურებულად არ ჩათვალოთ. გამყიდველისგან მოითხოვეთ ქარხნული ეტიკეტის ფოტო ან ოფიციალურ დოკუმენტთან წერილობითი დაკავშირება; მანამდე შეკვეთა არ გააკეთოთ.\n\n## ვის ავურჩიოთ რომელი\n\n**Lenovo 83HS0024RK:** აირჩიეთ, თუ OLED ეკრანი, 500 nit და 80Wh თქვენთვის FreeDOS-ის პირობებსა და საჭირო ოპერაციული სისტემის წინასწარ დაგეგმვაზე მნიშვნელოვანია. გამოტოვეთ, თუ მზა Windows გჭირდებათ.\n\n**DELL PV15250:** აირჩიეთ, თუ Windows 11 Home-ის არსებობა და 54Wh ელემენტი თქვენს გზას ერგება. გამოტოვეთ, თუ 1.94 კგ წონა თქვენთვის ბევრია ან სხვა ეკრანის ტიპი გჭირდებათ.\n\n**HP 640 G11:** განიხილეთ მხოლოდ მაშინ, როცა გამყიდველის ჩანაწერში მითითებული ელემენტის მონაცემი, FreeDOS-ის პირობები და ნაწილის კოდი ერთმანეთს ემთხვევა; საჭირო ოპერაციული სისტემა წინასწარ დაგეგმეთ. გამოტოვეთ, თუ უფრო დიდი OLED ეკრანი გჭირდებათ.\n\n## საბოლოო არჩევანი და მაღაზიის გადასვლა\n\nამ სამიდან Lenovo 83HS0024RK-ს ავირჩევ მხოლოდ მაშინ, როცა კონკრეტული ნაწილის კოდი, ეკრანის/ელემენტის ჩანაწერი და FreeDOS-ის პირობები თქვენს მოთხოვნას ემთხვევა. ზუსტი ბარათი ზემოთაა, ხოლო შეთავაზება გახსენით [PCShop-ის Lenovo გვერდზე](https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/). DELL-ისა და HP-ის გვერდებზე გადასვლა მაშინ ღირს, როცა მზა Windows ან კონკრეტული დადასტურებული კომპლექტაცია ცვლის თქვენს გადაწყვეტილებას.\n\n## შეზღუდვა\n\nეს არის წყაროებზე დაფუძნებული არჩევანი და არა შესრულების, ეკრანის ან ელემენტის დამოუკიდებელი ტესტი. 2026 წლის 7 სექტემბრის ფასის ჩანაწერი, მარაგი, მიწოდება და დაბრუნება გამყიდველთან ცალკე გადაამოწმეთ. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "ლეპტოპი",
+        "დამტენი",
+        "USB-C",
+        "კომპლექტაცია",
+        "არჩევა"
+      ],
+      "productIDs": [
+        "pcshop-10",
+        "pcshop-11",
+        "pcshop-12",
+        "pcshop-4"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/",
+        "https://pcshop.ge/shop/dell-pro-15-essential-pv15250/",
+        "https://pcshop.ge/shop/hp-elitebook-640-g11-3/",
+        "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Slim_5_16IRH10/IdeaPad_Slim_5_16IRH10_Spec.pdf",
+        "https://www.dell.com/en-us/shop/dell-laptops/dell-pro-15-essential-laptop/spd/dell-pro-pv15250-laptop",
+        "https://support.hp.com/in-en/document/ish_10387841-10388131-16",
+        "https://www.usb.org/usb-type-cr-cable-and-connector-specification",
+        "https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/",
+        "https://lp.ankerjapan.com/hubfs/aoos/manual/A1291Manual.pdf"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "cb1e1c8e36a9018c5ba205bd0158c95f3c58a4368bcc7fc4df111e5c0d5cf90a",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "1d7e1c13fece846986a7355265fc421ae9142dc32a6b37eb7536eb61c31ca358",
+        "selectionRowSha256": "1d7e1c13fece846986a7355265fc421ae9142dc32a6b37eb7536eb61c31ca358",
+        "contentHash": "cb1e1c8e36a9018c5ba205bd0158c95f3c58a4368bcc7fc4df111e5c0d5cf90a",
+        "receiptHash": "2ec06ccb11315f3d5ad658570165d9bfdc0f99972fc526e705d0fa2dbbae5741"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-laptop-hp-lenovo",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "HP EliteBook 640 G11 თუ Lenovo 83HS0024RK: გამყიდველის წონა თუ OLED",
+      "excerpt": "PCShop-ის ჩანაწერი HP-ს 1.39 კგ-ს და Lenovo-ს 16-ინჩიან OLED-ს უთითებს; HP-ის ელემენტის/წონის წყვილი და Lenovo-ს ადგილობრივი კომპლექტაცია ყუთისა და ნაწილის კოდით ცალკე გადაამოწმეთ.",
+      "bodyMarkdown": "HP EliteBook 640 G11 და Lenovo IdeaPad Slim 5 16IRH10 ერთსა და იმავე მყიდველს ავტომატურად არ ეკუთვნის. Lenovo-ს განსახილველი კოდია I37249, ნაწილის კოდი 83HS0024RK; PCShop-ის დათარიღებული ჩანაწერი ამ კოდს 16-ინჩიან OLED 2880x1800 ეკრანს, 500 nit-ს, 80Wh-ს, 1.76 კგ-სა და FreeDOS-ს მიაწერს. Lenovo-ს სერიის PSREF ამ მონაცემებს ვარიანტად აჩვენებს, მაგრამ ადგილობრივი ყუთის შიგთავსს ვერ ცვლის. HP-ის გამყიდველის ჩანაწერი ამ შეთავაზებას 56Wh, 1.39 კგ და FreeDOS-ს მიაწერს; HP-ის სერიის ცხრილი 56Wh-სა და 1.39 კგ-ს ამავე ერთეულთან არ აკავშირებს, ამიტომ ყუთისა და ნაწილის კოდი შეკვეთამდე შეადარეთ.\n\n## თუ ჩანთა ყოველდღე მიგაქვთ\n\nHP განიხილეთ მხოლოდ მაშინ, როცა გამყიდველის ჩანაწერში მითითებული 1.39 კგ და შესაბამისი ნაწილის/ელემენტის მონაცემი დადასტურებულია და ყოველდღიური გადაადგილება მთავარი მოთხოვნაა. ეს უპირატესობა ჩანთის წონას ეხება და არა დადასტურებულ წარმადობას. FreeDOS-ის გამო საჭირო ოპერაციული სისტემის პირობები და დაყენების გზა წინასწარ დაგეგმეთ. [HP-ის ზუსტი ბარათი](/products/find-pcshop-12) ადგილობრივ შეთავაზებაზე გადაგიყვანთ.\n\n## თუ ეკრანი და ელემენტი წყვეტს არჩევანს\n\nLenovo 83HS0024RK აირჩიეთ, თუ 2880x1800 OLED, 500 nit და 80Wh თქვენთვის უფრო მნიშვნელოვანია, ვიდრე FreeDOS-ის პირობებისა და საჭირო ოპერაციული სისტემის ცალკე დაგეგმვა. ამ მონაცემებს Lenovo-ს კონკრეტულ კოდს ვუკავშირებთ და არა მთელ IdeaPad Slim 5 სერიას. [Lenovo-ს ზუსტი ბარათი](/products/find-pcshop-10) სხვა კომპლექტაციით არ ჩაანაცვლოთ.\n\n## ვინ უნდა გამოტოვოს რომელი\n\nHP გამოტოვეთ, თუ 1.39 კგ-ის მიუხედავად მზა ოპერაციული სისტემა გჭირდებათ ან დიდი OLED ეკრანი სამუშაოს ძირითადი პირობაა. Lenovo გამოტოვეთ, თუ სისტემის ცალკე დაყენება არ გსურთ ან ჩანთაში 1.76 კგ თქვენთვის ზედმეტია. ორივე შემთხვევაში სერიის სახელით არჩევა შეცდომაში შეგიყვანთ.\n\n## არჩევის პრაქტიკული წესი\n\nჩანთაში ჩადეთ თქვენი ჩვეულებრივი სამუშაო ნივთები და შეაფასეთ, ყოველდღე წონის შემცირება უფრო ღირებულია თუ დიდი OLED სამუშაო ზედაპირი. შემდეგ დაწერეთ ერთი შეზღუდვა, რომელსაც იღებთ: HP-სთან FreeDOS და ეკრანის ზომა უნდა დაგეგმოთ, Lenovo-სთან კი FreeDOS და 1.76 კგ. ეს შედარებაა და არა ხელით ჩატარებული ტესტი.\n\n## საბოლოო გადაწყვეტილება\n\nთუ მყიდველი ყოველდღე გადაადგილდება, HP EliteBook 640 G11-ს მხოლოდ გამყიდველის ჩანაწერში მითითებული წონისა და შესაბამისი ნაწილის დადასტურების შემდეგ განვიხილავ; FreeDOS-ის პირობებიც მისაღები უნდა იყოს. მისი ზუსტი შეთავაზება გახსენით [PCShop-ის HP გვერდზე](https://pcshop.ge/shop/hp-elitebook-640-g11-3/). Lenovo-ზე გადადით მაშინ, როცა 2880x1800 OLED, 500 nit და 80Wh გადაადგილების წონის შეზღუდვას გადაწონის.\n\n## შეზღუდვა\n\nეს არ არის ეკრანის ხარისხის, ელემენტის ხანგრძლივობის ან წარმადობის დამოუკიდებელი ტესტი. 2026 წლის 7 სექტემბრის ფასის ჩანაწერი, მარაგი, მიწოდება და დაბრუნება გამყიდველთან ცალკე გადაამოწმეთ. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "ლეპტოპი",
+        "HP",
+        "Lenovo",
+        "სამუშაო",
+        "შედარება"
+      ],
+      "productIDs": [
+        "pcshop-12",
+        "pcshop-10"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/hp-elitebook-640-g11-3/",
+        "https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/",
+        "https://support.hp.com/in-en/document/ish_10387841-10388131-16",
+        "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Slim_5_16IRH10/IdeaPad_Slim_5_16IRH10_Spec.pdf"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "d53a6935fb36823f60f85b989660ebd2a29b24b1346b7258e6ccf98525da31fb",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "323aa5b2caf4a0d121e22bc5f843dec2958769e04f1a6beee28c1e44ea2ae02f",
+        "selectionRowSha256": "323aa5b2caf4a0d121e22bc5f843dec2958769e04f1a6beee28c1e44ea2ae02f",
+        "contentHash": "d53a6935fb36823f60f85b989660ebd2a29b24b1346b7258e6ccf98525da31fb",
+        "receiptHash": "b1cfdb1e9d48711333051b1ff444674ed0cc793a0a43091ce283a1a22befee7b"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-laptop-lenovo-dell",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "Lenovo 83HS0024RK თუ DELL PV15250: ეკრანი თუ მზა Windows",
+      "excerpt": "PCShop-ის ჩანაწერი Lenovo-ს OLED/80Wh/FreeDOS-ს და DELL-ს Windows 11 Home/54Wh-ს მიაწერს; სერიის აღწერა ადგილობრივი ყუთის ზუსტ შიგთავსს ავტომატურად ვერ ამტკიცებს.",
+      "bodyMarkdown": "Lenovo IdeaPad Slim 5 16IRH10 და DELL Pro 15 Essential PV15250 ერთმანეთს მხოლოდ სახელით არ უნდა შეადაროთ. Lenovo-ს ადგილობრივი SKU I37249 და ნაწილის კოდი 83HS0024RK-ზე PCShop-ის ჩანაწერი 16-ინჩიან OLED 2880x1800-ს, 500 nit-ს, 80Wh-ს, 1.76 კგ-სა და FreeDOS-ს აჩვენებს. DELL-ის ზუსტი გამყიდველის ჩანაწერი Windows 11 Home-ს, 54Wh-სა და 1.94 კგ-ს მიაწერს; DELL-ის სერიის/აშშ-ის გვერდი ამ მონაცემებს ადგილობრივ შეთავაზებას ავტომატურად არ უკავშირებს. ამიტომ I35897-ის კორპუსისა და ნაწილის კოდი შეკვეთამდე თავად შეთავაზებაში შეადარეთ.\n\n## ვის სჭირდება Lenovo\n\n[Lenovo-ს ზუსტი ბარათი](/products/find-pcshop-10) აირჩიეთ, თუ გამყიდველის ჩანაწერში მითითებული OLED 2880x1800 და 83HS0024RK-ის ყუთის მონაცემი დადასტურებულია, ხოლო FreeDOS-ის პირობები და საჭირო ოპერაციული სისტემის გზა წინასწარ დაგეგმილი გაქვთ. 500 nit და 80Wh ამ კონკრეტულ კოდს მიეკუთვნება; სხვა IdeaPad Slim 5-ზე ავტომატურად ნუ გადაიტანთ.\n\n## ვის სჭირდება DELL\n\n[DELL-ის ზუსტი ბარათი](/products/find-pcshop-11) აირჩიეთ, თუ Windows 11 Home-ის მზად არსებობა უფრო მნიშვნელოვანია, ვიდრე Lenovo-ს OLED ეკრანი. DELL-ის 54Wh და 1.94 კგ კონკრეტულ PV15250 ჩანაწერში გამყიდველის მითითებაა; I35897-ის კორპუსი და შესაბამისი ნაწილის კოდი შეკვეთამდე შეამოწმეთ. ეს შედარება არ ამბობს, რომ ერთი ბრენდი ყველა სამუშაოში უკეთესია.\n\n## ვის არ უნდა აირჩიოს\n\nLenovo გამოტოვეთ, თუ მზა Windows გჭირდებათ და საჭირო ოპერაციული სისტემის გზა თქვენთვის დამატებითი საქმეა. DELL გამოტოვეთ, თუ 1.94 კგ ჩანთაში ზედმეტია ან OLED 2880x1800 თქვენი მთავარი მოთხოვნაა. ორივე შემთხვევაში სრული SKU და კომპლექტაცია გამყიდველთან შეადარეთ.\n\n## ჩემი არჩევანი\n\nთუ გადაწყვეტილებას მხოლოდ ორი კრიტერიუმი წყვეტს, Lenovo-ს ავირჩევდი მხოლოდ მაშინ, როცა გამყიდველის ჩანაწერში მითითებული OLED/80Wh კონკრეტულად 83HS0024RK-ს ემთხვევა და FreeDOS-ის პირობები მისაღებია. თუ ლეპტოპი მზად უნდა ჩაირთოს Windows 11 Home-ით, DELL-ს გადავხედავდი. პირველ შემთხვევაში გახსენით [PCShop-ის Lenovo შეთავაზება](https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/), მეორე შემთხვევაში DELL-ის ზუსტი გვერდი ზემოთ.\n\n## შეზღუდვა\n\nეს არ არის ეკრანის, ელემენტის ან წარმადობის დამოუკიდებელი ტესტი. 2026 წლის 7 სექტემბრის ფასის ჩანაწერი, მარაგი, მიწოდება და დაბრუნება გამყიდველთან გადაამოწმეთ. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "ლეპტოპი",
+        "Lenovo",
+        "Dell",
+        "შედარება",
+        "ოფისი"
+      ],
+      "productIDs": [
+        "pcshop-10",
+        "pcshop-11"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/",
+        "https://pcshop.ge/shop/dell-pro-15-essential-pv15250/",
+        "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Slim_5_16IRH10/IdeaPad_Slim_5_16IRH10_Spec.pdf",
+        "https://www.dell.com/en-us/shop/dell-laptops/dell-pro-15-essential-laptop/spd/dell-pro-pv15250-laptop"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "36268450cc58ca9092d7053b5b93e4e5486bd7d97c166583c6915c71171d3842",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "2b2798c73b5e22f754c0441b0532f968514fe7f0c271e4101afa41fb314944fe",
+        "selectionRowSha256": "2b2798c73b5e22f754c0441b0532f968514fe7f0c271e4101afa41fb314944fe",
+        "contentHash": "36268450cc58ca9092d7053b5b93e4e5486bd7d97c166583c6915c71171d3842",
+        "receiptHash": "4899911641d55a254ce5dd79e7ddf5a0dcd75f45609f9fcd0e701d62c7b18a19"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-laptop-ports-three",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "სამუშაო ლეპტოპის პორტები: Lenovo, DELL თუ HP რომელი მოწყობილობისთვისაა",
+      "excerpt": "ამ სამ ადგილობრივ შეთავაზებაში Lenovo-ს, DELL-ისა და HP-ის HDMI, USB-C, USB-A, Thunderbolt 4 და RJ-45 პორტები განსხვავდება. BOYA-სთვის USB აუდიოს მხარდაჭერა ცალკე გადაამოწმეთ.",
+      "bodyMarkdown": "სამუშაო ლეპტოპის არჩევისას HDMI, USB-A და USB-C მხოლოდ სახელებად არ ჩამოწეროთ. [Lenovo IdeaPad Slim 5 16IRH10](/products/find-pcshop-10), [DELL Pro 15 Essential PV15250](/products/find-pcshop-11) და [HP EliteBook 640 G11](/products/find-pcshop-12) ამ შედარებაში სამი განსხვავებული პორტის ნაკრებია. [BOYA BY-M100UC](/products/find-pcshop-3) კი ცალკე Type-C მიკროფონია.\n\n## სამი რეალური განსხვავება\n\n**Lenovo 83HS0024RK:** PCShop-ის ჩანაწერი და Lenovo-ს სერიის PSREF HDMI 1.4b-ს, ორ USB-C-ს DP/PD-ითა და ორ USB-A-ს აჩვენებს; ადგილობრივი ყუთისა და ნაწილის კოდი მაინც შეადარეთ. ეს პრაქტიკული არჩევანია, თუ გარე ეკრანთან ერთად ორი USB-A აქსესუარის დატოვება გჭირდებათ. ზუსტი სავაჭრო გვერდია [Lenovo IdeaPad Slim 5-ის გვერდი](https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/).\n\n**DELL PV15250:** PCShop-ის ჩანაწერი ერთ USB-C-ს DP/PD-ით, HDMI 1.4-ს, ერთ USB-A 3.2-სა და ერთ USB-A 2.0-ს უთითებს, მაგრამ Dell-ის სერიის გვერდი USB-C PD-ს კორპუსისა და კონკრეტული კომპლექტაციის მიხედვით განიხილავს. I35897-ის კორპუსისა და პორტების ჩანაწერი ყიდვამდე შეთავაზებაში შეადარეთ.\n\n**HP EliteBook 640 G11:** PCShop-ის ჩანაწერი HDMI 2.1-ს, ორ USB4-C/Thunderbolt 4-ს DP/PD-ით, ორ USB-A-ს, RJ-45-სა და აუდიოკომბოს მიაწერს; CW0T6ET-ის ყუთი და ნაწილის კოდი შეადარეთ. აირჩიეთ, თუ სადენიანი ქსელი ან Thunderbolt-ის დოკი სამუშაოს ნაწილია.\n\n## BOYA-სთან არჩევა\n\nType-C კონექტორის არსებობა BOYA-ს აუდიომხარდაჭერას ავტომატურად არ ამტკიცებს. მონიტორისთვის ზემოთ ჩამოთვლილი DisplayPort/HDMI ჩანაწერი უფრო კონკრეტული მტკიცებულებაა, ხოლო BOYA-სთვის ლეპტოპის USB აუდიოს რეჟიმი და აპის აუდიოს წყარო ცალკე უნდა დადასტურდეს. [USB-IF-ის სპეციფიკაცია](https://www.usb.org/usb-type-cr-cable-and-connector-specification) საერთო კონექტორს ხსნის, მაგრამ კონკრეტულ მოწყობილობაზე მიკროფონის მუშაობას არ ამოწმებს.\n\n## ვინ უნდა გამოტოვოს\n\nარ აირჩიოთ DELL, თუ ორი USB-C პორტი ან RJ-45 აუცილებელია. არ აირჩიოთ Lenovo, თუ HDMI 2.1 ან Thunderbolt 4 არის მოთხოვნა. HP-ის უპირატესობა არ გამოიყენოთ არგუმენტად, თუ FreeDOS-ის შემთხვევაში თქვენთვის საჭირო ოპერაციული სისტემის არჩევისა და დაყენების გზა, ასევე საქმიანი პორტების რეალური საჭიროება, წინასწარ არ გაქვთ დადასტურებული. BOYA გადადეთ, სანამ პორტის აუდიორეჟიმი და აპის მხარდაჭერა არ დადასტურდება.\n\n## არჩევანის დასასრული\n\nორი USB-C და ორი USB-A-ს კომბინაციით Lenovo ავირჩევდი მრავალაქსესუარიანი სამუშაო მაგიდისთვის; ერთი USB-C-ით DELL მხოლოდ მაშინ, როცა HDMI 1.4 საკმარისია და Windows 11 Home გირჩევნიათ. RJ-45-სა და Thunderbolt 4-ს თუ იყენებთ, HP-ის [ზუსტი ჩანაწერი](/products/find-pcshop-12) უფრო შესაბამისი საწყისი არჩევანია. BOYA-სთვის საბოლოო გადაწყვეტილება მიიღეთ მხოლოდ აუდიორეჟიმის დადასტურების შემდეგ.\n\n## შეზღუდვა\n\nსტატიაში არ არის შესრულებული პორტების ან აუდიოს ხელით ტესტი და BOYA-ს უნივერსალური თავსებადობა არ დასტურდება. ფასი, მარაგი, მიწოდება და დაბრუნება გამყიდველთან გადაამოწმეთ. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "ლეპტოპი",
+        "პორტები",
+        "USB-C",
+        "HDMI",
+        "შედარება"
+      ],
+      "productIDs": [
+        "pcshop-10",
+        "pcshop-11",
+        "pcshop-12",
+        "pcshop-3"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/",
+        "https://pcshop.ge/shop/dell-pro-15-essential-pv15250/",
+        "https://pcshop.ge/shop/hp-elitebook-640-g11-3/",
+        "https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/",
+        "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Slim_5_16IRH10/IdeaPad_Slim_5_16IRH10_Spec.pdf",
+        "https://www.dell.com/en-us/shop/dell-laptops/dell-pro-15-essential-laptop/spd/dell-pro-pv15250-laptop",
+        "https://support.hp.com/in-en/document/ish_10387841-10388131-16",
+        "https://www.usb.org/usb-type-cr-cable-and-connector-specification"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "4ced4dcc47cef747c653ff2ca3416a8b943bb44cee01848036b4bd5f9fe2ce60",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "9e16821746818522b3247f0ea072ad726176556edf1374a725c7e0419c4bb166",
+        "selectionRowSha256": "9e16821746818522b3247f0ea072ad726176556edf1374a725c7e0419c4bb166",
+        "contentHash": "4ced4dcc47cef747c653ff2ca3416a8b943bb44cee01848036b4bd5f9fe2ce60",
+        "receiptHash": "66c64dfa3a05fed4c465e671166283d85e3549114e3cb7e50a727cb0c40d2c3b"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-laptop-travel-power",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "მოგზაურობის ლეპტოპი ჯერ აირჩიეთ, powerbank კი ცალკე გადაამოწმეთ",
+      "excerpt": "ჯერ Lenovo-სა და DELL-ს შორის გადაწყვიტეთ წონა, ეკრანი და ოპერაციული სისტემა; Anker ცალკე, დაუდასტურებელი კვების ვარიანტია და არც ერთ ლეპტოპთან ავტომატურად თავსებადად არ ითვლება.",
+      "bodyMarkdown": "მოგზაურობისთვის ლეპტოპის არჩევა მხოლოდ ჩანთაში ჩატევას არ ნიშნავს. [Lenovo 83HS0024RK](/products/find-pcshop-10) PCShop-ის ჩანაწერში 1.76 კგ, 80Wh და FreeDOS არის მითითებული; [DELL PV15250](/products/find-pcshop-11)-ის ჩანაწერში კი 1.94 კგ, 54Wh და Windows 11 Home. ორივე შემთხვევაში ნაწილისა და შეკვეთის კოდი ცალკე შეადარეთ; [Anker PowerCore III Elite 25600](/products/find-pcshop-4) კი დამოუკიდებელი გარე კვების წყაროა.\n\n## როცა ჩანთა მთავარია\n\nამ მასალაში მთავარი შედარება Lenovo-სა და DELL-ს შორისაა, ამიტომ ისინი თქვენს რეალურ ჩანთასთან შეადარეთ. Lenovo-ს ჩანაწერში მითითებული 1.76 კგ ამ ორ ვარიანტში ნაკლები წონაა, ხოლო 80Wh მხოლოდ ბატარეის ნომინალური მაჩვენებელია და მუშაობის ხანგრძლივობას არ გვპირდება — ეკრანი და დატვირთვა განსხვავდება. DELL-ის ჩანაწერში მითითებული 1.94 კგ და 54Wh სხვა კომპრომისია. DELL-ის სერიის გვერდი ადგილობრივი შეთავაზების ყველა დეტალს ავტომატურად ვერ ამტკიცებს, ამიტომ კონკრეტული კოდი ადგილზე შეადარეთ. Windows 11 Home DELL-ისთვის მზა გარემოს საკითხს ხურავს; Lenovo-ს FreeDOS-ზე კი წინასწარ უნდა გადაწყვიტოთ საჭირო ოპერაციული სისტემა და მისი დაყენების გზა.\n\n## სად უნდა გაჩერდეს გარე კვების წყაროს იდეა\n\nAnker-ის [ზუსტი გამყიდველის ბარათი](https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/) პროდუქტს p/n A1291H11-ად ასახელებს, ხოლო [Anker-ის ოფიციალური სახელმძღვანელო](https://lp.ankerjapan.com/hubfs/aoos/manual/A1291Manual.pdf) პროდუქტს A1291-ად აღნიშნავს. ეს ორი აღნიშვნა თავისთავად ვერ ადასტურებს, რომ ადგილობრივი გვერდი იმავე გასაყიდ ერთეულს ეხება. ამიტომ ამ კონკრეტულ შეთავაზებას Lenovo-ს ან DELL-ის კვების წყაროდ ნუ დაეყრდნობით: ზუსტი ერთეული, ქარხნული მარკირება და ლეპტოპთან შესაბამისობა დადასტურებამდე უცნობია. გამყიდველისგან მოითხოვეთ ქარხნული ეტიკეტის ფოტო ან ოფიციალურ დოკუმენტთან წერილობითი დაკავშირება; მანამდე შეკვეთა არ გააკეთოთ.\n\n## ვის ეკუთვნის რომელი გადაწყვეტილება\n\n**Lenovo:** განიხილეთ, თუ გამყიდველის ჩანაწერში მითითებული წონა/OLED/80Wh და კონკრეტული ნაწილი თქვენს მოთხოვნას ემთხვევა და FreeDOS მისაღებია. **DELL:** განიხილეთ, თუ გამყიდველის ჩანაწერში მითითებული Windows 11 Home/წონა და კორპუსის მონაცემი დაგაკმაყოფილებთ. **Anker:** შეკვეთა არ დაიწყოთ, სანამ ზუსტი ერთეული და ლეპტოპთან თავსებადობა დოკუმენტურად არ დადასტურდება.\n\n## საბოლოო არჩევანი\n\nმოგზაურობისთვის მთავარ არჩევანად Lenovo-ს დავტოვებ, თუ OLED ეკრანი, ამ ჩანაწერში მითითებული 1.76 კგ და FreeDOS-ის პირობები თქვენთვის მისაღებია; 80Wh-ს მხოლოდ ნომინალურ მონაცემად შევაფასებ და არა მუშაობის დროის დაპირებად. მისი ზუსტი შეთავაზება გახსენით [PCShop-ის Lenovo გვერდზე](https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/). DELL აირჩიეთ მზა Windows-ის პრიორიტეტით. Anker-ის განხილვა მხოლოდ დოკუმენტური შესაბამისობის შემდეგ დაიწყეთ.\n\n## შეზღუდვა\n\nეს არ არის ფრენის, ელემენტის ან დატენვის ტესტი. ბატარეის გადატანის წესები გადაამოწმეთ ავიაკომპანიასთან; ფასი, მარაგი, მიწოდება და დაბრუნება გამყიდველთან შეამოწმეთ. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "ლეპტოპი",
+        "მოგზაურობა",
+        "power bank",
+        "ჩანთა",
+        "დამუხტვა"
+      ],
+      "productIDs": [
+        "pcshop-10",
+        "pcshop-11",
+        "pcshop-4"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/",
+        "https://pcshop.ge/shop/dell-pro-15-essential-pv15250/",
+        "https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/",
+        "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Slim_5_16IRH10/IdeaPad_Slim_5_16IRH10_Spec.pdf",
+        "https://www.dell.com/en-us/shop/dell-laptops/dell-pro-15-essential-laptop/spd/dell-pro-pv15250-laptop",
+        "https://www.iata.org/en/programs/cargo/dgr/lithium-batteries/",
+        "https://lp.ankerjapan.com/hubfs/aoos/manual/A1291Manual.pdf"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "18c8a577572ca3c78614fadc6aef2b5e85302bb7321b6441e5b1752daa448128",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "648f23ee20840dc35ac9c1c04082621fdb2d138c590e84fa11092927f5496836",
+        "selectionRowSha256": "648f23ee20840dc35ac9c1c04082621fdb2d138c590e84fa11092927f5496836",
+        "contentHash": "18c8a577572ca3c78614fadc6aef2b5e85302bb7321b6441e5b1752daa448128",
+        "receiptHash": "8a79673af8511508c5e63b0d96ee47e0cd833feb64cbc318a522da5b489d0036"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-mic-phone-setup",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "BOYA BY-M100UC ტელეფონისთვის: ჯერ Type-C გზა შეამოწმეთ",
+      "excerpt": "BY-M100UC-ის ყიდვა მხოლოდ მაშინ არის ლოგიკური, როცა ტელეფონი და ჩასაწერი აპი გარე USB Type-C აუდიოს იღებს. კონექტორის ფორმა უნივერსალური მტკიცებულება არ არის.",
+      "bodyMarkdown": "[BOYA BY-M100UC-ის შეთავაზება](/products/find-pcshop-3) არის პირდაპირ USB Type-C პორტში მისაერთებელი მიკროფონი ტელეფონის სცენარისთვის. ყიდვის სწორი კითხვა არ არის მხოლოდ „აქვს თუ არა ტელეფონს Type-C პორტი?“ ჯერ უნდა გადაამოწმოთ, უჭერს თუ არა კონკრეტული ტელეფონი გარე USB აუდიოს მხარს და ირჩევს თუ არა თქვენი კამერის ან ჩანაწერის აპი ამ წყაროს.\n\n## რას ადასტურებს წყარო\n\nBOYA-ს პროდუქტის ჩანაწერში BY-M100UC აღწერილია როგორც Type-C მოწყობილობებისთვის განკუთვნილი პატარა, ყველა მიმართულებით მიმღები მიკროფონი. მწარმოებლის გვერდზე მითითებულია 50Hz-დან 18kHz-მდე სიხშირის დიაპაზონი, 180 გრადუსით მბრუნავი თავი, პირდაპირი შეერთება და ქარის დამცავი ღრუბელი. მოწყობილობა თავად ტელეფონის ენერგიას იყენებს და ცალკე ელემენტი არ სჭირდება. ეს არის სპეციფიკაცია და არა ჩემი აუდიო ტესტი.\n\nAndroid-ის ოფიციალური დოკუმენტაცია განმარტავს, რომ ყველა Android მოწყობილობა USB host რეჟიმის მხარდაჭერას გარანტირებულად არ იძლევა. სწორედ ამიტომ USB-C კონექტორი მარტო საკმარისი პასუხი არ არის. ტელეფონის მოდელის დოკუმენტში მოძებნეთ გარე USB აუდიოს ან host რეჟიმის მხარდაჭერა, შემდეგ აპის პარამეტრებში შეამოწმეთ, ჩანს თუ არა გარე მიკროფონი.\n\n## ვის შეეფერება\n\nეს მოდელი განიხილეთ, თუ ტელეფონით იღებთ ვიდეოს, ზარს ან ხმოვან ჩანაწერს და გჭირდებათ პირდაპირ USB Type-C პორტში მისაერთებელი მიკროფონი. შეაჩერეთ ყიდვა, თუ ტელეფონის პორტის აუდიო რეჟიმი უცნობია, აპი მხოლოდ ტელეფონის შიდა მიკროფონს იყენებს, ან უსადენო სისტემა გჭირდებათ. BY-M100UC არ უნდა აგერიოთ 3.5 მმ, Lightning ან ჩვეულებრივ USB-A მოდელში.\n\nPCShop-ის ზუსტ ჩანაწერში მითითებულია BOYA BY-M100UC, p/n BY-M100UC, SKU I23310, USB Type-C კონექტორი და 79 GEL-ის ფასი. ეს ფასი 2026-09-08-ის ცოცხალ გვერდზე ჩანს. გვერდზე მარაგის შეტყობინება ჩანს, მაგრამ დამოუკიდებელი მარაგის დადასტურება არ გვაქვს. შეკვეთამდე თავად გადაამოწმეთ საბოლოო ფასი, გარანტია, მიწოდება და დაბრუნება.\n\n## ყიდვამდე შემოწმება\n\n1. იპოვეთ თქვენი ტელეფონის ოფიციალური ტექნიკური გვერდი და დაადასტურეთ, რომ USB Type-C პორტი გარე USB აუდიოს იღებს.\n2. აპის დოკუმენტაციაში ან მხარდაჭერის გვერდზე მოძებნეთ, იღებს თუ არა ის გარე აუდიოს. თუ შესაძლებელია, გამყიდველის დემო ან უკვე თავსებადი მიკროფონით გადაამოწმეთ.\n3. თუ ადაპტერს იყენებთ, ცალკე შეამოწმეთ მისი აუდიო მხარდაჭერა. Type-C-ის ფორმა და აუდიოს გადაცემა ერთი და იგივე არ არის.\n4. მხოლოდ ამის შემდეგ გახსენით [PCShop-ის ზუსტი გამყიდველის გვერდი](https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/) და შეადარეთ p/n-ს.\n\nUSB-IF-ის კონექტორის სპეციფიკაცია საერთო ფიზიკურ სტანდარტს აღწერს; ის არ ადასტურებს თქვენი ტელეფონისა და აპის თავსებადობას. ამიტომ ამ კანდიდატს უნივერსალურ მობილურ მიკროფონად არ ვასაღებ.\n\nTrendingNow მხოლოდ ზუსტ გამყიდველის გვერდზე გადაგიყვანთ და არც მარაგს ფლობს, არც შეკვეთას იღებს. ფასი და სავაჭრო პირობები შეიძლება შეიცვალოს. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "მიკროფონი",
+        "USB Type-C",
+        "ტელეფონი",
+        "BOYA",
+        "თავსებადობა"
+      ],
+      "productIDs": [
+        "pcshop-3"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/",
+        "https://cn.boya-mic.com/product/by-m100uc",
+        "https://developer.android.com/develop/connectivity/usb/host",
+        "https://www.usb.org/usb-type-cr-cable-and-connector-specification",
+        "https://device.report/boya/by-m100uc",
+        "https://www.cliftoncameras.co.uk/uploads/specifications/BOYA%20BY-M100UC%20Type-C%20Miniature%20Condenser%20Microphone%20Specs.pdf"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "f28e4e46ac57408570cdcea69592584d3a3881fb96b7b72cb43a8ec2118a8a81",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "e40d3d2df2c9c8b69e49cf425aca0f1cb06bcf8f75551ce28ef39efe5202fd38",
+        "selectionRowSha256": "e40d3d2df2c9c8b69e49cf425aca0f1cb06bcf8f75551ce28ef39efe5202fd38",
+        "contentHash": "f28e4e46ac57408570cdcea69592584d3a3881fb96b7b72cb43a8ec2118a8a81",
+        "receiptHash": "1d311b670b8111724426014c3abf8daa34a4ccba2d858e86e8048fe882a0b8e8"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-mouse-ergonomic",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "M650L თუ Pebble 2: სამუშაოსთვის რომელი არჩევანი გერგებათ",
+      "excerpt": "M650L და Pebble 2 M350S ორივე უსადენო მაუსია, მაგრამ ზომისა და კავშირის საჭიროება განსხვავდება. არჩევანი გააკეთეთ ხელის ზომის, სამუშაო ადგილისა და მიმღების საჭიროების მიხედვით.",
+      "bodyMarkdown": "თუ ახალი მაუსი გჭირდებათ, პირველ რიგში ორი რამ გაარკვიეთ: გსურთ უფრო დიდი კორპუსი მუდმივი სამუშაო ადგილისთვის, თუ მსუბუქი Bluetooth ვარიანტი, რომელსაც ჩანთაში მარტივად ჩაალაგებთ? ორივე მოდელი უსადენო მაუსია, მაგრამ [Logitech Signature M650L-ის შეთავაზება](/products/find-pcshop-1) და [Logitech Pebble 2 M350S-ის შეთავაზება](/products/find-pcshop-2) ზომისა და კავშირის განსხვავებულ საჭიროებას პასუხობს.\n\n## როდის აქვს აზრი M650L-ს\n\nLogitech-ის ოფიციალური აღწერა M650L-ს დიდი ხელებისთვის რეკომენდებულ ზომად ასახელებს და ასევე მიუთითებს კონტურულ ფორმაზე, ცერის რბილ საყრდენსა და გვერდით რეზინის ზედაპირებზე. ეს არის მწარმოებლის აღწერა და არა დამოუკიდებელი ერგონომიული ტესტი. ამიტომ M650L განიხილეთ მაშინ, თუ დიდი ხელისთვის შექმნილი ფორმა გჭირდებათ ან მაუსს ერთ მუდმივ სამუშაო ადგილზე იყენებთ. თუ პატარა მაგიდა, პატარა ხელი ან ხშირი გადაადგილება გაქვთ, უფრო დიდი მოდელი ავტომატურად უკეთესი არ ხდება.\n\nPCShop-ის ჩანაწერში M650L მითითებულია როგორც Logitech Signature M650L, p/n 910-006236, SKU I28705. გვერდზე ნაჩვენები ფასი 99 GEL-ია, რომელიც 2026-09-08-ზე გადავამოწმე. მარაგი დამოუკიდებლად არ დამიდასტურებია, ამიტომ ყიდვამდე თავად გადაამოწმეთ ფასი, მარაგი, მიწოდება და დაბრუნების პირობა.\n\n## როდის ჯობს Pebble 2 M350S\n\nPebble 2 M350S უფრო ლოგიკური კანდიდატია, თუ გსურთ Bluetooth-ით დაკავშირება და გადასატანი მაუსი. Logitech-ის მხარდაჭერის სპეციფიკაციაში წერია, რომ მოდელი მუშაობს Bluetooth Low Energy-ით და თავსებადია Logi Bolt USB მიმღებთან, მაგრამ მიმღები კომპლექტში არ შედის. თუ თქვენს კომპიუტერს Bluetooth არ აქვს, ცალკე Logi Bolt მიმღები დაგჭირდებათ. ნებისმიერი USB მიმღები თავსებადად ვერ ჩაითვლება.\n\nPCShop-ის თეთრი ვარიანტის ჩანაწერია Logitech Pebble 2 M350S, p/n 910-007013, SKU I31167. იმ გვერდზე ნაჩვენები ფასი 75 GEL-ია და 2026-09-08-ზე გადავამოწმე. ცოცხალ გვერდზე ასევე ჩანს მიმღების არქონის ჩანაწერი. მარაგისა და საბოლოო პირობების დამოუკიდებელი დადასტურება არ გვაქვს. ზუსტი შეთავაზება გახსენით [PCShop-ის Pebble 2 გვერდზე](https://pcshop.ge/shop/logitech-pebble-2-m350s-bluetooth-white/).\n\n## ზომა და წონა\n\nPebble 2-ის ოფიციალურ სპეციფიკაციაში თვითონ მაუსისთვის მოცემულია 106,7 × 58,7 × 26,62 მმ და 53 გრამი მიმღებისა და ელემენტის გარეშე. PCShop-ის გვერდზე ნაჩვენები 8 × 4 × 12 სმ და 0,15 კგ მნიშვნელობები მოწყობილობის ოფიციალურ ზომად და წონად არ გამოიყენება, რადგან გვერდი მათ კონტექსტს არ განმარტავს.\n\n## ორი მოწყობილობის გადართვის შემოწმება\n\nPebble 2-ის ოფიციალურ გვერდზე პირდაპირ არის მითითებული EasySwitch 3. ამიტომ ის აირჩიეთ, თუ ორი მოწყობილობის შორის გადართვა მთავარი მოთხოვნაა. M650-ის ოფიციალურ გვერდზე აღწერილია Bluetooth და Logi Bolt, მაგრამ EasySwitch 3 არ არის ნახსენები, ამიტომ M650L ნუ იყიდით ორ ჰოსტს შორის ერთი ღილაკით გადართვის მოლოდინით. M650L ამ სცენარში მხოლოდ ერთი დადასტურებული Bluetooth ან Logi Bolt გზისთვის განიხილეთ.\n\n## ჩუმი კლიკის დაპირების საზღვარი\n\nM650-ის Logitech-ის გვერდზე SilentTouch არის მითითებული, ხოლო Pebble 2-ის გვერდზე quiet clicks. ორივე მწარმოებლის მტკიცებაა და ამ წყაროებში დამოუკიდებელი დეციბელების გაზომვა ან კონკრეტულ ოთახში აკუსტიკური ტესტი არ ჩანს. ამიტომ ჩუმი ოფისის არჩევანი ზომას, ფორმასა და ამ დაპირების მიღებას უნდა დაეყრდნოს; თუ ზუსტი ხმაურის დონე კრიტიკულია, მოსინჯვის გარეშე საბოლოო გადაწყვეტილება არ მიიღოთ.\n\n## სწრაფი გადაწყვეტილება\n\nაირჩიეთ M650L, თუ თქვენი მთავარი კრიტერიუმია Logitech-ის მიერ დიდი ხელებისთვის რეკომენდებული ფორმა და PCShop-ის ჩანაწერში მითითებული 5 ღილაკი. აირჩიეთ Pebble 2, თუ Bluetooth-ზე დაფუძნებული გადასატანი ვარიანტი გჭირდებათ და მზად ხართ, Logi Bolt მიმღები ცალკე შეიძინოთ მხოლოდ მაშინ, როცა კომპიუტერს Bluetooth არ აქვს.\n\nარჩევანი არ უნდა დაეყრდნოს სიტყვას „ერგონომიული“ ან მხოლოდ ფოტოს. წყაროები არ გვაძლევს თქვენი ხელის, ტკივილის ან ხანგრძლივი გამოყენების შეფასებას. ეს არის წყაროებზე დაფუძნებული შედარება და არა გამოყენების ტესტი.\n\n## ყიდვამდე შემოწმება\n\nგახსენით შესაბამისი [M650L-ის გამყიდველის გვერდი](/products/find-pcshop-1) ან [Pebble 2-ის გამყიდველის გვერდი](/products/find-pcshop-2), შეადარეთ SKU-ს და p/n-ს, შემდეგ PCShop-ზე გადაამოწმეთ ფასი, მარაგი, გარანტია, მიწოდება და დაბრუნება. პროდუქტის გვერდი გამყიდველის გვერდზე ავტომატურად არ გადაგიყვანთ: გახსნილ ბარათზე თავად დააჭირეთ „ნახე მაღაზიაში“. TrendingNow თავად არ ფლობს მარაგს და შეკვეთას არ იღებს.\n\nფასი და სავაჭრო პირობები შეიძლება შეიცვალოს. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "მაუსი",
+        "M650L",
+        "Pebble 2",
+        "Bluetooth",
+        "სამუშაო სივრცე"
+      ],
+      "productIDs": [
+        "pcshop-1",
+        "pcshop-2"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/",
+        "https://pcshop.ge/shop/logitech-pebble-2-m350s-bluetooth-white/",
+        "https://support.logi.com/hc/en-nz/articles/16171133096087-Specification-Pebble-Mouse-2-M350s",
+        "https://www.logitech.com/en-us/shop/p/m650-signature-wireless-mouse",
+        "https://www.logitech.com/en-us/shop/p/pebble-2-m350s-wireless-mouse",
+        "https://www.logitech.com/en-us/shop/p/pebble-2-m350s-wireless-mouse.910-007023",
+        "https://mobihome.ge/shop/mouse-logitech-pebble-mouse-2-m350s-tonal-graphite-bt-emea-808-dongleless/",
+        "https://www.rtings.com/mouse/tools/compare/logitech-signature-m650-logitech-pebble-mouse-2-m350s/31352/43931"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "a5352f0839017719976249593e269a08de22eeae907bc81be7b632d6e487b3c7",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "603bd752de284c748af052c7ecf538c6bc8d8e2abb723a8772bf2d9a6c22b5c9",
+        "selectionRowSha256": "603bd752de284c748af052c7ecf538c6bc8d8e2abb723a8772bf2d9a6c22b5c9",
+        "contentHash": "a5352f0839017719976249593e269a08de22eeae907bc81be7b632d6e487b3c7",
+        "receiptHash": "f3ee041ac2bd6ab3ed70d86a306e4bd7b9d5b43477be038cf948e8db78541b7c"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-mouse-gaming-work",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "სათამაშო 2E MG355 თუ M650L: რომელი მაუსი გამოგადგებათ სამუშაოდ",
+      "excerpt": "2E MG355 და Logitech M650L სხვადასხვა არჩევანია. თამაშის სახელმა სამუშაო კომფორტი არ უნდა გადაწყვიტოს, ხოლო M650L ბიზნეს-ვერსიად არ უნდა ჩათვალოთ.",
+      "bodyMarkdown": "[2E MG355 WL](/products/find-elite-2) და [Logitech Signature M650L](/products/find-pcshop-1) ერთი მიზეზით არ უნდა აირჩიოთ. ამ პაკეტში ყველაზე მკაფიო შემოწმებადი განსხვავება ფასია: 2026 წლის 7 სექტემბრის ჩანაწერში MG355 WL 54.99 GEL, M650L კი 99 GEL იყო. MG355-ის შეთავაზება gaming mouse-ადაა დასახელებული, ხოლო M650L-ის Logitech-ის გვერდი Bluetooth/Logi Bolt და SmartWheel-ს აღწერს; ეს არ არის სენსორის სიჩქარის ან კომფორტის ტესტი.\n\n## ზუსტი მოდელი პირველ ადგილზე\n\n2E-ს [მწარმოებლის გვერდი](https://shop.2egaming.com/en/new-2e-gaming-mg355-wl-wireless-gaming-mouse-in-four-stylish-colors/) და [Elite-ის ბარათი](https://ee.ge/geiming-mausi/2e-mg355-wl-pink-2e-mg355upk-wl-p21695) კონკრეტულ MG355 WL-ს ეხება. M650L-ის [Logitech-ის გვერდი](https://www.logitech.com/en-us/shop/p/m650-signature-wireless-mouse) და [PCShop-ის საცალო ბარათი](https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/) სხვა ხაზია. M650L-ის ეს საცალო ჩანაწერი ბიზნეს-ვერსიას არ ნიშნავს.\n\n## ვის უნდა აირჩიოს\n\n**2E MG355:** აირჩიეთ, თუ 54.99 GEL-იანი დაკვირვებული ფასი და gaming-კატეგორიის მოწყობილობა თქვენს სცენარს ერგება. გამოტოვეთ, თუ გჭირდებათ M650L-ის დოკუმენტირებული Bluetooth/Logi Bolt/SmartWheel გზა ან ამ ფორმისგან დამოუკიდებელი კომფორტის დადასტურება.\n\n**M650L:** აირჩიეთ, თუ დოკუმენტირებული Bluetooth/Logi Bolt, SmartWheel და 99 GEL-იანი დაკვირვებული ფასი უფრო სასარგებლოა თქვენს სამუშაო გზაში. გამოტოვეთ, თუ მცირე ზომა ან gaming-კატეგორიის იაფი ვარიანტი გჭირდებათ.\n\n## საბოლოო არჩევანი\n\nდოკუმენტირებული კავშირის გზისა და SmartWheel-ის საჭიროებისას M650L-ს ავირჩევდი; gaming-კატეგორიის და დაბალი დაკვირვებული ფასის პრიორიტეტში 2E განიხილეთ. გახსენით [PCShop-ის M650L გვერდი](https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/) ან [Elite-ის ზუსტი MG355 გვერდი](https://ee.ge/geiming-mausi/2e-mg355-wl-pink-2e-mg355upk-wl-p21695) შესაბამისი არჩევანისთვის.\n\n## შეზღუდვა\n\nსტატიაში არ არის სენსორის, ღილაკების, კავშირის ან კომფორტის დამოუკიდებელი ტესტი. ფასი, მარაგი, მიწოდება და დაბრუნება გამყიდველთან გადაამოწმეთ. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "მაუსი",
+        "სათამაშო",
+        "სამუშაო",
+        "ღილაკები",
+        "არჩევა"
+      ],
+      "productIDs": [
+        "elite-2",
+        "pcshop-1"
+      ],
+      "sourceURLs": [
+        "https://ee.ge/geiming-mausi/2e-mg355-wl-pink-2e-mg355upk-wl-p21695",
+        "https://shop.2egaming.com/en/new-2e-gaming-mg355-wl-wireless-gaming-mouse-in-four-stylish-colors/",
+        "https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/",
+        "https://www.logitech.com/en-us/shop/p/m650-signature-wireless-mouse"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "dba8081f198a995f6124d6f33927a3639ca0e6c3f7e3c138257cc51f3d8cd8e6",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "b1e78f9d1be2274c5b27ad485cdbad2d48edb76317fa67492eef19c3d093eebd",
+        "selectionRowSha256": "b1e78f9d1be2274c5b27ad485cdbad2d48edb76317fa67492eef19c3d093eebd",
+        "contentHash": "dba8081f198a995f6124d6f33927a3639ca0e6c3f7e3c138257cc51f3d8cd8e6",
+        "receiptHash": "9e312aa1c9c2fd26430a5544b74022db044e64bfa1558a8790a8ffa31b1c88a6"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-power-strip-six-outlets",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "Gembird SPG6-B-6C: ექვსი როზეტი ნამდვილად გჭირდებათ?",
+      "excerpt": "SPG6-B-6C სამუშაო მაგიდაზე რამდენიმე შტეფსელის შეკრებას ემსახურება. ექვსი როზეტი არ არის დატვირთვის ან უსაფრთხოების ავტომატური გარანტია.",
+      "bodyMarkdown": "[Gembird SPG6-B-6C-ის შეთავაზება](/products/find-pcshop-9) განიხილეთ მხოლოდ ერთი კონკრეტული პრობლემისთვის: ერთ კედლის როზეტთან რამდენიმე მოწყობილობის მიერთება გჭირდებათ და 1,8 მეტრიანი კაბელი თქვენს განლაგებას ჰყოფნის. ეს არ არის USB დამტენი და არც ლეპტოპის კვების ცალკე სისტემა.\n\n## რას ადასტურებს პროდუქტის წყაროები\n\nPCShop-ის ჩანაწერში მითითებულია Gembird SPG6-B-6C, p/n SPG6-B-6C, SKU I38554, 6 როზეტი, ჩართვის ჩამრთველი, 1,8 მეტრიანი კაბელი და USB დამტენის პორტის არარსებობა. ფასი 30 GEL-ია, რომელიც 2026-09-08-ზე გადავამოწმე. გვერდზე მარაგის შეტყობინება ჩანს, მაგრამ დამოუკიდებელი დადასტურება არ გვაქვს.\n\nTME-ის დამოუკიდებელ კატალოგში იგივე მოდელი აღწერილია როგორც 6-როზეტიანი დამცავი გამანაწილებელი და 1,8 მეტრი კაბელით. ეს კატალოგური აღწერაა და არა თქვენს სახლში ჩატარებული ელექტრო-უსაფრთხოების ტესტი.\n\n## როდის აქვს აზრი\n\nაირჩიეთ, თუ ერთ ადგილზე გაქვთ მონიტორი, დამტენი, კომპიუტერი ან სხვა დაბალი მოხმარების მოწყობილობები და კაბელების გადანაწილება 1,8 მეტრში ჯდება. გამოტოვეთ, თუ USB დამუხტვა, მონაცემთა გადაცემა, ძალიან გრძელი კაბელი ან მაღალი სიმძლავრის საყოფაცხოვრებო ტექნიკა გჭირდებათ. როზეტების რაოდენობა არ გეუბნებათ, რომ ნებისმიერი 6 მოწყობილობა ერთად უსაფრთხოდ იმუშავებს.\n\nElectrical Safety First-ის რჩევით, გამანაწილებელზე მიერთებული მოწყობილობების ჯამი არ უნდა აჭარბებდეს თვითონ გამანაწილებლის მაქსიმალურ დენს. ისინი ასევე გვირჩევენ, რომ ერთი გამანაწილებელი მეორეში არ შეაერთოთ, რადგან გადახურების რისკი იზრდება. თუ შტეფსელი ან კორპუსი ცხელდება, ჩანს დამწვრობის კვალი, ისმის ბზუილი ან სადენი დაზიანებულია, გამოყენება შეწყვიტეთ და კვალიფიციურ სპეციალისტს მიმართეთ.\n\n## ყიდვამდე მოკლე სია\n\n1. დათვალეთ რეალური მოწყობილობები, არა მხოლოდ თავისუფალი შტეფსელები.\n2. გაზომეთ კედლის როზეტიდან სამუშაო მაგიდამდე გზა.\n3. გადაამოწმეთ, რომ USB პორტი არ გჭირდებათ. ამ მოდელს ასეთი პორტი არ აქვს.\n4. შეადარეთ p/n და SKU [PCShop-ის ზუსტ გვერდზე](https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/) და მხოლოდ შემდეგ შეამოწმეთ ფასი, მარაგი, მიწოდება და დაბრუნება.\n\nეს ტექსტი არ ადგენს კონკრეტულ სახლში დასაშვებ დატვირთვას, არ ცვლის ელექტრიკოსის შეფასებას და არ არის პროდუქტის ტესტი. TrendingNow თავად არ ყიდის გამანაწილებელს. ფასი და პირობები შეიძლება შეიცვალოს. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "გამანაწილებელი",
+        "Gembird",
+        "როზეტი",
+        "კაბელი",
+        "ელექტრო უსაფრთხოება"
+      ],
+      "productIDs": [
+        "pcshop-9"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/",
+        "https://www.tme.eu/en/details/spg6-b-6c/socket-strips/gembird/",
+        "https://www.electricalsafetyfirst.org.uk/safety-advice/home-and-people/house-maintenance/overloading-sockets/",
+        "https://www.electricalsafetyfirst.org.uk/safety-advice/home-and-people/house-maintenance/extension-leads-cable-reels-and-block-adaptors/"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "f312cd59af99b8f2c6117c647788f584ded547f86699edd8e4bf27dfcd691e44",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "e95ea38b80e86a596c2d640121bca478fb1ae24c4f8cd2b73c44a448593fa7ea",
+        "selectionRowSha256": "e95ea38b80e86a596c2d640121bca478fb1ae24c4f8cd2b73c44a448593fa7ea",
+        "contentHash": "f312cd59af99b8f2c6117c647788f584ded547f86699edd8e4bf27dfcd691e44",
+        "receiptHash": "82be75adbf0b8aaba6d626c33ceff787deb272b9d76b2961de7fb80a93165ed3"
+      }
+    },
+    {
+      "schemaVersion": 1,
+      "slug": "workspace-powerbank-laptop-check",
+      "status": "OWNER_AUTHORIZED",
+      "reviewStatus": "owner_manual",
+      "reviewedAt": "2026-09-08T13:41:13.683Z",
+      "title": "Power bank და ლეპტოპი: Anker-ის ზუსტი ერთეული ჯერ გადაამოწმეთ",
+      "excerpt": "PCShop-ის Anker შეთავაზების p/n A1291H11 და ოფიციალური A1291 დოკუმენტი ერთსა და იმავე ერთეულად არ დასტურდება; ლეპტოპის დამუხტვის შეთავსება უცნობია.",
+      "bodyMarkdown": "[Anker PowerCore III Elite 25600](/products/find-pcshop-4) ამ ეტაპზე ლეპტოპის დამტენის შემცვლელად არ გირჩევთ. [PCShop-ის შეთავაზება](https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/) პროდუქტს p/n A1291H11-ად ასახელებს, ხოლო [Anker-ის ოფიციალური სახელმძღვანელო](https://lp.ankerjapan.com/hubfs/aoos/manual/A1291Manual.pdf) პროდუქტს A1291-ად აღნიშნავს. ეს ორი აღნიშვნა თავისთავად ვერ ადასტურებს, რომ ადგილობრივი გვერდი სახელმძღვანელოს იმავე გასაყიდ ერთეულს ეხება. ამიტომ რომელიმე გვერდის ელექტრულ ან ფიზიკურ მონაცემს ამ კონკრეტული შეთავაზების დადასტურებულ მახასიათებლად ნუ ჩათვლით.\n\n## ჯერ დაადგინეთ ლეპტოპის მოთხოვნა\n\nPower bank განიხილეთ მხოლოდ მაშინ, როცა ლეპტოპის ზუსტ დოკუმენტში USB-C-ით დამუხტვა, Power Delivery და საჭირო კვების რეჟიმი მკაფიოდ არის აღწერილი. USB-C კონექტორის არსებობა ამ ფუნქციას ავტომატურად არ ამტკიცებს. [USB-IF-ის სპეციფიკაცია](https://www.usb.org/usb-type-cr-cable-and-connector-specification) კონექტორისა და რეჟიმების საერთო ჩარჩოა, არა ამ შეთავაზების ან კონკრეტული ლეპტოპის თავსებადობის მტკიცებულება. Lenovo-ს, Dell-ისა და HP-ის დოკუმენტები ოჯახის ან კონკრეტული კონფიგურაციის მიხედვით უნდა წაიკითხოთ; მათი არსებობა ადგილობრივი Anker-ის ერთეულის იდენტობას ვერ ავსებს.\n\n## რა უნდა დაადასტუროთ გამყიდველთან\n\nმოითხოვეთ ქარხნული ეტიკეტის მკაფიო ფოტო ან წერილობითი პასუხი, სადაც ადგილობრივი p/n, მოდელის სახელწოდება და შესაბამისი ოფიციალური დოკუმენტი ერთმანეთთან არის მიბმული. სანამ ეს კავშირი არ დადასტურდება, A1291H11 და A1291 ერთ მოდელად არ წარმოადგინოთ. ამის შემდეგ ცალკე შეადარეთ დადასტურებული power bank-ის გამოსასვლელი ლეპტოპის დოკუმენტირებულ მოთხოვნას და კაბელის ორივე ბოლოს.\n\n## Hoco და Anker სხვადასხვა ამოცანას ემსახურება\n\nთუ ძველ მოწყობილობას Micro-USB სჭირდება, [Hoco X21 Plus](/products/find-pcshop-8) ცალკე საკაბელო ვარიანტია. [PCShop-ის ბარათი](https://pcshop.ge/shop/hoco-x21-plus-usb-to-micro-usb-charging-cable-blackred-2m/) მიუთითებს USB-A to Micro-USB დაბოლოებებსა და 2 მეტრ სიგრძეზე. ეს საკმარისია შესაერთებლისა და განლაგების პირველადი შემოწმებისთვის, მაგრამ არა ყველა დამუხტვის ან მონაცემთა რეჟიმის დასადასტურებლად. Hoco კონკრეტული Micro-USB მოწყობილობის კაბელია და ლეპტოპის კვების წყაროს არ ცვლის.\n\n## როდის უნდა შეჩერდეს შეკვეთა\n\nAnker-ის ეს შეთავაზება გამოტოვეთ, თუ გამყიდველი ზუსტ ქარხნულ კოდს ვერ ადასტურებს, ლეპტოპის დოკუმენტი USB-C დამუხტვას არ ამბობს, კაბელის ბოლოები არ ემთხვევა ან ორი დოკუმენტი სხვადასხვა ერთეულს აღწერს. ასეთ დროს ლეპტოპის საკუთარი დამტენი დატოვეთ მთავარ ვარიანტად. ეს სტატია არ გაძლევთ ამ კონკრეტული Anker-ის ყიდვის რეკომენდაციას, სანამ იდენტობა და კვების შესაბამისობა არ დადასტურდება.\n\n## სამოგზაურო გამოყენების ცალკე შემოწმება\n\nთუ power bank მგზავრობისთვის გჭირდებათ, ავიაკომპანიისა და გადამზიდავის მიმდინარე წესები ცალკე შეამოწმეთ. სახელწოდება ან ბატარეის ტევადობა თავისთავად არ ნიშნავს, რომ კონკრეტული ბარგის ან ფრენის წესი შესრულებულია; საჭირო ეტიკეტირება და დასაშვები პირობები გადამზიდავთან გადაამოწმეთ.\n\n## გადაწყვეტილების ჩეკლისტი\n\n1. ჩაიწერეთ ლეპტოპის სრული მოდელი და ადგილობრივი power bank-ის ზუსტი კოდი.\n2. ორივე მხარის ოფიციალურ დოკუმენტში მოძებნეთ დამუხტვის რეჟიმი და შესასვლელი ან გამოსასვლელი მოთხოვნა.\n3. შეადარეთ ქარხნული მარკირება, სახელწოდება და დოკუმენტი, შემდეგ კი კაბელის ბოლოები.\n4. თუ რომელიმე ველი უცნობია, შეკვეთა შეაჩერეთ და გამყიდველს წერილობით მიმართეთ.\n\n## შეზღუდვა\n\nაქ არ არის შესრულებული Anker-ისა და რომელიმე ლეპტოპის დამუხტვის ტესტი. ზუსტი გასაყიდი ერთეულის იდენტობა კვლავ უცნობია, ამიტომ არც შეთავსება, არც დამუხტვის სიჩქარე და არც უსაფრთხოება დადასტურებულად არ ჩაითვალოს. ფასი, მარაგი, მიწოდება და დაბრუნება გამყიდველთან გადაამოწმეთ. ტექსტი მომზადებულია ხელოვნური ინტელექტის დახმარებით.\n",
+      "category": "სამუშაო სივრცე",
+      "tags": [
+        "ლეპტოპი",
+        "power bank",
+        "USB-C",
+        "დამუხტვა",
+        "პორტები"
+      ],
+      "productIDs": [
+        "pcshop-4",
+        "pcshop-8"
+      ],
+      "sourceURLs": [
+        "https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/",
+        "https://psref.lenovo.com/syspool/Sys/PDF/IdeaPad/IdeaPad_Slim_5_16IRH10/IdeaPad_Slim_5_16IRH10_Spec.pdf",
+        "https://www.dell.com/en-us/shop/dell-laptops/dell-pro-15-essential-laptop/spd/dell-pro-pv15250-laptop",
+        "https://support.hp.com/in-en/document/ish_10387841-10388131-16",
+        "https://www.usb.org/usb-type-cr-cable-and-connector-specification",
+        "https://www.iata.org/en/programs/cargo/dgr/lithium-batteries/",
+        "https://service.anker.com/product-description/a085g000004x2BGAAY/powercore-iii-elite-26k-87w",
+        "https://lp.ankerjapan.com/hubfs/aoos/manual/A1291Manual.pdf",
+        "https://pcshop.ge/shop/hoco-x21-plus-usb-to-micro-usb-charging-cable-blackred-2m/"
+      ],
+      "sourceDate": "2026-09-07",
+      "disclosure": "სარედაქციო ბმული. ეს არ არის ფასიანი განთავსება ან დადასტურებული პარტნიორობა. ფასი, მარაგი, მიწოდება, გარანტია და დაბრუნება გადაამოწმე გამყიდველთან.",
+      "contentHash": "60c50b66a79d221babb63591b7f610abd3467ca7106a6999e5ce14d2650a6830",
+      "manualAdmission": {
+        "schemaVersion": 1,
+        "mode": "owner_authorized_manual",
+        "approvedAt": "2026-09-08T13:41:13.683Z",
+        "approvedBy": "owner",
+        "approvalReason": "მფლობელმა დაუშვა შეზღუდული ხელით გამოქვეყნება; ავტომატური SEO, ქართული, უსაფრთხოების, მოთხოვნის, გამოსახულების უფლებებისა და production gates კვლავ HOLD-ად რჩება.",
+        "automaticGateStatus": "HOLD",
+        "pendingAutomaticGates": [
+          "mechanicalGeorgianLint:FLAGS_REMAIN",
+          "contentSafety:PENDING_NOT_RUN",
+          "productKnowledge:PENDING_NOT_RUN",
+          "nativeGeorgianReview:PENDING",
+          "imageRights:UNKNOWN",
+          "marketDemand:UNKNOWN",
+          "aiSearchObservation:OBSERVED_ONLY_PRIORITY5",
+          "rootAcceptance:PENDING",
+          "productionMapping:NOT_GRANTED",
+          "publication:NOT_ATTEMPTED"
+        ],
+        "sourceArticleSha256": "d0a6f28891d934aac4a4dd440343ba1a3b22f78f06c2098697efba73f8a4fdc6",
+        "selectionRowSha256": "d0a6f28891d934aac4a4dd440343ba1a3b22f78f06c2098697efba73f8a4fdc6",
+        "contentHash": "60c50b66a79d221babb63591b7f610abd3467ca7106a6999e5ce14d2650a6830",
+        "receiptHash": "9b8374dff605057070590cc39a4f2fa4e4350b1deeacc7ba961066e892f8c05a"
+      }
+    }
+  ]
+}

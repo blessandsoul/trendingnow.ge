@@ -1,0 +1,736 @@
+{
+  "note": "Read-only HTTP and structured-data receipt, not visual QA or stock guarantee. Initial Alta 7 requests returned 403; Elite desk/iron lacked product markup; VELI returned maintenance. Only exact reviewed records enter separate local pilot.",
+  "observations": [
+    {
+      "id": "elite-6",
+      "checkedAt": "2026-09-07T17:34:19.764Z",
+      "status": 200,
+      "finalUrl": "https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309",
+      "h1": [
+        "ARDESTO Coffee Maker YCM-E1501"
+      ],
+      "products": [
+        {
+          "name": "ARDESTO Coffee Maker YCM-E1501",
+          "sku": "YCM-E1501",
+          "brand": {
+            "@type": "Brand",
+            "name": "ARDESTO"
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": "https://ee.ge/yavis-aparati/ardesto-coffee-maker-ycm-e1501-p10309",
+            "priceCurrency": "GEL",
+            "price": 369.99,
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Elite"
+            }
+          }
+        }
+      ],
+      "maintenance": false,
+      "bytes": 288125
+    },
+    {
+      "id": "elite-7",
+      "checkedAt": "2026-09-07T17:34:21.417Z",
+      "status": 200,
+      "finalUrl": "https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446",
+      "h1": [
+        "ARDESTO Kettle EKL-F500L"
+      ],
+      "products": [
+        {
+          "name": "ARDESTO Kettle EKL-F500L",
+          "sku": "EKL-F500L",
+          "brand": {
+            "@type": "Brand",
+            "name": "ARDESTO"
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": "https://ee.ge/chaidani/ardesto-kettle-ekl-f500l-p10446",
+            "priceCurrency": "GEL",
+            "price": 175.99,
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Elite"
+            }
+          }
+        }
+      ],
+      "maintenance": false,
+      "bytes": 233557
+    },
+    {
+      "id": "pcshop-1",
+      "checkedAt": "2026-09-07T17:34:17.440Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/",
+      "h1": [
+        "Logitech Signature M650L Bluetooth Graphite"
+      ],
+      "products": [
+        {
+          "name": "Logitech Signature M650L Bluetooth Graphite",
+          "sku": "I28705",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "99.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "129.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31",
+                  "priceType": "https://schema.org/ListPrice"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/logitech-signature-m650l-bluetooth-graphite/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 280679
+    },
+    {
+      "id": "pcshop-2",
+      "checkedAt": "2026-09-07T17:34:22.876Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/logitech-pebble-2-m350s-bluetooth-white/",
+      "h1": [
+        "Logitech Pebble 2 M350S Bluetooth White"
+      ],
+      "products": [
+        {
+          "name": "Logitech Pebble 2 M350S Bluetooth White",
+          "sku": "I31167",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "75.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "99.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31",
+                  "priceType": "https://schema.org/ListPrice"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/logitech-pebble-2-m350s-bluetooth-white/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 280690
+    },
+    {
+      "id": "pcshop-3",
+      "checkedAt": "2026-09-07T17:34:21.553Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/",
+      "h1": [
+        "BOYA BY-M100UC Wired Mic Type-C"
+      ],
+      "products": [
+        {
+          "name": "BOYA BY-M100UC Wired Mic Type-C",
+          "sku": "I23310",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "79.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "119.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31",
+                  "priceType": "https://schema.org/ListPrice"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/boya-by-m100uc-wired-mic-type-c/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 280247
+    },
+    {
+      "id": "pcshop-4",
+      "checkedAt": "2026-09-07T17:34:21.542Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/",
+      "h1": [
+        "Anker PowerCore III Elite 25600 Black"
+      ],
+      "products": [
+        {
+          "name": "Anker PowerCore III Elite 25600 Black",
+          "sku": "I25305",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "299.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "399.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31",
+                  "priceType": "https://schema.org/ListPrice"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/anker-powercore-iii-elite-25600-black/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 280569
+    },
+    {
+      "id": "pcshop-5",
+      "checkedAt": "2026-09-07T17:34:22.975Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/defender-spirit-gaming-desk/",
+      "h1": [
+        "Defender Spirit Gaming Desk"
+      ],
+      "products": [
+        {
+          "name": "Defender Spirit Gaming Desk",
+          "sku": "I28383",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "549.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "599.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31",
+                  "priceType": "https://schema.org/ListPrice"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/defender-spirit-gaming-desk/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 280090
+    },
+    {
+      "id": "pcshop-6",
+      "checkedAt": "2026-09-07T17:34:24.298Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/",
+      "h1": [
+        "BroadLink Smart Light Switch White 2-Gang LC1"
+      ],
+      "products": [
+        {
+          "name": "BroadLink Smart Light Switch White 2-Gang LC1",
+          "sku": "I25751",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "67.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "99.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31",
+                  "priceType": "https://schema.org/ListPrice"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/broadlink-smart-light-switch-white-2-gang-lc1/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 281214
+    },
+    {
+      "id": "pcshop-7",
+      "checkedAt": "2026-09-07T17:34:24.330Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/eufy-2c-add-on-camera-white/",
+      "h1": [
+        "Eufy 2C Add-On Camera White"
+      ],
+      "products": [
+        {
+          "name": "Eufy 2C Add-On Camera White",
+          "sku": "I26702",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "259.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "299.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31",
+                  "priceType": "https://schema.org/ListPrice"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/eufy-2c-add-on-camera-white/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 282962
+    },
+    {
+      "id": "pcshop-8",
+      "checkedAt": "2026-09-07T17:34:24.523Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/hoco-x21-plus-usb-to-micro-usb-charging-cable-blackred-2m/",
+      "h1": [
+        "Hoco X21 Plus USB to Micro-USB Charging Cable Black&#038;Red 2m"
+      ],
+      "products": [
+        {
+          "name": "Hoco X21 Plus USB to Micro-USB Charging Cable Black&amp;amp;Red 2m",
+          "sku": "I19635",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "7.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "16.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31",
+                  "priceType": "https://schema.org/ListPrice"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/hoco-x21-plus-usb-to-micro-usb-charging-cable-blackred-2m/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 280788
+    },
+    {
+      "id": "pcshop-9",
+      "checkedAt": "2026-09-07T17:34:24.515Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/",
+      "h1": [
+        "Gembird SPG6-B-6C 6&#215;1.8m Grey"
+      ],
+      "products": [
+        {
+          "name": "Gembird SPG6-B-6C 6x1.8m Grey",
+          "sku": "I38554",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "30.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/gembird-spg6-b-6c-6x1-8m-grey/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 276969
+    },
+    {
+      "id": "pcshop-10",
+      "checkedAt": "2026-09-07T17:34:24.660Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/",
+      "h1": [
+        "Lenovo IdeaPad Slim 5 16IRH10"
+      ],
+      "products": [
+        {
+          "name": "Lenovo IdeaPad Slim 5 16IRH10",
+          "sku": "I37249",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "2299.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                },
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "2699.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31",
+                  "priceType": "https://schema.org/ListPrice"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/lenovo-ideapad-slim-5-16irh10/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 294696
+    },
+    {
+      "id": "pcshop-11",
+      "checkedAt": "2026-09-07T17:34:33.346Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/dell-pro-15-essential-pv15250/",
+      "h1": [
+        "DELL Pro 15 Essential PV15250"
+      ],
+      "products": [
+        {
+          "name": "DELL Pro 15 Essential PV15250",
+          "sku": "I35897",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "2199.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/dell-pro-15-essential-pv15250/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 295770
+    },
+    {
+      "id": "pcshop-12",
+      "checkedAt": "2026-09-07T17:34:24.767Z",
+      "status": 200,
+      "finalUrl": "https://pcshop.ge/shop/hp-elitebook-640-g11-3/",
+      "h1": [
+        "HP EliteBook 640 G11"
+      ],
+      "products": [
+        {
+          "name": "HP EliteBook 640 G11",
+          "sku": "I37106",
+          "offers": [
+            {
+              "@type": "Offer",
+              "priceSpecification": [
+                {
+                  "@type": "UnitPriceSpecification",
+                  "price": "2999.00",
+                  "priceCurrency": "GEL",
+                  "validThrough": "2027-12-31"
+                }
+              ],
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://pcshop.ge/shop/hp-elitebook-640-g11-3/",
+              "seller": {
+                "@type": "Organization",
+                "name": "PCShop.ge",
+                "url": "https://pcshop.ge"
+              }
+            }
+          ]
+        }
+      ],
+      "maintenance": false,
+      "bytes": 292535
+    },
+    {
+      "id": "veli-0",
+      "checkedAt": "2026-09-07T17:34:24.837Z",
+      "status": 200,
+      "finalUrl": "https://veli.store/details/%E1%83%A7%E1%83%90%E1%83%95%E1%83%98%E1%83%A1-%E1%83%90%E1%83%9E%E1%83%90%E1%83%A0%E1%83%90%E1%83%A2%E1%83%98-ariete-1389-vintage-espresso-machine-blue/?sku=8003705113947",
+      "h1": [
+        "მიმდინარეობს ტექნიკური სამუშაოები"
+      ],
+      "products": [],
+      "maintenance": true,
+      "bytes": 5887
+    },
+    {
+      "id": "veli-1",
+      "checkedAt": "2026-09-07T17:34:33.447Z",
+      "status": 200,
+      "finalUrl": "https://veli.store/details/%E1%83%9E%E1%83%98%E1%83%AA%E1%83%98%E1%83%A1-%E1%83%A6%E1%83%A3%E1%83%9B%E1%83%94%E1%83%9A%E1%83%98-ariete-0918-da-gennaro-pizza-oven-white/?sku=8003705120686",
+      "h1": [
+        "მიმდინარეობს ტექნიკური სამუშაოები"
+      ],
+      "products": [],
+      "maintenance": true,
+      "bytes": 5887
+    },
+    {
+      "id": "veli-2",
+      "checkedAt": "2026-09-07T17:34:33.446Z",
+      "status": 200,
+      "finalUrl": "https://veli.store/details/%E1%83%A1%E1%83%A2%E1%83%90%E1%83%91%E1%83%98%E1%83%9A%E1%83%98%E1%83%96%E1%83%90%E1%83%A2%E1%83%9D%E1%83%A0%E1%83%98-dji-osmo-mobile-7-flagship-intelligent-tracking-phone-gimbal-gray/?sku=6941565997586",
+      "h1": [
+        "მიმდინარეობს ტექნიკური სამუშაოები"
+      ],
+      "products": [],
+      "maintenance": true,
+      "bytes": 5887
+    },
+    {
+      "id": "elite-8",
+      "checkedAt": "2026-09-07T17:34:35.539Z",
+      "status": 200,
+      "finalUrl": "https://ee.ge/uto/ardesto-iron-ir-c2230-bur-p13544",
+      "h1": [],
+      "products": [],
+      "maintenance": false,
+      "bytes": 70019
+    },
+    {
+      "id": "elite-2",
+      "checkedAt": "2026-09-07T17:34:17.207Z",
+      "status": 200,
+      "finalUrl": "https://ee.ge/geiming-mausi/2e-mg355-wl-pink-2e-mg355upk-wl-p21695",
+      "h1": [
+        "2E MG355 WL Pink/2E-MG355UPK-WL"
+      ],
+      "products": [
+        {
+          "name": "2E MG355 WL Pink/2E-MG355UPK-WL",
+          "sku": "I106247",
+          "brand": {
+            "name": "2E"
+          },
+          "offers": {
+            "price": 54.99,
+            "priceCurrency": "GEL",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ],
+      "maintenance": false,
+      "note": "Captured in initial probe stdout; checkedAt uses batch completion."
+    },
+    {
+      "id": "elite-3",
+      "checkedAt": "2026-09-07T17:34:17.207Z",
+      "status": 200,
+      "finalUrl": "https://ee.ge/tmis-feni/mova-hair-dryer-mist-aero-c-high-speed-pink-eua-amsu10-p21620",
+      "h1": [
+        "MOVA Hair Dryer-Mist Aero C High-Speed Pink (EUA) / AMSU10"
+      ],
+      "products": [
+        {
+          "name": "MOVA Hair Dryer-Mist Aero C High-Speed Pink (EUA) / AMSU10",
+          "sku": "6978794732275",
+          "brand": {
+            "name": "MOVA"
+          },
+          "offers": {
+            "price": 399.99,
+            "priceCurrency": "GEL",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ],
+      "maintenance": false,
+      "note": "Captured in initial probe stdout; checkedAt uses batch completion."
+    },
+    {
+      "id": "elite-4",
+      "checkedAt": "2026-09-07T17:34:17.207Z",
+      "status": 200,
+      "finalUrl": "https://ee.ge/mtversasruti/eta-robot-vacuum-cleaner-eta124890030-p21440",
+      "h1": [
+        "ETA Robot Vacuum Cleaner ETA124890030"
+      ],
+      "products": [
+        {
+          "name": "ETA Robot Vacuum Cleaner ETA124890030",
+          "sku": "ETA124890030",
+          "brand": {
+            "name": "ETA"
+          },
+          "offers": {
+            "price": 549.99,
+            "priceCurrency": "GEL",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ],
+      "maintenance": false,
+      "note": "Captured in initial probe stdout; checkedAt uses batch completion."
+    },
+    {
+      "id": "elite-5",
+      "checkedAt": "2026-09-07T17:34:17.207Z",
+      "status": 200,
+      "finalUrl": "https://ee.ge/miqseri/ardesto-mixer-kstm-8041-p10312",
+      "h1": [
+        "ARDESTO Mixer KSTM-8041"
+      ],
+      "products": [
+        {
+          "name": "ARDESTO Mixer KSTM-8041",
+          "sku": "KSTM-8041",
+          "brand": {
+            "name": "ARDESTO"
+          },
+          "offers": {
+            "price": 355.99,
+            "priceCurrency": "GEL",
+            "availability": "https://schema.org/InStock"
+          }
+        }
+      ],
+      "maintenance": false,
+      "note": "Captured in initial probe stdout; checkedAt uses batch completion."
+    }
+  ]
+}

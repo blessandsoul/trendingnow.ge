@@ -17,6 +17,9 @@ import { ProductsStorefront } from '@/features/storefront/components/ProductsSto
 import { OrderSuccessPage } from '@/features/storefront/components/OrderSuccessPage';
 import { OrdersDashboard } from '@/features/storefront/components/OrdersDashboard';
 import { StorefrontInfoPage } from '@/features/storefront/components/StorefrontInfoPage';
+import { SavedCollectionPage } from '@/features/storefront/components/SavedCollectionPage';
+import { CompareCollectionPage } from '@/features/storefront/components/CompareCollectionPage';
+import { getDiscoverySnapshotTime } from '@/features/storefront/lib/discovery-clock';
 import { productMetadataForSlug } from '@/features/storefront/lib/product-metadata';
 import { getCopy, type AppCopy } from '@/i18n/copy';
 import { DEFAULT_LOCALE, isActiveLocale, localizedPath, type ActiveLocale } from '@/i18n/locales';
@@ -94,6 +97,13 @@ async function metadataForSegments(
   if (segments.length === 2 && segments[0] === 'dashboard' && segments[1] === 'favorites') return buildPrivateMetadata(copy.metadata.dashboard);
   if (segments.length === 2 && segments[0] === 'dashboard' && segments[1] === 'orders') return buildPrivateMetadata(copy.metadata.dashboard);
   if (segments.length === 2 && segments[0] === 'order-success') return buildPrivateMetadata(copy.metadata.cart);
+  if (segments.length === 1 && (segments[0] === 'saved' || segments[0] === 'compare')) {
+    const labels = {
+      saved: { ka: 'შენახული ნივთები', en: 'Saved products', ru: 'Сохранённые товары' },
+      compare: { ka: 'შეადარე არჩევანი', en: 'Compare products', ru: 'Сравнение товаров' },
+    } as const;
+    return { title: labels[segments[0]][locale] };
+  }
   if (segments.length !== 1) return {};
 
   switch (segments[0]) {
@@ -156,11 +166,14 @@ export default async function Page({ params }: PageProps): Promise<React.ReactEl
     return <OrderSuccessPage orderCode={segments[1]} locale={locale} />;
   }
 
+  if (segments.length === 1 && segments[0] === 'saved') return <SavedCollectionPage />;
+  if (segments.length === 1 && segments[0] === 'compare') return <CompareCollectionPage />;
+
   if (segments.length !== 1) notFound();
 
   switch (segments[0]) {
     case 'products':
-      return <ProductsStorefront />;
+      return <ProductsStorefront now={await getDiscoverySnapshotTime()} />;
     case 'cart':
       return <CartStorefront />;
     case 'login':

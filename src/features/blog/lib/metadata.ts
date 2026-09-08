@@ -3,6 +3,7 @@ import 'server-only';
 import type { Metadata } from 'next';
 
 import { getPostWithFallback, getAvailableLocales, getTagBySlug } from './api';
+import { getAcceptedCollectionBySlug, getAcceptedCollectionLocales } from './accepted-collections';
 import { getBlogCopy } from './copy';
 import {
   ACTIVE_BLOG_LOCALES,
@@ -63,6 +64,46 @@ export function buildBlogIndexMetadata(locale: BlogLocale, page: number): Metada
 }
 
 export async function buildBlogPostMetadata(slug: string, locale: BlogLocale): Promise<Metadata> {
+  const curatedCollection = await getAcceptedCollectionBySlug(slug, locale);
+  if (curatedCollection) {
+    const availableLocales = await getAcceptedCollectionLocales(slug);
+    const currentUrl = absoluteUrl(localizedPath(locale, `/blog/${slug}`));
+    const defaultUrl = absoluteUrl(localizedPath(DEFAULT_BLOG_LOCALE, `/blog/${slug}`));
+    const languages: Record<string, string> = {};
+    availableLocales.forEach((availableLocale) => {
+      languages[availableLocale] = absoluteUrl(localizedPath(availableLocale, `/blog/${slug}`));
+    });
+    if (availableLocales.includes(DEFAULT_BLOG_LOCALE)) languages['x-default'] = defaultUrl;
+
+    const image = curatedCollection.products[0]?.imageUrl;
+    const title = `${clampTitle(curatedCollection.title)} | ${SITE_NAME}`;
+    return {
+      title,
+      description: curatedCollection.excerpt,
+      alternates: {
+        canonical: curatedCollection.isFallback ? defaultUrl : currentUrl,
+        languages,
+      },
+      openGraph: {
+        title: curatedCollection.title,
+        description: curatedCollection.excerpt,
+        url: currentUrl,
+        siteName: SITE_NAME,
+        ...(image ? { images: [{ url: image, alt: curatedCollection.title }] } : {}),
+        type: 'article',
+        ...(curatedCollection.sourceDate ? { publishedTime: curatedCollection.sourceDate } : {}),
+        tags: curatedCollection.tags,
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: curatedCollection.title,
+        description: curatedCollection.excerpt,
+        ...(image ? { images: [image] } : {}),
+      },
+      robots: { index: !curatedCollection.isFallback, follow: true },
+    };
+  }
+
   const result = await getPostWithFallback(slug, locale);
   const copy = getBlogCopy(locale);
   if (!result) return { title: copy.postNotFoundTitle };

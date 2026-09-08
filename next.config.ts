@@ -31,6 +31,9 @@ function apiUploadsRemotePattern(): RemotePattern {
 }
 
 const nextConfig: NextConfig = {
+  devIndicators: false,
+  // Keep local audit compilation isolated without deleting an existing build.
+  distDir: process.env.TRENDINGNOW_QUALITY_QA === '1' ? '.next-quality-qa' : process.env.TRENDINGNOW_RESPONSIVE_QA === '1' ? '.next-responsive-qa' : '.next',
   output: "standalone",
   images: {
     remotePatterns: [apiUploadsRemotePattern(), ...productImageRemotePatterns],

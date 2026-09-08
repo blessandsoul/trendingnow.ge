@@ -7,8 +7,16 @@ import { buildProductMetadataPolicy } from '@/lib/seo/metadata';
 import { getRequestCopy } from '@/i18n/server';
 import { getPublicProduct } from '../lib/public-product';
 import { buildProductStructuredData } from '../lib/product-structured-data';
+import { getDiscoveryItem } from '../lib/discovery-pilot';
+import { DiscoveryPilot } from '../components/DiscoveryPilot';
+import { getDiscoverySnapshotTime } from '../lib/discovery-clock';
 
 export async function ProductDetailRoute({ slug }: { slug: string }): Promise<React.ReactElement> {
+  const discoveryItem = getDiscoveryItem(slug);
+  if (discoveryItem) {
+    // Force request-time expiry checks; never synthesize legacy InStock JSON-LD.
+    return <DiscoveryPilot item={discoveryItem} now={await getDiscoverySnapshotTime()} />;
+  }
   const detail = await getPublicProduct(slug);
   if (!detail) notFound();
 

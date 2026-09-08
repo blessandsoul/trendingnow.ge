@@ -1,0 +1,40 @@
+import type { ActiveLocale } from '@/i18n/locales';
+
+export const discoveryShellCopy = {
+  ka: {
+    discover: 'აღმოაჩინე', catalog: 'ნივთები', home: 'სახლი', tech: 'ტექნიკა',
+    guides: 'რჩევები', saved: 'შენახული', compare: 'შედარება', gifts: 'საჩუქრები',
+    menu: 'საიტის მენიუ', navigation: 'მთავარი ნავიგაცია',
+    menuTitle: 'აირჩიე შენთვის', menuDescription: 'იპოვე ნივთი, შეინახე და შეადარე.',
+    about: 'ჩვენ შესახებ', contact: 'კონტაქტი', how: 'როგორ ვარჩევთ',
+    summary: 'ვარჩევთ ნივთებს საქართველოს მაღაზიებიდან და გეხმარებით არჩევანში.',
+    merchant: 'შეძენა მაღაზიაში',
+    merchantNote: 'გადახდა, მიწოდება და დაბრუნება არჩეული მაღაზიის პირობებით ხდება.',
+    disclosure: 'კომერციული განთავსება ცალკე აღინიშნება. მაღაზიასთან ბმული თავისთავად პარტნიორობას არ ნიშნავს.',
+    skip: 'შინაარსზე გადასვლა', source: 'პირობები და წყაროები',
+  },
+  en: {
+    discover: 'Discover', catalog: 'Finds', home: 'Home', tech: 'Tech',
+    guides: 'Guides', saved: 'Saved', compare: 'Compare', gifts: 'Gifts',
+    menu: 'Site menu', navigation: 'Main navigation',
+    menuTitle: 'Find your next pick', menuDescription: 'Find, save and compare things that suit you.',
+    about: 'About us', contact: 'Contact', how: 'How we choose',
+    summary: 'Selected finds from stores in Georgia, with help making your choice.',
+    merchant: 'Buy from the store',
+    merchantNote: 'Payment, delivery and returns follow the selected store’s terms.',
+    disclosure: 'Paid placements are identified separately. A store link alone does not imply a partnership.',
+    skip: 'Skip to content', source: 'Terms and sources',
+  },
+  ru: {
+    discover: 'Находки', catalog: 'Каталог', home: 'Для дома', tech: 'Техника',
+    guides: 'Советы', saved: 'Сохранённое', compare: 'Сравнение', gifts: 'Подарки',
+    menu: 'Меню сайта', navigation: 'Основная навигация',
+    menuTitle: 'Выберите своё', menuDescription: 'Находите, сохраняйте и сравнивайте подходящие вещи.',
+    about: 'О нас', contact: 'Контакты', how: 'Как мы выбираем',
+    summary: 'Находки из магазинов Грузии и помощь в выборе подходящей вещи.',
+    merchant: 'Покупка в магазине',
+    merchantNote: 'Оплата, доставка и возврат проходят по условиям выбранного магазина.',
+    disclosure: 'Платные размещения обозначены отдельно. Ссылка на магазин сама по себе не означает партнёрство.',
+    skip: 'К содержимому', source: 'Условия и источники',
+  },
+} satisfies Record<ActiveLocale, Record<string, string>>;

@@ -47,7 +47,6 @@ export function BuyerDecisionPassport({ product }: { product: StorefrontProductD
   const copy = useLocaleCopy();
   const passport = copy.product.decisionPassport;
   const checkedDate = formatStorefrontDate(product.updatedAt, locale);
-  const packageSummary = product.description?.trim() || product.category.name;
   const supportHref = buildSupportMailto(
     passport.emailSubject(product.name, product.attributes.sku),
     passport.emailBody(product.name, product.attributes.sku),
@@ -78,7 +77,7 @@ export function BuyerDecisionPassport({ product }: { product: StorefrontProductD
     {
       painId: 'TN-BX-16',
       label: passport.package.label,
-      detail: <>{passport.package.detail} <strong className="font-semibold text-[#303844]">{packageSummary}</strong></>,
+      detail: passport.package.detail,
       state: 'needs-confirmation',
       icon: PackageOpen,
     },
@@ -95,14 +94,14 @@ export function BuyerDecisionPassport({ product }: { product: StorefrontProductD
           <p className="mt-1.5">{passport.price.detail}</p>
         </div>
       ),
-      state: 'confirmed',
+      state: 'needs-confirmation',
       icon: BadgeDollarSign,
     },
     {
       painId: 'TN-BX-14',
       label: passport.visual.label,
       detail: passport.visual.detail,
-      state: 'confirmed',
+      state: 'unavailable',
       icon: Images,
     },
   ];

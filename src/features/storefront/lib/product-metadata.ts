@@ -8,6 +8,7 @@ import { buildPrivateMetadata, buildProductMetadataPolicy, SITE_NAME } from '@/l
 import { DEFAULT_LOCALE, type ActiveLocale } from '@/i18n/locales';
 import { getPublicProduct } from './public-product';
 import { htmlToPlainText } from './format';
+import { getDiscoveryItem } from './discovery-pilot';
 
 const DESCRIPTION_MAX_LENGTH = 160;
 
@@ -34,6 +35,12 @@ export async function productMetadataForSlug(
   copy: AppCopy,
   locale: ActiveLocale = DEFAULT_LOCALE,
 ): Promise<Metadata> {
+  const discoveryItem = getDiscoveryItem(slug);
+  if (discoveryItem) return {
+    title: `${discoveryItem.name} | ${SITE_NAME}`,
+    alternates: { canonical: buildProductMetadataPolicy(locale, slug).canonical },
+    robots: { index: false, follow: false },
+  };
   const detail = await getPublicProduct(slug);
   if (!detail) return buildPrivateMetadata(copy.metadata.product);
 

@@ -3,10 +3,12 @@ import Link from 'next/link';
 import { ArrowRight, Newspaper } from 'lucide-react';
 
 import { getAllTags, getPosts } from '../lib/api';
+import { getAcceptedCollections } from '../lib/accepted-collections';
 import { getBlogCopy } from '../lib/copy';
 import { BLOG_PAGE_SIZE, parsePage } from '../lib/metadata';
 import { DEFAULT_BLOG_LOCALE, localizedPath, type BlogLocale } from '../lib/locales';
 import { BlogList } from '../components/BlogList';
+import { CuratedCollectionSection } from '../components/CuratedCollectionGrid';
 import { Pagination } from '../components/Pagination';
 import { BlogShell } from './BlogShell';
 
@@ -18,6 +20,7 @@ interface BlogIndexPageProps {
 export async function BlogIndexPage({ locale, rawPage }: BlogIndexPageProps): Promise<React.ReactElement> {
   const copy = getBlogCopy(locale);
   let posts = await getPosts(locale);
+  const curatedCollections = await getAcceptedCollections(locale);
   const isFallback = posts.length === 0 && locale !== DEFAULT_BLOG_LOCALE;
   if (isFallback) posts = await getPosts(DEFAULT_BLOG_LOCALE);
 
@@ -29,6 +32,7 @@ export async function BlogIndexPage({ locale, rawPage }: BlogIndexPageProps): Pr
 
   return (
     <BlogShell>
+      <CuratedCollectionSection collections={curatedCollections} locale={locale} />
       <div className="storefront-container py-10 md:py-16">
         <header className="tn-page-intro mb-12">
           <div>

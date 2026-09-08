@@ -177,10 +177,7 @@ export async function getRelatedPosts(
 }
 
 export function getAvailableLocales(slug: string): BlogLocale[] {
-  return ACTIVE_BLOG_LOCALES.filter((locale) => {
-    const filePath = path.join(process.cwd(), 'content', 'blog', locale, `${slug}.mdx`);
-    return fs.existsSync(filePath);
-  });
+  return ACTIVE_BLOG_LOCALES.filter((locale) => Boolean(getMdxPost(slug, locale, ['slug']).slug));
 }
 
 export async function getAllTags(locale: BlogLocale = DEFAULT_BLOG_LOCALE): Promise<{ tag: string; slug: string; count: number }[]> {

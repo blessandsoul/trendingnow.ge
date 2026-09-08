@@ -13,6 +13,7 @@ import { ROUTES } from '@/lib/constants/routes';
 import { useAppSelector } from '@/store/hooks';
 import { formatGel } from '../lib/format';
 import { useCart, useCreateOrder } from '../hooks/useStorefront';
+import { rememberOrderReceipt } from '../lib/order-receipt';
 import {
   storefrontDeliveryPrices,
   type CreateStorefrontOrderRequest,
@@ -83,6 +84,7 @@ export function OrderCheckoutDialog({
       })),
     }, {
       onSuccess: ({ order }) => {
+        rememberOrderReceipt(order.publicCode);
         setDraft(emptyDraft);
         setShowGuestPrompt(false);
         setShowDeliveryError(false);

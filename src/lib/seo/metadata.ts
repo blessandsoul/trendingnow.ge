@@ -85,12 +85,11 @@ export function buildProductMetadataPolicy(locale: ActiveLocale, slug: string): 
   };
 }
 
-export const onlineStoreJsonLd = {
+export const publisherJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'OnlineStore',
+  '@type': 'Organization',
   name: SITE_NAME,
   url: SITE_URL,
-  logo: absoluteUrl('/storefront/trendingnow/logo-mark-user-v1.png'),
   email: 'contact@ainow.ge',
   telephone: '+995 574 88 28 87',
 };

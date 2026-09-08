@@ -1,6 +1,6 @@
 # TrendingNow visual system
 
-The public site now shares the Bold Discovery language selected by the owner.
+Bold Discovery is the public design language selected by the owner, not a completed site-wide acceptance claim. The 2026-09-08 design/value audit found remaining BOG/Noto font divergence, legacy footer/favicon branding, inconsistent product photography and two separate shopping flows. See `DESIGN_VALUE_AUDIT_20260908.md` for rendered evidence and the route matrix.
 
 ## Tokens
 
@@ -26,10 +26,14 @@ The public site now shares the Bold Discovery language selected by the owner.
 
 ## Typography and interaction
 
+- Product specifications use one compact semantic icon per row (for example Hand, Bluetooth, Usb), aligned at the text start. No blue vertical rule or decorative callout background. Catalog and detail share the same specification renderer; labels stay as accessible text, icons are decorative.
 - Noto Sans Georgian variable is the public Georgian display/body family; Anton is reserved for the Latin TrendingNow wordmark.
 - Use clear weight contrast, short headings, and dense-but-readable metadata.
 - Menus, search, buttons and links remain keyboard reachable with visible focus. Motion uses `motion-safe`; reduced-motion users receive no transform animation.
+- Long Georgian words must wrap inside their own column (`overflow-wrap: anywhere` inherited from body). Page-level overflow clipping is not a responsive-text fix. Grid/flex text children must allow shrinking; do not use fixed heights to crop headings.
+- Georgian multiline display headings use line-height at least 1.08. Keep narrow promotional copy short without sacrificing a readable font size.
+- Shared header inline navigation starts at 1536px; below that the menu preserves room for search. Verify intermediate widths1280/1440, not only phone and wide desktop.
 
 ## Coverage
 
-The shared tokens and palette migration cover the public storefront, catalog, product detail, cart, favorites, orders, auth, blog, info pages and admin UI. The homepage remains the reference implementation. Browser viewport comparison is still required after the CUA transport is restored.
+The homepage remains the reference implementation. Local text-boundary QA on 2026-09-08 covers public/auth/info/catalog/blog routes, KA/EN/RU samples, 50 editorial drafts, 36 product pages and menu/filter/scroll-header states. See `RESPONSIVE_TEXT_AUDIT_20260908.md` for actual counts and limits. Authenticated dashboard/admin contents were not verified; login redirects are not coverage of those interiors. Local QA is not a production release.

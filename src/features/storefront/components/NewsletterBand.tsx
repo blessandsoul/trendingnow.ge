@@ -3,38 +3,36 @@
 import type React from 'react';
 import { Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { useLocaleCopy } from '@/i18n/context';
 import type { StorefrontHomeNewsletter } from '../types/storefront.types';
+import { buildSupportMailto } from '../lib/support-mailto';
 
 export function NewsletterBand({ newsletter }: { newsletter?: StorefrontHomeNewsletter | null }): React.ReactElement {
   const copy = useLocaleCopy();
+  void newsletter;
+  const contactHref = buildSupportMailto(copy.newsletter.contactSubject, [copy.newsletter.contactBody]);
 
   return (
     <section className="storefront-container mt-8">
-      <div className="tn-signal-edge flex flex-col gap-5 overflow-hidden border border-[#101010] bg-[#101010] px-6 py-6 text-white shadow-[0_18px_42px_rgba(17,20,27,0.12)] lg:flex-row lg:items-center lg:justify-between lg:px-8">
+      <div className="tn-signal-edge flex flex-col gap-5 overflow-hidden border border-[#101010] bg-[#101010] px-6 py-6 text-white lg:flex-row lg:items-center lg:justify-between lg:px-8">
         <div className="flex min-w-0 items-center gap-4">
-          <div className="grid size-12 shrink-0 place-items-center rounded-[12px] bg-[#092BB4] text-white">
+          <div className="grid size-12 shrink-0 place-items-center rounded-none bg-[#092BB4] text-white">
             <Mail className="size-7" />
           </div>
           <div className="min-w-0">
-            <h2 className="text-base font-bold tracking-[-0.015em] text-white">{newsletter?.title ?? copy.newsletter.title}</h2>
-            <p className="text-sm leading-6 text-white/75">
-              {newsletter?.text ?? copy.newsletter.description}
-            </p>
+            <h2 className="text-base font-bold tracking-[-0.015em] text-white">{copy.newsletter.title}</h2>
+            <p className="text-sm leading-6 text-white/75">{copy.newsletter.description}</p>
           </div>
         </div>
 
-        <form className="flex min-w-0 flex-col gap-2 sm:flex-row lg:w-[460px]">
-          <Input
-            type="email"
-            placeholder={newsletter?.placeholder ?? copy.newsletter.placeholder}
-            className="h-11 border-white/14 bg-white text-[#101010] placeholder:text-[#7C8490]"
-          />
-          <Button type="button" className="h-11 rounded-[9px] bg-[#092BB4] px-6 font-bold text-white hover:bg-[#061E81]">
-            {newsletter?.buttonLabel ?? copy.newsletter.button}
+        <div className="flex min-w-0 flex-col gap-2 sm:flex-row lg:w-[460px]">
+          <p className="flex min-h-11 min-w-0 flex-1 items-center border border-white/14 bg-white/10 px-3 text-sm leading-5 text-white/80">
+            {copy.newsletter.contactHint}
+          </p>
+          <Button asChild className="h-11 rounded-none bg-[#092BB4] px-6 font-bold text-white hover:bg-[#061E81]">
+            <a href={contactHref}>{copy.newsletter.button}</a>
           </Button>
-        </form>
+        </div>
       </div>
     </section>
   );

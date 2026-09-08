@@ -37,6 +37,25 @@ interface StorefrontInfoPageProps {
   sections: readonly InfoSection[];
 }
 
+function contactHref(value: string): string | null {
+  const trimmed = value.trim();
+  if (trimmed === 'contact@ainow.ge') return 'mailto:contact@ainow.ge';
+  if (trimmed === '+995 574 88 28 87') return 'tel:+995574882887';
+  return null;
+}
+
+function renderContactAwareText(value: string): React.ReactNode {
+  const email = 'contact@ainow.ge';
+  const phone = '+995 574 88 28 87';
+  if (!value.includes(email) && !value.includes(phone)) return value;
+
+  const parts = value.split(new RegExp(`(${email.replace('.', '\\.')})|(${phone.replace(/[+ ]/g, '\\$&')})`, 'g'));
+  return parts.filter(Boolean).map((part, index) => {
+    const href = contactHref(part);
+    return href ? <a key={`${part}-${index}`} href={href} className="font-semibold text-[#061E81] underline-offset-4 hover:underline">{part}</a> : part;
+  });
+}
+
 export function StorefrontInfoPage({
   eyebrow,
   title,
@@ -64,7 +83,7 @@ export function StorefrontInfoPage({
               </p>
             </div>
 
-            <div className="tn-dark-panel p-5 shadow-[0_14px_38px_rgba(17,20,27,0.14)] sm:p-6">
+            <div className="tn-dark-panel p-5 sm:p-6">
               <div className="flex items-center gap-2 text-sm font-semibold text-white">
                 <FileText className="size-4 text-[#FFE622]" aria-hidden="true" />
                 TrendingNow.ge
@@ -86,7 +105,9 @@ export function StorefrontInfoPage({
               {cards.map((card) => (
                 <div key={card.label} className="tn-commerce-card p-5">
                   <p className="text-xs font-semibold uppercase tracking-[0.08em] text-[#657080]">{card.label}</p>
-                  <p className="mt-2 text-lg font-semibold text-[#101010]">{card.value}</p>
+                  <p className="mt-2 text-lg font-semibold text-[#101010]">
+                    {contactHref(card.value) ? <a href={contactHref(card.value) ?? undefined} className="underline-offset-4 hover:underline">{card.value}</a> : card.value}
+                  </p>
                 </div>
               ))}
             </div>
@@ -105,7 +126,7 @@ export function StorefrontInfoPage({
                 {section.text && (
                   <div className="tn-body-copy mt-4 space-y-3 text-sm sm:text-base">
                     {section.text.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
+                      <p key={paragraph}>{renderContactAwareText(paragraph)}</p>
                     ))}
                   </div>
                 )}
@@ -115,7 +136,7 @@ export function StorefrontInfoPage({
                     {section.items.map((item) => (
                       <li key={item} className="grid grid-cols-[20px_minmax(0,1fr)] gap-3">
                         <CheckCircle2 className="mt-0.5 size-5 text-[#061E81]" aria-hidden="true" />
-                        <span>{item}</span>
+                        <span>{renderContactAwareText(item)}</span>
                       </li>
                     ))}
                   </ul>
@@ -124,13 +145,13 @@ export function StorefrontInfoPage({
                 {section.blocks && (
                   <div className="mt-5 grid gap-3 sm:grid-cols-2">
                     {section.blocks.map((block) => (
-                      <div key={block.title} className="rounded-[12px] border border-[#DDE2E9] bg-[#F3F6FF] p-4">
+                      <div key={block.title} className="border border-black/25 bg-[#faf9f6] p-4">
                         <h3 className="text-base font-semibold text-[#101010]">{block.title}</h3>
-                        {block.text && <p className="mt-2 text-sm leading-6 text-[#526071]">{block.text}</p>}
+                        {block.text && <p className="mt-2 text-sm leading-6 text-[#526071]">{renderContactAwareText(block.text)}</p>}
                         {block.items && (
                           <ul className="mt-3 space-y-2 text-sm leading-6 text-[#526071]">
                             {block.items.map((item) => (
-                              <li key={item}>• {item}</li>
+                              <li key={item}>• {renderContactAwareText(item)}</li>
                             ))}
                           </ul>
                         )}

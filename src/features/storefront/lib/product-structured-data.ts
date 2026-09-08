@@ -35,17 +35,12 @@ export function buildProductStructuredData(
       description: htmlToPlainText(product.description ?? ''),
       image: images,
       sku: product.attributes.sku,
-      brand: {
-        '@type': 'Brand',
-        name: product.brand,
-      },
-      offers: {
-        '@type': 'Offer',
-        price: String(product.salePrice),
-        priceCurrency: product.currency,
-        availability: 'https://schema.org/InStock',
-        url: canonicalUrl,
-      },
+      // These are preserved legacy records, not current stock or a seller offer.
+      // Do not manufacture rich-result eligibility with an unverified price,
+      // availability, rating, or by treating the publisher as the manufacturer.
+      ...(product.brand && product.brand !== SITE_NAME ? {
+        brand: { '@type': 'Brand', name: product.brand },
+      } : {}),
     },
     breadcrumbJsonLd: {
       '@context': 'https://schema.org',

@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { buildProductStructuredData } from './product-structured-data';
 
 describe('buildProductStructuredData', () => {
-  it('creates Product and BreadcrumbList schema from sellable product data', () => {
+  it('preserves Product and BreadcrumbList identity without claiming legacy stock or a current offer', () => {
     const { breadcrumbJsonLd, productJsonLd } = buildProductStructuredData(
       {
         product: {
@@ -45,15 +45,10 @@ describe('buildProductStructuredData', () => {
       '@type': 'Product',
       name: 'Wireless Earbuds',
       sku: 'CONT-EARBUDS',
-      brand: { '@type': 'Brand', name: 'TrendingNow.ge' },
-      offers: {
-        '@type': 'Offer',
-        price: '199',
-        priceCurrency: 'GEL',
-        availability: 'https://schema.org/InStock',
-        url: 'https://trendingnow.ge/products/wireless-earbuds',
-      },
     });
+    expect(productJsonLd).not.toHaveProperty('offers');
+    expect(productJsonLd).not.toHaveProperty('brand');
+    expect(productJsonLd).not.toHaveProperty('aggregateRating');
     expect(productJsonLd.image).toEqual(['http://localhost:8000/uploads/earbuds.png']);
     expect(breadcrumbJsonLd.itemListElement).toEqual([
       { '@type': 'ListItem', position: 1, name: 'TrendingNow.ge', item: 'https://trendingnow.ge/' },

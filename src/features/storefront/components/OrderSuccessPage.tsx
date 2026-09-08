@@ -1,15 +1,16 @@
 'use client';
 
 import type React from 'react';
+import { useSyncExternalStore } from 'react';
 import Link from 'next/link';
-import { CheckCircle2, Mail, PackageCheck } from 'lucide-react';
+import { CheckCircle2, Mail, PackageCheck, SearchX } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { getCopy } from '@/i18n/copy';
 import { localizedPath, type ActiveLocale } from '@/i18n/locales';
 import { ROUTES } from '@/lib/constants/routes';
-import { useAppSelector } from '@/store/hooks';
 import { buildSupportMailto } from '../lib/support-mailto';
+import { hasOrderReceipt } from '../lib/order-receipt';
 import { StorefrontFooter } from './StorefrontFooter';
 import { StorefrontHeader } from './StorefrontHeader';
 
@@ -20,11 +21,52 @@ interface OrderSuccessPageProps {
 
 export function OrderSuccessPage({ orderCode, locale = 'ka' }: OrderSuccessPageProps): React.ReactElement {
   const copy = getCopy(locale);
-  const { isAuthenticated } = useAppSelector((state) => state.auth);
+  const receiptState = useSyncExternalStore(
+    () => () => undefined,
+    () => (hasOrderReceipt(orderCode) ? 'verified' : 'not-found'),
+    () => 'checking',
+  );
   const supportHref = buildSupportMailto(
     copy.orderSuccess.supportSubject(orderCode),
     copy.orderSuccess.supportBody(orderCode),
   );
+
+  if (receiptState === 'checking') {
+    return (
+      <div className="tn-page min-h-dvh text-[#101010]">
+        <StorefrontHeader />
+        <main className="px-4 py-10 sm:py-14">
+          <section className="mx-auto grid min-h-[56dvh] max-w-[720px] place-items-center">
+            <p role="status" className="text-sm text-[#657080]">{copy.orderSuccess.checking}</p>
+          </section>
+        </main>
+        <StorefrontFooter />
+      </div>
+    );
+  }
+
+  if (receiptState === 'not-found') {
+    return (
+      <div className="tn-page min-h-dvh text-[#101010]">
+        <StorefrontHeader />
+        <main className="px-4 py-10 sm:py-14">
+          <section className="mx-auto grid min-h-[56dvh] max-w-[720px] place-items-center">
+            <div className="tn-commerce-card w-full p-6 text-center sm:p-10">
+              <span className="mx-auto grid size-16 place-items-center rounded-full bg-[#F4F2ED] text-[#657080]">
+                <SearchX className="size-9" aria-hidden="true" />
+              </span>
+              <h1 className="tn-page-title mx-auto mt-5">{copy.orderSuccess.notFoundTitle}</h1>
+              <p className="mx-auto mt-3 max-w-[520px] text-sm leading-6 text-[#526071] sm:text-base">{copy.orderSuccess.notFoundText}</p>
+              <Button asChild className="tn-primary-action mt-6 h-11 px-6">
+                <Link href={localizedPath(locale, ROUTES.PRODUCTS)}>{copy.orderSuccess.continueShopping}</Link>
+              </Button>
+            </div>
+          </section>
+        </main>
+        <StorefrontFooter />
+      </div>
+    );
+  }
 
   return (
     <div className="tn-page min-h-dvh text-[#101010]">
@@ -45,14 +87,12 @@ export function OrderSuccessPage({ orderCode, locale = 'ka' }: OrderSuccessPageP
             <Button asChild className="tn-primary-action h-11 px-6">
               <Link href={localizedPath(locale, ROUTES.PRODUCTS)}>{copy.orderSuccess.continueShopping}</Link>
             </Button>
-            {isAuthenticated ? (
-              <Button asChild variant="outline" className="tn-secondary-action h-11 px-6">
-                <Link href={localizedPath(locale, ROUTES.DASHBOARD_ORDERS)}>
-                  <PackageCheck className="size-4" />
-                  {copy.orderSuccess.viewOrders}
-                </Link>
-              </Button>
-            ) : null}
+            <Button asChild variant="outline" className="tn-secondary-action h-11 px-6">
+              <Link href={localizedPath(locale, ROUTES.DASHBOARD_ORDERS)}>
+                <PackageCheck className="size-4" />
+                {copy.orderSuccess.viewOrders}
+              </Link>
+            </Button>
           </div>
           <div data-pain-id="TN-BX-20" className="mt-6 rounded-none border border-[#D9DDE7] bg-[#F4F2ED] p-4 text-left sm:flex sm:items-center sm:justify-between sm:gap-5">
             <div className="min-w-0">

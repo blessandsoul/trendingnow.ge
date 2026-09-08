@@ -31,18 +31,15 @@ export function TrendingNowWordmark({ className, tone = 'light' }: TrendingNowLo
   return (
     <span
       className={cn(
-        'inline-flex h-10 w-[190px] shrink-0 items-center gap-1.5 whitespace-nowrap text-[16px] font-semibold leading-none tracking-[-0.045em] sm:text-[17px] xl:text-[18px]',
+        'inline-flex shrink-0 items-center whitespace-nowrap font-[family-name:Discovery_Anton] text-[29px] font-normal leading-none tracking-[-1px] sm:text-[35px]',
         tone === 'dark' ? 'text-white' : 'text-[#101010]',
         className,
       )}
-      data-logo-format="png"
+      data-logo-format="text"
       data-logo-tone={tone}
-      data-logo-version="user-v1-live-text"
+      data-logo-version="bold-discovery"
     >
-      <TrendingNowLogoMark className="size-[1.85em]" tone={tone} />
-      <span>
-        Trending<span className="text-[#092BB4]">Now</span><span className={tone === 'dark' ? 'text-white/75' : 'text-[#6B7280]'}>.ge</span>
-      </span>
+      TrendingNow.ge
     </span>
   );
 }

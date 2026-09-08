@@ -4,6 +4,7 @@ import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 
 import { getPostWithFallback, getRelatedPosts } from '../lib/api';
+import { getAcceptedCollectionBySlug } from '../lib/accepted-collections';
 import { getBlogCopy } from '../lib/copy';
 import { DEFAULT_BLOG_LOCALE, localizedPath, type BlogLocale } from '../lib/locales';
 import { absoluteUrl, SITE_NAME, SITE_URL } from '../lib/site';
@@ -13,6 +14,7 @@ import { ProductCrossLink } from '../components/ProductCrossLink';
 import { ReadingProgress } from '../components/ReadingProgress';
 import { RelatedPosts } from '../components/RelatedPosts';
 import { BlogShell } from './BlogShell';
+import { CuratedCollectionPage } from './CuratedCollectionPage';
 
 interface BlogPostPageProps {
   slug: string;
@@ -20,6 +22,11 @@ interface BlogPostPageProps {
 }
 
 export async function BlogPostPage({ slug, locale }: BlogPostPageProps): Promise<React.ReactElement> {
+  const curatedCollection = await getAcceptedCollectionBySlug(slug, locale);
+  if (curatedCollection) {
+    return <CuratedCollectionPage collection={curatedCollection} locale={locale} />;
+  }
+
   const result = await getPostWithFallback(slug, locale);
   if (!result) notFound();
 

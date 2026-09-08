@@ -4,7 +4,7 @@ import type React from 'react';
 
 import { Providers } from './providers';
 import { getRequestCopy, getRequestLocale } from '@/i18n/server';
-import { onlineStoreJsonLd, SITE_URL } from '@/lib/seo/metadata';
+import { publisherJsonLd, SITE_URL } from '@/lib/seo/metadata';
 import './globals.css';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -15,9 +15,8 @@ export async function generateMetadata(): Promise<Metadata> {
     description: copy.metadata.root.description,
     metadataBase: new URL(SITE_URL),
     icons: {
-      icon: [{ url: '/storefront/trendingnow/logo-mark-user-v1.png', type: 'image/png', sizes: '1254x1254' }],
-      shortcut: '/storefront/trendingnow/logo-mark-user-v1.png',
-      apple: '/storefront/trendingnow/logo-mark-user-v1.png',
+      icon: [{ url: '/storefront/bold-discovery/favicon.svg', type: 'image/svg+xml' }],
+      shortcut: '/storefront/bold-discovery/favicon.svg',
     },
   };
 }
@@ -43,15 +42,12 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://webstatic.bog.ge" crossOrigin="anonymous" />
-      </head>
       <body className="font-sans antialiased">
         <script
           nonce={nonce}
           type="application/ld+json"
           suppressHydrationWarning
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(onlineStoreJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(publisherJsonLd) }}
         />
         <Providers nonce={nonce} locale={locale}>{children}</Providers>
       </body>

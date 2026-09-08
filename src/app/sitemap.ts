@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import { getAvailableLocales, getPosts } from '@/features/blog/lib/api';
+import { getAcceptedCollections } from '@/features/blog/lib/accepted-collections';
 import { getLocalProducts } from '@/features/storefront/data/local-storefront';
 import { absoluteUrl, languageAlternates } from '@/lib/seo/metadata';
 import { collectProductSitemapEntries } from '@/lib/seo/sitemap-products';
@@ -9,6 +10,7 @@ import { ACTIVE_BLOG_LOCALES, DEFAULT_BLOG_LOCALE, localizedPath, type BlogLocal
 const STATIC_PATHS = [
   '/',
   '/products',
+  '/about-us',
   '/delivery',
   '/warranty',
   '/contact',
@@ -51,7 +53,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ACTIVE_BLOG_LOCALES.forEach((locale) => {
     entries.push({
       url: absoluteUrl(localizedPath(locale, '/blog')),
-      lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
       alternates: { languages: blogLanguageAlternates('/blog') },
@@ -78,6 +79,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       });
     });
   }
+
+  // Curated collections are a separate public admission path from legacy
+  // posts. They currently have only the canonical Georgian payload, so emit
+  // one ka URL per admitted collection and do not invent untranslated locale
+  // entries.
+  const acceptedCollections = await getAcceptedCollections(DEFAULT_BLOG_LOCALE);
+  acceptedCollections.forEach((collection) => {
+    const key = `${DEFAULT_BLOG_LOCALE}:${collection.slug}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    const path = `/blog/${collection.slug}`;
+    entries.push({
+      url: absoluteUrl(localizedPath(DEFAULT_BLOG_LOCALE, path)),
+      lastModified: new Date(collection.reviewedAt),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+      alternates: {
+        languages: blogLanguageAlternates(path, [DEFAULT_BLOG_LOCALE]),
+      },
+    });
+  });
 
   entries.push(...await collectProductSitemapEntries(fetchProductSitemapPage));
 

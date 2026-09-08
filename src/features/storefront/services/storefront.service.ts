@@ -1,5 +1,6 @@
 import { apiClient } from '@/lib/api/axios.config';
 import { API_ENDPOINTS } from '@/lib/constants/api-endpoints';
+import { normalizeCatalogParams } from '../lib/catalog-navigation';
 import {
   addLocalCartItem,
   clearLocalCart,
@@ -39,6 +40,7 @@ class StorefrontService {
   }
 
   async getProducts(params: ProductListParams = {}): Promise<PaginatedApiResponse<StorefrontProduct>['data']> {
+    params = normalizeCatalogParams(params);
     try {
       const response = await apiClient.get<PaginatedApiResponse<StorefrontProduct>>(
         API_ENDPOINTS.STOREFRONT.PRODUCTS,

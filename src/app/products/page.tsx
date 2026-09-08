@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { ProductsStorefront } from '@/features/storefront/components/ProductsStorefront';
 import { getRequestCopy, getRequestLocale } from '@/i18n/server';
 import { buildCatalogMetadata, hasCatalogRefinement, type MetadataSearchParams } from '@/lib/seo/metadata';
+import { getDiscoverySnapshotTime } from '@/features/storefront/lib/discovery-clock';
 
 export async function generateMetadata({
   searchParams,
@@ -14,6 +15,6 @@ export async function generateMetadata({
   return buildCatalogMetadata(copy.metadata.products, locale, hasCatalogRefinement(await searchParams));
 }
 
-export default function ProductsPage(): React.ReactElement {
-  return <ProductsStorefront />;
+export default async function ProductsPage(): Promise<React.ReactElement> {
+  return <ProductsStorefront now={await getDiscoverySnapshotTime()} />;
 }

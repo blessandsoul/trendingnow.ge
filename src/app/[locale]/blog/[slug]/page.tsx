@@ -4,6 +4,7 @@ import { notFound, permanentRedirect } from 'next/navigation';
 
 import { BlogPostPage } from '@/features/blog/pages/BlogPostPage';
 import { getPosts } from '@/features/blog/lib/api';
+import { getAcceptedCollections } from '@/features/blog/lib/accepted-collections';
 import {
   DEFAULT_BLOG_LOCALE,
   PREFIXED_BLOG_LOCALES,
@@ -36,7 +37,11 @@ export async function generateStaticParams(): Promise<{ locale: string; slug: st
   const params = await Promise.all(
     PREFIXED_BLOG_LOCALES.map(async (locale) => {
       const posts = await getPosts(locale);
-      return posts.map((post) => ({ locale, slug: post.slug }));
+      const collections = await getAcceptedCollections(locale);
+      return [
+        ...posts.map((post) => ({ locale, slug: post.slug })),
+        ...collections.map((collection) => ({ locale, slug: collection.slug })),
+      ];
     }),
   );
 

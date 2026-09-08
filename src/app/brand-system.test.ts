@@ -24,7 +24,7 @@ function activeUiFiles(root: string): string[] {
 }
 
 describe('TrendingNow visual system', () => {
-  it('uses the supplied transparent PNG mark with a live-text wordmark', () => {
+  it('keeps the supplied PNG archived and uses the approved live-text Bold Discovery wordmark', () => {
     const componentPath = path.join(
       process.cwd(),
       'src/features/storefront/components/TrendingNowWordmark.tsx',
@@ -41,6 +41,8 @@ describe('TrendingNow visual system', () => {
     expect(componentSource).toContain('Now');
     expect(componentSource).toContain('.ge');
     expect(componentSource).not.toContain('logo-v2.png');
+    expect(componentSource).toContain('data-logo-version="bold-discovery"');
+    expect(componentSource).toContain('Discovery_Anton');
     expect(mark.subarray(1, 4).toString('ascii')).toBe('PNG');
     expect(mark.readUInt32BE(16)).toBe(1254);
     expect(mark.readUInt32BE(20)).toBe(1254);

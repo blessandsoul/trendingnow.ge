@@ -2,92 +2,38 @@
 
 import type React from 'react';
 import Link from 'next/link';
-import { Mail, Phone } from 'lucide-react';
-
-import { useLocaleCopy, useLocalizedPath } from '@/i18n/context';
-import { ROUTES } from '@/lib/constants/routes';
+import { ArrowUpRight, Mail, Phone } from 'lucide-react';
+import { useLocale, useLocaleCopy, useLocalizedPath } from '@/i18n/context';
 import { TrendingNowWordmark } from './TrendingNowWordmark';
-
-interface FooterLink {
-  label: string;
-  href?: string;
-}
-
-interface FooterColumn {
-  title: string;
-  links: readonly FooterLink[];
-}
+import { discoveryShellCopy } from '../lib/discovery-shell-copy';
 
 export function StorefrontFooter(): React.ReactElement {
+  const words = discoveryShellCopy[useLocale()];
   const copy = useLocaleCopy();
-  const localizeHref = useLocalizedPath();
-  const footerColumns: readonly FooterColumn[] = copy.footer.columns;
-
+  const path = useLocalizedPath();
+  const links = [[words.catalog, '/products'], [words.saved, '/saved'], [words.compare, '/compare'], [words.guides, '/blog'], [words.about, '/about-us'], [words.contact, '/contact']];
+  const helpLinks = [[copy.infoPages.faq.title, '/faq'], [copy.infoPages.delivery.title, '/delivery'], [copy.infoPages.warranty.title, '/warranty'], [copy.infoPages.paymentMethods.title, '/payment-methods'], [copy.infoPages.corporateOffer.title, '/corporate-offer']];
   return (
-    <footer className="mt-12 border-t border-[#242932] bg-[#101010] pb-[66px] text-white md:pb-0">
-      <div className="storefront-container grid gap-9 py-11 xl:grid-cols-[1.1fr_1.7fr_0.8fr]">
-        <div className="relative overflow-hidden">
-          <span className="absolute -left-8 -top-16 h-44 w-10 rotate-[24deg] bg-[#092BB4]" aria-hidden="true" />
-          <TrendingNowWordmark className="relative mb-5 h-10 w-[200px]" tone="dark" />
-          <p className="relative max-w-[320px] text-sm leading-6 text-white/72">
-            {copy.footer.summary}
-          </p>
-          <div className="relative mt-5 space-y-2 text-sm text-white/76">
-            <p className="flex items-center gap-2"><Phone className="size-4 text-[#FFE622]" /> +995 574 88 28 87</p>
-            <p className="flex items-center gap-2"><Mail className="size-4 text-[#FFE622]" /> contact@ainow.ge</p>
-          </div>
-          <div className="relative mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-[#FFE622]">
-            <span className="h-px w-8 bg-current" /> signal pop commerce
-          </div>
+    <footer data-discovery-footer className="border-t border-black/30 bg-[#101010] pb-[calc(66px+env(safe-area-inset-bottom))] text-white md:pb-0">
+      <div className="storefront-container grid gap-9 py-10 lg:grid-cols-[1.2fr_1fr_1fr]">
+        <div className="min-w-0">
+          <Link href={path('/')} aria-label="TrendingNow.ge" className="inline-flex focus-visible:outline-2 focus-visible:outline-[#ffe622]"><TrendingNowWordmark tone="dark" /></Link>
+          <p className="mt-4 max-w-sm text-sm leading-7 text-white/80">{words.summary}</p>
         </div>
-
-        <div className="grid gap-6 sm:grid-cols-3">
-          {footerColumns.map((column) => (
-            <div key={column.title}>
-              <h3 className="mb-3 text-sm font-bold text-white">{column.title}</h3>
-              <ul className="space-y-2 text-sm text-white/70">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    {link.href ? (
-                      <Link
-                        href={localizeHref(link.href)}
-                        className="transition-colors hover:text-[#092BB4] focus-visible:text-[#092BB4] focus-visible:outline-none"
-                      >
-                        {link.label}
-                      </Link>
-                    ) : (
-                      <span>{link.label}</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div>
-          <h3 className="mb-3 text-sm font-bold text-white">{copy.footer.paymentMethods}</h3>
-          <p className="text-sm leading-6 text-white/72">{copy.footer.paymentStatus}</p>
-          <Link
-            href={localizeHref(ROUTES.PAYMENT_METHODS)}
-            className="mt-3 inline-flex min-h-10 items-center rounded-[8px] border border-white/14 px-3 text-xs font-bold text-white transition-colors hover:border-[#092BB4] hover:text-[#FFE622] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4]/55"
-          >
-            {copy.footer.paymentDetails}
-          </Link>
+        <nav aria-label={words.menu} className="grid grid-cols-2 content-start gap-x-5">
+          {links.map(([label, href]) => <Link key={href} href={path(href)} className="flex min-h-11 items-center gap-2 text-sm hover:text-[#ffe622] focus-visible:outline-2 focus-visible:outline-[#ffe622]">{label}<ArrowUpRight className="size-4 shrink-0" aria-hidden="true" /></Link>)}
+        </nav>
+        <div className="min-w-0 text-sm">
+          <h2 className="font-semibold text-[#ffe622]">{words.merchant}</h2>
+          <p className="mt-3 leading-7 text-white/80">{words.merchantNote}</p>
+          <a href="mailto:contact@ainow.ge" className="mt-3 flex min-h-11 items-center gap-2 underline underline-offset-4 hover:text-[#ffe622]"><Mail className="size-4 shrink-0" aria-hidden="true" />contact@ainow.ge</a>
+          <a href="tel:+995574882887" className="flex min-h-11 items-center gap-2 hover:text-[#ffe622]"><Phone className="size-4 shrink-0" aria-hidden="true" />+995 574 88 28 87</a>
         </div>
       </div>
-
-      <div className="border-t border-white/10 py-4 text-center text-xs text-white/60">
-        <a
-          href="https://ainow.ge"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={copy.footer.agencyAria}
-          className="inline-flex max-w-full items-center justify-center rounded-md px-2 py-1 font-bold tracking-[-0.025em] transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4]/35"
-        >
-          aiNOW
-        </a>
-      </div>
+      <nav aria-label={copy.infoPages.faq.title} className="storefront-container flex flex-wrap gap-x-6 border-t border-white/20 py-3">
+        {helpLinks.map(([label, href]) => <Link key={href} href={path(href)} className="flex min-h-11 items-center text-xs leading-6 text-white/80 hover:text-[#ffe622] focus-visible:outline-2 focus-visible:outline-[#ffe622]">{label}</Link>)}
+      </nav>
+      <div className="border-t border-white/20"><div className="storefront-container flex flex-col gap-3 py-5 text-xs leading-6 text-white/70 sm:flex-row sm:justify-between"><p className="max-w-3xl">{words.disclosure}</p><a href="https://ainow.ge" target="_blank" rel="noopener noreferrer" className="shrink-0 hover:text-white">aiNOW</a></div></div>
     </footer>
   );
 }

@@ -2,16 +2,16 @@
 
 import type React from 'react';
 import Link from 'next/link';
-import { CircleCheck, Heart, ShoppingCart } from 'lucide-react';
+import { ArrowUpRight, Heart } from 'lucide-react';
 
 import { SafeImage } from '@/components/common/SafeImage';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { useLocaleCopy, useLocalizedPath } from '@/i18n/context';
+import { useLocale, useLocaleCopy, useLocalizedPath } from '@/i18n/context';
 import { ROUTES } from '@/lib/constants/routes';
 import { cn } from '@/lib/utils';
 import { publicMediaUrl } from '@/lib/utils/media';
-import { useAddCartItem, useFavoriteIds, useToggleFavorite } from '../hooks/useStorefront';
+import { useFavoriteIds, useToggleFavorite } from '../hooks/useStorefront';
 import { formatGel, toStorefrontUppercase } from '../lib/format';
 import type { StorefrontProduct } from '../types/storefront.types';
 import { AiImageMark } from './AiImageMark';
@@ -22,7 +22,11 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, compact = false }: ProductCardProps): React.ReactElement {
-  const addCartItem = useAddCartItem();
+  const legacy = {
+    ka: { label: 'არქივის ჩანაწერი', price: 'ისტორიული ფასი', details: 'ჩანაწერის ნახვა' },
+    en: { label: 'Archived record', price: 'Historical price', details: 'View record' },
+    ru: { label: 'Архивная запись', price: 'Историческая цена', details: 'Подробнее' },
+  }[useLocale()];
   const favoriteIds = useFavoriteIds();
   const toggleFavorite = useToggleFavorite();
   const copy = useLocaleCopy();
@@ -35,6 +39,7 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
 
   return (
     <article
+      data-product-card={compact ? 'compact' : 'standard'}
       className={cn(
         'group relative flex h-full min-h-[348px] flex-col border border-[#D9DDE7] bg-white p-2.5 shadow-[0_0_0_1px_rgba(0,0,0,0.04),0_6px_18px_rgba(17,20,27,0.04)] transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:border-[#092BB4] hover:shadow-[0_0_0_1px_rgba(9,43,180,0.16),0_18px_34px_rgba(17,20,27,0.1)] focus-within:shadow-[0_0_0_2px_rgba(9,43,180,0.45),0_18px_34px_rgba(17,20,27,0.1)] motion-reduce:transition-none sm:min-h-[386px] sm:p-3',
         compact && 'min-h-[132px] flex-row items-center gap-3 p-3 sm:min-h-[132px] sm:p-3',
@@ -46,24 +51,27 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
           compact && 'mb-0 h-[104px] w-[116px] shrink-0',
         )}
       >
-        {(product.isBestseller || product.isNew) && !compact && (
+        {!compact && (
           <Badge
             className="absolute left-2 top-2 z-10 border-transparent bg-[#101010] text-[10px] font-bold text-white shadow-sm"
           >
-            {product.isNew ? copy.productCard.new : copy.productCard.bestseller}
+            {legacy.label}
           </Badge>
         )}
         <button
           type="button"
           aria-label={isFavorite ? copy.productCard.removeFromWishlistAria : copy.productCard.addToWishlistAria}
           disabled={isFavoritePending}
+          aria-pressed={isFavorite}
           onClick={() => toggleFavorite.toggleFavorite({ productId: product.id, productSlug: product.slug, isFavorite })}
           className={cn(
-            'absolute right-2 top-2 z-10 grid size-11 place-items-center border border-[#101010]/15 bg-white/92 text-[#7C8490] shadow-[0_0_0_1px_rgba(0,0,0,0.07),0_4px_12px_rgba(17,20,27,0.08)] backdrop-blur transition-[color,transform,box-shadow] duration-150 ease-out hover:text-[#101010] active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4] disabled:cursor-not-allowed disabled:opacity-70 motion-reduce:transition-none',
+            'absolute right-0 top-0 z-10 grid size-11 place-items-center text-[#657080] transition-colors hover:text-[#092BB4] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4] disabled:cursor-not-allowed disabled:opacity-70',
             isFavorite && 'text-[#092BB4] hover:text-[#061E81]',
           )}
         >
-          <Heart className={cn('size-4', isFavorite && 'fill-current')} />
+          <span className={cn('grid size-8 place-items-center border border-black/10 bg-white/95', compact && 'size-6')}>
+            <Heart aria-hidden="true" className={cn('size-4', compact && 'size-3.5', isFavorite && 'fill-current')} />
+          </span>
         </button>
         <Link
           href={productHref}
@@ -102,27 +110,13 @@ export function ProductCard({ product, compact = false }: ProductCardProps): Rea
         )}
         <div className="mt-auto pt-3">
           <div className="min-w-0">
+            <p className="mb-1 text-xs leading-5 text-neutral-600">{legacy.price}</p>
             <div className="flex flex-wrap items-baseline gap-x-2 tabular-nums">
               <span className="whitespace-nowrap text-lg font-bold tracking-[-0.03em] text-[#101010] sm:text-xl">{formatGel(product.salePrice)}</span>
             </div>
           </div>
           {!compact && (
-            <p className="mt-2 flex items-center gap-1.5 text-[11px] font-bold leading-4 text-[#476052]">
-              <CircleCheck className="size-3.5 shrink-0 text-[#2A8C47]" aria-hidden="true" />
-              {copy.productCard.orderOnDemand}
-            </p>
-          )}
-          {!compact && (
-            <Button
-              type="button"
-            className="mt-3 h-11 w-full rounded-none bg-[#092BB4] pl-4 pr-3.5 font-bold text-white shadow-[0_8px_18px_rgba(9,43,180,0.22)] hover:bg-[#061E81]"
-              disabled={addCartItem.isPending}
-              onClick={() => addCartItem.mutate({ productSlug: product.slug })}
-              aria-label={copy.productCard.addToCartAria(product.name)}
-            >
-              <ShoppingCart className="size-4" />
-              {copy.productCard.addToCart}
-            </Button>
+            <Button asChild className="mt-3 h-auto min-h-11 w-full rounded-none bg-[#092BB4] px-2 py-3 text-xs font-semibold whitespace-normal text-white hover:bg-[#061E81]"><Link href={productHref}><span className="min-w-0">{legacy.details}</span><ArrowUpRight className="size-4 shrink-0" aria-hidden="true" /></Link></Button>
           )}
         </div>
       </div>

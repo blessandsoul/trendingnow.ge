@@ -8,6 +8,7 @@ import { marked } from 'marked';
 
 import { tagToSlug } from './slugify';
 import type { BlogPost } from '../types';
+import { isPublicBlogData } from './publication-policy';
 
 const blogRoot = path.join(process.cwd(), 'content', 'blog');
 
@@ -71,7 +72,14 @@ export function getPostSlugs(locale = 'ka'): string[] {
   const dir = getLocaleDir(locale);
   if (!fs.existsSync(dir)) return [];
 
-  return fs.readdirSync(dir).filter((file) => file.endsWith('.mdx'));
+  return fs.readdirSync(dir).filter((file) => {
+    if (!file.endsWith('.mdx')) return false;
+    try {
+      return isPublicBlogData(matter(fs.readFileSync(path.join(dir, file), 'utf8')).data);
+    } catch {
+      return false;
+    }
+  });
 }
 
 export function getPostBySlug(
@@ -88,6 +96,7 @@ export function getPostBySlug(
   try {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
+    if (!isPublicBlogData(data)) return {};
     const items: Record<string, unknown> = {};
 
     fields.forEach((field) => {

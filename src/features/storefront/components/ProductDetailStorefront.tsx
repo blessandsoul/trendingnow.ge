@@ -3,7 +3,6 @@
 import type React from 'react';
 import { useCallback, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import {
   ArrowLeft,
   Box,
@@ -14,14 +13,11 @@ import {
   ChevronRight,
   CreditCard,
   Heart,
-  Minus,
   PackageCheck,
   PlayCircle,
-  Plus,
   RefreshCw,
   Share2,
   ShieldCheck,
-  ShoppingCart,
   Truck,
   WalletCards,
   Wifi,
@@ -37,7 +33,7 @@ import { useLocaleCopy, useLocalizedPath } from '@/i18n/context';
 import { ROUTES } from '@/lib/constants/routes';
 import { cn } from '@/lib/utils';
 import { publicMediaUrl } from '@/lib/utils/media';
-import { useAddCartItem, useFavoriteIds, useProduct, useToggleFavorite } from '../hooks/useStorefront';
+import { useFavoriteIds, useProduct, useToggleFavorite } from '../hooks/useStorefront';
 import { formatGel, htmlToPlainText, toStorefrontUppercase } from '../lib/format';
 import { buildSupportMailto } from '../lib/support-mailto';
 import type {
@@ -186,15 +182,6 @@ function ProductGallery({
   return (
     <section className="min-w-0">
       <div className="relative overflow-hidden rounded-none border border-[#DFE6EF] bg-white">
-        <div className="absolute left-3 top-3 z-10 flex flex-wrap gap-2">
-          {product.isNew && (
-            <Badge className="border-[#D9DDE7] bg-[#EEF2FF] text-[#061E81]">{copy.product.new}</Badge>
-          )}
-          {product.isBestseller && (
-            <Badge className="border-[#DCF2DF] bg-[#F1FFF3] text-[#2A9D4A]">{copy.product.bestseller}</Badge>
-          )}
-        </div>
-
         <div className="absolute right-3 top-3 z-10 flex gap-2">
           <button
             type="button"
@@ -360,57 +347,17 @@ function ProductInfo({
   );
 }
 
-function QuantityStepper({
-  quantity,
-  onChange,
-}: {
-  quantity: number;
-  onChange: (quantity: number) => void;
-}): React.ReactElement {
-  const copy = useLocaleCopy();
-
-  return (
-    <div className="grid grid-cols-[44px_1fr_44px] overflow-hidden rounded-none border border-[#DFE6EF] bg-white">
-      <button
-        type="button"
-        onClick={() => onChange(Math.max(1, quantity - 1))}
-        className="grid h-12 place-items-center text-[#101010] hover:bg-[#F4F2ED]"
-        aria-label={copy.product.decreaseQuantityAria}
-      >
-        <Minus className="size-4" />
-      </button>
-      <div className="grid h-12 place-items-center border-x border-[#DFE6EF] text-base font-semibold tabular-nums">
-        {quantity}
-      </div>
-      <button
-        type="button"
-        onClick={() => onChange(Math.min(99, quantity + 1))}
-        className="grid h-12 place-items-center text-[#101010] hover:bg-[#F4F2ED]"
-        aria-label={copy.product.increaseQuantityAria}
-      >
-        <Plus className="size-4" />
-      </button>
-    </div>
-  );
-}
-
 function PurchasePanel({
   product,
-  quantity,
-  onQuantityChange,
   onShare,
   embedded = false,
 }: {
   product: StorefrontProductDetailProduct;
-  quantity: number;
-  onQuantityChange: (quantity: number) => void;
   onShare: () => Promise<void>;
   embedded?: boolean;
 }): React.ReactElement {
   const copy = useLocaleCopy();
   const localizeHref = useLocalizedPath();
-  const router = useRouter();
-  const addCartItem = useAddCartItem();
   const favoriteIds = useFavoriteIds();
   const toggleFavorite = useToggleFavorite();
   const isFavorite = favoriteIds.data?.productIds.includes(product.id) ?? false;
@@ -421,21 +368,6 @@ function PurchasePanel({
     passport.emailBody(product.name, product.attributes.sku),
   );
   const factsToConfirm = [passport.fit.label, passport.compatibility.label, passport.material.label, passport.package.label];
-
-  const addToCart = (): void => {
-    addCartItem.mutate({ productSlug: product.slug, quantity });
-  };
-
-  const buyNow = (): void => {
-    addCartItem.mutate(
-      { productSlug: product.slug, quantity },
-      {
-        onSuccess: () => {
-          router.push(localizeHref(ROUTES.CART));
-        },
-      },
-    );
-  };
 
   return (
     <aside
@@ -471,36 +403,12 @@ function PurchasePanel({
         </a>
       </div>
 
-      <div className="mt-4 grid items-end gap-3 sm:grid-cols-[minmax(0,1fr)_auto]">
-        <div className="min-w-0">
-          <label className="mb-2 block text-sm font-semibold text-[#101010]">{copy.product.quantity}</label>
-          <QuantityStepper quantity={quantity} onChange={onQuantityChange} />
-        </div>
-        <div className="rounded-none bg-[#F4F2ED] px-4 py-2.5 sm:min-w-[136px] sm:text-right">
-          <p className="text-xs font-medium uppercase tracking-[0.06em] text-[#657080]">{copy.product.total}</p>
-          <p className="mt-1 text-xl font-bold tabular-nums text-[#101010]">{formatGel(product.salePrice * quantity)}</p>
-        </div>
-      </div>
-
-      <div className="mt-4 grid gap-3">
-        <Button
-          type="button"
-          disabled={addCartItem.isPending}
-          onClick={buyNow}
-          className="h-12 rounded-none bg-[#092BB4] text-base font-semibold text-white shadow-[0_10px_22px_rgba(9,43,180,0.22)] hover:bg-[#061E81]"
-        >
-          {copy.product.buyNow}
-        </Button>
-        <Button
-          type="button"
-          disabled={addCartItem.isPending}
-          onClick={addToCart}
-          variant="outline"
-          className="h-12 rounded-none border-[#C9D1DB] bg-white text-base font-semibold text-[#101010] hover:border-[#092BB4] hover:bg-[#EEF2FF] hover:text-[#061E81]"
-        >
-          <ShoppingCart className="size-5" />
-          {copy.product.addToCart}
-        </Button>
+      <div className="mt-4 border border-[#D9DDE7] bg-[#F4F2ED] p-4">
+        <p className="text-sm font-bold text-[#101010]">{copy.product.orderStatusLabel}</p>
+        <p className="mt-1 text-sm leading-6 text-[#657080]">{copy.product.orderStatusText}</p>
+        <a href={supportHref} className="mt-3 inline-flex min-h-11 items-center font-semibold text-[#061E81] underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#092BB4]/35">
+          {passport.confirmCta} · SKU {product.attributes.sku}
+        </a>
       </div>
 
       {product.attributes.highlights.length > 0 && (
@@ -752,7 +660,6 @@ export function ProductDetailStorefront({
   const localizeHref = useLocalizedPath();
   const { data, isLoading, error } = useProduct(slug, initialData);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [quantity, setQuantity] = useState(1);
 
   const product = data?.product;
   const relatedProducts = useMemo(() => data?.relatedProducts ?? [], [data?.relatedProducts]);
@@ -797,7 +704,7 @@ export function ProductDetailStorefront({
               <div className="min-w-0 xl:sticky xl:top-[84px] xl:self-start">
                 <div className="overflow-hidden rounded-none border border-[#DFE6EF] bg-white shadow-[0_18px_48px_rgba(17,20,27,0.07)]">
                   <ProductInfo product={product} embedded />
-                  <PurchasePanel product={product} quantity={quantity} onQuantityChange={setQuantity} onShare={handleShare} embedded />
+                  <PurchasePanel product={product} onShare={handleShare} embedded />
                 </div>
               </div>
             </section>

@@ -19,6 +19,7 @@ import {
   toAppRedirectHref,
 } from '../lib/redirects';
 import { useCurrentUser } from '../hooks/useCurrentUser';
+import { shouldBootstrapSession } from '../lib/session-bootstrap';
 
 const PROTECTED_PATHS: string[] = [ROUTES.DASHBOARD, ROUTES.PROFILE, '/admin'];
 
@@ -51,7 +52,7 @@ export const AuthInitializer = ({ children }: AuthInitializerProps): React.React
   // avatar upload, email verification) should call:
   //   queryClient.invalidateQueries({ queryKey: authKeys.me() })
   // to refresh Redux state automatically.
-  const enabled = !isAuthRoutePath(normalizedPathname) && !isLoggingOut;
+  const enabled = shouldBootstrapSession(normalizedPathname, isLoggingOut, isAuthenticated);
 
   const { error } = useCurrentUser({ enabled });
 
