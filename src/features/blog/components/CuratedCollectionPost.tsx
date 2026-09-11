@@ -64,7 +64,7 @@ export function CuratedCollectionPost({ collection, locale, reviewMetadata }: { 
   const isSingleProduct = collection.products.length === 1;
 
   return (
-    <article className="storefront-container max-w-6xl py-8 md:py-14">
+    <article className="storefront-reading-container py-8 md:py-14">
       <nav aria-label={copy.back} className="mb-7 flex min-w-0 flex-wrap items-center gap-1.5 text-sm text-[#526071]">
         <Link href={localizedPath(locale, '/')} className="inline-flex min-h-10 items-center gap-1 hover:text-[#101010] focus-visible:outline-2 focus-visible:outline-[#092BB4]">
           <HomeIcon className="size-3.5" aria-hidden="true" /><span className="sr-only">{copy.back}</span>
@@ -88,7 +88,7 @@ export function CuratedCollectionPost({ collection, locale, reviewMetadata }: { 
         </div>
       </header>
 
-      <section className={isSingleProduct ? 'mt-8 max-w-4xl border-b border-black/20 pb-10' : 'mt-8 border-b border-black/20 pb-10'} aria-labelledby="collection-products" data-testid="collection-products" data-collection-format={isSingleProduct ? 'single-product-review' : 'multi-product-collection'}>
+      <section className="mt-8 border-b border-black/20 pb-10" aria-labelledby="collection-products" data-testid="collection-products" data-collection-format={isSingleProduct ? 'single-product-review' : 'multi-product-collection'}>
         <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="tn-kicker text-[#092BB4]">{copy.eyebrow}</p>
@@ -96,7 +96,7 @@ export function CuratedCollectionPost({ collection, locale, reviewMetadata }: { 
           </div>
           <p className="text-sm text-[#526071]">{isSingleProduct ? copy.singleProduct : copy.exactProducts}</p>
         </div>
-        {collection.products.length > 0 ? <div className={isSingleProduct ? 'max-w-4xl' : 'grid gap-5 sm:grid-cols-2 xl:grid-cols-3'}>
+        {collection.products.length > 0 ? <div className={isSingleProduct ? 'w-full' : 'grid gap-5 sm:grid-cols-2 xl:grid-cols-3'}>
           {collection.products.map((product) => <ProductCard key={product.id} collection={collection} product={product} locale={locale} featured={isSingleProduct} />)}
         </div> : <p className="border border-dashed border-black/30 bg-[#FAF9F6] p-5 text-sm leading-7 text-[#526071]">{copy.noProducts}</p>}
       </section>

@@ -57,6 +57,7 @@ describe('curated collection detail', () => {
     expect(screen.getAllByRole('link', { name: /პროდუქტის დეტალები/ })[0]).toHaveAttribute('href', '/products/find-pcshop-1');
     expect(screen.queryByRole('link', { name: /კალათ/ })).not.toBeInTheDocument();
     expect(screen.getByTestId('collection-products')).toHaveAttribute('data-collection-format', 'single-product-review');
+    expect(screen.getByTestId('collection-products').closest('article')).toHaveClass('storefront-reading-container');
     expect(screen.getByRole('heading', { name: 'პროდუქტის მოკლე შეფასება' })).toBeInTheDocument();
   });
 
