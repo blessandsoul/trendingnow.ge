@@ -57,6 +57,7 @@ export function isActiveLocale(locale: string): locale is ActiveLocale {
 export function localizedPath(locale: Locale, path: string): string {
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
   if (locale === DEFAULT_LOCALE) return normalizedPath;
+  if (normalizedPath === '/') return LOCALE_ROUTE_PREFIXES[locale];
   return `${LOCALE_ROUTE_PREFIXES[locale]}${normalizedPath}`;
 }
 

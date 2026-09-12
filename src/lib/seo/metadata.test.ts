@@ -27,6 +27,24 @@ describe('SEO metadata', () => {
     });
   });
 
+  it('uses direct no-slash URLs for localized homepages in canonicals and alternates', () => {
+    const metadata = buildPublicMetadata(
+      { title: 'Home | TrendingNow.ge', description: 'The home page.' },
+      'en',
+      '/',
+    );
+
+    expect(metadata.alternates).toEqual({
+      canonical: 'https://trendingnow.ge/en',
+      languages: {
+        ka: 'https://trendingnow.ge/',
+        en: 'https://trendingnow.ge/en',
+        ru: 'https://trendingnow.ge/ru',
+        'x-default': 'https://trendingnow.ge/',
+      },
+    });
+  });
+
   it('marks transactional pages as noindex while keeping links followable', () => {
     expect(buildPrivateMetadata({ title: 'Cart', description: 'Shopping cart.' }).robots).toEqual({
       index: false,
